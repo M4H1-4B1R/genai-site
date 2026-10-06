@@ -14,8 +14,23 @@
 * {
   box-sizing: border-box;
 }
-html {
-  scroll-behavior: smooth;
+/* Smooth anchor scrolling as a no-JS fallback; Lenis takes over once active
+   (CSS smooth-scroll conflicts with it, per Lenis docs). `html.lenis` is
+   persistent while Lenis runs; `lenis-smooth` only toggles mid-scroll. */
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.lenis) {
+    scroll-behavior: smooth;
+  }
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 body {
   margin: 0;
