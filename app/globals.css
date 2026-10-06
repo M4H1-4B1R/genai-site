@@ -489,19 +489,19 @@ select {
   inset: 1.2% !important;
 }
 .kaya-phone-left {
-  height: 491px;
+  height: 60.25%;
   left: 1.22%;
   top: 38.71%;
   width: 29%;
 }
 .kaya-phone-center {
-  height: 599px;
+  height: 73.5%;
   left: 32.28%;
   top: 28.4%;
   width: 35.32%;
 }
 .kaya-phone-right {
-  height: 509px;
+  height: 62.45%;
   left: 69.55%;
   top: 37.73%;
   width: 29%;
@@ -988,23 +988,41 @@ select {
   .project-list {
     margin: 0 -20px;
   }
+  /* Stacked card: scaled image zone on top, copy on a solid panel below. */
   .project {
-    height: 540px;
+    height: auto;
+    padding-top: 220px;
+  }
+  .project-background,
+  .project-kaya .project-background,
+  .project-mingcheji .project-background,
+  .project-nexagent .project-background {
+    bottom: auto !important;
+    height: 220px !important;
+    left: 0 !important;
+    max-width: none !important;
+    object-fit: cover;
+    top: 0 !important;
+    width: 100% !important;
+  }
+  .project:after,
+  .project-right:after {
+    background: none;
+    content: none;
+  }
+  .kaya-devices {
+    height: 220px;
+    left: 0;
+    top: 0;
+    width: 100%;
   }
   .project-copy,
   .project-left .project-copy,
   .project-right .project-copy {
+    background: var(--deep);
     margin: 0;
-    padding: 28px 20px;
-  }
-  .project:after,
-  .project-right:after {
-    background: linear-gradient(
-      0deg,
-      #080b0df2 0%,
-      #080b0dcc 55%,
-      transparent 100%
-    );
+    max-width: none;
+    padding: 24px 20px 28px;
   }
   .project h3 {
     font-size: 28px;
