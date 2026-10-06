@@ -266,19 +266,40 @@ select {
 }
 .marquee-item {
   align-items: center;
-  color: #aeb5b8;
   display: inline-flex;
-  font-size: 15px;
-  font-weight: 700;
-  gap: 32px;
-  padding-right: 32px;
-  text-transform: uppercase;
+  padding-right: 110px;
   white-space: nowrap;
 }
-.marquee-icon {
-  color: var(--orange);
-  height: 15px;
-  width: 15px;
+.client-logo {
+  align-items: center;
+  color: #9aa0a3;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.client-logo-row {
+  align-items: center;
+  display: inline-flex;
+  gap: 10px;
+}
+.client-logo-row svg {
+  height: 24px;
+  width: 24px;
+}
+.client-logo-row strong {
+  font-size: 17px;
+  font-weight: 700;
+}
+.client-logo-row .name-light {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.client-logo small {
+  color: #83898c;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 .marquee:hover .marquee-track {
   animation-play-state: paused;
@@ -318,6 +339,11 @@ select {
   position: absolute;
   width: 100%;
   z-index: 2;
+}
+.client-strip-section {
+  border-top: 1px solid #1c2328;
+  border-bottom: 1px solid #1c2328;
+  padding: 26px 0 30px;
 }
 .client-strip .marquee-item {
   opacity: 0.8;

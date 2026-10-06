@@ -1,9 +1,9 @@
-import { Sparkles } from "lucide-react";
+import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
 type MarqueeProps = {
-  items: string[];
+  items: ReactNode[];
   duration?: number;
   className?: string;
 };
@@ -18,11 +18,10 @@ export function Marquee({ items, duration = 40, className }: MarqueeProps) {
         {[...items, ...items].map((item, index) => (
           <span
             className="marquee-item"
-            key={`${item}-${index}`}
+            key={index}
             aria-hidden={index >= items.length}
           >
-            <span>{item}</span>
-            <Sparkles className="marquee-icon" aria-hidden="true" />
+            {item}
           </span>
         ))}
       </div>
