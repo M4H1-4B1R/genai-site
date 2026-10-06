@@ -216,7 +216,8 @@ select {
     position: relative;
   }
   .hero-lines,
-  .hero-end-tag {
+  .hero-end-tag,
+  .hero-scroll .client-strip {
     display: none;
   }
   .hero-scroll .hero-content {
@@ -237,7 +238,8 @@ select {
     height: auto;
     position: relative;
   }
-  .hero-end-tag {
+  .hero-end-tag,
+  .hero-scroll .client-strip {
     display: none;
   }
 }
