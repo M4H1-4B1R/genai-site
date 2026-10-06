@@ -4,7 +4,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <a className="brand" href="#top" aria-label="GenAILabs home">
-        <Image src="/figma/raw-2.png" alt="" width={54} height={36} priority />
+        <Image src="/figma/logo-yellow.png" alt="" width={54} height={30} priority />
         <span>GenAILabs</span>
       </a>
       <nav aria-label="Primary navigation">
