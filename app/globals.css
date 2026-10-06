@@ -35,7 +35,9 @@ select {
 }
 .site-shell {
   min-width: 320px;
-  overflow: hidden;
+  /* overflow:clip keeps horizontal bleed contained without creating a scroll
+     container, so position:sticky inside (hero) still works. */
+  overflow: clip;
   background: var(--ink);
 }
 .site-header {
@@ -126,19 +128,6 @@ select {
   overflow: hidden;
   position: relative;
 }
-.hero-art {
-  object-fit: cover;
-  object-position: center right;
-  opacity: 0.22;
-}
-.hero:after {
-  background:
-    linear-gradient(90deg, #0d0e0f 0%, #0d0e0fcc 38%, transparent 75%),
-    linear-gradient(0deg, #0d0e0f, transparent 45%);
-  content: "";
-  inset: 0;
-  position: absolute;
-}
 .hero-content {
   margin: 0 auto;
   max-width: 1120px;
@@ -179,6 +168,121 @@ select {
   margin: 0 0 40px;
   max-width: 760px;
 }
+/* Scroll-scrubbed hero: tall wrapper + sticky stage. --hero-p (0..1) is set
+   by components/hero-lines.tsx on scroll. */
+.hero-scroll {
+  height: 320vh;
+  position: relative;
+}
+.hero-scroll .hero {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+.hero-lines {
+  height: 100%;
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.hero-node {
+  filter: drop-shadow(0 0 16px rgba(255, 152, 0, 0.55));
+}
+.hero-scroll .hero-content {
+  opacity: max(0, calc(1 - var(--hero-p, 0) * 1.5));
+  transform: translateX(calc(var(--hero-p, 0) * -220px));
+  will-change: opacity, transform;
+}
+.hero-scroll .client-strip {
+  opacity: max(0, calc(1 - var(--hero-p, 0) * 4));
+}
+.hero-end-tag {
+  left: auto;
+  margin: 0;
+  opacity: min(1, max(0, (var(--hero-p, 0) - 0.8) * 6));
+  position: absolute;
+  right: 15%;
+  top: 42%;
+  z-index: 1;
+}
+@media (max-width: 900px) {
+  .hero-scroll {
+    height: auto;
+  }
+  .hero-scroll .hero {
+    height: auto;
+    position: relative;
+  }
+  .hero-lines,
+  .hero-end-tag {
+    display: none;
+  }
+  .hero-scroll .hero-content {
+    opacity: 1;
+    transform: none;
+  }
+  .hero-scroll .client-strip {
+    opacity: 1;
+  }
+}
+/* Reduced motion: no scroll scrubbing, but keep the frame-1 line composition
+   statically instead of hiding it. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll {
+    height: auto;
+  }
+  .hero-scroll .hero {
+    height: auto;
+    position: relative;
+  }
+  .hero-end-tag {
+    display: none;
+  }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee {
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    black 12%,
+    black 88%,
+    transparent
+  );
+  overflow: hidden;
+}
+.marquee-track {
+  animation: marquee var(--marquee-duration, 40s) linear infinite;
+  display: flex;
+  width: max-content;
+}
+.marquee-item {
+  align-items: center;
+  color: #aeb5b8;
+  display: inline-flex;
+  font-size: 15px;
+  font-weight: 700;
+  gap: 32px;
+  padding-right: 32px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.marquee-icon {
+  color: var(--orange);
+  height: 15px;
+  width: 15px;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
 .button-row {
   display: flex;
   flex-wrap: wrap;
@@ -206,23 +310,16 @@ select {
   text-transform: uppercase;
 }
 .client-strip {
-  align-items: center;
+  border-top: 1px solid #1c2328;
   border-bottom: 1px solid #1c2328;
   bottom: 0;
-  display: flex;
-  justify-content: space-between;
-  left: 50%;
-  max-width: 1280px;
-  padding: 26px 0 36px;
+  left: 0;
+  padding: 26px 0 30px;
   position: absolute;
-  transform: translateX(-50%);
-  width: calc(100% - 96px);
+  width: 100%;
   z-index: 2;
 }
-.client-strip span {
-  color: #aeb5b8;
-  font-size: 15px;
-  font-weight: 700;
+.client-strip .marquee-item {
   opacity: 0.8;
 }
 .section-heading {
@@ -741,7 +838,7 @@ select {
     padding: 110px 32px 80px;
   }
   .client-strip {
-    width: calc(100% - 64px);
+    padding-inline: 32px;
   }
   .architecture,
   .contact {
@@ -795,9 +892,9 @@ select {
     gap: 18px;
     overflow: hidden;
     padding-bottom: 24px;
-    width: calc(100% - 40px);
+    padding-inline: 20px;
   }
-  .client-strip span {
+  .client-strip .marquee-item {
     flex: 0 0 auto;
     font-size: 11px;
   }
@@ -894,5 +991,11 @@ select {
   .footer-bottom {
     flex-direction: column !important;
     gap: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
   }
 }

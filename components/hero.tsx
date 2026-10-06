@@ -1,17 +1,12 @@
-import Image from "next/image";
+import { HeroLines } from "@/components/hero-lines";
+import { Marquee } from "@/components/shared/marquee";
 
 export function Hero() {
   return (
-    <section className="hero" id="top">
-      <Image
-        className="hero-art"
-        src="/figma/raw-16.png"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-      />
-      <div className="hero-content">
+    <section className="hero-scroll" id="top">
+      <div className="hero">
+        <HeroLines />
+        <div className="hero-content">
         <div className="hero-status">
           <span>● Live system</span>
           <small>Build / Act / Deploy</small>
@@ -46,17 +41,19 @@ export function Hero() {
           </div>
         </div>
       </div>
-      <div className="client-strip" aria-label="Selected clients">
-        {[
-          "it it",
-          "✣ Frostbite",
-          "♣ DATAWATCH",
-          "⊕ DATA INSIGHT",
-          "▲ NextGen",
-          "A\\ ELEVATE AI",
-        ].map((client) => (
-          <span key={client}>{client}</span>
-        ))}
+        <p className="hero-end-tag mono">Build / Act / Deploy</p>
+        <Marquee
+          className="client-strip"
+          duration={42}
+          items={[
+            "it it",
+            "✣ Frostbite",
+            "♣ DATAWATCH",
+            "⊕ DATA INSIGHT",
+            "▲ NextGen",
+            "A\\ ELEVATE AI",
+          ]}
+        />
       </div>
     </section>
   );
