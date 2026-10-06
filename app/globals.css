@@ -351,6 +351,17 @@ select {
 .section-heading {
   margin-bottom: 56px;
 }
+.work-section .section-heading {
+  margin-bottom: 48px;
+}
+.work-section .section-heading h2 {
+  font-size: 48px;
+  line-height: 52px;
+}
+.work-section > .button-muted {
+  min-height: 44px;
+  padding: 14px 32px;
+}
 .section-heading h2,
 .architecture h2,
 .contact h2 {
@@ -366,9 +377,12 @@ select {
 .automation,
 .contact {
   border-top: 1px solid #2a2d34;
-  padding: 96px max(40px, calc((100% - 1280px) / 2));
+  padding: 64px max(40px, calc((100% - 1280px) / 2));
 }
 .project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   margin: 0 calc(max(40px, (100% - 1280px) / 2) * -1);
 }
 .project {
@@ -378,33 +392,15 @@ select {
   overflow: hidden;
   position: relative;
 }
-.project:after {
-  background: linear-gradient(
-    90deg,
-    #080b0df2 0%,
-    #080b0d99 33%,
-    transparent 70%
-  );
-  content: "";
-  inset: 0;
-  position: absolute;
-}
-.project-right:after {
-  background: linear-gradient(
-    270deg,
-    #080b0df2 0%,
-    #080b0d99 33%,
-    transparent 70%
-  );
-}
-.project img {
+.project-background {
   object-fit: cover;
+  z-index: 0;
 }
 .project-copy {
   max-width: 430px;
-  padding: 40px;
+  padding: 0;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 .project-left .project-copy {
   margin-left: max(40px, calc((100vw - 1280px) / 2));
@@ -451,6 +447,64 @@ select {
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
+}
+.project-kaya .project-background {
+  height: 1062px !important;
+  left: 0 !important;
+  max-width: none !important;
+  object-fit: cover;
+  top: -51px !important;
+  width: 121.3% !important;
+}
+.project-mingcheji .project-background {
+  height: 878px !important;
+  left: 0 !important;
+  max-width: none !important;
+  top: -177px !important;
+  width: 100% !important;
+}
+.project-nexagent .project-background {
+  height: 876px !important;
+  left: 0 !important;
+  max-width: none !important;
+  top: -56px !important;
+  width: 100% !important;
+}
+.kaya-devices {
+  height: 815px;
+  left: 43%;
+  position: absolute;
+  top: -145px;
+  width: min(57vw, 821px);
+  z-index: 1;
+}
+.kaya-phone {
+  position: absolute;
+}
+.kaya-phone-frame,
+.kaya-phone-screen {
+  object-fit: contain;
+}
+.kaya-phone-screen {
+  inset: 1.2% !important;
+}
+.kaya-phone-left {
+  height: 491px;
+  left: 1.22%;
+  top: 38.71%;
+  width: 29%;
+}
+.kaya-phone-center {
+  height: 599px;
+  left: 32.28%;
+  top: 28.4%;
+  width: 35.32%;
+}
+.kaya-phone-right {
+  height: 509px;
+  left: 69.55%;
+  top: 37.73%;
+  width: 29%;
 }
 .capabilities {
   background: var(--deep);
