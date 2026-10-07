@@ -197,18 +197,6 @@ select {
   padding: 8px 16px;
   text-align: center;
 }
-.services-client strong {
-  color: #aeb5b8;
-  font-size: 17px;
-}
-.services-client small {
-  color: #747d81;
-  font:
-    10px var(--font-space-mono),
-    monospace;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
 .services-banner {
   background: #0d0e0f;
   border-bottom: 1px solid #1c2328;

@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { ServicesProofSlider } from "@/components/services-proof-slider";
+import { clientStripItems } from "@/components/shared/client-logos";
 
 const capabilities = [
   {
@@ -62,17 +63,9 @@ export function ServicesHub() {
         className="services-client-strip"
         aria-label="Selected technology partners"
       >
-        {[
-          ["Stripe", "Financial tech solution"],
-          ["Frostbite", "Cloud data architecture"],
-          ["Datawatch", "System monitoring"],
-          ["Data Insight", "Security & strategy"],
-          ["NextGen", "Cloud edge computing"],
-          ["Elevate AI", "Next generation models"],
-        ].map(([name, label]) => (
-          <div className="services-client" key={name}>
-            <strong>{name}</strong>
-            <small>{label}</small>
+        {clientStripItems.map((item, index) => (
+          <div className="services-client" key={index}>
+            {item}
           </div>
         ))}
       </div>
