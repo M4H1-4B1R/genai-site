@@ -900,6 +900,10 @@ select {
   height: 24px;
   width: 24px;
 }
+.client-logo-row .mark-image {
+  height: 24px;
+  width: auto;
+}
 .client-logo-row strong {
   font-size: 17px;
   font-weight: 700;

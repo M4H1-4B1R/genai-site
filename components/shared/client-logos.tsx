@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 
 const iconProps = {
@@ -9,13 +10,16 @@ const iconProps = {
 } as const;
 
 function TechSolutionMark() {
+  // Official mark, extracted from the Figma page export with the dark
+  // background converted to transparency.
   return (
-    <svg {...iconProps} fill="currentColor" aria-hidden="true">
-      <rect height="5" rx="1" width="5" x="2" y="2" />
-      <rect height="12" rx="1" width="5" x="2" y="10" />
-      <rect height="20" rx="1" width="5" x="10" y="2" />
-      <rect height="5" rx="1" width="10" x="12" y="7" />
-    </svg>
+    <Image
+      alt=""
+      className="mark-image"
+      height={31}
+      src="/figma/logo-tech-solution.png"
+      width={36}
+    />
   );
 }
 
