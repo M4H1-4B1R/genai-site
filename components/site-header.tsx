@@ -4,11 +4,17 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <a className="brand" href="#top" aria-label="GenAILabs home">
-        <Image src="/figma/logo-yellow.png" alt="" width={54} height={30} priority />
+        <Image
+          src="/figma/logo-yellow.png"
+          alt=""
+          width={54}
+          height={30}
+          priority
+        />
         <span>GenAILabs</span>
       </a>
       <nav aria-label="Primary navigation">
-        <a className="active" href="#services">
+        <a className="active" href="/services">
           Services <span>⌄</span>
         </a>
         <a href="#work">Work</a>
