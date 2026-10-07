@@ -573,7 +573,7 @@ select {
 .services-proof {
   border: 1px solid #5344344d;
   margin: 48px 0;
-  padding: 32px 64px;
+  padding: 32px 64px 26px;
 }
 .services-proof-top {
   border-bottom: 1px solid #53443433;
@@ -619,6 +619,39 @@ select {
   line-height: 1.4;
   margin-top: 5px;
   text-transform: none;
+}
+/* Proof slider */
+.services-proof-viewport {
+  overflow: hidden;
+}
+.services-proof-track {
+  display: flex;
+}
+.services-proof-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+.services-proof-dots {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding-top: 26px;
+}
+.services-proof-dots button {
+  background: #3a4046;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 6px;
+  padding: 0;
+  transition: background 0.3s;
+  width: 6px;
+}
+.services-proof-dots button:hover {
+  background: #6b7280;
+}
+.services-proof-dots button.active {
+  background: var(--orange);
 }
 .services-cta {
   background: #121314;

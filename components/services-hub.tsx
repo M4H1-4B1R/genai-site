@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { ServicesProofSlider } from "@/components/services-proof-slider";
+
 const capabilities = [
   {
     number: "01",
@@ -265,36 +267,7 @@ export function ServicesHub() {
           </div>
         </section>
 
-        <section className="services-proof">
-          <div className="services-proof-top">
-            <strong>— Proof record</strong>
-            <span>● Verified audit</span>
-          </div>
-          <blockquote>
-            “GenAILabs gave our operational platform the rare feeling of being
-            both extraordinarily intelligent and unmistakably human.”
-          </blockquote>
-          <div className="services-proof-meta">
-            <span>
-              — Mara Voss
-              <br />
-              <small>Founder &amp; Managing Director, Lumen Field</small>
-            </span>
-            <span>
-              Discipline
-              <br />
-              <small>
-                Autonomous workflow engine / model alignment / production
-                infrastructure
-              </small>
-            </span>
-            <span>
-              Deployment cycle
-              <br />
-              <small>2026.Q1 production</small>
-            </span>
-          </div>
-        </section>
+        <ServicesProofSlider />
       </main>
     </div>
   );
