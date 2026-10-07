@@ -210,6 +210,7 @@ export function ServicesHub() {
               <span className="services-connector-drop services-connector-drop-center" />
               <span className="services-connector-drop services-connector-drop-right" />
               <span className="services-connector-bus" />
+              <span className="services-connector-elbow" />
               <span className="services-connector-down" />
             </div>
             <article className="services-convergence-core">

@@ -516,6 +516,10 @@ select {
   top: var(--bus-y);
   width: calc(100% - var(--stage-center) * 2);
 }
+/* Mobile-only corner piece (vertical spine turns right into the drop). */
+.services-connector-elbow {
+  display: none;
+}
 .services-connector-down {
   border-width: 0 0 0 1px;
   height: calc(76px - var(--bus-y));
@@ -713,9 +717,49 @@ select {
   }
   .services-stage-grid {
     grid-template-columns: 1fr;
+    position: relative;
+  }
+  /* Mobile convergence tree: the desktop 3-into-1 tree becomes a vertical
+     spine in the section's left padding (cards keep full width). Each stage
+     card feeds the spine via a stub; the spine elbows right into a single
+     drop into the core card. */
+  .services-stage-grid::before {
+    border-left: 1px dashed #ff9800;
+    bottom: 0;
+    content: "";
+    left: -12px;
+    position: absolute;
+    top: 0;
+  }
+  .services-stage-grid article {
+    position: relative;
+  }
+  .services-stage-grid article::before {
+    border-top: 1px dashed #ff9800;
+    content: "";
+    left: -12px;
+    position: absolute;
+    top: 50%;
+    width: 12px;
   }
   .services-connectors {
+    height: 64px;
+  }
+  .services-connector-drop,
+  .services-connector-bus {
     display: none;
+  }
+  .services-connector-elbow {
+    border-width: 0 0 1px 1px;
+    display: block;
+    height: 32px;
+    left: -12px;
+    top: 0;
+    width: calc(50% + 12px);
+  }
+  .services-connector-down {
+    height: 32px;
+    top: 32px;
   }
   .services-proof {
     margin: 32px 24px;
