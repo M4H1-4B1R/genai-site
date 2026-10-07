@@ -152,7 +152,7 @@ export function HeroLines() {
   return (
     <svg
       ref={svgRef}
-      className="hero-lines"
+      className="pointer-events-none absolute inset-0 z-[1] h-full w-full max-[900px]:hidden"
       viewBox={`0 0 ${VB_WIDTH} ${VB_HEIGHT}`}
       preserveAspectRatio="xMidYMid slice"
       aria-hidden="true"
@@ -222,7 +222,7 @@ export function HeroLines() {
       />
       <image
         ref={nodeRef}
-        className="hero-node"
+        className="drop-shadow-[0_0_16px_rgba(255,152,0,0.55)]"
         href="/figma/raw-2.png"
         width={NODE_W}
         height={NODE_H}

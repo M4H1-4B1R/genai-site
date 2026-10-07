@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/site-header";
 
 export default function ServicesPage() {
   return (
-    <div className="site-shell">
+    <div className="min-w-[320px] overflow-clip bg-ink">
       <SiteHeader />
       <ServicesHub />
       <section className="cta-section services-cta">

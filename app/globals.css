@@ -2,6 +2,76 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+@theme {
+  --color-ink: #0d0e0f;
+  --color-deep: #080b0d;
+  --color-panel: #14161a;
+  --color-line: #293137;
+  --color-muted: #9fa4ab;
+  --color-text: #f2f2f0;
+  --color-orange: #ff9800;
+  --font-sans: var(--font-space-grotesk), sans-serif;
+  --font-mono: var(--font-space-mono), monospace;
+}
+
+@utility button {
+  align-items: center;
+  border-radius: 3px;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 700;
+  gap: 12px;
+  justify-content: center;
+  letter-spacing: 0.55px;
+  min-height: 48px;
+  padding: 14px 25px;
+  text-transform: uppercase;
+  transition:
+    transform 0.2s,
+    background 0.2s,
+    border-color 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@utility button-primary {
+  background: var(--orange);
+  box-shadow: 0 0 24px #ff980033;
+  color: #080b0d;
+
+  &:hover {
+    background: #ffac26;
+  }
+}
+
+@utility button-outline {
+  border: 1px solid #6a7276;
+  color: #f4f4f1;
+
+  &:hover {
+    border-color: var(--orange);
+  }
+}
+
+@utility button-muted {
+  background: #14161a;
+  border: 1px solid var(--line);
+  color: var(--text);
+  margin: 48px auto 0;
+}
+
+/* Shared mono label used for section eyebrows, hero status text, and mono
+   metadata. One definition replaces the old `.eyebrow` class rule. */
+@utility eyebrow {
+  color: #999ea2;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
 :root {
   --ink: #0d0e0f;
   --deep: #080b0d;
@@ -10,9 +80,6 @@
   --muted: #9fa4ab;
   --text: #f2f2f0;
   --orange: #ff9800;
-}
-* {
-  box-sizing: border-box;
 }
 /* Smooth anchor scrolling as a no-JS fallback; Lenis takes over once active
    (CSS smooth-scroll conflicts with it, per Lenis docs). `html.lenis` is
@@ -32,114 +99,29 @@ html.lenis body {
 .lenis.lenis-stopped {
   overflow: hidden;
 }
-body {
-  margin: 0;
-  background: var(--ink);
-  color: var(--text);
-  font-family: var(--font-space-grotesk), sans-serif;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
-.site-shell {
-  min-width: 320px;
-  /* overflow:clip keeps horizontal bleed contained without creating a scroll
-     container, so position:sticky inside (hero) still works. */
-  overflow: clip;
-  background: var(--ink);
-}
-.site-header {
-  align-items: center;
-  border-bottom: 1px solid #303437;
-  display: flex;
-  height: 80px;
-  justify-content: space-between;
-  margin: 0 auto;
-  max-width: 1280px;
-  padding: 0 32px;
-  position: relative;
-}
-.mobile-menu {
-  display: none;
-}
-/* Panel styles are top-level on purpose: on desktop the whole .mobile-menu
-   wrapper is display:none, so they never apply there anyway. */
-.nav-toggle {
-  align-items: center;
-  background: transparent;
-  border: 1px solid #424a50;
-  border-radius: 3px;
-  color: var(--text);
-  cursor: pointer;
-  display: inline-flex;
-  height: 44px;
-  justify-content: center;
-  padding: 0;
-  width: 44px;
-}
-.mobile-nav-panel {
-  background: var(--ink);
-  border-bottom: 1px solid #303437;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  left: 0;
-  padding: 16px 20px 24px;
-  position: absolute;
-  right: 0;
-  top: 100%;
-  z-index: 50;
-}
-.mobile-nav-panel > a:not(.button) {
-  border-bottom: 1px solid #1c2328;
-  color: #b4b6b8;
-  font-size: 15px;
-  padding: 14px 4px;
-}
-.mobile-nav-panel > a:not(.button):last-of-type {
-  border-bottom: 0;
-}
-.mobile-nav-panel .button {
-  justify-content: center;
-  margin-top: 14px;
-}
-.brand {
-  align-items: center;
-  display: flex;
-  gap: 16px;
-  font-size: 24px;
-  letter-spacing: -0.4px;
-}
-.brand img {
-  height: 25px;
-  object-fit: contain;
-  width: 42px;
-}
-.site-header > nav {
-  display: flex;
-  gap: 32px;
-  margin-left: auto;
-  margin-right: 40px;
-}
-.site-header > nav a {
-  color: #b4b6b8;
-  font-size: 14px;
-  padding: 30px 0 25px;
-}
-.site-header > nav a.active {
-  border-bottom: 1px solid var(--text);
-  color: var(--text);
-}
-.site-header > nav span {
-  color: var(--muted);
-  padding-left: 10px;
+/* Element defaults live in @layer base on purpose: unlayered CSS outranks
+   every Tailwind utility, so leaving these at top level would make
+   `text-*`, `font-*`, etc. silently lose on links, inputs, and buttons. */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--text);
+    font-family: var(--font-space-grotesk), sans-serif;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
 }
 .services-page {
   background: #090a0b;
@@ -780,170 +762,9 @@ select {
     align-self: stretch;
   }
 }
-.button {
-  align-items: center;
-  border-radius: 3px;
-  display: inline-flex;
-  font-size: 13px;
-  font-weight: 700;
-  gap: 12px;
-  justify-content: center;
-  letter-spacing: 0.55px;
-  min-height: 48px;
-  padding: 14px 25px;
-  text-transform: uppercase;
-  transition:
-    transform 0.2s,
-    background 0.2s,
-    border-color 0.2s;
-}
-.button:hover {
-  transform: translateY(-2px);
-}
-.button-primary {
-  background: var(--orange);
-  box-shadow: 0 0 24px #ff980033;
-  color: #080b0d;
-}
-.button-primary:hover {
-  background: #ffac26;
-}
-.button-outline {
-  border: 1px solid #6a7276;
-  color: #f4f4f1;
-}
-.button-outline:hover {
-  border-color: var(--orange);
-}
-.button-muted {
-  background: #14161a;
-  border: 1px solid var(--line);
-  color: var(--text);
-  margin: 48px auto 0;
-}
-.hero {
-  background: #0d0e0f;
-  min-height: 930px;
-  overflow: hidden;
-  position: relative;
-}
-.hero-content {
-  margin: 0 auto;
-  max-width: 1120px;
-  padding: 140px 0 80px;
-  position: relative;
-  z-index: 1;
-}
-.hero-status {
-  align-items: center;
-  display: flex;
-  gap: 14px;
-  margin-bottom: 40px;
-}
-.hero-status span {
-  border: 1px solid var(--orange);
-  border-radius: 999px;
-  color: var(--orange);
-  font-family: var(--font-space-mono), monospace;
-  font-size: 10px;
-  letter-spacing: 0.5px;
-  padding: 6px 10px;
-  text-transform: uppercase;
-}
-.hero-status small,
-.mono,
-.eyebrow {
-  color: #999ea2;
-  font-family: var(--font-space-mono), monospace;
-  font-size: 11px;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-}
-.hero h1 {
-  font-size: clamp(48px, 5vw, 72px);
-  font-weight: 400;
-  letter-spacing: -2px;
-  line-height: 1.04;
-  margin: 0 0 40px;
-  max-width: 760px;
-}
-/* Scroll-scrubbed hero: tall wrapper + sticky stage. --hero-p (0..1) is set
-   by components/hero-lines.tsx on scroll. */
-.hero-scroll {
-  height: 320vh;
-  position: relative;
-}
-.hero-scroll .hero {
-  height: 100vh;
-  position: sticky;
-  top: 0;
-}
-.hero-lines {
-  height: 100%;
-  inset: 0;
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-}
-.hero-node {
-  filter: drop-shadow(0 0 16px rgba(255, 152, 0, 0.55));
-}
-.hero-scroll .hero-content {
-  opacity: max(0, calc(1 - var(--hero-p, 0) * 1.5));
-  transform: translateX(calc(var(--hero-p, 0) * -220px));
-  will-change: opacity, transform;
-}
-.hero-scroll .client-strip {
-  opacity: max(0, calc(1 - var(--hero-p, 0) * 4));
-}
-.hero-end-tag {
-  left: auto;
-  margin: 0;
-  opacity: min(1, max(0, (var(--hero-p, 0) - 0.8) * 6));
-  position: absolute;
-  right: 15%;
-  top: 42%;
-  z-index: 1;
-}
-@media (max-width: 900px) {
-  .hero-scroll {
-    height: auto;
-  }
-  .hero-scroll .hero {
-    height: auto;
-    min-height: 0;
-    position: relative;
-  }
-  .hero-lines,
-  .hero-end-tag,
-  .hero-scroll .client-strip {
-    display: none;
-  }
-  .hero-scroll .hero-content {
-    opacity: 1;
-    transform: none;
-  }
-  .hero-scroll .client-strip {
-    opacity: 1;
-  }
-}
-/* Reduced motion: no scroll scrubbing, but keep the frame-1 line composition
-   statically instead of hiding it. */
-@media (prefers-reduced-motion: reduce) {
-  .hero-scroll {
-    height: auto;
-  }
-  .hero-scroll .hero {
-    height: auto;
-    min-height: 0;
-    position: relative;
-  }
-  .hero-end-tag,
-  .hero-scroll .client-strip {
-    display: none;
-  }
-}
+/* Keyframe target for the `animate-[marquee_...]` utility in
+   components/shared/marquee.tsx. Keyframes stay here: Tailwind has no
+   utility form for @keyframes declarations. */
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -951,27 +772,6 @@ select {
   to {
     transform: translateX(-50%);
   }
-}
-.marquee {
-  mask-image: linear-gradient(
-    90deg,
-    transparent,
-    black 12%,
-    black 88%,
-    transparent
-  );
-  overflow: hidden;
-}
-.marquee-track {
-  animation: marquee var(--marquee-duration, 40s) linear infinite;
-  display: flex;
-  width: max-content;
-}
-.marquee-item {
-  align-items: center;
-  display: inline-flex;
-  padding-right: 110px;
-  white-space: nowrap;
 }
 .client-logo {
   align-items: center;
@@ -1008,449 +808,11 @@ select {
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
-}
-.button-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.stats {
-  border-top: 1px solid #2a2d34;
-  display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 48px;
-  max-width: 760px;
-  padding-top: 16px;
-}
-.stats strong {
-  display: block;
-  font-size: 26px;
-}
-.stats span {
-  color: #9ca3af;
-  display: block;
-  font-size: 12px;
-  letter-spacing: 0.55px;
-  margin-top: 4px;
-  text-transform: uppercase;
-}
-.client-strip {
-  border-top: 1px solid #1c2328;
-  border-bottom: 1px solid #1c2328;
-  bottom: 0;
-  left: 0;
-  padding: 26px 0 30px;
-  position: absolute;
-  width: 100%;
-  z-index: 2;
-}
-.client-strip-section {
-  border-top: 1px solid #1c2328;
-  border-bottom: 1px solid #1c2328;
-  padding: 26px 0 30px;
-}
-.client-strip .marquee-item {
-  opacity: 0.8;
-}
-.section-heading {
-  margin-bottom: 56px;
-}
-.work-section .section-heading {
-  margin-bottom: 48px;
-}
-.work-section .section-heading h2 {
-  font-size: 48px;
-  line-height: 52px;
-}
-.work-section > .button-muted {
-  min-height: 44px;
-  padding: 14px 32px;
-}
-.section-heading h2,
-.architecture h2,
-.contact h2 {
-  font-size: clamp(40px, 4vw, 56px);
-  font-weight: 400;
-  letter-spacing: -1.5px;
-  line-height: 1.08;
-  margin: 14px 0 0;
-}
-.work-section,
-.capabilities,
-.architecture,
-.automation,
-.contact {
-  border-top: 1px solid #2a2d34;
-  padding: 64px max(40px, calc((100% - 1280px) / 2));
-}
-.project-list {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin: 0 calc(max(40px, (100% - 1280px) / 2) * -1);
-}
-.project {
-  align-items: center;
-  display: flex;
-  height: 524px;
-  overflow: hidden;
-  position: relative;
-}
-.project-background {
-  object-fit: cover;
-  z-index: 0;
-}
-.project-copy {
-  max-width: 430px;
-  padding: 0;
-  position: relative;
-  z-index: 2;
-}
-.project-left .project-copy {
-  margin-left: max(40px, calc((100vw - 1280px) / 2));
-}
-.project-right .project-copy {
-  margin-left: auto;
-  margin-right: max(40px, calc((100vw - 1280px) / 2));
-}
-.project-type {
-  color: var(--orange);
-  font-family: var(--font-space-mono), monospace;
-  font-size: 11px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-.project h3 {
-  font-size: 32px;
-  margin: 16px 0 12px;
-}
-.project-copy > p:not(.project-type) {
-  color: #9fa4ab;
-  font-size: 17px;
-  line-height: 1.65;
-}
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 22px 0;
-}
-.tags span,
-.filter-row span {
-  border: 1px solid #293137;
-  border-radius: 999px;
-  color: #9fa4ab;
-  font-family: var(--font-space-mono), monospace;
-  font-size: 10px;
-  letter-spacing: 0.5px;
-  padding: 6px 14px;
-  text-transform: uppercase;
-}
-.project-copy a {
-  color: var(--orange);
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.project-kaya .project-background {
-  height: 1062px !important;
-  left: 0 !important;
-  max-width: none !important;
-  object-fit: cover;
-  top: -51px !important;
-  width: 121.3% !important;
-}
-.project-mingcheji .project-background {
-  height: 878px !important;
-  left: 0 !important;
-  max-width: none !important;
-  top: -177px !important;
-  width: 100% !important;
-}
-.project-nexagent .project-background {
-  height: 876px !important;
-  left: 0 !important;
-  max-width: none !important;
-  top: -56px !important;
-  width: 100% !important;
-}
-.kaya-devices {
-  height: 815px;
-  left: 43%;
-  position: absolute;
-  top: -145px;
-  width: min(57vw, 821px);
-  z-index: 1;
-}
-.kaya-phone {
-  position: absolute;
-}
-.kaya-phone-frame,
-.kaya-phone-screen {
-  object-fit: contain;
-}
-.kaya-phone-screen {
-  inset: 1.2% !important;
-}
-.kaya-phone-left {
-  height: 60.25%;
-  left: 1.22%;
-  top: 38.71%;
-  width: 29%;
-}
-.kaya-phone-center {
-  height: 73.5%;
-  left: 32.28%;
-  top: 28.4%;
-  width: 35.32%;
-}
-.kaya-phone-right {
-  height: 62.45%;
-  left: 69.55%;
-  top: 37.73%;
-  width: 29%;
-}
-.capabilities {
-  background: var(--deep);
-}
-.capability-list a {
-  align-items: center;
-  border-bottom: 1px solid var(--line);
-  display: grid;
-  gap: 42px;
-  grid-template-columns: 20px 1fr 1fr 20px;
-  min-height: 76px;
-}
-.capability-list strong {
-  font-size: 22px;
-}
-.capability-list p {
-  color: #9fa4ab;
-  font-size: 15px;
-}
-.muted {
-  color: #747d81;
-}
-.accent {
-  color: var(--orange);
-}
-.architecture {
-  display: grid;
-  gap: 64px;
-  grid-template-columns: 1fr 1.55fr;
-}
-.architecture-copy {
-  align-self: center;
-}
-.architecture-copy > p:not(.eyebrow) {
-  color: #d1d5db;
-  font-size: 18px;
-  line-height: 1.55;
-  max-width: 500px;
-}
-.architecture-note {
-  background: #14161a99;
-  border-left: 2px solid white;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-top: 30px;
-  padding: 14px 20px;
-}
-.architecture-note strong {
-  font-size: 11px;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-}
-.architecture-note span {
-  color: #9ca3af;
-  font-size: 14px;
-  line-height: 1.45;
-}
-.diagram {
-  align-items: center;
-  background: #14161a;
-  border: 1px solid #2a2d34;
-  border-radius: 8px;
-  display: flex;
-  gap: 56px;
-  min-height: 420px;
-  padding: 40px;
-  position: relative;
-}
-.node-stack {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 14px;
-}
-.diagram-node {
-  background: #0d0e0f;
-  border: 1px solid #2a2d34;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  padding: 17px;
-}
-.diagram-node strong {
-  font-size: 14px;
-}
-.diagram-node span {
-  color: #9ca3af;
-  font-size: 11px;
-}
-.diagram-core {
-  border: 2px solid white;
-  border-radius: 4px;
-  box-shadow: 0 0 35px #ff8a0026;
-  display: flex;
-  flex: 1.4;
-  flex-direction: column;
-  gap: 12px;
-  padding: 36px 34px;
-}
-.diagram-core p {
-  color: #ff8a00;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  margin: 0;
-  text-transform: uppercase;
-}
-.diagram-core strong {
-  font-size: 24px;
-  text-transform: uppercase;
-}
-.diagram-core span {
-  color: #d1d5db;
-  font-size: 13px;
-  line-height: 1.5;
-}
-.diagram-core small {
-  border-top: 1px solid #2a2d34;
-  color: #ff8a00;
-  margin-top: 4px;
-  padding-top: 12px;
-}
-.proof {
-  border-top: 1px solid #53443433;
-  margin: 0 auto;
-  max-width: 1280px;
-  padding: 49px 64px;
-}
-.proof-top {
-  border-bottom: 1px solid #53443433;
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 33px;
-  text-transform: uppercase;
-}
-.proof-top b {
-  border: 1px solid #f59e0b4d;
-  border-radius: 12px;
-  color: #ffc174;
-  font-size: 11px;
-  font-weight: 500;
-  padding: 3px 11px;
-}
-.proof blockquote {
-  border-bottom: 1px solid #53443433;
-  font-size: clamp(32px, 4vw, 52px);
-  font-weight: 700;
-  letter-spacing: -1.2px;
-  line-height: 1.05;
-  margin: 0;
-  padding: 42px 0;
-  max-width: 930px;
-}
-.proof-meta {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(3, 1fr);
-  padding-top: 40px;
-}
-.proof-meta div {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.proof-meta strong {
-  font-size: 12px;
-  text-transform: uppercase;
-}
-.proof-meta span {
-  color: #c8c1c5;
-  font-size: 12px;
-  line-height: 1.4;
-}
-.automation {
-  background: var(--deep);
-}
-.section-heading > p:last-child {
-  color: #9fa4ab;
-  font-size: 18px;
-  margin-bottom: 0;
-}
-.filter-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 16px;
-}
-.filter-row span {
-  border: 0;
-  color: #4d525c;
-  font-family: inherit;
-  font-size: 14px;
-  text-transform: none;
-}
-.filter-row .selected {
-  background: #131518;
-  color: white;
-}
-.automation-card {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  height: 415px;
-}
 .cta-section {
   background: #121314;
   border-top: 1px solid #2a2d34;
   padding: 120px 24px;
   text-align: center;
-}
-.cta-inner {
-  margin: auto;
-  max-width: 800px;
-}
-.cta-inner h2 {
-  font-size: clamp(42px, 5vw, 64px);
-  line-height: 0.98;
-  margin: 14px auto 22px;
-  max-width: 700px;
-  text-transform: uppercase;
-}
-.cta-inner > p:not(.eyebrow) {
-  color: #d1d5db;
-  font-size: 18px;
-  line-height: 1.55;
-  margin: auto;
-  max-width: 700px;
-}
-.cta-inner .button {
-  margin-top: 32px;
-}
-.cta-inner small {
-  color: #6b7280;
-  display: block;
-  font-size: 12px;
-  letter-spacing: 0.6px;
-  margin-top: 10px;
-  text-transform: uppercase;
 }
 /* Services CTA: left-aligned panel card with the orange arc on the right. */
 .services-cta {
@@ -1523,318 +885,11 @@ select {
   transform: translateY(-50%);
   width: 720px;
 }
-.contact {
-  display: grid;
-  gap: 64px;
-  grid-template-columns: 1fr 1fr;
-}
-.contact-copy {
-  align-self: center;
-}
-.contact-copy > p {
-  color: #d1d5db;
-  font-size: 18px;
-  line-height: 1.55;
-  max-width: 520px;
-}
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 34px;
-}
-.contact-details span {
-  color: #9ca3af;
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-  gap: 3px;
-}
-.contact-details strong {
-  color: white;
-  font-size: 16px;
-  font-weight: 400;
-}
-.contact-form {
-  border: 1px solid #2a2d34;
-  padding: 36px 40px 40px;
-}
-.form-title {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 32px;
-}
-.form-title h3 {
-  font-size: 28px;
-  font-weight: 400;
-  margin: 0;
-}
-.form-title span,
-.contact-form label {
-  color: #747d81;
-  font-family: var(--font-space-mono), monospace;
-  font-size: 10px;
-  letter-spacing: 0.7px;
-  text-transform: uppercase;
-}
-.form-grid {
-  display: grid;
-  gap: 24px 16px;
-  grid-template-columns: 1fr 1fr;
-}
-.contact-form label {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 24px;
-}
-.contact-form input,
-.contact-form select,
-.contact-form textarea,
-.subscribe input {
-  background: #0d0e0f;
-  border: 1px solid #424a50;
-  color: white;
-  outline: none;
-  padding: 14px;
-}
-.contact-form textarea {
-  min-height: 130px;
-  resize: vertical;
-}
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  border-color: var(--orange);
-}
-.consent {
-  align-items: flex-start;
-  display: grid !important;
-  gap: 10px !important;
-  grid-template-columns: 18px 120px 1fr;
-  line-height: 1.5;
-}
-.consent input {
-  accent-color: var(--orange);
-  height: 18px;
-  margin: 0;
-  width: 18px;
-}
-.consent small {
-  color: #747d81;
-  font-family: var(--font-space-grotesk), sans-serif;
-  font-size: 12px;
-  letter-spacing: 0;
-  text-transform: none;
-}
-.site-footer {
-  border-top: 1px solid #2a2d34;
-  display: grid;
-  gap: 48px;
-  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
-  padding: 64px max(40px, calc((100% - 1280px) / 2));
-}
-.site-footer > div {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.footer-brand strong {
-  font-size: 16px;
-  text-transform: uppercase;
-}
-.footer-brand p,
-.site-footer a {
-  color: #9ca3af;
-  font-size: 14px;
-  line-height: 1.5;
-}
-.footer-brand p {
-  max-width: 320px;
-}
-.footer-label {
-  font-size: 11px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-.subscribe {
-  display: flex;
-  margin-top: 28px;
-}
-.subscribe input {
-  min-width: 0;
-  width: 100%;
-}
-.subscribe .button {
-  border: 0;
-  min-width: 165px;
-}
-.footer-bottom {
-  border-top: 1px solid #2a2d34;
-  color: #6b7280;
-  flex-direction: row !important;
-  font-size: 11px;
-  grid-column: 1 / -1;
-  justify-content: space-between;
-  margin-top: 20px;
-  padding-top: 12px;
-  text-transform: uppercase;
-}
-@media (max-width: 900px) {
-  .site-header {
-    padding: 0 20px;
-  }
-  .site-header > nav {
-    gap: 14px;
-    margin-right: 16px;
-  }
-  .site-header > nav a {
-    font-size: 12px;
-  }
-  .hero-content {
-    padding: 110px 32px 80px;
-  }
-  .client-strip {
-    padding-inline: 32px;
-  }
-  .architecture,
-  .contact {
-    grid-template-columns: 1fr;
-  }
-  .site-footer {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+/* Product engineering legacy classes removed - converted to Tailwind utilities in components/product-engineering-page.tsx */
 @media (max-width: 640px) {
-  .site-header {
-    height: auto;
-    min-height: 72px;
-    padding: 16px 20px;
-  }
-  .brand {
-    font-size: 20px;
-  }
-  .site-header > nav {
-    display: none;
-  }
-  /* Hamburger replaces the header CTA on mobile; the CTA lives in the menu. */
-  .header-cta {
-    display: none;
-  }
-  .mobile-menu {
-    display: block;
-  }
-  .hero {
-    min-height: 760px;
-  }
-  .hero-content {
-    padding: 90px 20px 40px;
-  }
-  .hero h1 {
-    font-size: 46px;
-    letter-spacing: -1px;
-  }
   .button {
     font-size: 11px;
     padding: 12px 15px;
-  }
-  .stats {
-    gap: 12px;
-  }
-  .stats strong {
-    font-size: 20px;
-  }
-  .stats span {
-    font-size: 9px;
-  }
-  .client-strip {
-    gap: 18px;
-    overflow: hidden;
-    padding-bottom: 24px;
-    padding-inline: 20px;
-  }
-  .client-strip .marquee-item {
-    flex: 0 0 auto;
-    font-size: 11px;
-  }
-  .work-section,
-  .capabilities,
-  .architecture,
-  .automation,
-  .contact {
-    padding: 68px 20px;
-  }
-  .project-list {
-    margin: 0 -20px;
-  }
-  /* Stacked card: scaled image zone on top, copy on a solid panel below. */
-  .project {
-    height: auto;
-    padding-top: 220px;
-  }
-  .project-background,
-  .project-kaya .project-background,
-  .project-mingcheji .project-background,
-  .project-nexagent .project-background {
-    bottom: auto !important;
-    height: 220px !important;
-    left: 0 !important;
-    max-width: none !important;
-    object-fit: cover;
-    top: 0 !important;
-    width: 100% !important;
-  }
-  .project:after,
-  .project-right:after {
-    background: none;
-    content: none;
-  }
-  .kaya-devices {
-    height: 220px;
-    left: 0;
-    top: 0;
-    width: 100%;
-  }
-  .project-copy,
-  .project-left .project-copy,
-  .project-right .project-copy {
-    background: var(--deep);
-    margin: 0;
-    max-width: none;
-    padding: 24px 20px 28px;
-  }
-  .project h3 {
-    font-size: 28px;
-  }
-  .capability-list a {
-    gap: 12px;
-    grid-template-columns: 20px 1fr 20px;
-    padding: 18px 0;
-  }
-  .capability-list p {
-    display: none;
-  }
-  .diagram {
-    align-items: stretch;
-    flex-direction: column;
-    gap: 24px;
-    padding: 20px;
-  }
-  .diagram-core {
-    padding: 24px 20px;
-  }
-  .proof {
-    padding: 40px 20px;
-  }
-  .proof-meta {
-    grid-template-columns: 1fr;
-  }
-  .proof blockquote {
-    font-size: 34px;
-  }
-  .automation-card {
-    height: 260px;
   }
   .cta-section {
     padding: 90px 20px;
@@ -1849,41 +904,7 @@ select {
   .cta-panel::after {
     display: none;
   }
-  .contact-form {
-    padding: 24px 18px;
-  }
-  .form-grid {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  .consent {
-    grid-template-columns: 18px 1fr !important;
-  }
-  .consent small {
-    grid-column: 2;
-  }
-  .site-footer {
-    grid-template-columns: 1fr 1fr;
-    padding: 48px 20px;
-  }
-  .footer-brand,
-  .site-footer > div:last-of-type {
-    grid-column: 1 / -1;
-  }
-  .subscribe {
-    flex-direction: column;
-  }
-  .subscribe .button {
-    width: 100%;
-  }
-  .footer-bottom {
-    flex-direction: column !important;
-    gap: 8px;
-  }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none;
-  }
-}
+/* Marquee reduced-motion handling lives on the track as the
+   `motion-reduce:animate-none` utility in components/shared/marquee.tsx. */
