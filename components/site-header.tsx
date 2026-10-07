@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { MobileMenu } from "@/components/mobile-menu";
+
 export function SiteHeader() {
   return (
     <header className="site-header">
@@ -24,6 +26,7 @@ export function SiteHeader() {
       <a className="button button-outline header-cta" href="#contact">
         Talk to our team →
       </a>
+      <MobileMenu />
     </header>
   );
 }

@@ -64,6 +64,51 @@ select {
   margin: 0 auto;
   max-width: 1280px;
   padding: 0 32px;
+  position: relative;
+}
+.mobile-menu {
+  display: none;
+}
+/* Panel styles are top-level on purpose: on desktop the whole .mobile-menu
+   wrapper is display:none, so they never apply there anyway. */
+.nav-toggle {
+  align-items: center;
+  background: transparent;
+  border: 1px solid #424a50;
+  border-radius: 3px;
+  color: var(--text);
+  cursor: pointer;
+  display: inline-flex;
+  height: 44px;
+  justify-content: center;
+  padding: 0;
+  width: 44px;
+}
+.mobile-nav-panel {
+  background: var(--ink);
+  border-bottom: 1px solid #303437;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  left: 0;
+  padding: 16px 20px 24px;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 50;
+}
+.mobile-nav-panel > a:not(.button) {
+  border-bottom: 1px solid #1c2328;
+  color: #b4b6b8;
+  font-size: 15px;
+  padding: 14px 4px;
+}
+.mobile-nav-panel > a:not(.button):last-of-type {
+  border-bottom: 0;
+}
+.mobile-nav-panel .button {
+  justify-content: center;
+  margin-top: 14px;
 }
 .brand {
   align-items: center;
@@ -77,22 +122,22 @@ select {
   object-fit: contain;
   width: 42px;
 }
-.site-header nav {
+.site-header > nav {
   display: flex;
   gap: 32px;
   margin-left: auto;
   margin-right: 40px;
 }
-.site-header nav a {
+.site-header > nav a {
   color: #b4b6b8;
   font-size: 14px;
   padding: 30px 0 25px;
 }
-.site-header nav a.active {
+.site-header > nav a.active {
   border-bottom: 1px solid var(--text);
   color: var(--text);
 }
-.site-header nav span {
+.site-header > nav span {
   color: var(--muted);
   padding-left: 10px;
 }
@@ -1596,11 +1641,11 @@ select {
   .site-header {
     padding: 0 20px;
   }
-  .site-header nav {
+  .site-header > nav {
     gap: 14px;
     margin-right: 16px;
   }
-  .site-header nav a {
+  .site-header > nav a {
     font-size: 12px;
   }
   .hero-content {
@@ -1626,13 +1671,15 @@ select {
   .brand {
     font-size: 20px;
   }
-  .site-header nav {
+  .site-header > nav {
     display: none;
   }
+  /* Hamburger replaces the header CTA on mobile; the CTA lives in the menu. */
   .header-cta {
-    font-size: 10px;
-    min-height: 40px;
-    padding: 10px 12px;
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
   }
   .hero {
     min-height: 760px;
