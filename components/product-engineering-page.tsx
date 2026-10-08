@@ -1,3 +1,6 @@
+import { clientStripItems } from "@/components/shared/client-logos";
+import { Marquee } from "@/components/shared/marquee";
+
 import Image from "next/image";
 
 const situations = [
@@ -152,7 +155,7 @@ function SectionHeading({
 export function ProductEngineeringPage() {
   return (
     <main className="bg-[#0d0e0f]">
-      <section className="relative overflow-hidden border-b border-[#1c2328] bg-[#080b0d] min-h-[720px] px-[max(40px,calc((100%_-_1120px)_/_2))]">
+      <section className="relative overflow-hidden border-b border-[#1c2328] bg-[#080b0d] min-h-[720px] px-[max(40px,calc((100%_-_1120px)_/_2))] pt-[110px] max-[900px]:pt-[92px] max-[640px]:pt-[68px]">
         <div className="relative z-[1] max-w-[650px]">
           <p className="inline-flex items-center gap-1.5 bg-[#0f1417] border border-[#293137] rounded-[2px] text-[#9ca3af] font-[700] text-[11px] tracking-[1.2px] uppercase px-2 py-1 mb-8">
             <span className="inline-block h-[6px] w-[6px] rounded-full bg-[var(--orange)]" aria-hidden="true" />
@@ -174,32 +177,36 @@ export function ProductEngineeringPage() {
             </a>
           </div>
         </div>
-        <div className="absolute right-[16%] top-0 border-r border-[#ff9800] rounded-full h-[720px] w-[420px] opacity-[0.55] transform rotate-[-28deg] max-[800px]:right-[-30%]" aria-hidden="true" />
+        <svg
+          className="absolute right-[10%] top-0 h-[722px] w-[418px] max-[900px]:right-[6%] max-[640px]:right-[-8%]"
+          aria-hidden="true"
+          viewBox="0 0 418 722"
+        >
+          <linearGradient id="pe-hero-sweep" x1="0" y1="0.7" x2="418" y2="0.7" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#E6BC73" />
+            <stop offset="0.5" stopColor="#B38B4E" />
+            <stop offset="1" stopColor="#76684E" stopOpacity={0} />
+          </linearGradient>
+          <path
+            d="M0 0.7C106.4 0.7 167.2 720.7 418 720.7"
+            fill="none"
+            stroke="url(#pe-hero-sweep)"
+            strokeWidth="1.4"
+          />
+        </svg>
       </section>
-      <div
-        className="flex items-center gap-6 justify-between mx-auto max-w-[1280px] min-h-[128px] overflow-hidden px-6 py-2"
-        aria-label="Selected technology partners"
+      <section
+        className="border-y border-[#1c2328] pt-[26px] pb-[30px]"
+        aria-label="Clients"
       >
-        <span className="flex-1 min-w-[150px] text-center text-[#aeb5b8] font-[700] text-[14px]">
-          STRIPE<small className="block text-[#747d81] text-[9px] tracking-[0.5px] mt-1.5">FINANCIAL TECH SOLUTION</small>
-        </span>
-        <span className="flex-1 min-w-[150px] text-center text-[#aeb5b8] font-[700] text-[14px]">
-          FROSTBITE<small className="block text-[#747d81] text-[9px] tracking-[0.5px] mt-1.5">CLOUD DATA ARCHITECTURE</small>
-        </span>
-        <span className="flex-1 min-w-[150px] text-center text-[#aeb5b8] font-[700] text-[14px]">
-          DATAWATCH<small className="block text-[#747d81] text-[9px] tracking-[0.5px] mt-1.5">OBSERVABILITY SYSTEMS</small>
-        </span>
-        <span className="flex-1 min-w-[150px] text-center text-[#aeb5b8] font-[700] text-[14px]">
-          ORBITAL<small className="block text-[#747d81] text-[9px] tracking-[0.5px] mt-1.5">PRODUCT INFRASTRUCTURE</small>
-        </span>
-        <span className="flex-1 min-w-[150px] text-center text-[#aeb5b8] font-[700] text-[14px]">
-          VECTOR<small className="block text-[#747d81] text-[9px] tracking-[0.5px] mt-1.5">MODEL OPERATIONS</small>
-        </span>
-      </div>
-      <div className="bg-[#0d0e0f] border-t border-[#1c2328] border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] py-[61px]">
-        <strong className="inline-flex items-center justify-center bg-[#191c1e] border border-[#293137] rounded-[8px] text-white font-[700] h-[120px] letter-spacing-[0.4px]">
-          IMAGE BANNER
-        </strong>
+        <Marquee duration={42} items={clientStripItems} className="max-[640px]:py-4" />
+      </section>
+      <div className="bg-[#0d0e0f] border-y border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] py-[38px]">
+        <div className="flex h-[116px] items-center justify-center rounded-[8px] border border-[#30363d] bg-[#161b22]">
+          <strong className="text-white font-[700] text-[20px] tracking-[0.4px] uppercase">
+            IMAGE BANNER
+          </strong>
+        </div>
       </div>
       <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] py-[96px]">
         <SectionHeading

@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { MobileMenu } from "@/components/mobile-menu";
+import { ServicesDropdown } from "@/components/services-dropdown";
 
 export function SiteHeader() {
   return (
@@ -24,17 +25,7 @@ export function SiteHeader() {
         className="ml-auto mr-10 flex gap-8 text-[14px] max-[900px]:mr-4 max-[900px]:gap-3.5 max-[900px]:text-[12px] max-[640px]:hidden"
         aria-label="Primary navigation"
       >
-        {/* Services carries the always-on active treatment from the original
-            design: white text plus a white underline. */}
-        <a
-          className="border-b border-text px-0 pb-[25px] pt-[30px] text-text"
-          href="/services"
-        >
-          Services <span className="pl-2.5 text-muted">⌄</span>
-        </a>
-        <a className="px-0 pb-[25px] pt-[30px] text-[#b4b6b8]" href="/services/product-engineering">
-          AI Product Engineering
-        </a>
+        <ServicesDropdown />
         <a className="px-0 pb-[25px] pt-[30px] text-[#b4b6b8]" href="#work">
           Work
         </a>

@@ -1,10 +1,11 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
     <div className="hidden max-[640px]:block">
@@ -24,41 +25,37 @@ export function MobileMenu() {
           id="mobile-nav-panel"
           aria-label="Mobile navigation"
         >
-          <a
-            className="border-b border-[#1c2328] px-1 py-3.5 text-[15px] text-[#b4b6b8]"
-            href="/services"
-            onClick={() => setOpen(false)}
+          <MobileDropdown
+            title="Services"
+            isOpen={servicesOpen}
+            onToggle={() => setServicesOpen((v) => !v)}
           >
-            Services
-          </a>
-          <a
-            className="border-b border-[#1c2328] px-1 py-3.5 text-[15px] text-[#b4b6b8]"
-            href="/services/product-engineering"
-            onClick={() => setOpen(false)}
-          >
-            AI Product Engineering
-          </a>
-          <a
-            className="border-b border-[#1c2328] px-1 py-3.5 text-[15px] text-[#b4b6b8]"
+            <MobileMenuItem
+              href="/services/product-engineering"
+              label="AI Product Engineering"
+              onSelect={() => setOpen(false)}
+            />
+            <MobileMenuItem
+              href="/services"
+              label="All Services"
+              onSelect={() => setOpen(false)}
+            />
+          </MobileDropdown>
+          <MobileMenuItem
             href="#work"
-            onClick={() => setOpen(false)}
-          >
-            Work
-          </a>
-          <a
-            className="border-b border-[#1c2328] px-1 py-3.5 text-[15px] text-[#b4b6b8]"
+            label="Work"
+            onSelect={() => setOpen(false)}
+          />
+          <MobileMenuItem
             href="#insights"
-            onClick={() => setOpen(false)}
-          >
-            Insights
-          </a>
-          <a
-            className="border-b border-[#1c2328] px-1 py-3.5 text-[15px] text-[#b4b6b8]"
+            label="Insights"
+            onSelect={() => setOpen(false)}
+          />
+          <MobileMenuItem
             href="#about"
-            onClick={() => setOpen(false)}
-          >
-            About
-          </a>
+            label="About"
+            onSelect={() => setOpen(false)}
+          />
           <a
             className="button button-primary mt-3.5 justify-center"
             href="#contact"
@@ -71,3 +68,59 @@ export function MobileMenu() {
     </div>
   );
 }
+
+function MobileDropdown({
+  title,
+  isOpen,
+  onToggle,
+  children,
+}: {
+  title: string;
+  isOpen: boolean;
+  onToggle: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex flex-col">
+      <button
+        className="w-full flex items-center justify-between px-1 py-3.5 text-[15px] text-[#b4b6b8] border-b border-[#1c2328]"
+        onClick={onToggle}
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+      >
+        <span>{title}</span>
+        {isOpen ? (
+          <ChevronDown size={18} className="ml-2" />
+        ) : (
+          <ChevronRight size={18} className="ml-2" />
+        )}
+      </button>
+      {isOpen && (
+        <div className="flex flex-col pl-4">
+          {children}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function MobileMenuItem({
+  href,
+  label,
+  onSelect,
+}: {
+  href: string;
+  label: string;
+  onSelect: () => void;
+}) {
+  return (
+    <a
+      className="block px-1 py-3 text-[15px] text-[#b4b6b8] hover:text-orange rounded-[4px]"
+      href={href}
+      onClick={onSelect}
+    >
+      {label}
+    </a>
+  );
+}
+
