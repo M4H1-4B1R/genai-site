@@ -8,7 +8,7 @@ export function SiteHeader() {
     <header className="relative mx-auto flex h-20 min-w-0 max-w-[1280px] items-center justify-between border-b border-[#303437] px-8 max-[900px]:px-5 max-[640px]:h-auto max-[640px]:min-h-[72px] max-[640px]:py-4">
       <a
         className="flex items-center gap-4 text-2xl tracking-[-0.4px] max-[640px]:text-xl"
-        href="#top"
+        href="/"
         aria-label="GenAILabs home"
       >
         <Image
