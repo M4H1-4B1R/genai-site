@@ -6,9 +6,7 @@ interface ServicesDropdownProps {
 
 export function ServicesDropdown({ className }: ServicesDropdownProps) {
   return (
-    <div
-      className={`group relative inline-block ${className || ""}`}
-    >
+    <div className={`group relative inline-block ${className || ""}`}>
       <button
         className="border-b border-text px-0 pb-[25px] pt-[30px] text-text flex items-center group-hover:text-orange"
         aria-haspopup="true"
@@ -35,6 +33,13 @@ export function ServicesDropdown({ className }: ServicesDropdownProps) {
         </a>
         <a
           className="block px-4 py-3 text-[14px] text-[#b4b6b8] hover:text-orange hover:bg-[#0d0e0f] rounded-[4px] transition-colors"
+          href="/services/agentic-layer-engineering"
+          role="menuitem"
+        >
+          Agentic Layer Engineering
+        </a>
+        <a
+          className="block px-4 py-3 text-[14px] text-[#b4b6b8] hover:text-orange hover:bg-[#0d0e0f] rounded-[4px] transition-colors"
           href="/services"
           role="menuitem"
         >
@@ -44,4 +49,3 @@ export function ServicesDropdown({ className }: ServicesDropdownProps) {
     </div>
   );
 }
-
