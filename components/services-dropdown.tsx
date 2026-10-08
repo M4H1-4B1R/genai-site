@@ -28,7 +28,7 @@ export function ServicesDropdown({ className }: ServicesDropdownProps) {
       >
         <a
           className="block px-4 py-3 text-[14px] text-[#f4f4f1] hover:text-orange hover:bg-[#0d0e0f] rounded-[4px] transition-colors"
-          href="/services/product-engineering"
+          href="/services/ai-product-engineering"
           role="menuitem"
         >
           AI Product Engineering

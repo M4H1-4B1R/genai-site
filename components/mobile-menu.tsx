@@ -31,7 +31,7 @@ export function MobileMenu() {
             onToggle={() => setServicesOpen((v) => !v)}
           >
             <MobileMenuItem
-              href="/services/product-engineering"
+              href="/services/ai-product-engineering"
               label="AI Product Engineering"
               onSelect={() => setOpen(false)}
             />
