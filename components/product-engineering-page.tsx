@@ -2,6 +2,7 @@ import { clientStripItems } from "@/components/shared/client-logos";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { Marquee } from "@/components/shared/marquee";
 
+import { ArrowDown, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 const situations = [
@@ -247,11 +248,16 @@ export function ProductEngineeringPage() {
             Service Model
           </h2>
         </div>
-        <div className="relative flex gap-3 max-[900px]:flex-col">
-          <span className="absolute left-[10%] right-[10%] top-[-22px] border-t border-dashed border-[#ff9800] opacity-50 max-[900px]:hidden" aria-hidden="true" />
+        <div className="relative flex gap-6 max-[900px]:flex-col">
+          {/* Mobile feedback loop: dashed channel on the side returning from the
+              last step back to the first (rotated version of the desktop U). */}
+          <span
+            className="absolute -left-3 top-0 bottom-0 border-l border-dashed border-[#ff9800] opacity-60 min-[901px]:hidden"
+            aria-hidden="true"
+          />
           {modelSteps.map(([number, title, body], index) => (
             <div
-              className={`flex-1 bg-[#080b0d] border border-[#293137] rounded-[4px] p-6 max-[640px]:p-5 flex flex-col gap-2.5 ${index === 2 ? "border-[var(--orange)]" : ""}`}
+              className={`relative flex-1 bg-[#080b0d] border border-[#293137] rounded-[4px] p-6 max-[640px]:p-5 flex flex-col gap-2.5 ${index === 2 ? "border-[var(--orange)]" : ""}`}
               key={number}
             >
               <span className={`${index === 2 ? "text-[#ffc081]" : "text-[#747d81]"} font-[700] text-[10px] font-mono tracking-[1px]"`}
@@ -259,10 +265,37 @@ export function ProductEngineeringPage() {
               >
               <strong className="text-[#f4f4f1] text-[13px] tracking-[0.6px]">{title}</strong>
               <p className="text-[#9ca3af] text-[13px] leading-[20px]">{body}</p>
+              {(index === 0 || index === modelSteps.length - 1) && (
+                <span
+                  className="absolute -left-3 top-1/2 w-3 border-t border-dashed border-[#ff9800] opacity-60 min-[901px]:hidden"
+                  aria-hidden="true"
+                />
+              )}
+              {index < modelSteps.length - 1 && (
+                <>
+                  <span
+                    className="absolute top-1/2 -right-6 flex w-6 -translate-y-1/2 items-center justify-center text-[#ff9800] max-[900px]:hidden"
+                    aria-hidden="true"
+                  >
+                    <ArrowRight size={16} />
+                  </span>
+                  <span
+                    className="absolute -bottom-6 left-1/2 flex h-6 w-6 -translate-x-1/2 items-center justify-center text-[#ff9800] min-[901px]:hidden"
+                    aria-hidden="true"
+                  >
+                    <ArrowDown size={14} />
+                  </span>
+                </>
+              )}
             </div>
           ))}
         </div>
-        <p className="text-center text-[#6b7280] text-[15px] mt-12 max-[640px]:mt-8">
+        {/* Feedback loop: dashed U returning from the last step back to the first. */}
+        <div
+          className="mx-[5px] h-[54px] rounded-b-[6px] border-b border-l border-r border-dashed border-[#ff9800] opacity-60 max-[900px]:hidden"
+          aria-hidden="true"
+        />
+        <p className="text-center text-[#6b7280] text-[15px] mt-11 max-[640px]:mt-8">
           Return to the problem as evidence changes.
         </p>
       </section>
