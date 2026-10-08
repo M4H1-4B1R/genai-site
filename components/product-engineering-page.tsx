@@ -1,4 +1,5 @@
 import { clientStripItems } from "@/components/shared/client-logos";
+import { FaqAccordion } from "@/components/faq-accordion";
 import { Marquee } from "@/components/shared/marquee";
 
 import Image from "next/image";
@@ -347,8 +348,8 @@ export function ProductEngineeringPage() {
           ))}
         </div>
       </section>
-      <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] py-[96px] text-center">
-        <div className="mx-auto max-w-[760px]">
+      <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] py-[96px]">
+        <div className="mx-auto max-w-[760px] text-center">
           <p className="eyebrow">FAQ</p>
           <h2 className="text-[#f2f2ef] text-[clamp(38px,4vw,48px)] font-[400] leading-[1.08] tracking-[-1.5px] mt-3">
             Frequently asked questions.
@@ -357,27 +358,18 @@ export function ProductEngineeringPage() {
             Common questions teams ask before starting an AI product engineering engagement.
           </p>
         </div>
-        <div className="border-t border-[#1c2328]">
-          {faqs.map(([question, answer]) => (
-            <article key={question} className="border-b border-[#293137] py-7">
-              <div className="flex items-center justify-between gap-4">
-                <h3 className="text-[#f4f4f1] text-[18px] leading-[24px]">{question}</h3>
-                <span className="inline-flex items-center justify-center flex-0 w-[24px] h-[24px] rounded-full bg-[rgba(255,152,0,0.1)] border border-[rgba(255,192,129,0.3)] text-[var(--orange)]">
-                  −
-                </span>
-              </div>
-              <p className="text-[#9ca3af] text-[15px] leading-[24px] mt-4">{answer}</p>
-            </article>
-          ))}
+        <div className="mx-auto mt-16 max-w-[1000px]">
+          <FaqAccordion faqs={faqs} />
         </div>
       </section>
       <section className="bg-[#0d0e0f] px-[max(40px,calc((100%_-_1120px)_/_2))] py-[96px]">
-        <div className="bg-[#0f1417] border border-[#293137] rounded-[4px] p-18 md:p-72">
-          <p className="eyebrow">Let&apos;s talk</p>
-          <h2 className="text-[#f2f2ef] text-[clamp(42px,5vw,56px)] font-[500] leading-[1.08] tracking-[-1.5px] mt-4 mb-4 max-w-[700px]">
-            Have an AI product worth building?
-          </h2>
-          <p className="text-[#9ca3af] text-[17px] leading-[28px] mt-0 mb-8 max-w-[672px]">
+        <div className="cta-panel cta-panel--sentence">
+          <p className="eyebrow">
+            <span className="cta-panel-dot" aria-hidden="true" />
+            Let&apos;s talk
+          </p>
+          <h2>Have an AI product worth building?</h2>
+          <p>
             Tell us the challenge you&apos;re tackling. We&apos;ll audit the
             technical feasibility and determine the right next step within 48
             hours.
