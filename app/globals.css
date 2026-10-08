@@ -109,8 +109,7 @@
   background: #090a0b;
 }
 .services-container,
-.services-main,
-.services-client-strip {
+.services-main {
   margin: 0 auto;
   max-width: 1280px;
   width: 100%;
@@ -189,22 +188,6 @@
   flex-wrap: wrap;
   gap: 16px;
   position: relative;
-}
-.services-client-strip {
-  display: flex;
-  overflow: hidden;
-  padding: 8px 0;
-}
-.services-client {
-  align-items: center;
-  display: flex;
-  flex: 1 0 170px;
-  flex-direction: column;
-  gap: 6px;
-  justify-content: center;
-  min-height: 112px;
-  padding: 8px 16px;
-  text-align: center;
 }
 .services-banner {
   background: #0d0e0f;
@@ -665,9 +648,6 @@
   .services-container,
   .services-main {
     max-width: none;
-  }
-  .services-client-strip {
-    overflow-x: auto;
   }
   .services-section,
   .services-routing,

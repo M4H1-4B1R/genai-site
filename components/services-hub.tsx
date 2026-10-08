@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { ServicesProofSlider } from "@/components/services-proof-slider";
 import { clientStripItems } from "@/components/shared/client-logos";
+import { Marquee } from "@/components/shared/marquee";
 
 const capabilities = [
   {
@@ -60,14 +61,10 @@ export function ServicesHub() {
       </section>
 
       <div
-        className="services-client-strip"
+        className="pt-[26px] pb-[30px]"
         aria-label="Selected technology partners"
       >
-        {clientStripItems.map((item, index) => (
-          <div className="services-client" key={index}>
-            {item}
-          </div>
-        ))}
+        <Marquee duration={42} items={clientStripItems} className="max-[640px]:py-4" />
       </div>
       <section className="services-banner">
         <div>Image banner</div>
