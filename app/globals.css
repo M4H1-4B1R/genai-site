@@ -81,24 +81,6 @@
   --text: #f2f2f0;
   --orange: #ff9800;
 }
-/* Smooth anchor scrolling as a no-JS fallback; Lenis takes over once active
-   (CSS smooth-scroll conflicts with it, per Lenis docs). `html.lenis` is
-   persistent while Lenis runs; `lenis-smooth` only toggles mid-scroll. */
-@media (prefers-reduced-motion: no-preference) {
-  html:not(.lenis) {
-    scroll-behavior: smooth;
-  }
-}
-html.lenis,
-html.lenis body {
-  height: auto;
-}
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
 /* Element defaults live in @layer base on purpose: unlayered CSS outranks
    every Tailwind utility, so leaving these at top level would make
    `text-*`, `font-*`, etc. silently lose on links, inputs, and buttons. */
