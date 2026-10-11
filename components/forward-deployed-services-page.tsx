@@ -106,9 +106,9 @@ function SectionLabel({ children }: { children: string }) {
 export function ForwardDeployedServicesPage() {
   return (
     <main className="bg-deep text-[#f2f2ef]">
-      {/* Hero - matches services-hub layout */}
-      <section className="border-b border-[#1c2328] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-28 lg:min-h-[520px]">
-        <div className="max-w-[720px] mx-auto lg:mx-0">
+      {/* Hero - matches services-hub layout but with arc SVG on desktop */}
+      <section className="border-b border-[#1c2328] px-6 sm:px-10 lg:grid lg:grid-cols-[minmax(0,8fr)_minmax(280px,4fr)] lg:gap-8 lg:px-20 lg:min-h-[520px]">
+        <div className="max-w-[720px] mx-auto lg:mx-0 self-start lg:self-center pt-12 lg:pt-0">
           <div className="inline-flex items-center gap-2 border border-[#293137] bg-[#0f1417] px-[9px] py-[5px] text-[10px] font-bold tracking-[1.2px] text-orange mb-8">
             <i className="h-1.5 w-1.5 rounded-full bg-orange" />
             SERVICES / FORWARD DEPLOYED
@@ -128,6 +128,16 @@ export function ForwardDeployedServicesPage() {
               View relevant work →
             </a>
           </div>
+        </div>
+        <div className="hidden lg:flex min-h-[560px] max-h-[720px] items-center justify-center opacity-90" aria-hidden="true">
+          <Image
+            src="/figma/forward-deployed/hero-vector.svg"
+            alt=""
+            width={418}
+            height={720}
+            priority
+            className="h-auto w-full max-h-[720px] object-contain"
+          />
         </div>
       </section>
 
