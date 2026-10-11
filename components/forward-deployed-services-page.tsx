@@ -94,6 +94,27 @@ const faqs = [
   ],
 ];
 
+const work = [
+  [
+    "evidence-1.png",
+    "HEALTHCARE AI",
+    "Kaya Health Coach",
+    "Replaced slow enterprise search with instantaneous semantic discovery across 40M documents.",
+  ],
+  [
+    "evidence-2.png",
+    "LOGISTICS",
+    "Generative Supply Chain Copilot",
+    "Engineered high-performance model microservices that optimize delivery routing graphs.",
+  ],
+  [
+    "evidence-3.png",
+    "HEALTHCARE",
+    "Clinical Trial Data Parser",
+    "Built real-time multi-model validation pipelines handling patient metrics with strict SLAs.",
+  ],
+];
+
 function SectionLabel({ children }: { children: string }) {
   return (
     <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[1.2px] text-orange">
@@ -284,77 +305,77 @@ export function ForwardDeployedServicesPage() {
       </section>
 
       {/* Evidence */}
-      <section
-        className="border-b border-[#1c2328] bg-ink px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24"
-        id="evidence"
-      >
-        <div className="mb-12 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-          <div className="max-w-[600px]">
-            <SectionLabel>Evidence</SectionLabel>
-            <h2 className="mt-4 max-w-[720px] text-[clamp(38px,4vw,48px)] font-bold leading-[1.08] tracking-[-1.2px]">
-              Evidence that demonstrates capability.
+      
+      <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 py-[96px] max-[640px]:py-16" id="evidence">
+        <div className="flex items-end justify-between gap-8 max-[640px]:flex-col max-[640px]:items-start mb-10">
+          <div>
+            <p className="eyebrow">Relevant work</p>
+            <h2 className="text-[#f2f2ef] text-[clamp(38px,4vw,48px)] font-[400] leading-[1.08] tracking-[-1.5px] mt-3 max-w-[760px]">
+              Evidence that demonstrates this capability.
             </h2>
           </div>
-          <p className="max-w-[400px] text-[15px] leading-6 text-[#9fa4ab]">
-            Selected work shows what changes when AI is engineered for the
-            environment—not just the demo.
-          </p>
+          <a href="#contact" className="text-[var(--orange)] text-[13px] font-[700] tracking-[0.65px] uppercase">
+            View all work →
+          </a>
         </div>
-        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-3">
-          {[
-            [
-              "raw-3.png",
-              "FIELD OPERATIONS",
-              "Operational Intelligence Console",
-            ],
-            ["raw-4.png", "FINANCE", "Decision Support Workflow"],
-            ["raw-5.png", "HEALTHCARE", "Clinical Trial Data Parser"],
-          ].map(([image, tag, title]) => (
-            <article
-              className="overflow-hidden border border-[#293137] bg-[#0f1417]"
-              key={title}
-            >
-              <div className="relative aspect-[1.5] border-b border-[#293137]">
-                <Image
-                  src={`/figma/forward-deployed/${image}`}
-                  alt=""
-                  fill
-                  sizes="(max-width: 800px) 100vw, 33vw"
-                  className="object-cover"
-                />
+        <div className="grid grid-cols-3 max-[900px]:grid-cols-2 max-[640px]:grid-cols-1 gap-6">
+          {work.map(([image, label, title, body]) => (
+            <article key={title} className="bg-[#0f1417] border border-[#293137] rounded-[4px] overflow-hidden flex flex-col">
+              <Image
+                src={`/figma/services/${image}`}
+                alt=""
+                width={640}
+                height={440}
+                className="w-full aspect-[1.45] object-cover"
+              />
+              <div className="flex-1 p-6">
+                <span className="text-[var(--orange)] text-[11px] font-[700] tracking-[0.55px]">{label}</span>
+                <h3 className="text-[#f2f2ef] text-[20px] leading-[26px] mt-1.5">{title}</h3>
+                <p className="text-[#9ca3af] text-[14px] leading-[22px] mt-0">{body}</p>
               </div>
-              <div className="px-4 sm:px-6 py-5 sm:py-6">
-                <small className="block text-[10px] tracking-[1px] text-[#ffc081]">
-                  {tag}
-                </small>
-                <h3 className="mt-2 text-xl font-bold">{title}</h3>
-                <p className="mt-2 text-sm leading-[22px] text-[#9fa4ab]">
-                  Built for real workflows, strict constraints, and measurable
-                  outcomes.
-                </p>
-                <a
-                  className="mt-4 inline-block text-[13px] font-bold uppercase text-[#f2f2ef]"
-                  href="#contact"
-                >
-                  View case study →
-                </a>
-              </div>
+              <a href="#contact" className="border-t border-[#293137] p-6 flex-1">
+                View case study →
+              </a>
             </article>
           ))}
         </div>
       </section>
 
+
       {/* Quote */}
-      <section className="border-b border-[#53443433] bg-ink px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-28">
-        <p className="max-w-[900px] mx-auto text-center text-[clamp(28px,4vw,48px)] font-bold leading-none tracking-[-1.2px]">
-          “GenAILabs gave our operational platform the rare feeling of being
-          both extraordinarily intelligent and unmistakably human.”
-        </p>
-        <div className="mt-10 flex flex-col justify-between gap-2 border-t border-[#53443433] pt-6 text-xs text-[#c8c1c5] sm:flex-row sm:items-center">
-          <strong className="text-white">— Mara Voss</strong>
-          <span>Founder & Managing Director, Lumen Field</span>
+      
+      <section className="border-t border-[rgba(83,68,52,0.2)] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 py-[49px]">
+        <div className="border border-[rgba(83,68,52,0.3)] rounded-[4px] p-8 md:p-16 max-[640px]:p-5">
+          <p className="text-[#f4f4f1] text-[14px] tracking-[0.6px] uppercase border-b border-[rgba(83,68,52,0.2)] pb-8 mb-0">
+            — &nbsp; Proof record <span className="float-right text-[#ffc174] text-[11px]">● Verified audit</span>
+          </p>
+          <blockquote className="text-[#e5e1e4] text-[clamp(32px,4vw,48px)] font-[700] leading-[1] tracking-[-1.2px] mt-10 mb-10 max-w-[900px] max-[640px]:mt-8 max-[640px]:mb-8">
+            &quot;GenAILabs gave our operational platform the rare feeling of being
+            both extraordinarily intelligent and unmistakably human.&quot;
+          </blockquote>
+          <div className="grid grid-cols-3 max-[640px]:grid-cols-1 gap-6 pt-8 border-t border-[rgba(83,68,52,0.2)]">
+            <p>
+              <strong className="text-[10px] tracking-[0.6px] uppercase text-white block mt-1">— Mara Voss</strong>
+              <span className="text-[#c8c1c5] text-[12px] leading-[16px]">
+                Founder &amp; Managing Director, Lumen Field
+              </span>
+            </p>
+            <p>
+              <strong className="text-[10px] tracking-[0.6px] uppercase text-white block mt-1">Discipline</strong>
+              <span className="text-[#c8c1c5] text-[12px] leading-[16px]">
+                Autonomous Workflow Engine / Model Alignment / Production Infrastructure
+              </span>
+            </p>
+            <p>
+              <strong className="text-[10px] tracking-[0.6px] uppercase text-white block mt-1">Deployment cycle</strong>
+              <span className="text-[#c8c1c5] text-[12px] leading-[16px]">
+                2026.Q1 Production
+              </span>
+            </p>
+          </div>
         </div>
       </section>
+
 
       {/* Engagement model */}
       <section className="border-b border-[#1c2328] bg-deep px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24">
