@@ -30,7 +30,7 @@ export function EngagementModel({ items }: EngagementModelProps) {
 
   return (
     <div
-      className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+      className="mt-12 grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4"
       onMouseEnter={() => {
         paused.current = true;
       }}
@@ -53,14 +53,14 @@ export function EngagementModel({ items }: EngagementModelProps) {
                 isActive ? "bg-orange" : "bg-[#293137]"
               }`}
             />
-            <div className="pt-5">
-              <b className="text-[13px] tracking-[1px] text-orange">
+            <div className="pt-4 sm:pt-5">
+              <b className="text-[12px] sm:text-[13px] tracking-[1px] text-orange">
                 0{index + 1}
               </b>
-              <h3 className="my-6 text-2xl font-bold leading-[30px]">
+              <h3 className="my-4 sm:my-6 text-xl sm:text-2xl font-bold leading-[1.2] sm:leading-[30px]">
                 {title}
               </h3>
-              <p className="text-[15px] leading-6 text-[#9fa4ab]">{body}</p>
+              <p className="text-[14px] sm:text-[15px] leading-6 text-[#9fa4ab]">{body}</p>
             </div>
           </article>
         );

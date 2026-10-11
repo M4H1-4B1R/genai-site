@@ -19,9 +19,9 @@ export function FaqAccordion({ faqs }: { faqs: string[][] }) {
                 aria-controls={`faq-panel-${index}`}
                 id={`faq-button-${index}`}
                 onClick={() => setOpen(expanded ? null : index)}
-                className="flex w-full cursor-pointer items-center justify-between gap-4 py-7 text-left"
+                className="flex w-full cursor-pointer items-center justify-between gap-4 py-6 sm:py-7 text-left"
               >
-                <span className="text-[#f4f4f1] text-[18px] leading-[24px] font-[500]">
+                <span className="text-[#f4f4f1] text-[16px] sm:text-[18px] leading-[24px] font-[500]">
                   {question}
                 </span>
                 <span
@@ -41,7 +41,7 @@ export function FaqAccordion({ faqs }: { faqs: string[][] }) {
               }`}
             >
               <div className="overflow-hidden">
-                <p className="pb-7 text-[#9ca3af] text-[15px] leading-[24px]">
+                <p className="pb-6 sm:pb-7 text-[#9ca3af] text-[14px] sm:text-[15px] leading-[24px]">
                   {answer}
                 </p>
               </div>
