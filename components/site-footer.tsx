@@ -36,7 +36,7 @@ export function SiteFooter() {
       </div>
       <div className="flex flex-col gap-2.5">
         <span className="text-[11px] uppercase tracking-[1px]">Explore</span>
-        <a className="text-sm leading-[1.5] text-[#9ca3af]" href="#work">
+        <a className="text-sm leading-[1.5] text-[#9ca3af]" href="/work">
           Work
         </a>
         <a className="text-sm leading-[1.5] text-[#9ca3af]" href="#services">

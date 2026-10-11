@@ -52,7 +52,7 @@ export function MobileMenu() {
             />
           </MobileDropdown>
           <MobileMenuItem
-            href="#work"
+            href="/work"
             label="Work"
             onSelect={() => setOpen(false)}
           />

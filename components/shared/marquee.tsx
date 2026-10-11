@@ -6,6 +6,7 @@ type MarqueeProps = {
   items: ReactNode[];
   duration?: number;
   className?: string;
+  ariaLabel?: string;
   /** Extra classes for each marquee item (e.g. the hero strip's dimmed items). */
   itemClassName?: string;
 };
@@ -15,9 +16,12 @@ export function Marquee({
   duration = 40,
   className,
   itemClassName,
+  ariaLabel,
 }: MarqueeProps) {
   return (
     <div
+      aria-label={ariaLabel}
+      role={ariaLabel ? "region" : undefined}
       className={cn(
         "overflow-hidden group [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]",
         className,

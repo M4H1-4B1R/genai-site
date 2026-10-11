@@ -26,7 +26,7 @@ export function SiteHeader() {
         aria-label="Primary navigation"
       >
         <ServicesDropdown />
-        <a className="px-0 pb-[25px] pt-[30px] text-[#b4b6b8]" href="#work">
+        <a className="px-0 pb-[25px] pt-[30px] text-[#b4b6b8]" href="/work">
           Work
         </a>
         <a className="px-0 pb-[25px] pt-[30px] text-[#b4b6b8]" href="#insights">
