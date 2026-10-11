@@ -31,13 +31,18 @@ export function MobileMenu() {
             onToggle={() => setServicesOpen((v) => !v)}
           >
             <MobileMenuItem
+              href="/services"
+              label="All Services"
+              onSelect={() => setOpen(false)}
+            />
+            <MobileMenuItem
               href="/services/ai-product-engineering"
               label="AI Product Engineering"
               onSelect={() => setOpen(false)}
             />
             <MobileMenuItem
-              href="/services"
-              label="All Services"
+              href="/services/agentic-layer-engineering"
+              label="Agentic Layer Engineering"
               onSelect={() => setOpen(false)}
             />
             <MobileMenuItem

@@ -25,7 +25,14 @@ export function ServicesDropdown({ className }: ServicesDropdownProps) {
         aria-label="Services submenu"
       >
         <a
-          className="block px-4 py-3 text-[14px] text-[#f4f4f1] hover:text-orange hover:bg-[#0d0e0f] rounded-[4px] transition-colors"
+          className="block px-4 py-3 text-[14px] text-[#b4b6b8] hover:text-orange hover:bg-[#0d0e0f] rounded-[4px] transition-colors"
+          href="/services"
+          role="menuitem"
+        >
+          All Services
+        </a>
+        <a
+          className="block px-4 py-3 text-[14px] text-[#b4b6b8] hover:text-orange hover:bg-[#0d0e0f] rounded-[4px] transition-colors"
           href="/services/ai-product-engineering"
           role="menuitem"
         >
@@ -44,13 +51,6 @@ export function ServicesDropdown({ className }: ServicesDropdownProps) {
           role="menuitem"
         >
           Forward-Deployed Services
-        </a>
-        <a
-          className="block px-4 py-3 text-[14px] text-[#b4b6b8] hover:text-orange hover:bg-[#0d0e0f] rounded-[4px] transition-colors"
-          href="/services"
-          role="menuitem"
-        >
-          All Services
         </a>
       </div>
     </div>
