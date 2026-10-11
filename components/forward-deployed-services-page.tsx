@@ -78,19 +78,27 @@ const engagement = [
 const faqs = [
   [
     "What are forward deployed services?",
-    "Forward deployed services integrate AI capabilities directly into operational environments, enhancing real-time decision-making and responsiveness. They align the system with the workflows, data, and constraints where value is created.",
+    "Forward deployed services integrate AI capabilities directly into operational environments, enhancing real-time decision-making and responsiveness. They are crucial because they enable organizations to leverage AI in a way that is directly aligned with their operational needs, ensuring efficiency and effectiveness.",
   ],
   [
-    "When should we use a forward deployed team?",
-    "Use this model when a promising prototype needs to become a reliable system, or when the hard work is integration, adoption, and learning from real use.",
+    "How do your forward deployed services differ from traditional AI solutions?",
+    "Traditional AI solutions often focus on data analysis or insights, whereas our forward deployed services are designed for immediate action and integration within existing workflows. They facilitate real-time responses and operational execution, ensuring that AI is not just a tool for analysis but a partner in execution.",
   ],
   [
-    "How does the engagement start?",
-    "We begin by understanding the environment: the workflow, people, systems, constraints, and the outcome that matters. From there we shape the smallest useful path to deployment.",
+    "What systems can your forward deployed services connect to?",
+    "Our forward deployed services can interface with a variety of systems, including cloud platforms, on-premise databases, CRM systems, and third-party APIs. We customize the integration to fit seamlessly within your existing technology stack.",
   ],
   [
-    "Do you work with existing engineering teams?",
-    "Yes. The model is designed to work closely with the teams who own the operating environment, leaving behind a system and practices they can continue to improve.",
+    "How do you ensure reliability and recovery in your services?",
+    "We incorporate robust error handling, automated recovery protocols, and continuous monitoring to ensure reliability. If an issue arises, our services can automatically revert to a stable state or alert human operators for intervention.",
+  ],
+  [
+    "Can your services operate across different tools and workflows?",
+    "Absolutely. Our forward deployed services are designed to function across various tools and workflows, allowing for seamless orchestration and coordination between different systems and processes.",
+  ],
+  [
+    "What does a successful deployment of forward deployed services look like?",
+    "A successful deployment includes comprehensive monitoring, user access management, performance analytics, and a clear framework for ongoing improvement. We ensure that the services are scalable and adaptable to evolving business needs.",
   ],
 ];
 
