@@ -40,6 +40,11 @@ export function MobileMenu() {
               label="All Services"
               onSelect={() => setOpen(false)}
             />
+            <MobileMenuItem
+              href="/services/forward-deployed-services"
+              label="Forward-Deployed Services"
+              onSelect={() => setOpen(false)}
+            />
           </MobileDropdown>
           <MobileMenuItem
             href="#work"
@@ -123,4 +128,3 @@ function MobileMenuItem({
     </a>
   );
 }
-
