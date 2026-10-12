@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 import { clientStripItems } from "@/components/shared/client-logos";
@@ -235,15 +236,15 @@ export function WorkHubPage() {
                 </div>
 
                 <div className="mt-8 border-t border-[#1c2328] pt-6">
-                  <a
-                    href="#contact"
+                  <Link
+                    href="/case-study"
                     className="inline-flex items-center gap-2 text-[14px] font-bold uppercase tracking-[0.6px] text-[#f2f2ef] transition-colors group-hover:text-orange"
                   >
                     <span>View Case Study</span>
                     <span className="transition-transform duration-200 group-hover:translate-x-1">
                       →
                     </span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </article>
