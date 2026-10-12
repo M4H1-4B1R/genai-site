@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { clientStripItems } from "@/components/shared/client-logos";
 import { Marquee } from "@/components/shared/marquee";
 import { CalloutCtaSection } from "@/components/shared/callout-cta-section";
@@ -89,12 +91,12 @@ export function InsightsPage() {
               <p className="font-mono text-[10px] tracking-[0.5px] text-[#747d81]">
                 [Date] · [Read time]
               </p>
-              <a
-                href="#contact"
+              <Link
+                href="/insights/article"
                 className="text-[13px] font-bold text-orange hover:underline"
               >
                 Read Article →
-              </a>
+              </Link>
             </div>
           </div>
         </div>

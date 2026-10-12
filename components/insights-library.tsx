@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const filterTopics = [
@@ -96,12 +97,12 @@ export function InsightsLibrary() {
               <span className="font-mono text-[10px] tracking-[0.5px] text-[#747d81]">
                 {article.meta}
               </span>
-              <a
-                href="#contact"
+              <Link
+                href="/insights/article"
                 className="text-[13px] font-bold text-orange transition-transform duration-200 group-hover:translate-x-0.5"
               >
                 Read Article →
-              </a>
+              </Link>
             </div>
           </article>
         ))}
