@@ -57,7 +57,7 @@ export function MobileMenu() {
             onSelect={() => setOpen(false)}
           />
           <MobileMenuItem
-            href="#insights"
+            href="/insights"
             label="Insights"
             onSelect={() => setOpen(false)}
           />
