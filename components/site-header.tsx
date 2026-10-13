@@ -32,7 +32,7 @@ export function SiteHeader() {
         <a className="px-0 pb-[25px] pt-[30px] text-[#b4b6b8]" href="/insights">
           Insights
         </a>
-        <a className="px-0 pb-[25px] pt-[30px] text-[#b4b6b8]" href="#about">
+        <a className="px-0 pb-[25px] pt-[30px] text-[#b4b6b8]" href="/about">
           About
         </a>
       </nav>
