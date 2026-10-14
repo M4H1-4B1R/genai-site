@@ -41,7 +41,7 @@ export function Contact() {
             <span className="flex flex-col gap-[3px]">
               Phone
               <strong className="text-base font-normal text-white">
-                00962776424784
+                +962776424784
               </strong>
             </span>
           </span>
