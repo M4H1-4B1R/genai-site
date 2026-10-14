@@ -68,7 +68,7 @@ export function MobileMenu() {
           />
           <a
             className="button button-primary mt-3.5 justify-center"
-            href="#contact"
+            href="/contact"
             onClick={() => setOpen(false)}
           >
             Talk to our team →

@@ -36,7 +36,7 @@ export function SiteHeader() {
           About
         </a>
       </nav>
-      <a className="button button-outline max-[640px]:hidden" href="#contact">
+      <a className="button button-outline max-[640px]:hidden" href="/contact">
         Talk to our team →
       </a>
       <MobileMenu />
