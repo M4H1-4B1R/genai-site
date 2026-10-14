@@ -58,7 +58,7 @@ export default function PrivacyPolicyRoute() {
       <SiteHeader />
       <LegalPage
         title="Privacy Policy"
-        updated="[Last updated: [date]"
+        updated="[Last updated: 14/10/2026]"
         sections={sections}
       />
       <SiteFooter />

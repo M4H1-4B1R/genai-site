@@ -12,43 +12,16 @@ export function ContactLocation() {
         description="Our core team operates from Amman with partners across North America, Europe, and Asia-Pacific."
       />
       <div className="flex gap-8 max-[900px]:flex-col">
-        <div className="relative flex h-[500px] min-w-0 flex-1 flex-col justify-end overflow-hidden rounded border border-[#293137] p-6 max-[640px]:h-[380px]">
-          <Image
-            src="/figma/contact/map.png"
-            alt=""
-            fill
-            sizes="(max-width: 900px) 100vw, 824px"
-            className="object-cover"
+        <div className="h-[500px] min-w-0 flex-1 overflow-hidden rounded border border-[#293137] bg-[#0f1417] max-[640px]:h-[380px]">
+          {/* Keyless embed; the filter darkens Google's light tiles to fit the site. */}
+          <iframe
+            title="Map showing GenAILabs in Amman, Jordan"
+            src="https://www.google.com/maps?q=Amman,+Jordan&z=12&output=embed"
+            className="size-full border-0 [filter:invert(90%)_hue-rotate(180deg)_saturate(0.7)]"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
           />
-          <div className="absolute inset-0 bg-[#080b0d]/[0.27]" aria-hidden="true" />
-          <Image
-            src="/figma/contact/h-line.png"
-            alt=""
-            width={824}
-            height={1}
-            className="absolute left-0 top-[56%] h-px w-full"
-            aria-hidden="true"
-          />
-          <Image
-            src="/figma/contact/v-line.png"
-            alt=""
-            width={1}
-            height={500}
-            className="absolute left-[57.4%] top-0 h-full w-px"
-            aria-hidden="true"
-          />
-          <div className="absolute left-[53.3%] top-[48.8%] flex w-[190px] -translate-x-1/2 flex-col items-center gap-2.5 max-[640px]:left-1/2">
-            <div className="flex w-full flex-col gap-1 rounded-[2px] border border-orange bg-[#141a1e] p-3">
-              <p className="text-[10px] uppercase text-orange">
-                GenAI Lab / amman hq
-              </p>
-              <p className="text-[12px] text-[#f4f4f1]">Adress</p>
-            </div>
-            <Image src="/figma/contact/marker.svg" alt="" width={30} height={30} />
-          </div>
-          <p className="relative text-[10px] uppercase tracking-[0.8px] text-[#747d81]">
-            Layer / Street / Transit / UTC +01:00
-          </p>
         </div>
         <div className="flex min-h-[500px] w-[424px] shrink-0 flex-col justify-between gap-8 rounded border border-[#293137] bg-[#0f1417] p-10 max-[900px]:min-h-0 max-[900px]:w-full max-[640px]:p-6">
           <div className="flex flex-col gap-7">
