@@ -465,7 +465,7 @@ export function CaseStudyPage() {
           </p>
           <h2>Have a similar challenge?</h2>
           <p>Let&apos;s discuss the problem you&apos;re trying to solve.</p>
-          <a className="button button-primary" href="#contact">
+          <a className="button button-primary" href="/contact">
             Talk to our team <span aria-hidden="true">→</span>
           </a>
         </div>

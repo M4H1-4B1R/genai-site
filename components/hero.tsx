@@ -29,7 +29,7 @@ export function Hero() {
               Put It to Work.
             </h1>
             <div className="flex flex-wrap gap-4">
-              <a className="button button-primary" href="#contact">
+              <a className="button button-primary" href="/contact">
                 Request a strategy briefing <span>→</span>
               </a>
               <a className="button button-outline" href="#work">

@@ -50,10 +50,10 @@ export function ServicesHub() {
             <p>Three core capabilities. One integrated approach.</p>
           </div>
           <div className="services-actions">
-            <a className="button button-primary" href="#contact">
+            <a className="button button-primary" href="/contact">
               Talk to our team <span>→</span>
             </a>
-            <a className="button button-outline" href="#work">
+            <a className="button button-outline" href="/work">
               View relevant work →
             </a>
           </div>
@@ -92,7 +92,7 @@ export function ServicesHub() {
                     ))}
                   </div>
                 </div>
-                <a href="#contact">
+                <a href="/contact">
                   Explore <span>→</span>
                 </a>
               </article>
@@ -131,7 +131,7 @@ export function ServicesHub() {
                   <span>{number}</span>
                   <p>{problem}</p>
                 </div>
-                <a href="#contact">
+                <a href="/contact">
                   {service} <b>→</b>
                 </a>
               </div>
@@ -141,7 +141,7 @@ export function ServicesHub() {
                 <span>—</span>
                 <p>We&apos;re not sure yet.</p>
               </div>
-              <a className="button button-primary" href="#contact">
+              <a className="button button-primary" href="/contact">
                 Talk to our team <b>→</b>
               </a>
             </div>

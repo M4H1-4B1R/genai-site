@@ -146,7 +146,7 @@ export function WorkShowcase() {
               </div>
               <a
                 className="text-[13px] font-bold uppercase text-orange"
-                href="#contact"
+                href="/contact"
               >
                 View project →
               </a>
@@ -156,7 +156,7 @@ export function WorkShowcase() {
       </div>
       <a
         className="button button-muted min-h-11! px-8! py-3.5!"
-        href="#contact"
+        href="/contact"
       >
         View all work →
       </a>

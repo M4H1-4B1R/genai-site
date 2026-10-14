@@ -10,7 +10,7 @@ export function FinalCtaSection() {
           Stop experimenting and start engineering. Let&apos;s discuss how we
           can turn your complex requirements into a deployed solution.
         </p>
-        <a className="button button-primary mt-8" href="#contact">
+        <a className="button button-primary mt-8" href="/contact">
           Request a strategy briefing <span>→</span>
         </a>
         <small className="mt-2.5 block text-[12px] tracking-[0.6px] uppercase text-[#6b7280]">

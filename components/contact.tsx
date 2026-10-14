@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function Contact() {
   return (
     <section
@@ -13,23 +15,50 @@ export function Contact() {
           can turn your complex requirements into a deployed solution.
         </p>
         <div className="mt-[34px] flex flex-col gap-4">
-          <span className="flex flex-col gap-[3px] text-[14px] text-[#9ca3af]">
-            Email
-            <strong className="text-base font-normal text-white">
-              support@genailabs.agency
-            </strong>
+          <span className="flex items-start gap-3 text-[14px] text-[#9ca3af]">
+            <Image
+              className="mt-1"
+              src="/figma/contact/mail.svg"
+              alt=""
+              width={16}
+              height={16}
+            />
+            <span className="flex flex-col gap-[3px]">
+              Email
+              <strong className="text-base font-normal text-white">
+                support@genailabs.agency
+              </strong>
+            </span>
           </span>
-          <span className="flex flex-col gap-[3px] text-[14px] text-[#9ca3af]">
-            Phone
-            <strong className="text-base font-normal text-white">
-              00962776424784
-            </strong>
+          <span className="flex items-start gap-3 text-[14px] text-[#9ca3af]">
+            <Image
+              className="mt-1"
+              src="/figma/contact/phone.svg"
+              alt=""
+              width={16}
+              height={16}
+            />
+            <span className="flex flex-col gap-[3px]">
+              Phone
+              <strong className="text-base font-normal text-white">
+                00962776424784
+              </strong>
+            </span>
           </span>
-          <span className="flex flex-col gap-[3px] text-[14px] text-[#9ca3af]">
-            Office
-            <strong className="text-base font-normal text-white">
-              Amman, Jordan
-            </strong>
+          <span className="flex items-start gap-3 text-[14px] text-[#9ca3af]">
+            <Image
+              className="mt-1"
+              src="/figma/contact/pin.svg"
+              alt=""
+              width={12}
+              height={16}
+            />
+            <span className="flex flex-col gap-[3px]">
+              Office
+              <strong className="text-base font-normal text-white">
+                Amman, Jordan
+              </strong>
+            </span>
           </span>
         </div>
       </div>
@@ -86,14 +115,14 @@ export function Contact() {
           />
         </label>
         <label className="mb-6 grid grid-cols-[18px_120px_1fr] items-start gap-2.5 leading-[1.5] text-[#747d81] font-mono text-[10px] tracking-[0.7px] uppercase max-[640px]:grid-cols-[18px_1fr]">
-          <input
-            className="m-0 size-[18px] accent-orange"
-            type="checkbox"
-          />{" "}
+          <input className="m-0 size-[18px] accent-orange" type="checkbox" />{" "}
           <span>Marketing consent</span>
           <small className="col-auto max-[640px]:col-start-2 font-sans text-[12px] leading-[1.5] tracking-normal text-[#747d81] normal-case">
             I agree to receive relevant project and product updates. I can
-            withdraw consent at any time.
+            withdraw consent at any time.{" "}
+            <a className="underline" href="/privacy-policy">
+              View the Privacy Policy.
+            </a>
           </small>
         </label>
         <button className="button button-primary" type="submit">

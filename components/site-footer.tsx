@@ -24,37 +24,37 @@ export function SiteFooter() {
       </div>
       <div className="flex flex-col gap-2.5">
         <span className="text-[11px] uppercase tracking-[1px]">Services</span>
-        <a className="text-sm leading-[1.5] text-[#9ca3af]" href="#services">
+        <Link className="text-sm leading-[1.5] text-[#9ca3af]" href="/services/ai-product-engineering">
           AI Product Engineering
-        </a>
-        <a className="text-sm leading-[1.5] text-[#9ca3af]" href="#services">
+        </Link>
+        <Link className="text-sm leading-[1.5] text-[#9ca3af]" href="/services/agentic-layer-engineering">
           Agentic Layer Engineering
-        </a>
-        <a className="text-sm leading-[1.5] text-[#9ca3af]" href="#services">
+        </Link>
+        <Link className="text-sm leading-[1.5] text-[#9ca3af]" href="/services/forward-deployed-services">
           Forward-Deployed Services
-        </a>
+        </Link>
       </div>
       <div className="flex flex-col gap-2.5">
         <span className="text-[11px] uppercase tracking-[1px]">Explore</span>
         <a className="text-sm leading-[1.5] text-[#9ca3af]" href="/work">
           Work
         </a>
-        <a className="text-sm leading-[1.5] text-[#9ca3af]" href="#services">
+        <Link className="text-sm leading-[1.5] text-[#9ca3af]" href="/architecture">
           Architecture
-        </a>
-        <a className="text-sm leading-[1.5] text-[#9ca3af]" href="#about">
+        </Link>
+        <Link className="text-sm leading-[1.5] text-[#9ca3af]" href="/about">
           About
-        </a>
+        </Link>
       </div>
       <div className="flex flex-col gap-2.5 max-[640px]:col-span-full">
         <span className="text-[11px] uppercase tracking-[1px]">Connect</span>
-        <a className="text-sm leading-[1.5] text-[#9ca3af]" href="#contact">
+        <a className="text-sm leading-[1.5] text-[#9ca3af]" href="/contact">
           Talk to Our Team
         </a>
-        <a className="text-sm leading-[1.5] text-[#9ca3af]" href="#contact">
+        <Link className="text-sm leading-[1.5] text-[#9ca3af]" href="/careers">
           Careers
-        </a>
-        <a className="text-sm leading-[1.5] text-[#9ca3af]" href="#contact">
+        </Link>
+        <a className="text-sm leading-[1.5] text-[#9ca3af]" href="/contact">
           Contact
         </a>
         <div className="mt-7 flex max-[640px]:flex-col">
@@ -69,7 +69,11 @@ export function SiteFooter() {
       </div>
       <div className="col-span-full mt-5 flex flex-row justify-between border-t border-[#2a2d34] pt-3 text-[11px] uppercase text-[#6b7280] max-[640px]:flex-col max-[640px]:gap-2">
         <span>© 2025 GENAILABS INC. ALL RIGHTS RESERVED.</span>
-        <span>Privacy policy　 Terms of use　 Security</span>
+        <span>
+          <Link href="/privacy-policy">Privacy policy</Link>　{" "}
+          <Link href="/terms-of-use">Terms of use</Link>　{" "}
+          <Link href="/security">Security</Link>
+        </span>
       </div>
     </footer>
   );

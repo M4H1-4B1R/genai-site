@@ -32,7 +32,7 @@ export function Capabilities() {
         {capabilities.map(([number, title, copy]) => (
           <a
             className="grid min-h-[76px] grid-cols-[20px_1fr_1fr_20px] items-center gap-[42px] border-b border-line max-[640px]:grid-cols-[20px_1fr_20px] max-[640px]:gap-3 max-[640px]:py-[18px]"
-            href="#contact"
+            href="/contact"
             key={number}
           >
             <span className="eyebrow text-[#747d81]">{number}</span>

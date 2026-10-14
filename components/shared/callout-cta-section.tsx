@@ -12,7 +12,7 @@ export function CalloutCtaSection() {
         <p className="mt-4 text-[17px] leading-7 text-[#d1d5db] max-w-[672px]">
           Let&apos;s discuss the problem you&apos;re trying to solve.
         </p>
-        <a className="button button-primary mt-8" href="#contact">
+        <a className="button button-primary mt-8" href="/contact">
           Talk to our team <span>→</span>
         </a>
       </div>

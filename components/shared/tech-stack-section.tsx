@@ -105,7 +105,7 @@ export function TechStackSection() {
             </p>
             <p className="mt-4 max-w-[820px] text-[16px] leading-[1.65] text-[#c8c1c5] sm:text-[17px]">
               Learn how to{" "}
-              <a href="#" className="underline text-white bold">
+              <a href="/docs" className="underline text-white bold">
                 get started with our stack
               </a>{" "}
               or explore our production ready patterns, spanning

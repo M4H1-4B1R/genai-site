@@ -180,7 +180,7 @@ export function WorkGrid() {
 
               {/* Link */}
               <a
-                href="#contact"
+                href="/contact"
                 className="mt-5 inline-flex items-center gap-2 border-t border-[#1c2328] pt-4 text-[12px] font-bold uppercase tracking-[0.65px] text-[#f2f2ef] transition-colors duration-200 hover:text-orange"
               >
                 <span>View Case Study</span>

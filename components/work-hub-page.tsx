@@ -51,7 +51,7 @@ export function WorkHubPage() {
 
             {/* CTAs */}
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a href="#contact" className="button button-primary">
+              <a href="/contact" className="button button-primary">
                 <span>TALK TO OUR TEAM</span>
                 <span aria-hidden="true">→</span>
               </a>

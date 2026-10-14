@@ -19,7 +19,7 @@ export default function ServicesPage() {
             Tell us the problem. We&apos;ll help determine the right starting
             point.
           </p>
-          <a className="button button-primary" href="#contact">
+          <a className="button button-primary" href="/contact">
             Talk to our team <span>→</span>
           </a>
         </div>

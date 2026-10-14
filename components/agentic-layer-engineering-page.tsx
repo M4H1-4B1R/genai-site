@@ -162,7 +162,7 @@ export function AgenticLayerEngineeringPage() {
             control.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
-            <a className="button button-primary" href="#contact">
+            <a className="button button-primary" href="/contact">
               Talk to our team <span>→</span>
             </a>
             <a className="button button-outline" href="#relevant-work">
@@ -356,7 +356,7 @@ export function AgenticLayerEngineeringPage() {
                   </p>
                 </div>
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="border-t border-[#293137] px-6 py-4 text-[13px] font-[700] uppercase tracking-[0.65px] text-[#f2f2ef]"
                 >
                   View case study →
@@ -460,7 +460,7 @@ export function AgenticLayerEngineeringPage() {
             technical feasibility and determine the right next step within 48
             hours.
           </p>
-          <a className="button button-primary" href="#contact">
+          <a className="button button-primary" href="/contact">
             Talk to our team <span>→</span>
           </a>
         </div>

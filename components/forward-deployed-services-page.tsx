@@ -150,7 +150,7 @@ export function ForwardDeployedServicesPage() {
             data, and operating environment where it needs to create value.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a className="button button-primary" href="#contact">
+            <a className="button button-primary" href="/contact">
               Talk to our team <span>→</span>
             </a>
             <a className="button button-outline" href="#evidence">
@@ -322,7 +322,7 @@ export function ForwardDeployedServicesPage() {
               Evidence that demonstrates this capability.
             </h2>
           </div>
-          <a href="#contact" className="text-[var(--orange)] text-[13px] font-[700] tracking-[0.65px] uppercase">
+          <a href="/contact" className="text-[var(--orange)] text-[13px] font-[700] tracking-[0.65px] uppercase">
             View all work →
           </a>
         </div>
@@ -341,7 +341,7 @@ export function ForwardDeployedServicesPage() {
                 <h3 className="text-[#f2f2ef] text-[20px] leading-[26px] mt-1.5">{title}</h3>
                 <p className="text-[#9ca3af] text-[14px] leading-[22px] mt-0">{body}</p>
               </div>
-              <a href="#contact" className="border-t border-[#293137] p-6 flex-1">
+              <a href="/contact" className="border-t border-[#293137] p-6 flex-1">
                 View case study →
               </a>
             </article>
@@ -416,7 +416,7 @@ export function ForwardDeployedServicesPage() {
           <p className="mt-4 text-[17px] leading-7 text-[#d1d5db] max-w-[672px]">
             Bring us the problem, and we&apos;ll determine the useful next step.
           </p>
-          <a className="button button-primary mt-8" href="#contact">
+          <a className="button button-primary mt-8" href="/contact">
             Talk to our team <span>→</span>
           </a>
         </div>

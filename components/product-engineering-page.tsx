@@ -171,7 +171,7 @@ export function ProductEngineeringPage() {
             real users, from new concepts to launched products.
           </p>
           <div className="flex flex-wrap gap-4 mt-10 max-[640px]:gap-3">
-            <a className="button button-primary" href="#contact">
+            <a className="button button-primary" href="/contact">
               Talk to our team <span>→</span>
             </a>
             <a className="button button-outline" href="#relevant-work">
@@ -307,7 +307,7 @@ export function ProductEngineeringPage() {
               Evidence that demonstrates this capability.
             </h2>
           </div>
-          <a href="#contact" className="text-[var(--orange)] text-[13px] font-[700] tracking-[0.65px] uppercase">
+          <a href="/contact" className="text-[var(--orange)] text-[13px] font-[700] tracking-[0.65px] uppercase">
             View all work →
           </a>
         </div>
@@ -326,7 +326,7 @@ export function ProductEngineeringPage() {
                 <h3 className="text-[#f2f2ef] text-[20px] leading-[26px] mt-1.5">{title}</h3>
                 <p className="text-[#9ca3af] text-[14px] leading-[22px] mt-0">{body}</p>
               </div>
-              <a href="#contact" className="border-t border-[#293137] p-6 flex-1">
+              <a href="/contact" className="border-t border-[#293137] p-6 flex-1">
                 View case study →
               </a>
             </article>
@@ -407,7 +407,7 @@ export function ProductEngineeringPage() {
             technical feasibility and determine the right next step within 48
             hours.
           </p>
-          <a className="button button-primary" href="#contact">
+          <a className="button button-primary" href="/contact">
             Talk to our team <span>→</span>
           </a>
         </div>
