@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
+  robots: { index: false },
   title: "Case Study | GenAILabs",
   description:
     "Verified production case study: the challenge, our contributions, system design, and audited outcomes.",

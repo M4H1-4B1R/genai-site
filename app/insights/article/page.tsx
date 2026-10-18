@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
+  robots: { index: false },
   title: "Article | GenAILabs",
   description:
     "Practical thinking on AI products, agentic systems, implementation, and real-world use.",

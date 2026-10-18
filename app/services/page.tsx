@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
+
 import { Contact } from "@/components/contact";
 import { ServicesHub } from "@/components/services-hub";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+
+export const metadata: Metadata = {
+  title: "Services | GenAILabs",
+  description:
+    "Three core AI engineering capabilities: AI product engineering, agentic layer engineering, and forward-deployed services.",
+};
 
 export default function ServicesPage() {
   return (

@@ -36,6 +36,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: siteTitle,
   description: siteDescription,
+  alternates: { canonical: "./" },
   openGraph: {
     title: siteTitle,
     description: siteDescription,
@@ -56,6 +57,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${spaceMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "GenAILabs",
+              url: siteUrl,
+              description: siteDescription,
+            }),
+          }}
+        />
         {children}
         <ChatWidget />
       </body>
