@@ -36,6 +36,12 @@ export default function ChatWidget() {
   function closePanel() {
     abortRef.current?.abort();
     setPending(false);
+    // An abort mid-stream leaves the placeholder assistant message empty; without
+    // this the visitor reopens the panel to an empty bordered box.
+    setMessages((current) => {
+      const last = current[current.length - 1];
+      return last?.role === "assistant" && last.content === "" ? current.slice(0, -1) : current;
+    });
     setOpen(false);
     launcherRef.current?.querySelector("button")?.focus();
   }
