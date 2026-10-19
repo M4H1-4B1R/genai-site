@@ -45,20 +45,7 @@ const allProjects: Project[] = [
 		proof: { label: "Diagnostic Retrieval", value: "94.2% verified relevance" },
 		url: "/case-study",
 	},
-	{
-		id: "supply-chain",
-		tag: "LOGISTICS",
-		category: "AI PRODUCT ENGINEERING",
-		title: "Generative Supply Chain Copilot",
-		description:
-			"Engineered high-performance model microservices that optimize delivery routing graphs.",
-		image: "/figma/work/72e66.png",
-		topics: ["Development", "Technology", "Business"],
-		tags: ["Logistics", "Routing Graphs", "Inference"],
-		proof: { label: "Dispatch Latency", value: "-48% routing overhead" },
-		url: "/case-study",
-	},
-	{
+		{
 		id: "mingcheji",
 		tag: "TRADE COMPLIANCE AI",
 		category: "AGENTIC LAYER ENGINEERING",
@@ -83,32 +70,6 @@ const allProjects: Project[] = [
 		tags: ["Autonomous", "Retail VC", "Workflows"],
 		proof: { label: "Operational Uptime", value: "99.98% unattended execution" },
 		url: "/case-study/nexagents",
-	},
-	{
-		id: "ops-console",
-		tag: "FIELD OPERATIONS",
-		category: "FORWARD-DEPLOYED SERVICES",
-		title: "Operational Intelligence Console",
-		description:
-			"Real-time situational awareness engine integrating telemetry feeds and dynamic triage models for frontline operators.",
-		image: "/figma/forward-deployed/raw-3.png",
-		topics: ["Development", "Technology", "Design"],
-		tags: ["Field Ops", "Telemetry", "Decision Support"],
-		proof: { label: "Telemetry Rate", value: "120k events/sec streaming" },
-		url: "/case-study",
-	},
-	{
-		id: "decision-workflow",
-		tag: "FINANCE & RISK",
-		category: "AI PRODUCT ENGINEERING",
-		title: "Decision Support Workflow",
-		description:
-			"Built for real institutional workflows: automated regulatory filings analysis, strict risk bounds, and verifiable outcomes.",
-		image: "/figma/forward-deployed/raw-4.png",
-		topics: ["Business", "Technology", "Marketing"],
-		tags: ["Finance", "Risk Models", "Compliance"],
-		proof: { label: "Verification Record", value: "Zero hallucination tolerance" },
-		url: "/case-study",
 	},
 ];
 

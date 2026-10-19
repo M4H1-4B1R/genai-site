@@ -617,11 +617,12 @@
 }
 .services-proof-dots {
   display: flex;
-  gap: 10px;
+  gap: 16px;
   justify-content: center;
   padding-top: 26px;
 }
 .services-proof-dots button {
+  position: relative;
   background: #3a4046;
   border: 0;
   border-radius: 50%;
@@ -630,6 +631,11 @@
   padding: 0;
   transition: background 0.3s;
   width: 6px;
+}
+.services-proof-dots button::after {
+  content: "";
+  inset: -8px;
+  position: absolute;
 }
 .services-proof-dots button:hover {
   background: #6b7280;
