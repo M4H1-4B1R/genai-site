@@ -272,13 +272,6 @@ export function NexagentsCaseStudyPage() {
         </div>
       </section>
 
-      {/* 3. TRENDING BANNER */}
-      <div className="bg-ink px-[max(40px,calc((100%_-_1280px)_/_2))] py-[60px] max-[640px]:px-5 max-[640px]:py-10">
-        <div className="flex h-[120px] items-center justify-center rounded-[8px] border border-line bg-[#191c1e] shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)]">
-          <strong className="text-xl uppercase text-text">Image banner</strong>
-        </div>
-      </div>
-
       {/* 4. THE CHALLENGE */}
       <section className="bg-deep">
         <div className={bandClass}>
