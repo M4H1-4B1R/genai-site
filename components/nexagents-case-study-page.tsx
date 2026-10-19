@@ -1,3 +1,4 @@
+import { ImageLightbox } from "@/components/shared/image-lightbox";
 import { ServicesProofSlider } from "@/components/services-proof-slider";
 
 type Fact = {
@@ -227,13 +228,14 @@ export function NexagentsCaseStudyPage() {
             </div>
           </div>
 
-          <div className="relative h-[360px] min-w-0 flex-1 overflow-clip rounded-[8px] border border-line bg-[#0f1417] max-[640px]:h-[240px]">
-            <div
-              className="absolute -right-px -top-px h-[240px] w-[280px] bg-[linear-gradient(220deg,rgba(255,152,0,0.1)_0%,rgba(255,152,0,0)_55%)] opacity-70 blur-[24px]"
-              aria-hidden="true"
+          <div className="relative h-[360px] min-w-0 flex-1 max-[900px]:flex-none overflow-clip rounded-[8px] border border-line bg-[#0f1417] max-[640px]:h-[240px]">
+            <ImageLightbox
+              src="/figma/nexagents-hero.png"
+              alt="NexAgents chat interface — AI teammate conversation"
+              sizes="(max-width: 640px) 100vw, 32vw"
             />
             <span className="absolute bottom-6 left-6 rounded-[4px] border border-line bg-[rgba(13,14,15,0.8)] px-3 py-1.5 font-mono text-[10px] font-bold tracking-[0.6px] uppercase text-[#747d81]">
-              No schematic available — architecture described below
+              Web chat interface
             </span>
           </div>
         </div>
@@ -313,7 +315,7 @@ export function NexagentsCaseStudyPage() {
                     aria-hidden="true"
                   />
                   <div className="flex flex-col gap-1">
-                    <p className="text-[clamp(32px,4vw,40px)] font-medium tracking-[-1px] text-orange">
+                    <p className="text-[clamp(18px,4vw,24px)] font-medium tracking-[-1px] text-orange">
                       {metric.value}
                     </p>
                     <p className="text-[15px] leading-6 text-muted">{metric.label}</p>

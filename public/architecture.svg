@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1080" width="1400" height="1080" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'PingFang SC', Roboto, sans-serif">
+  <title>Car Search &amp; History Report Platform — System Architecture (Dark)</title>
+  <desc>Dark-theme layered system architecture. Black canvas with orange accents. Next.js 16 frontend on Vercel, Node.js/Express 5 API on Render, PostgreSQL with pg-boss job queue, Stripe Checkout payments, GlobalVIN + che168/Apify external APIs, Sentry + Prometheus observability.</desc>
+
+  <defs>
+    <!-- Subtle orange-tinted outer glow for cards on dark bg -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#F97316" flood-opacity="0.04"/>
+    </filter>
+    <filter id="subShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#F97316" flood-opacity="0.05"/>
+    </filter>
+
+    <!-- Arrowheads: orange for sync, muted gray for async -->
+    <marker id="arrowSync" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#F97316"/>
+    </marker>
+    <marker id="arrowAsync" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6B7280"/>
+    </marker>
+  </defs>
+
+  <!-- Background — near-black with subtle orange ambient gradient at the top -->
+  <defs>
+    <linearGradient id="bgAmbient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F0F0F"/>
+      <stop offset="50%" stop-color="#0A0A0A"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <radialGradient id="orangeGlow" cx="50%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.10"/>
+      <stop offset="35%" stop-color="#F97316" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="1400" height="1080" fill="url(#bgAmbient)"/>
+  <rect x="0" y="0" width="1400" height="1080" fill="url(#orangeGlow)"/>
+
+  <!-- ───────── Title ───────── -->
+  <text x="700" y="46" text-anchor="middle" font-size="24" font-weight="700" fill="#FAFAFA">Car Search &amp; History Report Platform</text>
+  <text x="700" y="72" text-anchor="middle" font-size="13" fill="#B8B8B8">System Architecture · Frontend → API → Data + Jobs + Payments + External APIs · Observability</text>
+
+  <!-- ═════════════════════════ FRONTEND TIER ═════════════════════════ -->
+  <g id="frontend-tier">
+    <rect x="80" y="100" width="1240" height="130" rx="12" fill="#141414" filter="url(#cardShadow)"/>
+    <rect x="80" y="100" width="1240" height="130" rx="12" fill="none" stroke="#333333" stroke-width="1"/>
+    <text x="100" y="128" font-size="10.5" font-weight="700" fill="#FB923C" letter-spacing="1.2">FRONTEND TIER</text>
+    <text x="100" y="146" font-size="11" fill="#8A8A8A">Hosted on Vercel · SSR + edge cache</text>
+
+    <!-- Frontend inner card -->
+    <rect x="160" y="160" width="1080" height="60" rx="8" fill="#1A1A1A" stroke="#454545" stroke-width="1" filter="url(#subShadow)"/>
+    <rect x="160" y="160" width="4" height="60" fill="#F97316"/>
+    <circle cx="195" cy="190" r="6" fill="#F97316"/>
+    <text x="215" y="187" font-size="16" font-weight="600" fill="#FAFAFA">Next.js 16 Website</text>
+    <text x="215" y="207" font-size="12.5" fill="#B8B8B8">Car search UI · VIN history report viewer · hosted on Vercel</text>
+    <text x="1210" y="195" text-anchor="end" font-size="11" font-weight="600" fill="#FB923C">Vercel</text>
+  </g>
+
+  <!-- ─── Arrow: Frontend → Backend (sync HTTPS) ─── -->
+  <g id="arrow-fe-be">
+    <line x1="700" y1="235" x2="700" y2="275" stroke="#F97316" stroke-width="2" marker-end="url(#arrowSync)"/>
+    <rect x="640" y="248" width="120" height="20" rx="10" fill="#1A1A1A" stroke="#454545" stroke-width="1"/>
+    <text x="700" y="262" text-anchor="middle" font-size="11" font-weight="500" fill="#FB923C">HTTPS · REST API</text>
+  </g>
+
+  <!-- ═════════════════════════ APPLICATION TIER ═════════════════════════ -->
+  <g id="app-tier">
+    <rect x="80" y="285" width="1240" height="190" rx="12" fill="#141414" filter="url(#cardShadow)"/>
+    <rect x="80" y="285" width="1240" height="190" rx="12" fill="none" stroke="#333333" stroke-width="1"/>
+    <text x="100" y="313" font-size="10.5" font-weight="700" fill="#FB923C" letter-spacing="1.2">APPLICATION TIER</text>
+    <text x="100" y="331" font-size="11" fill="#8A8A8A">Node.js service · Render preview deployment</text>
+
+    <!-- Backend main card -->
+    <rect x="160" y="345" width="1080" height="115" rx="8" fill="#1A1A1A" stroke="#454545" stroke-width="1" filter="url(#subShadow)"/>
+    <rect x="160" y="345" width="4" height="115" fill="#F97316"/>
+    <circle cx="195" cy="372" r="6" fill="#F97316"/>
+    <text x="215" y="376" font-size="16" font-weight="600" fill="#FAFAFA">Node.js / Express 5 API</text>
+    <text x="215" y="396" font-size="12.5" fill="#B8B8B8">REST endpoints · Render preview deployment</text>
+    <text x="1210" y="376" text-anchor="end" font-size="11" font-weight="600" fill="#FB923C">Render</text>
+
+    <!-- 4 sub-service mini-cards -->
+    <g id="backend-services">
+      <!-- Sign-in & Auth -->
+      <rect x="180" y="412" width="240" height="40" rx="6" fill="#1F1F1F" stroke="#333333" stroke-width="1"/>
+      <circle cx="200" cy="432" r="3.5" fill="#F97316"/>
+      <text x="214" y="436" font-size="12.5" font-weight="500" fill="#E5E5E5">Sign-in &amp; Accounts</text>
+
+      <!-- Accounts -->
+      <rect x="430" y="412" width="240" height="40" rx="6" fill="#1F1F1F" stroke="#333333" stroke-width="1"/>
+      <circle cx="450" cy="432" r="3.5" fill="#F97316"/>
+      <text x="464" y="436" font-size="12.5" font-weight="500" fill="#E5E5E5">Free Part Checks</text>
+
+      <!-- Order Queue -->
+      <rect x="680" y="412" width="240" height="40" rx="6" fill="#1F1F1F" stroke="#333333" stroke-width="1"/>
+      <circle cx="700" cy="432" r="3.5" fill="#F97316"/>
+      <text x="714" y="436" font-size="12.5" font-weight="500" fill="#E5E5E5">Order Queue</text>
+
+      <!-- VIN history -->
+      <rect x="930" y="412" width="290" height="40" rx="6" fill="#1F1F1F" stroke="#333333" stroke-width="1"/>
+      <circle cx="950" cy="432" r="3.5" fill="#F97316"/>
+      <text x="964" y="436" font-size="12.5" font-weight="500" fill="#E5E5E5">VIN History Report Delivery</text>
+    </g>
+  </g>
+
+  <!-- ─── 4 separate sync arrows: Backend bottom → each column top ─── -->
+  <g id="arrows-be-cols">
+    <!-- → PostgreSQL (sync SQL) -->
+    <line x1="295" y1="463" x2="295" y2="540" stroke="#F97316" stroke-width="2" marker-end="url(#arrowSync)"/>
+    <rect x="232" y="488" width="126" height="20" rx="10" fill="#1A1A1A" stroke="#454545" stroke-width="1"/>
+    <text x="295" y="502" text-anchor="middle" font-size="11" font-weight="500" fill="#FB923C">SQL · queries</text>
+
+    <!-- → pg-boss (enqueue) -->
+    <line x1="565" y1="463" x2="565" y2="540" stroke="#F97316" stroke-width="2" marker-end="url(#arrowSync)"/>
+    <rect x="500" y="488" width="130" height="20" rx="10" fill="#1A1A1A" stroke="#454545" stroke-width="1"/>
+    <text x="565" y="502" text-anchor="middle" font-size="11" font-weight="500" fill="#FB923C">enqueue job</text>
+
+    <!-- → Stripe (pay-first session) -->
+    <line x1="835" y1="463" x2="835" y2="540" stroke="#F97316" stroke-width="2" marker-end="url(#arrowSync)"/>
+    <rect x="765" y="488" width="140" height="20" rx="10" fill="#1A1A1A" stroke="#454545" stroke-width="1"/>
+    <text x="835" y="502" text-anchor="middle" font-size="11" font-weight="500" fill="#FB923C">create session</text>
+
+    <!-- → External APIs (async fetch — DASHED) -->
+    <line x1="1105" y1="463" x2="1105" y2="540" stroke="#6B7280" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrowAsync)"/>
+    <rect x="1045" y="488" width="120" height="20" rx="10" fill="#1A1A1A" stroke="#454545" stroke-width="1"/>
+    <text x="1105" y="502" text-anchor="middle" font-size="11" font-weight="500" fill="#B8B8B8">async fetch</text>
+  </g>
+
+  <!-- ═════════════════════════ 4-COLUMN TIER ═════════════════════════ -->
+
+  <!-- ─── Column 1: PostgreSQL (Data Tier) ─── -->
+  <g id="col-postgres">
+    <rect x="175" y="545" width="240" height="180" rx="10" fill="#141414" filter="url(#cardShadow)"/>
+    <rect x="175" y="545" width="240" height="180" rx="10" fill="none" stroke="#333333" stroke-width="1"/>
+    <rect x="175" y="545" width="4" height="180" fill="#F97316"/>
+    <text x="195" y="568" font-size="10" font-weight="700" fill="#FB923C" letter-spacing="1.1">DATA TIER</text>
+    <text x="195" y="592" font-size="16" font-weight="600" fill="#FAFAFA">PostgreSQL</text>
+    <text x="195" y="610" font-size="11.5" fill="#B8B8B8">Single durable store</text>
+
+    <!-- bullets -->
+    <g font-size="12" fill="#E5E5E5">
+      <circle cx="200" cy="635" r="2" fill="#F97316"/>
+      <text x="210" y="638">Durable user + order data</text>
+      <circle cx="200" cy="657" r="2" fill="#F97316"/>
+      <text x="210" y="660">pg-boss queue schema</text>
+      <circle cx="200" cy="679" r="2" fill="#F97316"/>
+      <text x="210" y="682">VIN reports &amp; parts cache</text>
+      <circle cx="200" cy="701" r="2" fill="#F97316"/>
+      <text x="210" y="704">Audit + delivery state</text>
+    </g>
+  </g>
+
+  <!-- ─── Column 2: pg-boss (Background Jobs) ─── -->
+  <g id="col-pgboss">
+    <rect x="445" y="545" width="240" height="180" rx="10" fill="#141414" filter="url(#cardShadow)"/>
+    <rect x="445" y="545" width="240" height="180" rx="10" fill="none" stroke="#333333" stroke-width="1"/>
+    <rect x="445" y="545" width="4" height="180" fill="#F97316"/>
+    <text x="465" y="568" font-size="10" font-weight="700" fill="#FB923C" letter-spacing="1.1">BACKGROUND JOBS</text>
+    <text x="465" y="592" font-size="16" font-weight="600" fill="#FAFAFA">pg-boss</text>
+    <text x="465" y="610" font-size="11.5" fill="#B8B8B8">Queue worker · runs on Render</text>
+
+    <g font-size="12" fill="#E5E5E5">
+      <circle cx="470" cy="635" r="2" fill="#F97316"/>
+      <text x="480" y="638">Retry failed deliveries</text>
+      <circle cx="470" cy="657" r="2" fill="#F97316"/>
+      <text x="480" y="660">Release unanswered checks</text>
+      <circle cx="470" cy="679" r="2" fill="#F97316"/>
+      <text x="480" y="682">Scheduled cron sweeps</text>
+      <circle cx="470" cy="701" r="2" fill="#F97316"/>
+      <text x="480" y="704">Backed by PostgreSQL</text>
+    </g>
+  </g>
+
+  <!-- ─── Column 3: Stripe Checkout (Payments) ─── -->
+  <g id="col-stripe">
+    <rect x="715" y="545" width="240" height="180" rx="10" fill="#141414" filter="url(#cardShadow)"/>
+    <rect x="715" y="545" width="240" height="180" rx="10" fill="none" stroke="#333333" stroke-width="1"/>
+    <rect x="715" y="545" width="4" height="180" fill="#F97316"/>
+    <text x="735" y="568" font-size="10" font-weight="700" fill="#FB923C" letter-spacing="1.1">PAYMENTS</text>
+    <text x="735" y="592" font-size="16" font-weight="600" fill="#FAFAFA">Stripe Checkout</text>
+    <text x="735" y="610" font-size="11.5" fill="#B8B8B8">Hosted payment page · pay-first</text>
+
+    <g font-size="12" fill="#E5E5E5">
+      <circle cx="740" cy="635" r="2" fill="#F97316"/>
+      <text x="750" y="638">Create checkout session</text>
+      <circle cx="740" cy="657" r="2" fill="#F97316"/>
+      <text x="750" y="660">Capture payment first</text>
+      <circle cx="740" cy="679" r="2" fill="#F97316"/>
+      <text x="750" y="682">Webhook → enqueue job</text>
+      <circle cx="740" cy="701" r="2" fill="#F97316"/>
+      <text x="750" y="704">Refunds + disputes</text>
+    </g>
+  </g>
+
+  <!-- ─── Column 4: External APIs ─── -->
+  <g id="col-external">
+    <rect x="985" y="545" width="240" height="180" rx="10" fill="#141414" filter="url(#cardShadow)"/>
+    <rect x="985" y="545" width="240" height="180" rx="10" fill="none" stroke="#333333" stroke-width="1"/>
+    <rect x="985" y="545" width="4" height="180" fill="#F97316"/>
+    <text x="1005" y="568" font-size="10" font-weight="700" fill="#FB923C" letter-spacing="1.1">EXTERNAL APIs</text>
+    <text x="1005" y="592" font-size="16" font-weight="600" fill="#FAFAFA">GlobalVIN · che168</text>
+    <text x="1005" y="610" font-size="11.5" fill="#B8B8B8">Async · retryable</text>
+
+    <g font-size="12" fill="#E5E5E5">
+      <circle cx="1010" cy="635" r="2" fill="#F97316"/>
+      <text x="1020" y="638">GlobalVIN — vehicle history</text>
+      <circle cx="1010" cy="657" r="2" fill="#F97316"/>
+      <text x="1020" y="660">GlobalVIN — parts catalog</text>
+      <circle cx="1010" cy="679" r="2" fill="#F97316"/>
+      <text x="1020" y="682">che168 via Apify — listings</text>
+      <circle cx="1010" cy="701" r="2" fill="#F97316"/>
+      <text x="1020" y="704">Rate-limited · cached</text>
+    </g>
+  </g>
+
+  <!-- ─── Async retry arrow: pg-boss → External APIs (dashed, rounded corners) ─── -->
+  <g id="arrow-retry">
+    <path d="M 565 725 L 565 755 Q 565 762 572 762 L 1098 762 Q 1105 762 1105 755 L 1105 725"
+          fill="none" stroke="#6B7280" stroke-width="2" stroke-dasharray="6,4"
+          marker-end="url(#arrowAsync)"/>
+    <rect x="720" y="744" width="230" height="18" rx="9" fill="#1A1A1A" stroke="#454545" stroke-width="1"/>
+    <text x="835" y="757" text-anchor="middle" font-size="11" fill="#B8B8B8">retry · release unanswered</text>
+  </g>
+
+  <!-- ═════════════════════════ OBSERVABILITY BAND ═════════════════════════ -->
+  <g id="observability">
+    <rect x="80" y="800" width="1240" height="120" rx="12" fill="#141414" filter="url(#cardShadow)"/>
+    <rect x="80" y="800" width="1240" height="120" rx="12" fill="none" stroke="#333333" stroke-width="1"/>
+    <text x="100" y="828" font-size="10.5" font-weight="700" fill="#FB923C" letter-spacing="1.2">OBSERVABILITY</text>
+    <text x="100" y="846" font-size="11" fill="#8A8A8A">Cross-cutting · instruments every service above</text>
+
+    <!-- Sentry -->
+    <rect x="160" y="858" width="530" height="50" rx="8" fill="#1A1A1A" stroke="#454545" stroke-width="1" filter="url(#subShadow)"/>
+    <rect x="160" y="858" width="4" height="50" fill="#F97316"/>
+    <circle cx="190" cy="883" r="5" fill="#F97316"/>
+    <text x="208" y="880" font-size="14" font-weight="600" fill="#FAFAFA">Sentry</text>
+    <text x="208" y="898" font-size="11.5" fill="#B8B8B8">Error tracking · stack traces · release alerts</text>
+
+    <!-- Prometheus -->
+    <rect x="710" y="858" width="530" height="50" rx="8" fill="#1A1A1A" stroke="#454545" stroke-width="1" filter="url(#subShadow)"/>
+    <rect x="710" y="858" width="4" height="50" fill="#F97316"/>
+    <circle cx="740" cy="883" r="5" fill="#F97316"/>
+    <text x="758" y="880" font-size="14" font-weight="600" fill="#FAFAFA">Prometheus</text>
+    <text x="758" y="898" font-size="11.5" fill="#B8B8B8">Metrics · latency · throughput · job health</text>
+  </g>
+
+  <!-- ═════════════════════════ LEGEND ═════════════════════════ -->
+  <g id="legend">
+    <rect x="430" y="950" width="540" height="48" rx="8" fill="#141414" stroke="#333333" stroke-width="1"/>
+    <!-- Solid -->
+    <line x1="460" y1="974" x2="500" y2="974" stroke="#F97316" stroke-width="2" marker-end="url(#arrowSync)"/>
+    <text x="510" y="978" font-size="12" fill="#E5E5E5">Synchronous call (REST / SQL)</text>
+    <!-- Dashed -->
+    <line x1="730" y1="974" x2="770" y2="974" stroke="#6B7280" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrowAsync)"/>
+    <text x="780" y="978" font-size="12" fill="#E5E5E5">Async / external / retry</text>
+  </g>
+
+  <!-- Footer note -->
+  <text x="700" y="1040" text-anchor="middle" font-size="10.5" fill="#8A8A8A">Pay-first ordering: Stripe Checkout → webhook enqueues pg-boss job → worker fetches from GlobalVIN / che168 → delivers report</text>
+
+</svg>

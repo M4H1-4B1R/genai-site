@@ -1,3 +1,4 @@
+import { ImageLightbox } from "@/components/shared/image-lightbox";
 import Link from "next/link";
 
 import { ServicesProofSlider } from "@/components/services-proof-slider";
@@ -222,13 +223,14 @@ export function MingchejiCaseStudyPage() {
             </div>
           </div>
 
-          <div className="relative h-[360px] min-w-0 flex-1 overflow-clip rounded-[8px] border border-line bg-[#0f1417] max-[640px]:h-[240px]">
-            <div
-              className="absolute -right-px -top-px h-[240px] w-[280px] bg-[linear-gradient(220deg,rgba(255,152,0,0.1)_0%,rgba(255,152,0,0)_55%)] opacity-70 blur-[24px]"
-              aria-hidden="true"
+          <div className="relative h-[360px] min-w-0 flex-1 max-[900px]:flex-none overflow-clip rounded-[8px] border border-line bg-[#0f1417] max-[640px]:h-[240px]">
+            <ImageLightbox
+              src="/figma/mingcheji-hero.png"
+              alt="Mingcheji mobile app — Hot lots vehicle listings with verified badges"
+              sizes="(max-width: 640px) 320px, 32vw"
             />
             <span className="absolute bottom-6 left-6 rounded-[4px] border border-line bg-[rgba(13,14,15,0.8)] px-3 py-1.5 font-mono text-[10px] font-bold tracking-[0.6px] uppercase text-[#747d81]">
-              No schematic available — architecture described below
+              Mobile app interface
             </span>
           </div>
         </div>
@@ -301,7 +303,7 @@ export function MingchejiCaseStudyPage() {
                     aria-hidden="true"
                   />
                   <div className="flex flex-col gap-1">
-                    <p className="text-[clamp(32px,4vw,40px)] font-medium tracking-[-1px] text-orange">
+                    <p className="text-[clamp(18px,4vw,24px)] font-medium tracking-[-1px] text-orange">
                       {metric.value}
                     </p>
                     <p className="text-[15px] leading-6 text-muted">
@@ -335,10 +337,7 @@ export function MingchejiCaseStudyPage() {
             title="Technical design of the custom system."
             description="Next.js website, Node.js/Express backend, GlobalVIN vehicle data, Stripe payments, and self-repairing background jobs."
           />
-          <div
-            className={`${cardClass} h-[415px] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] max-[640px]:h-[240px]`}
-            aria-hidden="true"
-          />
+					<img src="/architecture.svg" />
           <div className="flex items-center gap-4 rounded-[4px] border border-[#1c2328] bg-panel px-[18px] py-3.5 max-[640px]:flex-col max-[640px]:items-start max-[640px]:gap-2">
             <p className="shrink-0 font-mono text-[10px] font-bold tracking-[0.8px] uppercase text-orange">
               System architecture
