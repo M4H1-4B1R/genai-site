@@ -30,6 +30,7 @@ const projects = [
     side: "left",
     art: "kaya",
     slug: "kaya",
+    caseStudyUrl: "/contact",
   },
   {
     number: "02",
@@ -40,6 +41,7 @@ const projects = [
     side: "right",
     art: "single",
     slug: "mingcheji",
+    caseStudyUrl: "/case-study/mingcheji",
   },
   {
     number: "03",
@@ -50,6 +52,7 @@ const projects = [
     side: "left",
     art: "single",
     slug: "nexagent",
+    caseStudyUrl: "/case-study/nexagents",
   },
 ] as const;
 
@@ -146,7 +149,7 @@ export function WorkShowcase() {
               </div>
               <a
                 className="text-[13px] font-bold uppercase text-orange"
-                href="/contact"
+                href={project.caseStudyUrl || "/contact"}
               >
                 View project →
               </a>

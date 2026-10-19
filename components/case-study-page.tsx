@@ -240,10 +240,10 @@ export function CaseStudyPage() {
           />
           <div className="flex items-start gap-8 max-[900px]:flex-col max-[900px]:items-stretch">
             <div className="flex min-w-0 flex-1 flex-col gap-6">
-              <p className="border-l-4 border-orange pl-6 text-[clamp(24px,3vw,32px)] font-bold leading-[1.2] text-text">
+              <p className="border-l-4 border-orange pl-6 text-[clamp(18px,2vw,24px)] font-bold leading-[1.1] text-text">
                 [Clear challenge statement]
               </p>
-              <p className="text-[17px] leading-7 text-muted">
+              <p className="text-[17px] leading-5 text-muted">
                 [Contextual explanation of the problem, why it was hard, and
                 what was at stake. Keep to verified facts only.]
               </p>
