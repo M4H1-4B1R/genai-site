@@ -347,10 +347,7 @@ export function NexagentsCaseStudyPage() {
             title="Technical design of the custom system."
             description="Production stack: one VPS behind Caddy, four Docker app services, PostgreSQL state, Slack and web chat, Claude Agent SDK, and the qm agent platform."
           />
-          <div
-            className={`${cardClass} h-[415px] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] max-[640px]:h-[240px]`}
-            aria-hidden="true"
-          />
+					<img src="/architecture_qm.svg" />
           <div className="flex items-center gap-4 rounded-[4px] border border-[#1c2328] bg-panel px-[18px] py-3.5 max-[640px]:flex-col max-[640px]:items-start max-[640px]:gap-2">
             <p className="shrink-0 font-mono text-[10px] font-bold tracking-[0.8px] uppercase text-orange">
               System architecture
@@ -434,7 +431,7 @@ export function NexagentsCaseStudyPage() {
                   className={`h-px w-full ${item.highlight ? "bg-line" : "bg-[#1c2328]"}`}
                   aria-hidden="true"
                 />
-                <p className="text-[clamp(32px,3.5vw,40px)] font-medium tracking-[-1px] text-text">
+                <p className="text-[clamp(18px,3.5vw,24px)] font-medium tracking-[-1px] text-text">
                   {item.value}
                 </p>
                 <p className="text-[13px] leading-[19px] text-muted">
