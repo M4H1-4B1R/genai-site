@@ -32,7 +32,7 @@ export function Hero() {
               <a className="button button-primary" href="/contact">
                 Request a strategy briefing <span>→</span>
               </a>
-              <a className="button button-outline" href="#work">
+              <a className="button button-outline" href="/work">
                 Explore our work →
               </a>
             </div>
