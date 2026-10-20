@@ -38,6 +38,8 @@ const projects = [
     title: "Mingcheji China Cars",
     copy: "Bring trade documents, checks, and decisions into one workflow.",
     image: "/figma/mingcheji-showcase.png",
+    // textured backdrop behind the transparent laptop/phone art; Figma mirrors it
+    bg: "/figma/mingcheji-showcase-bg.png",
     side: "right",
     art: "single",
     slug: "mingcheji",
@@ -92,6 +94,15 @@ export function WorkShowcase() {
             className="relative flex h-[524px] items-center overflow-hidden max-[640px]:h-auto max-[640px]:pt-[220px]"
             key={project.title}
           >
+            {"bg" in project ? (
+              <Image
+                className="-scale-x-100 object-cover object-top z-0"
+                src={project.bg}
+                alt=""
+                fill
+                sizes="100vw"
+              />
+            ) : null}
             <Image
               className={backgroundImageClassName[project.slug]}
               src={project.image}

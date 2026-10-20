@@ -1,5 +1,4 @@
 import { Architecture } from "@/components/architecture";
-import { Automation } from "@/components/automation";
 import { Capabilities } from "@/components/capabilities";
 import { Contact } from "@/components/contact";
 import { Hero } from "@/components/hero";
@@ -8,6 +7,7 @@ import { FinalCtaSection } from "@/components/shared/final-cta-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { WorkShowcase } from "@/components/work-showcase";
+import { HeroRightAnimated } from "@/components/hero-right-animated";
 
 export default function Home() {
   // overflow-clip contains horizontal bleed without creating a scroll
@@ -21,7 +21,7 @@ export default function Home() {
         <Capabilities />
         <Architecture />
         <Proof />
-        <Automation />
+        <HeroRightAnimated />
         <FinalCtaSection />
         <Contact />
       </main>
