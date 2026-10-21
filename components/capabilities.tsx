@@ -3,16 +3,19 @@ const capabilities = [
     "01",
     "AI Product Engineering",
     "Build AI products around a real business need.",
+		"/services/ai-product-engineering",
   ],
   [
     "02",
     "Agentic Layer Engineering",
     "Connect agents to your tools, data, and workflows.",
+		"/services/agentic-layer-engineering",
   ],
   [
     "03",
     "Forward-Deployed Services",
     "Integrate, adapt, and deploy AI inside your operations.",
+		"/services/forward-deployed-services",
   ],
 ];
 
@@ -29,10 +32,10 @@ export function Capabilities() {
         </h2>
       </div>
       <div>
-        {capabilities.map(([number, title, copy]) => (
+        {capabilities.map(([number, title, copy, url]) => (
           <a
             className="grid min-h-[76px] grid-cols-[20px_1fr_1fr_20px] items-center gap-[42px] border-b border-line max-[640px]:grid-cols-[20px_1fr_20px] max-[640px]:gap-3 max-[640px]:py-[18px]"
-            href="/contact"
+            href={url}
             key={number}
           >
             <span className="eyebrow text-[#747d81]">{number}</span>

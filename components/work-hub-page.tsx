@@ -146,16 +146,16 @@ export function WorkHubPage() {
                     Kaya Health Coach
                   </h3>
                   <p className="mt-3 text-[15px] leading-relaxed text-[#aeb5b8] sm:text-[16px]">
-                    Replaced slow enterprise search with instantaneous semantic
-                    discovery across 40M documents. Engineered custom retrieval
-                    guardrails to ensure zero hallucination in patient-facing
-                    dialogues.
+                    AI functional medicine coach guiding people through
+                    structured wellness sessions, with real-time coaching
+                    responses and habit, goal and mood tracking — live on both
+                    app stores.
                   </p>
                 </div>
 
                 <div className="mt-8 border-t border-[#1c2328] pt-6">
                   <Link
-                    href="/case-study"
+                    href="/case-study/kaya"
                     className="inline-flex items-center gap-2 text-[14px] font-bold uppercase tracking-[0.6px] text-[#f2f2ef] transition-colors group-hover:text-orange"
                   >
                     <span>View Case Study</span>
@@ -178,9 +178,9 @@ export function WorkHubPage() {
                     What GenAI Labs worked on
                   </h4>
                   <p className="mt-2 text-sm leading-[1.65] text-[#aeb5b8]">
-                    End-to-end multi-agent clinical reasoning engine,
-                    HIPAA-compliant vector embedding pipeline, and sub-200ms
-                    streaming inference microservices on Kubernetes.
+                    Flutter app, FastAPI backend, AI coaching engine with SSE
+                    streaming, Firebase auth and Stripe payments — built end to
+                    end by GenAILabs.
                   </p>
                 </div>
 
@@ -192,18 +192,20 @@ export function WorkHubPage() {
                     Verified production metrics
                   </h4>
                   <p className="mt-2 text-sm leading-[1.65] text-[#aeb5b8]">
-                    Over 40 million clinical notes indexed with zero data
-                    leakage. 94.2% diagnostic retrieval precision audited and
-                    confirmed by licensed medical teams.
+                    Live on the App Store and Google Play, with sub-second
+                    first-token streaming and sessions that follow the user
+                    across devices.
                   </p>
                 </div>
               </div>
 
               <div className="mt-8 border-t border-[#293137] pt-6">
                 <div className="rounded border border-line bg-deep p-4 text-xs font-mono text-muted">
-                  <span className="block text-white">Status: DEPLOYED</span>
+                  <span className="block text-white">
+                    Status: LIVE ON APP STORE &amp; GOOGLE PLAY
+                  </span>
                   <span className="mt-1 block text-orange">
-                    Cluster: US-East Multi-Region
+                    Maintained on a fixed price plus retainer
                   </span>
                 </div>
               </div>
