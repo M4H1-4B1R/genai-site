@@ -38,12 +38,12 @@ const allProjects: Project[] = [
 		category: "AI PRODUCT ENGINEERING",
 		title: "Kaya Health Coach",
 		description:
-			"Replaced slow enterprise search with instantaneous semantic discovery across 40M documents.",
+			"AI functional medicine coach guiding people through structured wellness sessions, with real-time coaching and habit, goal and mood tracking.",
 		image: "/figma/work/8b005.png",
 		topics: ["Development", "Technology", "Design"],
 		tags: ["Healthcare", "Semantic Search", "Production"],
-		proof: { label: "Diagnostic Retrieval", value: "94.2% verified relevance" },
-		url: "/case-study",
+		proof: { label: "Real-time streaming", value: "Under 1s to first token" },
+		url: "/case-study/kaya",
 	},
 		{
 		id: "mingcheji",

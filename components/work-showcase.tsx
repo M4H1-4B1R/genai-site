@@ -41,7 +41,7 @@ const projects = [
     side: "left",
     art: "kaya",
     slug: "kaya",
-    caseStudyUrl: "/case-study",
+    caseStudyUrl: "/case-study/kaya",
   },
   {
     number: "02",

@@ -3,10 +3,10 @@
 import Image from "next/image";
 import { useRef } from "react";
 
-type Props = { src: string; alt: string; sizes: string };
+type Props = { src: string; alt: string; sizes: string; fit?: "cover" | "contain" };
 
 // Fills a `relative` parent; click opens the full, uncropped image in a modal.
-export function ImageLightbox({ src, alt, sizes }: Props) {
+export function ImageLightbox({ src, alt, sizes, fit = "cover" }: Props) {
   const dialog = useRef<HTMLDialogElement>(null);
 
   return (
@@ -18,7 +18,13 @@ export function ImageLightbox({ src, alt, sizes }: Props) {
         onClick={() => dialog.current?.showModal()}
         className="absolute inset-0 cursor-zoom-in"
       >
-        <Image src={src} alt={alt} fill sizes={sizes} className="object-cover" />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes={sizes}
+          className={fit === "contain" ? "object-contain p-4" : "object-cover"}
+        />
       </button>
       <dialog
         ref={dialog}
