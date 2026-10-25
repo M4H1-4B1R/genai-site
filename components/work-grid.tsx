@@ -45,6 +45,19 @@ const allProjects: Project[] = [
 		proof: { label: "Real-time streaming", value: "Under 1s to first token" },
 		url: "/case-study/kaya",
 	},
+	{
+		id: "askdahab",
+		tag: "TRAVEL & BOOKING PLATFORM",
+		category: "AI PRODUCT ENGINEERING",
+		title: "Ask Dahab",
+		description:
+			"Multilingual travel and booking platform for Dahab, Egypt — 6 languages, ~915 pages, 18 bookable experiences, admin panel, job portal, multilingual search, and Ask Sinai mobile app.",
+		image: "/figma/askdahab-hero.png",
+		topics: ["Development", "Technology", "Design", "Business"],
+		tags: ["Travel", "Multilingual", "Production"],
+		proof: { label: "Pages & URLs", value: "~915 pages, 903 URLs in sitemap" },
+		url: "/case-study/askdahab",
+	},
 		{
 		id: "mingcheji",
 		tag: "TRADE COMPLIANCE AI",
