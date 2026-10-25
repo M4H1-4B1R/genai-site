@@ -148,7 +148,7 @@ const relatedWork = [
     description:
       "Companion mobile app for Ask Dahab travellers — live on the App Store and Google Play, built alongside the web platform.",
     glow: true,
-    image: "/figma/work/8b005.png", // placeholder - should be replaced with Ask Sinai image
+    image: "/figma/asksinai.png",
     href: "/case-study/asksinai",
   },
   {
