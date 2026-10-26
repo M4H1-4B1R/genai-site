@@ -15,7 +15,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 bg-ink border-b border-[#303437]">
       <div className="flex h-20 min-w-0 items-center justify-between px-[max(40px,calc((100%_-_1280px)_/_2))] max-[900px]:px-5 max-[640px]:h-auto max-[640px]:min-h-[72px] max-[640px]:py-4">
         <Link
-          className="flex items-center gap-4 text-2xl tracking-[-0.4px] max-[640px]:text-xl"
+          className="flex items-center gap-4 text-xl tracking-[-0.4px] max-[640px]:gap-3 max-[640px]:text-lg"
           href="/"
           aria-label="GenAILabs home"
         >
