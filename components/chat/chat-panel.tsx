@@ -43,11 +43,11 @@ export function ChatPanel({
       role="dialog"
       aria-modal="false"
       aria-label="GenAILabs assistant"
-      className="flex w-[530px] flex-col overflow-clip rounded-[4px] border border-[#21272c] bg-[#101315] shadow-[0px_24px_60px_-15px_rgba(0,0,0,0.85)] backdrop-blur-[12px] max-[640px]:w-full"
+      className="flex w-[530px] flex-col overflow-clip rounded-[4px] border border-[#21272c] bg-[#101315] shadow-[0px_24px_60px_-15px_rgba(0,0,0,0.85)] backdrop-blur-[12px] max-h-[calc(100dvh_-_48px)] max-[640px]:w-full max-[640px]:max-h-[calc(var(--vvh,100dvh)_-_48px)]"
     >
-      <div className="flex items-center justify-between border-b border-[#1c2227] bg-[rgba(16,19,21,0.9)] px-[20px] pb-[17px] pt-[16px]">
+      <div className="flex shrink-0 items-center justify-between border-b border-[#1c2227] bg-[rgba(16,19,21,0.9)] px-[20px] pb-[17px] pt-[16px] max-[640px]:px-4 max-[640px]:pb-3 max-[640px]:pt-3">
         <div className="flex items-center gap-[14px]">
-          <div className="relative flex size-[44px] items-center justify-center rounded-[12px] border border-[#22282d] bg-[#090b0c]">
+          <div className="relative flex size-[44px] items-center justify-center rounded-[12px] border border-[#22282d] bg-[#090b0c] max-[640px]:size-9">
             <div aria-hidden="true" className="absolute inset-0 rounded-[12px] bg-[rgba(245,158,11,0.05)]" />
             <Image
               src="/figma/chat/logo-header.png"
@@ -81,7 +81,11 @@ export function ChatPanel({
       <div
         ref={threadRef}
         aria-live="polite"
-        className="flex max-h-[460px] flex-col gap-[16px] overflow-y-auto px-[20px] pb-[7px] pt-[20px] max-[640px]:max-h-[52vh]"
+        /* Fixed height, not max-height: the panel must not resize when the
+           bot streams a reply — content scrolls inside instead. Mobile reads
+           the visual viewport (`--vvh`, set by ChatWidget) so it shrinks to
+           whatever is left above the on-screen keyboard. */
+        className="flex h-[min(460px,52dvh)] min-h-0 flex-col gap-[16px] overflow-y-auto px-[20px] pb-[7px] pt-[20px] max-[640px]:h-[clamp(96px,calc(var(--vvh,100dvh)_-_200px),46dvh)] max-[640px]:px-4"
       >
         <div className="max-w-[374px] border border-[#21272d] bg-[#14181b] px-[17px] pb-[17px] pt-[16px]">
           <p className="text-[16px] leading-[22.75px] text-[#e4e4e7]">{GREETING}</p>
@@ -126,7 +130,7 @@ export function ChatPanel({
         )}
       </div>
 
-      <div className="flex flex-col gap-[14px] border-t border-[#1b2126] bg-[#101315] px-[16px] pb-[16px] pt-[17px]">
+      <div className="flex shrink-0 flex-col gap-[14px] border-t border-[#1b2126] bg-[#101315] px-[16px] pb-[16px] pt-[17px] max-[640px]:gap-2.5 max-[640px]:px-3.5 max-[640px]:pb-3.5 max-[640px]:pt-3">
         <form
           className="flex items-center gap-[8px]"
           onSubmit={(event) => {
