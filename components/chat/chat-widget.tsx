@@ -17,6 +17,7 @@ export default function ChatWidget() {
   const [draft, setDraft] = useState("");
   const [pending, setPending] = useState(false);
 
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const launcherRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const threadRef = useRef<HTMLDivElement | null>(null);
@@ -24,6 +25,36 @@ export default function ChatWidget() {
 
   useEffect(() => {
     if (open) inputRef.current?.focus();
+  }, [open]);
+
+  // On-screen keyboards overlay the layout viewport (iOS) or resize it only
+  // partially (Android), so a fixed-bottom stack can end up under the keys
+  // with its top clipped. While the panel is open, publish the *visual*
+  // viewport height as `--vvh` (the panel clamps its height to it) and lift
+  // the stack by whatever the keyboard occludes as `--chat-bottom`.
+  useEffect(() => {
+    if (!open) return;
+    const viewport = window.visualViewport;
+    const root = containerRef.current;
+    if (!viewport || !root) return;
+
+    const update = () => {
+      root.style.setProperty("--vvh", `${viewport.height}px`);
+      const occluded = Math.max(
+        0,
+        window.innerHeight - (viewport.offsetTop + viewport.height),
+      );
+      root.style.setProperty("--chat-bottom", `${occluded}px`);
+    };
+    update();
+    viewport.addEventListener("resize", update);
+    viewport.addEventListener("scroll", update);
+    return () => {
+      viewport.removeEventListener("resize", update);
+      viewport.removeEventListener("scroll", update);
+      root.style.removeProperty("--vvh");
+      root.style.removeProperty("--chat-bottom");
+    };
   }, [open]);
 
   useEffect(() => {
@@ -98,7 +129,8 @@ export default function ChatWidget() {
 
   return (
     <div
-      className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4 max-[640px]:bottom-4 max-[640px]:left-4 max-[640px]:right-4"
+      ref={containerRef}
+      className="fixed bottom-[calc(24px_+_var(--chat-bottom,0px))] right-6 z-50 flex flex-col items-end gap-4 max-[640px]:bottom-[calc(16px_+_var(--chat-bottom,0px))] max-[640px]:left-4 max-[640px]:right-4"
       onKeyDown={(event) => {
         if (event.key === "Escape" && open) closePanel();
       }}
@@ -116,7 +148,10 @@ export default function ChatWidget() {
           onClose={closePanel}
         />
       )}
-      <div ref={launcherRef}>
+      {/* On mobile the launcher hides while the panel is open — the panel
+          header's close button takes over — so the panel isn't pushed up by
+          78px of idle button below it. */}
+      <div ref={launcherRef} className={open ? "max-[640px]:hidden" : undefined}>
         <ChatLauncher
           open={open}
           panelId={PANEL_ID}
