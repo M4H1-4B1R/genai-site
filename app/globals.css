@@ -97,6 +97,9 @@
   a {
     color: inherit;
     text-decoration: none;
+    /* Short color fade for link hovers; links that already declare a Tailwind
+       `transition-*` utility keep their own timing. */
+    transition: color 0.2s ease;
   }
   button,
   input,
@@ -1734,6 +1737,21 @@
     opacity: 1;
     transform: translateY(-3px);
   }
+}
+
+/* ==========================================================================
+   Global link hover
+   Every anchor tints to the palette orange on hover. Deliberately unlayered:
+   `text-*` color utilities come from the utilities layer, which outranks
+   `@layer base`, so a layered hover rule would silently lose on every link
+   with an explicit text color. Anchors on orange backgrounds
+   (`button-primary`) are excluded so their dark label stays readable while
+   the background brightens on hover. Placed at the end of the file so it
+   also wins the cascade ties with unlayered rules like
+   `.services-routing-row > a:not(.button)`.
+   ========================================================================== */
+a:not(.button-primary):hover {
+  color: var(--orange);
 }
 
 @media (max-width: 719px) {
