@@ -36,6 +36,12 @@
   }
 }
 
+#header-button {
+	&:hover {
+		transform: translateY(0px);
+	}
+}
+
 @utility button-primary {
   background: var(--orange);
   box-shadow: 0 0 24px #ff980033;
