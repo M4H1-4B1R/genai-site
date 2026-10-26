@@ -13,7 +13,7 @@ export function Hero() {
         className="hero-scroll relative h-[320vh] max-[900px]:h-auto motion-reduce:h-auto"
         id="top"
       >
-        <div className="hero sticky top-0 h-svh min-h-[720px] overflow-hidden bg-ink max-[900px]:relative max-[900px]:h-auto max-[900px]:min-h-0 motion-reduce:relative motion-reduce:h-auto motion-reduce:min-h-0">
+        <div className="hero sticky top-20 h-[calc(100svh_-_80px)] min-h-[680px] overflow-hidden bg-ink max-[900px]:relative max-[900px]:top-0 max-[900px]:h-auto max-[900px]:min-h-0 motion-reduce:relative motion-reduce:top-0 motion-reduce:h-auto motion-reduce:min-h-0">
           <HeroLines />
           <div className="relative z-[1] mx-auto max-w-[1120px] px-0 pt-[clamp(96px,15svh,140px)] pb-[120px] opacity-[max(0,calc(1_-_var(--hero-p,0)*1.5))] translate-x-[calc(var(--hero-p,0)*-220px)] will-change-[opacity,transform] max-[900px]:px-8 max-[900px]:pt-[110px] max-[900px]:opacity-100 max-[900px]:translate-x-0 max-[640px]:px-5 max-[640px]:pt-[90px] max-[640px]:pb-10">
             <div className="mb-[clamp(20px,4svh,40px)] flex items-center gap-[14px]">
@@ -22,7 +22,7 @@ export function Hero() {
               </span>
               <small className="eyebrow">Build / Act / Deploy</small>
             </div>
-            <h1 className="mb-[clamp(20px,4svh,40px)] max-w-[760px] text-[clamp(48px,5vw,72px)] leading-[1.04] tracking-[-2px] max-[640px]:text-[46px] max-[640px]:tracking-[-1px]">
+            <h1 className="mb-[clamp(20px,4svh,40px)] max-w-[760px] text-[clamp(44px,4.5vw,64px)] leading-[1.04] tracking-[-2px] max-[640px]:text-[40px] max-[640px]:tracking-[-1px]">
               Build AI.
               <br />
               Make It Act.
@@ -68,7 +68,7 @@ export function Hero() {
             Build / Act / Deploy
           </p>
           <Marquee
-            className="absolute bottom-0 left-0 z-[2] w-full border-y border-[#1c2328] pt-[26px] pb-[30px] opacity-[max(0,calc(1_-_var(--hero-p,0)*4))] max-[900px]:hidden motion-reduce:hidden"
+            className="absolute bottom-0 left-0 z-[2] w-full border-b border-[#1c2328] pt-[26px] pb-[30px] bg-[linear-gradient(to_top,#080b0df0_25%,#080b0daa_70%,#080b0d00)] opacity-[max(0,calc(1_-_var(--hero-p,0)*4))] max-[900px]:hidden motion-reduce:hidden"
             duration={42}
             items={clientStripItems}
             itemClassName="opacity-80"
