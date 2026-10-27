@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { NewsletterForm } from "@/components/newsletter-form";
+
 export function SiteFooter() {
   return (
     <footer className="grid grid-cols-[1.5fr_1fr_1fr_1.5fr] gap-12 border-t border-[#2a2d34] px-[max(40px,calc((100%_-_1280px)_/_2))] py-16 max-[900px]:grid-cols-2 max-[640px]:grid-cols-2 max-[640px]:px-5 max-[640px]:py-12">
@@ -57,15 +59,7 @@ export function SiteFooter() {
         <a className="text-sm leading-[1.5] text-[#9ca3af]" href="/contact">
           Contact
         </a>
-        <div className="mt-7 flex max-[640px]:flex-col">
-          <input
-            className="min-w-0 w-full border border-[#424a50] bg-ink p-3.5 text-white outline-none focus:border-orange"
-            placeholder="Enter your work mail..."
-          />
-          <button className="button button-primary min-w-[165px] border-0 max-[640px]:w-full">
-            Subscribe →
-          </button>
-        </div>
+        <NewsletterForm />
       </div>
       <div className="col-span-full mt-5 flex flex-row justify-between border-t border-[#2a2d34] pt-3 text-[11px] uppercase text-[#6b7280] max-[640px]:flex-col max-[640px]:gap-2">
         <span>© 2025 GENAILABS INC. ALL RIGHTS RESERVED.</span>

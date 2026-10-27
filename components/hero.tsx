@@ -30,7 +30,7 @@ export function Hero() {
               Put It to Work.
             </h1>
             <div className="flex flex-wrap gap-4">
-              <Link className="button button-primary" href="/contact">
+              <Link className="button button-primary" href="#contact">
                 Request a strategy briefing <span>→</span>
               </Link>
               <Link className="button button-outline" href="/work">
