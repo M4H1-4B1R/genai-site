@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { ContactForm } from "@/components/contact-form";
+
 export function Contact() {
   return (
     <section
@@ -15,7 +17,17 @@ export function Contact() {
           can turn your complex requirements into a deployed solution.
         </p>
         <div className="mt-[34px] flex flex-col gap-4">
-          <span className="flex items-start gap-3 text-[14px] text-[#9ca3af]">
+          {/* Each contact row is one link (icon + label + value) with a
+              group-hover accent so the whole row reads as clickable. Email
+              opens a Gmail web compose (mailto would fight with desktop
+              mail apps), phone opens WhatsApp chat, address opens Google
+              Maps — official universal-link formats for each. */}
+          <a
+            className="group flex cursor-pointer items-start gap-3 text-[14px] text-[#9ca3af]"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=support@genailabs.agency"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Image
               className="mt-1"
               src="/figma/contact/mail.svg"
@@ -25,12 +37,17 @@ export function Contact() {
             />
             <span className="flex flex-col gap-[3px]">
               Email
-              <strong className="text-base font-normal text-white">
+              <strong className="text-base font-normal text-white group-hover:text-orange">
                 support@genailabs.agency
               </strong>
             </span>
-          </span>
-          <span className="flex items-start gap-3 text-[14px] text-[#9ca3af]">
+          </a>
+          <a
+            className="group flex cursor-pointer items-start gap-3 text-[14px] text-[#9ca3af]"
+            href="https://wa.me/962776424784"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Image
               className="mt-1"
               src="/figma/contact/phone.svg"
@@ -40,12 +57,17 @@ export function Contact() {
             />
             <span className="flex flex-col gap-[3px]">
               Phone
-              <strong className="text-base font-normal text-white">
+              <strong className="text-base font-normal text-white group-hover:text-orange">
                 +962776424784
               </strong>
             </span>
-          </span>
-          <span className="flex items-start gap-3 text-[14px] text-[#9ca3af]">
+          </a>
+          <a
+            className="group flex cursor-pointer items-start gap-3 text-[14px] text-[#9ca3af]"
+            href="https://www.google.com/maps/search/?api=1&query=Amman%2C+Jordan"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Image
               className="mt-1"
               src="/figma/contact/pin.svg"
@@ -55,11 +77,11 @@ export function Contact() {
             />
             <span className="flex flex-col gap-[3px]">
               Office
-              <strong className="text-base font-normal text-white">
+              <strong className="text-base font-normal text-white group-hover:text-orange">
                 Amman, Jordan
               </strong>
             </span>
-          </span>
+          </a>
         </div>
         <div className="mt-9 flex gap-3">
           {/* lucide-react (v1.52) no longer ships brand glyphs, so the social
@@ -106,52 +128,8 @@ export function Contact() {
           </a>
         </div>
       </div>
-      <form className="border border-[#2a2d34] px-10 pt-9 pb-10 max-[640px]:px-[18px] max-[640px]:py-6">
-        <div className="mb-8 flex items-center justify-between">
-          <h3 className="m-0 text-[28px]">Project intake</h3>
-          <span className="text-[#747d81] font-mono text-[10px] tracking-[0.7px] uppercase">
-            * Required fields
-          </span>
-        </div>
-        <div className="grid grid-cols-2 gap-x-4 gap-y-6 max-[640px]:grid-cols-1 max-[640px]:gap-0">
-          <label className="mb-6 flex flex-col gap-2 text-[#747d81] font-mono text-[10px] tracking-[0.7px] uppercase">
-            Name *
-            <input
-              className="border border-[#424a50] bg-ink p-3.5 text-white outline-none focus:border-orange"
-              placeholder="Your full name"
-            />
-          </label>
-          <label className="mb-6 flex flex-col gap-2 text-[#747d81] font-mono text-[10px] tracking-[0.7px] uppercase">
-            Work email *
-            <input
-              className="border border-[#424a50] bg-ink p-3.5 text-white outline-none focus:border-orange"
-              placeholder="name@company.com"
-              type="email"
-            />
-          </label>
-        </div>
-        <label className="mb-6 flex flex-col gap-2 text-[#747d81] font-mono text-[10px] tracking-[0.7px] uppercase">
-          What are you working on? *
-          <textarea
-            className="min-h-[130px] resize-y border border-[#424a50] bg-ink p-3.5 text-white outline-none focus:border-orange"
-            placeholder="Describe the problem, current constraints, and what success needs to look like."
-          />
-        </label>
-        <label className="mb-6 grid grid-cols-[18px_120px_1fr] items-start gap-2.5 leading-[1.5] text-[#747d81] font-mono text-[10px] tracking-[0.7px] uppercase max-[640px]:grid-cols-[18px_1fr]">
-          <input className="m-0 size-[18px] accent-orange" type="checkbox" />{" "}
-          <span>Marketing consent</span>
-          <small className="col-auto max-[640px]:col-start-2 font-sans text-[12px] leading-[1.5] tracking-normal text-[#747d81] normal-case">
-            I agree to receive relevant project and product updates. I can
-            withdraw consent at any time.{" "}
-            <a className="underline" href="/privacy-policy">
-              View the Privacy Policy.
-            </a>
-          </small>
-        </label>
-        <button className="button button-primary" type="submit">
-          Talk to our team →
-        </button>
-      </form>
+      {/* Form itself is a client component (fetch + status states). */}
+      <ContactForm />
     </section>
   );
 }
