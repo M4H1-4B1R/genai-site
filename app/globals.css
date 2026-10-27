@@ -926,41 +926,6 @@
   overflow: hidden;
 }
 
-.agent-demo .hbg {
-  inset: 0;
-  pointer-events: none;
-  position: absolute;
-}
-.agent-demo .dots {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1.1px, transparent 1.1px);
-  background-size: 26px 26px;
-  inset: 0;
-  position: absolute;
-  -webkit-mask-image: radial-gradient(ellipse 65% 60% at 74% 48%, #000 8%, transparent 72%);
-  mask-image: radial-gradient(ellipse 65% 60% at 74% 48%, #000 8%, transparent 72%);
-}
-.agent-demo .glow {
-  border-radius: 50%;
-  filter: blur(100px);
-  position: absolute;
-}
-.agent-demo .g1 {
-  animation: agent-drift 18s ease-in-out infinite;
-  background: rgba(244, 165, 13, 0.14);
-  height: 620px;
-  right: -160px;
-  top: 4%;
-  width: 620px;
-}
-.agent-demo .g2 {
-  animation: agent-drift 24s ease-in-out infinite reverse;
-  background: rgba(244, 165, 13, 0.06);
-  bottom: -120px;
-  height: 420px;
-  left: -180px;
-  width: 420px;
-}
-
 .agent-demo .stage {
   min-height: clamp(392px, 62vw, 462px);
   min-width: 0;
@@ -986,6 +951,26 @@
   transition-delay: 0s;
   visibility: visible;
 }
+/* Ambient bloom that sits behind the active scene's windows. A pure
+   radial gradient (elliptical, fading to transparent) so the "light"
+   stays round and can never produce the straight-edged, clipped-looking
+   rectangle that a box-shadow glow on a large window creates. */
+.agent-demo .sc::before {
+  background: radial-gradient(
+    ellipse 48% 66% at 50% 47%,
+    rgba(244, 165, 13, 0.11),
+    transparent 78%
+  );
+  content: "";
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 0.55s ease;
+}
+.agent-demo .sc.on::before {
+  opacity: 1;
+}
 .agent-demo .sc > * {
   min-width: 0;
   width: 100%;
@@ -1005,10 +990,7 @@
 }
 .agent-demo .win.act {
   border-color: rgba(244, 165, 13, 0.4);
-  box-shadow:
-    0 0 0 1px rgba(244, 165, 13, 0.07),
-    0 0 60px rgba(244, 165, 13, 0.1),
-    0 30px 80px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
 }
 .agent-demo .wh {
   align-items: center;
@@ -1709,15 +1691,6 @@
   top: 18px;
 }
 
-@keyframes agent-drift {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-36px, 28px);
-  }
-}
 @keyframes agent-blink {
   0%,
   100% {
@@ -1801,9 +1774,7 @@ a:not(.button-primary):hover {
 @media (prefers-reduced-motion: reduce) {
   .agent-demo .wst.live::before,
   .agent-demo .dts i,
-  .agent-demo .typing::after,
-  .agent-demo .g1,
-  .agent-demo .g2 {
+  .agent-demo .typing::after {
     animation: none;
   }
   .agent-demo .sc,
