@@ -8,16 +8,20 @@ export function ServicesDropdown({ className }: ServicesDropdownProps) {
   return (
     <div className={`group relative inline-block ${className || ""}`}>
       <button
-        className="flex items-center gap-2 border-b border-text px-0 pb-[25px] pt-[30px] text-text group-hover:text-orange"
+        className="flex items-center gap-2 border-b border-transparent px-0 pb-[25px] pt-[30px] text-text group-hover:text-orange"
         aria-haspopup="true"
         aria-label="Services menu"
       >
-        Services
-        {/* Inline SVG instead of the U+2304 glyph — font-independent size,
-            stroke, and baseline. currentColor tracks the orange hover. */}
+        <span className="underline decoration-1 underline-offset-[9px]">
+          Services
+        </span>
+        {/* Down-arrow glyph (stem + head), lucide "arrow-down" shape.
+            Rotates 180° (arrow points up) while the menu is open, via
+            hover and keyboard focus; currentColor tracks the orange
+            hover; transition-all covers both transform and color. */}
         <svg
           aria-hidden="true"
-          className="size-3.5 shrink-0 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
+          className="size-3.5 shrink-0 transition-all duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
           fill="none"
           stroke="currentColor"
           strokeLinecap="round"
@@ -25,7 +29,7 @@ export function ServicesDropdown({ className }: ServicesDropdownProps) {
           strokeWidth="2"
           viewBox="0 0 24 24"
         >
-          <path d="m6 9 6 6 6-6" />
+          <path d="M12 5v14m7-7-7 7-7-7" />
         </svg>
       </button>
       <div
