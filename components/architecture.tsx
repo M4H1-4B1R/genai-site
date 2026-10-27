@@ -35,12 +35,18 @@ export function Architecture() {
         <div className="flex flex-1 flex-col gap-3.5">
           {nodes.map(([title, copy]) => (
             <div
-              className="flex flex-col gap-[3px] rounded border border-[#2a2d34] bg-ink p-[17px]"
+              className="group flex flex-col gap-[3px] rounded border border-[#2a2d34] bg-ink p-[17px] transition-colors duration-200 hover:border-orange hover:bg-orange"
               data-diagram-node=""
               key={title}
             >
-              <strong className="text-[14px]">{title}</strong>
-              <span className="text-[11px] text-[#9ca3af]">{copy}</span>
+              {/* On hover the card floods orange; both lines flip to dark
+                  ink for contrast, matching the button-primary palette. */}
+              <strong className="text-[14px] transition-colors duration-200 group-hover:text-ink">
+                {title}
+              </strong>
+              <span className="text-[11px] text-[#9ca3af] transition-colors duration-200 group-hover:text-ink/75">
+                {copy}
+              </span>
             </div>
           ))}
         </div>
