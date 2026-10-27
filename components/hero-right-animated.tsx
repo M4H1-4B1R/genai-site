@@ -422,7 +422,7 @@ export function HeroRightAnimated() {
 
   return (
     <section className="border-t border-[#2a2d34] bg-deep px-[max(40px,calc((100%_-_1280px)_/_2))] py-16 max-[640px]:px-5 max-[640px]:py-[68px]">
-      <div className="mx-auto w-full max-w-[760px]">
+      <div className="mx-auto w-full max-w-[1280px]">
         <div className="mb-10 max-[640px]:mb-8">
           <p className="eyebrow m-0">Automation categories</p>
           <h2 className="mt-3.5 mb-0 text-[clamp(40px,4vw,56px)] leading-[1.08] tracking-[-1.5px] max-[640px]:text-[36px] max-[640px]:tracking-[-0.8px]">
@@ -435,11 +435,6 @@ export function HeroRightAnimated() {
         </div>
 
         <div className="agent-demo relative w-full" ref={rootRef}>
-        <div className="hbg" aria-hidden="true">
-          <i className="glow g1" />
-          <i className="glow g2" />
-          <i className="dots" />
-        </div>
 
         <div
           className="stage"

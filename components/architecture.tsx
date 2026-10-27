@@ -1,3 +1,5 @@
+import { DiagramLines } from "@/components/diagram-lines";
+
 const nodes = [
   ["PRODUCT", "Interface & Human Workflows"],
   ["AGENT", "Tools, Memory & Orchestration"],
@@ -29,18 +31,29 @@ export function Architecture() {
         </div>
       </div>
       <div className="relative flex min-h-[420px] items-center gap-14 rounded-lg border border-[#2a2d34] bg-[#14161a] p-10 max-[640px]:flex-col max-[640px]:items-stretch max-[640px]:gap-6 max-[640px]:p-5">
+        <DiagramLines />
         <div className="flex flex-1 flex-col gap-3.5">
           {nodes.map(([title, copy]) => (
             <div
-              className="flex flex-col gap-[3px] rounded border border-[#2a2d34] bg-ink p-[17px]"
+              className="group flex flex-col gap-[3px] rounded border border-[#2a2d34] bg-ink p-[17px] transition-colors duration-200 hover:border-orange hover:bg-orange"
+              data-diagram-node=""
               key={title}
             >
-              <strong className="text-[14px]">{title}</strong>
-              <span className="text-[11px] text-[#9ca3af]">{copy}</span>
+              {/* On hover the card floods orange; both lines flip to dark
+                  ink for contrast, matching the button-primary palette. */}
+              <strong className="text-[14px] transition-colors duration-200 group-hover:text-ink">
+                {title}
+              </strong>
+              <span className="text-[11px] text-[#9ca3af] transition-colors duration-200 group-hover:text-ink/75">
+                {copy}
+              </span>
             </div>
           ))}
         </div>
-        <div className="flex flex-[1.4] flex-col gap-3 rounded border-2 border-white p-9 shadow-[0_0_35px_#ff8a0026] max-[640px]:px-5 max-[640px]:py-6">
+        <div
+          className="flex flex-[1.4] flex-col gap-3 rounded border-2 border-white p-9 shadow-[0_0_35px_#ff8a0026] max-[640px]:px-5 max-[640px]:py-6"
+          data-diagram-target=""
+        >
           <p className="m-0 text-[11px] font-bold tracking-[1.2px] uppercase text-[#ff8a00]">
             Unified target
           </p>

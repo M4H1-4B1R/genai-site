@@ -18,7 +18,7 @@ type Status = "idle" | "sending" | "done" | "error";
     "Connect" still reads as the column/topic. */
 function NewsletterLabel() {
   return (
-    <p className="mb-2.5 text-[11px] uppercase leading-[1.4] tracking-[1px] text-[#ff9800]">
+    <p className="mt-4.5 ml-1 text-[11px] uppercase leading-[1.4] tracking-[1px] text-[#ff9800]">
       Subscribe to get latest news
     </p>
   );
@@ -62,17 +62,16 @@ export function NewsletterForm() {
   if (status === "done") {
     return (
       <div className="mt-6">
-        <NewsletterLabel />
         <p aria-live="polite" className="text-sm leading-[1.5] text-[#ffd88a]">
           You&apos;re on the list ✓ First issue lands next month.
         </p>
+        <NewsletterLabel />
       </div>
     );
   }
 
   return (
     <div className="mt-6 max-w-[340px] max-[640px]:max-w-none">
-      <NewsletterLabel />
       <form
         action={FALLBACK_ACTION}
         aria-busy={status === "sending"}
@@ -117,6 +116,7 @@ export function NewsletterForm() {
         )}
       </div>
     </form>
+      <NewsletterLabel />
     </div>
   );
 }
