@@ -35,7 +35,38 @@ export function ServicesHub() {
   return (
     <div className="services-page">
       <section className="services-hero">
-        <div className="services-hero-glow" />
+        <svg
+          className="services-hero-waves"
+          viewBox="0 0 600 400"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient
+              id="services-wave-fade"
+              gradientUnits="userSpaceOnUse"
+              x1="0"
+              y1="0"
+              x2="0"
+              y2="700"
+            >
+              <stop offset="0" stopColor="#ff9800" stopOpacity="0.05" />
+              <stop offset="0.5" stopColor="#ff9800" stopOpacity="0.4" />
+              <stop offset="1" stopColor="#ff9800" stopOpacity="0.05" />
+            </linearGradient>
+          </defs>
+          {Array.from({ length: 9 }, (_, i) => (
+            <path
+              key={i}
+              d="M0 0C60 160 200 220 340 320S480 520 520 700"
+              fill="none"
+              stroke="url(#services-wave-fade)"
+              strokeWidth="1"
+              transform={`translate(${i * 20} 0)`}
+              vectorEffect="non-scaling-stroke"
+            />
+          ))}
+        </svg>
         <div className="services-container">
           <div className="services-meta">
             <span className="services-badge">
@@ -66,9 +97,6 @@ export function ServicesHub() {
       >
         <Marquee duration={42} items={clientStripItems} className="max-[640px]:py-4" />
       </div>
-      <section className="services-banner">
-        <div>Image banner</div>
-      </section>
 
       <main className="services-main">
         <section className="services-section">

@@ -131,23 +131,13 @@
   padding: 48px max(40px, calc((100% - 1120px) / 2)) 72px;
   position: relative;
 }
-.services-hero-glow {
-  border: 1px solid #ff980033;
-  border-radius: 50%;
-  height: 720px;
-  opacity: 0.6;
+.services-hero-waves {
+  height: 100%;
+  pointer-events: none;
   position: absolute;
-  right: 4%;
-  top: -330px;
-  transform: rotate(38deg) skewX(8deg);
-  width: 720px;
-}
-.services-hero-glow::after {
-  border: 1px solid #ff980022;
-  border-radius: inherit;
-  content: "";
-  inset: 44px;
-  position: absolute;
+  right: 30%;
+  top: 0;
+  width: 600px;
 }
 .services-meta {
   align-items: center;
@@ -656,6 +646,11 @@
   background: #121314;
 }
 @media (max-width: 900px) {
+
+	.services-hero-waves {
+		top: 0;
+		right: 0;
+	}
   .services-hero {
     padding-left: 24px;
     padding-right: 24px;
