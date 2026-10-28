@@ -26,9 +26,9 @@ const capabilities = [
 ];
 
 const evidence = [
-  ["evidence-1.png", "Rapid Health Desk", "AI PRODUCT ENGINEERING"],
-  ["evidence-2.png", "Knowledge Workflows", "AGENTIC SYSTEMS"],
-  ["evidence-3.png", "Operations Console", "FORWARD-DEPLOYED"],
+  ["evidence-1.png", "Kaya Functional Health", "Kaya is an AI functional medicine health coach. It guides people through structured wellness sessions", "AI PRODUCT ENGINEERING", "/case-study/kaya"],
+  ["evidence-2.png", "Nexagents", "NexAgents (app.nexagents.cloud) puts production AI agents to work for a team", "AGENTIC SYSTEMS", "/case-study/nexagents"],
+  ["evidence-3.png", "Askdahab", "Ask Dahab (askdahab.com) is a multilingual travel and booking platform for Dahab, Egypt", "FORWARD-DEPLOYED", "/case-study/askdahab"],
 ];
 
 export function ServicesHub() {
@@ -177,13 +177,16 @@ export function ServicesHub() {
         </section>
 
         <section className="services-section services-evidence">
-          <div className="services-section-heading">
+          <div className="services-section-heading ">
             <p className="eyebrow">Proof in practice</p>
+						<div className="flex gap-30 max-[640px]:flex-col max-[640px]:gap-2">
             <h2>Evidence that demonstrates this capability.</h2>
+						<a href="/work" className="underline mt-8 font-bold">View All Work →</a>
+						</div>
           </div>
           <div className="services-evidence-grid">
-            {evidence.map(([image, title, label]) => (
-              <article className="services-evidence-card" key={image}>
+            {evidence.map(([image, title, description, label, url]) => (
+              <article className="services-evidence-card p-8" key={image}>
                 <Image
                   src={`/figma/services/${image}`}
                   alt=""
@@ -192,6 +195,8 @@ export function ServicesHub() {
                 />
                 <span>{label}</span>
                 <h3>{title}</h3>
+								<p className="ml-4.5 text-muted mb-3">{description}</p>
+							<a href={url} className="text-text text-[13px] font-bold ml-5">Explore →</a>
               </article>
             ))}
           </div>
