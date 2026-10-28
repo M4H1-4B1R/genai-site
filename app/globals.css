@@ -403,7 +403,6 @@
 }
 .services-stage-grid article {
   align-items: center;
-  background: #0f1417;
   display: flex;
   flex-direction: column;
   min-height: 267px;
@@ -411,18 +410,15 @@
   text-align: center;
 }
 .services-stage-grid strong {
-  color: #f4f4f1;
   font-size: 12px;
   letter-spacing: 0.6px;
   text-transform: uppercase;
 }
 .services-stage-grid h3 {
-  color: #f4f4f1;
   font-size: 18px;
   margin: 20px 0 14px;
 }
 .services-stage-grid p {
-  color: #aeb5b8;
   font-size: 13px;
   line-height: 19px;
   margin: 0;

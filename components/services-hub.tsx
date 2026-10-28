@@ -210,7 +210,7 @@ export function ServicesHub() {
           </div>
           <div className="services-architecture-diagram">
             <div className="services-stage-grid">
-              <article>
+              <article className="duration-150 bg-[#0f1417] hover:bg-orange hover:text-ink cursor-pointer">
                 <strong>Product</strong>
                 <h3>Build the product</h3>
                 <p>
@@ -218,7 +218,7 @@ export function ServicesHub() {
                   endpoints, and high-retention user loops.
                 </p>
               </article>
-              <article>
+              <article className="duration-150 bg-[#0f1417] hover:bg-orange hover:text-ink cursor-pointer">
                 <strong>Agent</strong>
                 <h3>Make AI act</h3>
                 <p>
@@ -226,7 +226,7 @@ export function ServicesHub() {
                   loops, and multi-system synthesis.
                 </p>
               </article>
-              <article>
+              <article className="duration-150 bg-[#0f1417] hover:bg-orange hover:text-ink cursor-pointer">
                 <strong>Deployment</strong>
                 <h3>Put it into real use</h3>
                 <p>
