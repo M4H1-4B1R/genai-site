@@ -389,7 +389,7 @@
   text-align: center;
 }
 .services-architecture .services-section-heading h2 {
-  font-size: 48px;
+  /* font-size: 48px; */
   font-weight: 700;
 }
 .services-architecture-diagram {
@@ -537,7 +537,7 @@
   text-align: center;
 }
 .services-why .services-section-heading h2 {
-  font-size: 58px;
+  /* font-size: 58px; */
   font-weight: 400;
   letter-spacing: -1.2px;
   line-height: 1.1;

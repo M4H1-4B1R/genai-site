@@ -2,7 +2,7 @@ import { Architecture } from "@/components/architecture";
 import { Capabilities } from "@/components/capabilities";
 import { Contact } from "@/components/contact";
 import { Hero } from "@/components/hero";
-import { Proof } from "@/components/proof";
+import { ServicesProofSlider } from "@/components/services-proof-slider";
 import { FinalCtaSection } from "@/components/shared/final-cta-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -20,7 +20,9 @@ export default function Home() {
         <WorkShowcase />
         <Capabilities />
         <Architecture />
-        <Proof />
+				<section className="px-50 py-20 max-[960px]:px-3 max-[960px]:py-5">
+				<ServicesProofSlider/>
+				</section>
         <HeroRightAnimated />
         <FinalCtaSection />
         <Contact />

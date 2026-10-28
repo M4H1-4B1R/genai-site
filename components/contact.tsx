@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/contact-form";
 export function Contact() {
   return (
     <section
-      className="grid grid-cols-2 gap-16 border-t border-[#2a2d34] px-[max(40px,calc((100%_-_1280px)_/_2))] py-16 max-[900px]:grid-cols-1 max-[640px]:px-5 max-[640px]:py-[68px]"
+      className="grid grid-cols-2 gap-16 border-t border-[#2a2d34] px-[max(40px,calc((100%_-_1280px)_/_2))] py-16 max-[900px]:grid-cols-1 max-[640px]:px-9 max-[640px]:py-[68px]"
       id="contact"
     >
       <div className="self-center">
