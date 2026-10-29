@@ -3,36 +3,10 @@
 import Link from "next/link";
 import { useState } from "react";
 
-const filterTopics = [
-  "All topics",
-  "Design",
-  "Development",
-  "Marketing",
-  "Business",
-  "Technology",
-] as const;
+import type { PostSummary } from "@/lib/insights";
 
-type FilterTopic = (typeof filterTopics)[number];
-
-type Article = {
-  id: string;
-  topic: Exclude<FilterTopic, "All topics">;
-  title: string;
-  summary: string;
-  meta: string;
-};
-
-const summary =
-  "[Short summary. Imagery is optional; typography can carry the card.]";
-
-const articles: Article[] = [
-  { id: "a1", topic: "Design", title: "[Article Title]", summary, meta: "[Date] · [Read time]" },
-  { id: "a2", topic: "Development", title: "[Article Title]", summary, meta: "[Date] · [Read time]" },
-  { id: "a3", topic: "Marketing", title: "[Article Title]", summary, meta: "[Date] · [Read time]" },
-  { id: "a4", topic: "Business", title: "[Article Title]", summary, meta: "[Date] · [Read time]" },
-  { id: "a5", topic: "Technology", title: "[Article Title]", summary, meta: "[Date] · [Read time]" },
-  { id: "a6", topic: "Development", title: "[Article Title]", summary, meta: "[Date] · [Read time]" },
-];
+const ALL = "All topics";
+const PAGE_SIZE = 12;
 
 export function TopicPill({ label }: { label: string }) {
   return (
@@ -45,12 +19,19 @@ export function TopicPill({ label }: { label: string }) {
   );
 }
 
-export function InsightsLibrary() {
-  const [selected, setSelected] = useState<FilterTopic>("All topics");
-  const visible =
-    selected === "All topics"
-      ? articles
-      : articles.filter((article) => article.topic === selected);
+export function InsightsLibrary({ posts }: { posts: PostSummary[] }) {
+  const [selected, setSelected] = useState(ALL);
+  const [limit, setLimit] = useState(PAGE_SIZE);
+  // Most frequent topics first.
+  const counts = new Map<string, number>();
+  for (const p of posts) counts.set(p.topic, (counts.get(p.topic) ?? 0) + 1);
+  const filterTopics = [
+    ALL,
+    ...[...counts.keys()].sort((a, b) => counts.get(b)! - counts.get(a)!),
+  ];
+  const matching =
+    selected === ALL ? posts : posts.filter((p) => p.topic === selected);
+  const visible = matching.slice(0, limit);
 
   return (
     <div className="flex flex-col gap-6">
@@ -67,7 +48,10 @@ export function InsightsLibrary() {
               type="button"
               role="tab"
               aria-selected={active}
-              onClick={() => setSelected(topic)}
+              onClick={() => {
+                setSelected(topic);
+                setLimit(PAGE_SIZE);
+              }}
               className={`h-[30px] shrink-0 cursor-pointer rounded-[15px] px-3.5 text-sm transition-colors duration-200 ${
                 active
                   ? "bg-orange font-medium text-black"
@@ -83,7 +67,7 @@ export function InsightsLibrary() {
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {visible.map((article) => (
           <article
-            key={article.id}
+            key={article.slug}
             className="group flex flex-col gap-4 rounded-[4px] border border-[#293137] bg-[#0f1417] p-6 transition-colors duration-200 hover:border-[#424a50]"
           >
             <TopicPill label={article.topic} />
@@ -95,10 +79,10 @@ export function InsightsLibrary() {
             </p>
             <div className="mt-auto flex items-center justify-between gap-4 pt-4 max-[640px]:flex-col max-[640px]:items-start max-[640px]:gap-2">
               <span className="font-mono text-[10px] tracking-[0.5px] text-[#747d81]">
-                {article.meta}
+                {article.dateLabel} · {article.readTime}
               </span>
               <Link
-                href="/insights/article"
+                href={`/insights/${article.slug}`}
                 className="text-[13px] font-bold text-orange transition-transform duration-200 group-hover:translate-x-0.5"
               >
                 Read Article →
@@ -107,6 +91,16 @@ export function InsightsLibrary() {
           </article>
         ))}
       </div>
+
+      {matching.length > visible.length && (
+        <button
+          type="button"
+          onClick={() => setLimit((n) => n + PAGE_SIZE)}
+          className="mx-auto h-10 cursor-pointer rounded-full border border-[#293137] px-6 text-sm font-medium text-white transition-colors duration-200 hover:border-orange hover:text-orange"
+        >
+          Show more ({matching.length - visible.length})
+        </button>
+      )}
     </div>
   );
 }
