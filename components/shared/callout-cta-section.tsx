@@ -1,7 +1,7 @@
 export function CalloutCtaSection() {
   return (
-    <section className="bg-[#0d0e0f] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-28 lg:max-w-[1280px] lg:mx-auto">
-      <div className="cta-panel cta-panel--sentence max-w-[1120px] mx-auto">
+    <section className="bg-[#0d0e0f] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-10 lg:max-w-[1440px] lg:mx-auto">
+      <div className="cta-panel cta-panel--sentence max-w-[1320px] mx-auto">
         <p className="eyebrow">
           <span className="cta-panel-dot" aria-hidden="true" />
           Let&apos;s talk

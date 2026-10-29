@@ -5,6 +5,8 @@ import type { ReactNode } from "react";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { Marquee } from "@/components/shared/marquee";
 import { clientStripItems } from "@/components/shared/client-logos";
+import { WorkTag } from "@/components/shared/work-tag";
+import { ServicesProofSlider } from "@/components/services-proof-slider";
 
 const situations = [
   "AI can answer, but it cannot act.",
@@ -50,18 +52,24 @@ const work = [
     "AI PRODUCT ENGINEERING",
     "Kaya Health Coach",
     "Replaced slow enterprise search with instantaneous semantic discovery across 40M documents.",
+		"/case-study/kaya",
+    "HEALTHCARE AI",
   ],
   [
-    "evidence-2.png",
+    "nexagent-showcase.png",
     "AI PRODUCT ENGINEERING",
-    "Generative Supply Chain Copilot",
-    "Engineered high-performance model microservices that optimize delivery routing graphs.",
+    "Nexagents",
+    "A venture studio fused with retail VC: autonomous operational systems that manage inventory distribution and automated reporting.",
+		"/case-study/nexagents",
+    "AI WORKSPACE",
   ],
   [
-    "evidence-3.png",
+    "askdahab-hero.png",
     "AI PRODUCT ENGINEERING",
-    "Clinical Trial Data Parser",
-    "Built real-time multi-model validation pipelines handling patient metrics with strict SLAs.",
+    "AskDahab",
+    "Ask Dahab (askdahab.com) is a multilingual travel and booking platform for Dahab, Egypt",
+		"/case-study/askdahab",
+    "TRAVEL & BOOKING",
   ],
 ];
 
@@ -206,11 +214,6 @@ export function AgenticLayerEngineeringPage() {
           className="max-[640px]:py-4"
         />
       </section>
-      <div className="border-y border-[#1c2328] bg-[#0d0e0f] px-[max(40px,calc((100%_-_1120px)_/_2))] py-[60px] max-[640px]:px-5 max-[640px]:py-10">
-        <div className="flex h-[120px] items-center justify-center rounded-[8px] border border-[#293137] bg-[#191c1e]">
-          <strong className="text-xl uppercase text-white">Image banner</strong>
-        </div>
-      </div>
 
       <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] py-24 max-[640px]:px-5 max-[640px]:py-16">
         <SectionHeading
@@ -243,7 +246,7 @@ export function AgenticLayerEngineeringPage() {
               key={title}
               className="grid grid-cols-[400px_1fr] gap-6 border-b border-[#293137] py-7 max-[900px]:grid-cols-2 max-[640px]:grid-cols-1 max-[640px]:gap-3"
             >
-              <h3 className="text-[28px] font-[700] leading-[34px] text-[#f2f2ef] max-[640px]:text-[24px]">
+              <h3 className="text-[28px] font-[700] leading-[34px] text-[#f2f2ef] max-[640px]:text-[24px] hover:text-orange">
                 {title}
               </h3>
               <p className="text-[17px] leading-7 text-[#9fa4ab]">{body}</p>
@@ -331,19 +334,22 @@ export function AgenticLayerEngineeringPage() {
           title="Evidence that demonstrates this capability."
         />
         <div className="grid grid-cols-3 gap-6 max-[900px]:grid-cols-2 max-[640px]:grid-cols-1">
-          {work.map(([image, label, title, body]) => (
+          {work.map(([image, label, title, body, url, tag]) => (
             <article
               key={title}
               className="flex overflow-hidden rounded-[4px] border border-[#293137] bg-[#0f1417]"
             >
               <div className="flex w-full flex-col">
-                <Image
-                  src={`/figma/services/${image}`}
-                  alt=""
-                  width={640}
-                  height={440}
-                  className="aspect-[1.45] w-full object-cover"
-                />
+                <div className="relative">
+                  <Image
+                    src={`/figma/services/${image}`}
+                    alt=""
+                    width={640}
+                    height={440}
+                    className="aspect-[1.45] w-full object-cover"
+                  />
+                  <WorkTag tag={tag} />
+                </div>
                 <div className="flex-1 p-6">
                   <span className="text-[11px] font-[700] tracking-[0.55px] text-[#ffc081]">
                     {label}
@@ -356,7 +362,7 @@ export function AgenticLayerEngineeringPage() {
                   </p>
                 </div>
                 <a
-                  href="/contact"
+                  href={url}
                   className="border-t border-[#293137] px-6 py-4 text-[13px] font-[700] uppercase tracking-[0.65px] text-[#f2f2ef]"
                 >
                   View case study →
@@ -368,45 +374,7 @@ export function AgenticLayerEngineeringPage() {
       </section>
 
       <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] py-24 max-[640px]:px-5 max-[640px]:py-16">
-        <div className="rounded-[4px] border border-[rgba(83,68,52,0.3)] p-8 max-[640px]:p-5 md:p-16">
-          <p className="border-b border-[rgba(83,68,52,0.2)] pb-8 text-[14px] uppercase tracking-[0.6px] text-[#f4f4f1]">
-            — &nbsp; Proof record{" "}
-            <span className="float-right text-[11px] text-[#ffc174]">
-              ● Verified audit
-            </span>
-          </p>
-          <blockquote className="mt-10 max-w-[900px] text-[clamp(32px,4vw,48px)] font-[700] leading-none tracking-[-1.2px] text-[#e5e1e4]">
-            &quot;They shipped an agentic workflow our compliance team actually
-            trusts — audit trails, human overrides, and all.&quot;
-          </blockquote>
-          <div className="mt-10 grid grid-cols-3 gap-6 border-t border-[rgba(83,68,52,0.2)] pt-8 max-[640px]:grid-cols-1">
-            <p>
-              <strong className="block text-[10px] uppercase text-white">
-                — Daniel Okafor
-              </strong>
-              <span className="text-[12px] leading-4 text-[#c8c1c5]">
-                VP Operations, Northgate Logistics
-              </span>
-            </p>
-            <p>
-              <strong className="block text-[10px] uppercase text-white">
-                Discipline
-              </strong>
-              <span className="text-[12px] leading-4 text-[#c8c1c5]">
-                Agentic orchestration / compliance automation / audit
-                infrastructure
-              </span>
-            </p>
-            <p>
-              <strong className="block text-[10px] uppercase text-white">
-                Deployment cycle
-              </strong>
-              <span className="text-[12px] leading-4 text-[#c8c1c5]">
-                2025.Q4 production
-              </span>
-            </p>
-          </div>
-        </div>
+			<ServicesProofSlider/>
       </section>
 
       <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] py-24 max-[640px]:px-5 max-[640px]:py-16">

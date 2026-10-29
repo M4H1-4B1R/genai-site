@@ -214,7 +214,7 @@ export function KayaCaseStudyPage() {
   return (
     <main className="w-full">
       {/* 1. HERO */}
-      <section className="bg-deep px-[120px] pt-20 max-[900px]:px-10 max-[900px]:pb-16 max-[640px]:px-5 max-[640px]:pt-12">
+      <section className="bg-deep px-[120px] pt-20 max-[900px]:px-10 max-[900px]:pb-16 max-[640px]:px-5 max-[640px]:pt-12 pb-10">
         <div className="mx-auto flex max-w-[1200px] items-center gap-12 max-[900px]:flex-col max-[900px]:items-stretch">
           <div className="flex min-w-0 flex-1 flex-col items-start gap-6">
             <ul className="flex flex-wrap gap-2">

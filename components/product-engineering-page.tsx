@@ -1,6 +1,8 @@
 import { clientStripItems } from "@/components/shared/client-logos";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { Marquee } from "@/components/shared/marquee";
+import { ServicesProofSlider } from "@/components/services-proof-slider";
+import { WorkTag } from "@/components/shared/work-tag";
 
 import { ArrowDown, ArrowRight } from "lucide-react";
 import Image from "next/image";
@@ -116,21 +118,27 @@ const faqs = [
 const work = [
   [
     "evidence-1.png",
-    "HEALTHCARE AI",
+    "AI PRODUCT ENGINEERING",
     "Kaya Health Coach",
     "Replaced slow enterprise search with instantaneous semantic discovery across 40M documents.",
+		"/case-study/kaya",
+    "HEALTHCARE AI",
   ],
   [
-    "evidence-2.png",
-    "LOGISTICS",
-    "Generative Supply Chain Copilot",
-    "Engineered high-performance model microservices that optimize delivery routing graphs.",
+    "nexagent-showcase.png",
+    "AI PRODUCT ENGINEERING",
+    "Nexagents",
+    "NexAgents (app.nexagents.cloud) puts production AI agents to work for a team",
+		"/case-study/nexagents",
+    "AI WORKSPACE",
   ],
   [
-    "evidence-3.png",
-    "HEALTHCARE",
-    "Clinical Trial Data Parser",
-    "Built real-time multi-model validation pipelines handling patient metrics with strict SLAs.",
+    "askdahab-hero.png",
+    "AI PRODUCT ENGINEERING",
+    "AskDahab",
+    "Ask Dahab (askdahab.com) is a multilingual travel and booking platform for Dahab, Egypt",
+		"/case-study/askdahab",
+    "TRAVEL & BOOKING PLATFORM",
   ],
 ];
 
@@ -144,12 +152,14 @@ function SectionHeading({
   description?: string;
 }) {
   return (
-    <div className="mb-12">
+    <div className="mb-12 flex max-[640px]:flex-col">
+		<div>
       <p className="eyebrow">{eyebrow}</p>
       <h2 className="text-[#f2f2ef] text-[clamp(38px,4vw,48px)] font-[400] leading-[1.08] tracking-[-1.5px] mt-3 max-w-[760px]">
         {title}
       </h2>
-      {description && <p className="text-[#9ca3af] text-[15px] leading-[24px] mt-0 max-w-[560px]">{description}</p>}
+			</div>
+      {description && <p className="text-[#9ca3af] text-[15px] leading-[24px] mt-9 max-w-[560px] items-end align-bottom">{description}</p>}
     </div>
   );
 }
@@ -171,7 +181,7 @@ export function ProductEngineeringPage() {
             real users, from new concepts to launched products.
           </p>
           <div className="flex flex-wrap gap-4 mt-10 max-[640px]:gap-3">
-            <a className="button button-primary" href="/contact">
+            <a className="button button-primary" href="#contact">
               Talk to our team <span>→</span>
             </a>
             <a className="button button-outline" href="#relevant-work">
@@ -204,11 +214,6 @@ export function ProductEngineeringPage() {
         <Marquee duration={42} items={clientStripItems} className="max-[640px]:py-4" />
       </section>
       <div className="bg-[#0d0e0f] border-y border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 py-[38px]">
-        <div className="flex h-[116px] items-center justify-center rounded-[8px] border border-[#30363d] bg-[#161b22]">
-          <strong className="text-white font-[700] text-[20px] tracking-[0.4px] uppercase">
-            IMAGE BANNER
-          </strong>
-        </div>
       </div>
       <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 py-[96px] max-[640px]:py-16">
         <SectionHeading
@@ -235,7 +240,7 @@ export function ProductEngineeringPage() {
         <div className="border-t border-[#293137]">
           {deliverables.map(([title, body]) => (
             <article key={title} className="grid grid-cols-2 max-[640px]:grid-cols-1 gap-12 max-[640px]:gap-3 border-b border-[#293137] p-6 max-[640px]:px-0 max-[640px]:py-5">
-              <h3 className="text-[#f2f2ef] text-[28px] max-[640px]:text-[24px] leading-[34px]">{title}</h3>
+              <h3 className="text-[#f2f2ef] text-[28px] max-[640px]:text-[24px] leading-[34px] hover:text-orange cursor-pointer">{title}</h3>
               <p className="text-[#9ca3af] text-[17px] leading-[28px]">{body}</p>
             </article>
           ))}
@@ -300,7 +305,7 @@ export function ProductEngineeringPage() {
         </p>
       </section>
       <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 py-[96px] max-[640px]:py-16" id="relevant-work">
-        <div className="flex items-end justify-between gap-8 max-[640px]:flex-col max-[640px]:items-start">
+        <div className="flex items-end justify-between gap-8 max-[640px]:flex-col max-[640px]:items-start mb-5">
           <div>
             <p className="eyebrow">Relevant work</p>
             <h2 className="text-[#f2f2ef] text-[clamp(38px,4vw,48px)] font-[400] leading-[1.08] tracking-[-1.5px] mt-3 max-w-[760px]">
@@ -312,21 +317,24 @@ export function ProductEngineeringPage() {
           </a>
         </div>
         <div className="grid grid-cols-3 max-[900px]:grid-cols-2 max-[640px]:grid-cols-1 gap-6">
-          {work.map(([image, label, title, body]) => (
+          {work.map(([image, label, title, body, url, tag]) => (
             <article key={title} className="bg-[#0f1417] border border-[#293137] rounded-[4px] overflow-hidden flex flex-col">
-              <Image
-                src={`/figma/services/${image}`}
-                alt=""
-                width={640}
-                height={440}
-                className="w-full aspect-[1.45] object-cover"
-              />
+              <div className="relative">
+                <Image
+                  src={`/figma/services/${image}`}
+                  alt=""
+                  width={640}
+                  height={440}
+                  className="w-full aspect-[1.45] object-cover"
+                />
+                <WorkTag tag={tag} />
+              </div>
               <div className="flex-1 p-6">
                 <span className="text-[var(--orange)] text-[11px] font-[700] tracking-[0.55px]">{label}</span>
                 <h3 className="text-[#f2f2ef] text-[20px] leading-[26px] mt-1.5">{title}</h3>
                 <p className="text-[#9ca3af] text-[14px] leading-[22px] mt-0">{body}</p>
               </div>
-              <a href="/contact" className="border-t border-[#293137] p-6 flex-1">
+              <a href={url} className="border-t border-[#293137] p-6 flex-1">
                 View case study →
               </a>
             </article>
@@ -334,35 +342,7 @@ export function ProductEngineeringPage() {
         </div>
       </section>
       <section className="border-t border-[rgba(83,68,52,0.2)] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 py-[49px]">
-        <div className="border border-[rgba(83,68,52,0.3)] rounded-[4px] p-8 md:p-16 max-[640px]:p-5">
-          <p className="text-[#f4f4f1] text-[14px] tracking-[0.6px] uppercase border-b border-[rgba(83,68,52,0.2)] pb-8 mb-0">
-            — &nbsp; Proof record <span className="float-right text-[#ffc174] text-[11px]">● Verified audit</span>
-          </p>
-          <blockquote className="text-[#e5e1e4] text-[clamp(32px,4vw,48px)] font-[700] leading-[1] tracking-[-1.2px] mt-10 mb-10 max-w-[900px] max-[640px]:mt-8 max-[640px]:mb-8">
-            &quot;GenAILabs gave our operational platform the rare feeling of being
-            both extraordinarily intelligent and unmistakably human.&quot;
-          </blockquote>
-          <div className="grid grid-cols-3 max-[640px]:grid-cols-1 gap-6 pt-8 border-t border-[rgba(83,68,52,0.2)]">
-            <p>
-              <strong className="text-[10px] tracking-[0.6px] uppercase text-white block mt-1">— Mara Voss</strong>
-              <span className="text-[#c8c1c5] text-[12px] leading-[16px]">
-                Founder &amp; Managing Director, Lumen Field
-              </span>
-            </p>
-            <p>
-              <strong className="text-[10px] tracking-[0.6px] uppercase text-white block mt-1">Discipline</strong>
-              <span className="text-[#c8c1c5] text-[12px] leading-[16px]">
-                Autonomous Workflow Engine / Model Alignment / Production Infrastructure
-              </span>
-            </p>
-            <p>
-              <strong className="text-[10px] tracking-[0.6px] uppercase text-white block mt-1">Deployment cycle</strong>
-              <span className="text-[#c8c1c5] text-[12px] leading-[16px]">
-                2026.Q1 Production
-              </span>
-            </p>
-          </div>
-        </div>
+			<ServicesProofSlider/>
       </section>
       <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 py-[96px] max-[640px]:py-16">
         <div className="mb-12">

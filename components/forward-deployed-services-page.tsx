@@ -5,6 +5,8 @@ import { EngagementModel } from "@/components/engagement-model";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { clientStripItems } from "@/components/shared/client-logos";
 import { Marquee } from "@/components/shared/marquee";
+import { WorkTag } from "@/components/shared/work-tag";
+import {ServicesProofSlider} from "@/components/services-proof-slider";
 
 const challenges = [
   [
@@ -105,21 +107,27 @@ const faqs = [
 const work = [
   [
     "evidence-1.png",
-    "HEALTHCARE AI",
+    "FORWARD-DEPLOYED",
     "Kaya Health Coach",
     "Replaced slow enterprise search with instantaneous semantic discovery across 40M documents.",
+		"/case-study/kaya",
+    "HEALTHCARE AI",
   ],
   [
-    "evidence-2.png",
-    "LOGISTICS",
-    "Generative Supply Chain Copilot",
-    "Engineered high-performance model microservices that optimize delivery routing graphs.",
+    "nexagent-showcase.png",
+    "FORWARD-DEPLOYED",
+    "Nexagent",
+    "NexAgents (app.nexagents.cloud) puts production AI agents to work for a team",
+		"/case-study/nexagents",
+    "AI WORKSPACE",
   ],
   [
-    "evidence-3.png",
-    "HEALTHCARE",
-    "Clinical Trial Data Parser",
-    "Built real-time multi-model validation pipelines handling patient metrics with strict SLAs.",
+    "askdahab-hero.png",
+    "FORWARD-DEPLOYED",
+    "AskDahab",
+    "Ask Dahab (askdahab.com) is a multilingual travel and booking platform for Dahab, Egypt",
+		"/case-study/askdahab",
+    "TRAVEL & BOOKING",
   ],
 ];
 
@@ -136,7 +144,7 @@ export function ForwardDeployedServicesPage() {
   return (
     <main className="bg-deep text-[#f2f2ef]">
       {/* Hero - matches services-hub layout but with arc SVG on desktop */}
-      <section className="border-b border-[#1c2328] px-10 sm:px-10 lg:grid lg:grid-cols-[minmax(0,8fr)_minmax(280px,4fr)] lg:gap-8 lg:px-80 lg:min-h-[520px]">
+      <section className="border-b border-[#1c2328] px-10 sm:px-10 lg:grid lg:grid-cols-[minmax(0,8fr)_minmax(280px,4fr)] lg:gap-8 lg:px-80 lg:min-h-[520px] py-5">
         <div className="max-w-[720px] mx-auto lg:mx-0 self-start lg:self-center pt-12 lg:pt-0">
           <div className="inline-flex items-center gap-2 border border-[#293137] bg-[#0f1417] px-[9px] py-[5px] text-[10px] font-bold tracking-[1.2px] text-orange mb-8">
             <i className="h-1.5 w-1.5 rounded-full bg-orange" />
@@ -178,15 +186,9 @@ export function ForwardDeployedServicesPage() {
         <Marquee duration={42} items={clientStripItems} className="max-[640px]:py-4" />
       </div>
 
-      {/* Image banner */}
-      <section className="border-b border-[#1c2328] bg-ink px-6 py-12 sm:px-10 sm:py-16 lg:px-20 lg:py-20">
-        <div className="min-h-[100px] sm:min-h-[120px] lg:min-h-[140px] grid place-items-center rounded-lg border border-[#293137] bg-[#191c1e] font-bold tracking-[.5px] text-[14px] sm:text-[16px]">
-          IMAGE BANNER
-        </div>
-      </section>
 
       {/* When you need this - Challenges */}
-      <section className="border-b border-[#1c2328] bg-deep px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24">
+      <section className="border-b border-[#1c2328] bg-deep px-6 py-16 sm:px-10 sm:py-20 lg:px-50 lg:py-24">
         <div className="mb-12 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <div className="max-w-[600px]">
             <SectionLabel>When you need this</SectionLabel>
@@ -218,7 +220,7 @@ export function ForwardDeployedServicesPage() {
       </section>
 
       {/* What we do - Capabilities */}
-      <section className="border-b border-[#1c2328] bg-ink px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24">
+      <section className="border-b border-[#1c2328] bg-ink py-20 px-50 max-[960px]:px-7">
         <div className="mb-12 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <div className="max-w-[600px]">
             <SectionLabel>What we do</SectionLabel>
@@ -234,7 +236,7 @@ export function ForwardDeployedServicesPage() {
         <div className="border-t border-[#293137]">
           {capabilities.map(([title, body], index) => (
             <div
-              className="flex flex-col gap-6 border-b border-[#293137] py-6 sm:py-8 lg:flex-row lg:items-center lg:gap-8 lg:py-10"
+              className="flex flex-col gap-6 border-b border-[#293137] py-6 sm:py-8 lg:flex-row lg:items-center lg:gap-8 lg:py-10 hover:text-orange"
               key={title}
             >
               <div className="flex flex-1 items-baseline gap-6 sm:gap-8">
@@ -256,7 +258,8 @@ export function ForwardDeployedServicesPage() {
       </section>
 
       {/* Service model - Pipeline */}
-      <section className="relative overflow-hidden border-b border-[#1c2328] bg-[#0f1417] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24 before:absolute before:inset-[25%_20%] before:bg-[#ff98000d] before:blur-[50px] before:content-['']">
+			<section className="bg-deep">
+      <div className="relative overflow-hidden border-b border-[#1c2328] bg-[#0f1417] px-6 py-16 sm:px-10 sm:py-20 lg:px-50 lg:py-24 before:absolute before:inset-[25%_20%] before:bg-[#ff98000d] before:blur-[50px] before:content-['']">
         <div className="relative">
           <SectionLabel>Service model</SectionLabel>
           <h2 className="mt-4 mb-12 text-[clamp(38px,4vw,48px)] font-bold leading-[1.08] tracking-[-1.2px]">
@@ -310,6 +313,7 @@ export function ForwardDeployedServicesPage() {
             Return to the problem as evidence changes.
           </p>
         </div>
+				</div>
       </section>
 
       {/* Evidence */}
@@ -322,26 +326,29 @@ export function ForwardDeployedServicesPage() {
               Evidence that demonstrates this capability.
             </h2>
           </div>
-          <a href="/contact" className="text-[var(--orange)] text-[13px] font-[700] tracking-[0.65px] uppercase">
+          <a href="/work" className="text-[var(--orange)] text-[13px] font-[700] tracking-[0.65px] uppercase">
             View all work →
           </a>
         </div>
         <div className="grid grid-cols-3 max-[900px]:grid-cols-2 max-[640px]:grid-cols-1 gap-6">
-          {work.map(([image, label, title, body]) => (
+          {work.map(([image, label, title, body, url, tag]) => (
             <article key={title} className="bg-[#0f1417] border border-[#293137] rounded-[4px] overflow-hidden flex flex-col">
-              <Image
-                src={`/figma/services/${image}`}
-                alt=""
-                width={640}
-                height={440}
-                className="w-full aspect-[1.45] object-cover"
-              />
+              <div className="relative">
+                <Image
+                  src={`/figma/services/${image}`}
+                  alt=""
+                  width={640}
+                  height={440}
+                  className="w-full aspect-[1.45] object-cover"
+                />
+                <WorkTag tag={tag} />
+              </div>
               <div className="flex-1 p-6">
                 <span className="text-[var(--orange)] text-[11px] font-[700] tracking-[0.55px]">{label}</span>
                 <h3 className="text-[#f2f2ef] text-[20px] leading-[26px] mt-1.5">{title}</h3>
                 <p className="text-[#9ca3af] text-[14px] leading-[22px] mt-0">{body}</p>
               </div>
-              <a href="/contact" className="border-t border-[#293137] p-6 flex-1">
+              <a href={url} className="border-t border-[#293137] p-6 flex-1">
                 View case study →
               </a>
             </article>
@@ -352,41 +359,13 @@ export function ForwardDeployedServicesPage() {
 
       {/* Quote */}
       
-      <section className="border-t border-[rgba(83,68,52,0.2)] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 py-[49px]">
-        <div className="border border-[rgba(83,68,52,0.3)] rounded-[4px] p-8 md:p-16 max-[640px]:p-5">
-          <p className="text-[#f4f4f1] text-[14px] tracking-[0.6px] uppercase border-b border-[rgba(83,68,52,0.2)] pb-8 mb-0">
-            — &nbsp; Proof record <span className="float-right text-[#ffc174] text-[11px]">● Verified audit</span>
-          </p>
-          <blockquote className="text-[#e5e1e4] text-[clamp(32px,4vw,48px)] font-[700] leading-[1] tracking-[-1.2px] mt-10 mb-10 max-w-[900px] max-[640px]:mt-8 max-[640px]:mb-8">
-            &quot;GenAILabs gave our operational platform the rare feeling of being
-            both extraordinarily intelligent and unmistakably human.&quot;
-          </blockquote>
-          <div className="grid grid-cols-3 max-[640px]:grid-cols-1 gap-6 pt-8 border-t border-[rgba(83,68,52,0.2)]">
-            <p>
-              <strong className="text-[10px] tracking-[0.6px] uppercase text-white block mt-1">— Mara Voss</strong>
-              <span className="text-[#c8c1c5] text-[12px] leading-[16px]">
-                Founder &amp; Managing Director, Lumen Field
-              </span>
-            </p>
-            <p>
-              <strong className="text-[10px] tracking-[0.6px] uppercase text-white block mt-1">Discipline</strong>
-              <span className="text-[#c8c1c5] text-[12px] leading-[16px]">
-                Autonomous Workflow Engine / Model Alignment / Production Infrastructure
-              </span>
-            </p>
-            <p>
-              <strong className="text-[10px] tracking-[0.6px] uppercase text-white block mt-1">Deployment cycle</strong>
-              <span className="text-[#c8c1c5] text-[12px] leading-[16px]">
-                2026.Q1 Production
-              </span>
-            </p>
-          </div>
-        </div>
+      <section className="border-t border-[#1c2328] px-50 max-[640px]:px-5 py-[49px]">
+			<ServicesProofSlider/>
       </section>
 
 
       {/* Engagement model */}
-      <section className="border-b border-[#1c2328] bg-deep px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24">
+      <section className="border-b border-[#1c2328] bg-deep px-6 py-16 sm:px-10 sm:py-20 lg:px-50 lg:py-24">
         <SectionLabel>Engagement model</SectionLabel>
         <h2 className="mt-4 max-w-[720px] text-[clamp(38px,4vw,48px)] font-bold leading-[1.08] tracking-[-1.2px]">
           The engagement model depends on the problem.
@@ -395,7 +374,7 @@ export function ForwardDeployedServicesPage() {
       </section>
 
       {/* FAQ */}
-      <section className="border-b border-[#1c2328] bg-ink px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24">
+      <section className="border-b border-[#1c2328] bg-ink px-6 py-16 sm:px-10 sm:py-20 lg:px-50 lg:py-24">
         <SectionLabel>FAQ</SectionLabel>
         <h2 className="mb-12 mt-4 max-w-[720px] text-[clamp(38px,4vw,48px)] font-bold leading-[1.08] tracking-[-1.2px]">
           Frequently asked questions regarding our forward deployed services.
@@ -404,7 +383,7 @@ export function ForwardDeployedServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#0d0e0f] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-28 lg:max-w-[1280px] lg:mx-auto">
+      <section className="bg-deep px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-28 lg:max-w-[1280px] lg:mx-auto">
         <div className="cta-panel cta-panel--sentence max-w-[1120px] mx-auto">
           <p className="eyebrow">
             <span className="cta-panel-dot" aria-hidden="true" />

@@ -71,7 +71,7 @@
 /* Shared mono label used for section eyebrows, hero status text, and mono
    metadata. One definition replaces the old `.eyebrow` class rule. */
 @utility eyebrow {
-  color: #999ea2;
+  color: var(--orange);
   font-family: var(--font-space-mono), monospace;
   font-size: 11px;
   letter-spacing: 1.2px;
@@ -131,23 +131,13 @@
   padding: 48px max(40px, calc((100% - 1120px) / 2)) 72px;
   position: relative;
 }
-.services-hero-glow {
-  border: 1px solid #ff980033;
-  border-radius: 50%;
-  height: 720px;
-  opacity: 0.6;
+.services-hero-waves {
+  height: 100%;
+  pointer-events: none;
   position: absolute;
-  right: 4%;
-  top: -330px;
-  transform: rotate(38deg) skewX(8deg);
-  width: 720px;
-}
-.services-hero-glow::after {
-  border: 1px solid #ff980022;
-  border-radius: inherit;
-  content: "";
-  inset: 44px;
-  position: absolute;
+  right: 30%;
+  top: 0;
+  width: 600px;
 }
 .services-meta {
   align-items: center;
@@ -399,7 +389,7 @@
   text-align: center;
 }
 .services-architecture .services-section-heading h2 {
-  font-size: 48px;
+  /* font-size: 48px; */
   font-weight: 700;
 }
 .services-architecture-diagram {
@@ -413,7 +403,6 @@
 }
 .services-stage-grid article {
   align-items: center;
-  background: #0f1417;
   display: flex;
   flex-direction: column;
   min-height: 267px;
@@ -421,18 +410,15 @@
   text-align: center;
 }
 .services-stage-grid strong {
-  color: #f4f4f1;
   font-size: 12px;
   letter-spacing: 0.6px;
   text-transform: uppercase;
 }
 .services-stage-grid h3 {
-  color: #f4f4f1;
   font-size: 18px;
   margin: 20px 0 14px;
 }
 .services-stage-grid p {
-  color: #aeb5b8;
   font-size: 13px;
   line-height: 19px;
   margin: 0;
@@ -551,7 +537,7 @@
   text-align: center;
 }
 .services-why .services-section-heading h2 {
-  font-size: 58px;
+  /* font-size: 58px; */
   font-weight: 400;
   letter-spacing: -1.2px;
   line-height: 1.1;
@@ -656,6 +642,11 @@
   background: #121314;
 }
 @media (max-width: 900px) {
+
+	.services-hero-waves {
+		top: 0;
+		right: 0;
+	}
   .services-hero {
     padding-left: 24px;
     padding-right: 24px;

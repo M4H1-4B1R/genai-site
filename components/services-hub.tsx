@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ServicesProofSlider } from "@/components/services-proof-slider";
 import { clientStripItems } from "@/components/shared/client-logos";
 import { Marquee } from "@/components/shared/marquee";
+import { WorkTag } from "@/components/shared/work-tag";
 
 const capabilities = [
   {
@@ -26,16 +27,47 @@ const capabilities = [
 ];
 
 const evidence = [
-  ["evidence-1.png", "Rapid Health Desk", "AI PRODUCT ENGINEERING"],
-  ["evidence-2.png", "Knowledge Workflows", "AGENTIC SYSTEMS"],
-  ["evidence-3.png", "Operations Console", "FORWARD-DEPLOYED"],
+  ["evidence-1.png", "Kaya Functional Health", "Kaya is an AI functional medicine health coach. It guides people through structured wellness sessions", "AI PRODUCT ENGINEERING", "/case-study/kaya", "HEALTHCARE AI"],
+  ["nexagent-showcase.png", "Nexagents", "NexAgents (app.nexagents.cloud) puts production AI agents to work for a team", "AGENTIC SYSTEMS", "/case-study/nexagents", "AUTONOMOUS LOGISTICS"],
+  ["askdahab-hero.png", "Askdahab", "Ask Dahab (askdahab.com) is a multilingual travel and booking platform for Dahab, Egypt", "FORWARD-DEPLOYED", "/case-study/askdahab", "TRAVEL & BOOKING PLATFORM"],
 ];
 
 export function ServicesHub() {
   return (
     <div className="services-page">
       <section className="services-hero">
-        <div className="services-hero-glow" />
+        <svg
+          className="services-hero-waves"
+          viewBox="0 0 600 400"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient
+              id="services-wave-fade"
+              gradientUnits="userSpaceOnUse"
+              x1="0"
+              y1="0"
+              x2="0"
+              y2="700"
+            >
+              <stop offset="0" stopColor="#ff9800" stopOpacity="0.05" />
+              <stop offset="0.5" stopColor="#ff9800" stopOpacity="0.4" />
+              <stop offset="1" stopColor="#ff9800" stopOpacity="0.05" />
+            </linearGradient>
+          </defs>
+          {Array.from({ length: 9 }, (_, i) => (
+            <path
+              key={i}
+              d="M0 0C60 160 200 220 340 320S480 520 520 700"
+              fill="none"
+              stroke="url(#services-wave-fade)"
+              strokeWidth="1"
+              transform={`translate(${i * 20} 0)`}
+              vectorEffect="non-scaling-stroke"
+            />
+          ))}
+        </svg>
         <div className="services-container">
           <div className="services-meta">
             <span className="services-badge">
@@ -66,9 +98,6 @@ export function ServicesHub() {
       >
         <Marquee duration={42} items={clientStripItems} className="max-[640px]:py-4" />
       </div>
-      <section className="services-banner">
-        <div>Image banner</div>
-      </section>
 
       <main className="services-main">
         <section className="services-section">
@@ -149,21 +178,29 @@ export function ServicesHub() {
         </section>
 
         <section className="services-section services-evidence">
-          <div className="services-section-heading">
+          <div className="services-section-heading ">
             <p className="eyebrow">Proof in practice</p>
+						<div className="flex gap-30 max-[640px]:flex-col max-[640px]:gap-2">
             <h2>Evidence that demonstrates this capability.</h2>
+						<a href="/work" className="underline mt-8 font-bold">View All Work →</a>
+						</div>
           </div>
           <div className="services-evidence-grid">
-            {evidence.map(([image, title, label]) => (
-              <article className="services-evidence-card" key={image}>
-                <Image
-                  src={`/figma/services/${image}`}
-                  alt=""
-                  width={640}
-                  height={440}
-                />
+            {evidence.map(([image, title, description, label, url, tag]) => (
+              <article className="services-evidence-card p-8" key={image}>
+                <div className="relative">
+                  <Image
+                    src={`/figma/services/${image}`}
+                    alt=""
+                    width={640}
+                    height={440}
+                  />
+                  <WorkTag tag={tag} />
+                </div>
                 <span>{label}</span>
                 <h3>{title}</h3>
+								<p className="ml-4.5 text-muted mb-3">{description}</p>
+							<a href={url} className="text-text text-[13px] font-bold ml-5">Explore →</a>
               </article>
             ))}
           </div>
@@ -177,7 +214,7 @@ export function ServicesHub() {
           </div>
           <div className="services-architecture-diagram">
             <div className="services-stage-grid">
-              <article>
+              <article className="duration-150 bg-[#0f1417] hover:bg-orange hover:text-ink cursor-pointer">
                 <strong>Product</strong>
                 <h3>Build the product</h3>
                 <p>
@@ -185,7 +222,7 @@ export function ServicesHub() {
                   endpoints, and high-retention user loops.
                 </p>
               </article>
-              <article>
+              <article className="duration-150 bg-[#0f1417] hover:bg-orange hover:text-ink cursor-pointer">
                 <strong>Agent</strong>
                 <h3>Make AI act</h3>
                 <p>
@@ -193,7 +230,7 @@ export function ServicesHub() {
                   loops, and multi-system synthesis.
                 </p>
               </article>
-              <article>
+              <article className="duration-150 bg-[#0f1417] hover:bg-orange hover:text-ink cursor-pointer">
                 <strong>Deployment</strong>
                 <h3>Put it into real use</h3>
                 <p>

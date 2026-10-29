@@ -418,7 +418,7 @@ export function MingchejiCaseStudyPage() {
                   className={`h-px w-full ${item.highlight ? "bg-line" : "bg-[#1c2328]"}`}
                   aria-hidden="true"
                 />
-                <p className="text-[clamp(32px,3.5vw,40px)] font-medium tracking-[-1px] text-text">
+                <p className="text-[clamp(28px,3.5vw,32px)] font-medium tracking-[-1px] text-text">
                   {item.value}
                 </p>
                 <p className="text-[13px] leading-[19px] text-muted">
