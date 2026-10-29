@@ -3,8 +3,7 @@ import Link from "next/link";
 import { clientStripItems } from "@/components/shared/client-logos";
 import { FinalCtaSection } from "@/components/shared/final-cta-section";
 import { Marquee } from "@/components/shared/marquee";
-import { ProofQuoteSection } from "@/components/shared/proof-quote-section";
-import { TrendingBanner } from "@/components/shared/trending-banner";
+import {ServicesProofSlider} from "@/components/services-proof-slider";
 
 const metrics = [
   { label: "Systems in production", value: "30+" },
@@ -147,9 +146,6 @@ export function AboutPage() {
       <section className="border-b border-[#1c2328] bg-ink py-6">
         <Marquee ariaLabel="Client technology and partners" items={clientStripItems} />
       </section>
-
-      {/* 3. TRENDING BANNER */}
-      <TrendingBanner />
 
       {/* 4. WHO WE ARE */}
       <Section eyebrow="WHO WE ARE" title="Who We Are">
@@ -321,7 +317,9 @@ export function AboutPage() {
       </Section>
 
       {/* 10-11. SHARED SECTIONS */}
-      <ProofQuoteSection />
+			<section className="lg:px-50 sm:px-5 py-10">
+			<ServicesProofSlider/>
+			</section>
       <FinalCtaSection />
     </main>
   );
