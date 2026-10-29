@@ -10,8 +10,12 @@ import {
 } from "@/components/shared/tech-stack-section";
 import { TrendingBanner } from "@/components/shared/trending-banner";
 import { InsightsLibrary, TopicPill } from "@/components/insights-library";
+import { getPosts, toSummary } from "@/lib/insights";
 
 export function InsightsPage() {
+  const posts = getPosts().map(toSummary);
+  const featured = posts[0];
+
   return (
     <main className="w-full">
       {/* 1. HERO */}
@@ -71,7 +75,7 @@ export function InsightsPage() {
                     aria-hidden="true"
                   />
                   <span className="font-mono text-[10px] font-bold uppercase tracking-[0.5px] text-orange">
-                    Healthcare AI
+                    {featured.topic}
                   </span>
                 </span>
                 <span className="text-center font-mono text-[10px] font-bold uppercase tracking-[1px] text-[#aeb5b8]">
@@ -81,18 +85,18 @@ export function InsightsPage() {
             </article>
 
             <div className="flex flex-col items-start gap-5">
-              <TopicPill label="[Topic]" />
+              <TopicPill label={featured.topic} />
               <h3 className="text-[32px] font-bold leading-[38px] text-[#f2f2f0]">
-                [Featured Article Title]
+                {featured.title}
               </h3>
               <p className="text-[15px] leading-6 text-[#9fa4ab]">
-                [Short useful summary of what the reader will learn.]
+                {featured.summary}
               </p>
               <p className="font-mono text-[10px] tracking-[0.5px] text-[#747d81]">
-                [Date] · [Read time]
+                {featured.dateLabel} · {featured.readTime}
               </p>
               <Link
-                href="/insights/article"
+                href={`/insights/${featured.slug}`}
                 className="text-[13px] font-bold text-orange hover:underline"
               >
                 Read Article →
@@ -116,7 +120,7 @@ export function InsightsPage() {
               Browse all insights.
             </h2>
           </div>
-          <InsightsLibrary />
+          <InsightsLibrary posts={posts} />
         </div>
       </section>
 

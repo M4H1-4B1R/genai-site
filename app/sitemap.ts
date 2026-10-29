@@ -1,10 +1,12 @@
 import type { MetadataRoute } from "next";
 
+import { getPosts } from "@/lib/insights";
+
 const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   : "http://localhost:3000";
 
-// case-study and insights/article are noindex placeholders: keep them out.
+// case-study is a noindex placeholder: keep it out. Insight posts are appended below.
 const paths = [
   "",
   "/services",
@@ -19,5 +21,6 @@ const paths = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return paths.map((p) => ({ url: `${siteUrl}${p}` }));
+  const posts = getPosts().map((p) => `/insights/${p.slug}`);
+  return [...paths, ...posts].map((p) => ({ url: `${siteUrl}${p}` }));
 }
