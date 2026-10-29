@@ -71,7 +71,7 @@
 /* Shared mono label used for section eyebrows, hero status text, and mono
    metadata. One definition replaces the old `.eyebrow` class rule. */
 @utility eyebrow {
-  color: #999ea2;
+  color: var(--orange);
   font-family: var(--font-space-mono), monospace;
   font-size: 11px;
   letter-spacing: 1.2px;

@@ -27,8 +27,8 @@ const capabilities = [
 
 const evidence = [
   ["evidence-1.png", "Kaya Functional Health", "Kaya is an AI functional medicine health coach. It guides people through structured wellness sessions", "AI PRODUCT ENGINEERING", "/case-study/kaya"],
-  ["evidence-2.png", "Nexagents", "NexAgents (app.nexagents.cloud) puts production AI agents to work for a team", "AGENTIC SYSTEMS", "/case-study/nexagents"],
-  ["evidence-3.png", "Askdahab", "Ask Dahab (askdahab.com) is a multilingual travel and booking platform for Dahab, Egypt", "FORWARD-DEPLOYED", "/case-study/askdahab"],
+  ["nexagent-showcase.png", "Nexagents", "NexAgents (app.nexagents.cloud) puts production AI agents to work for a team", "AGENTIC SYSTEMS", "/case-study/nexagents"],
+  ["askdahab-hero.png", "Askdahab", "Ask Dahab (askdahab.com) is a multilingual travel and booking platform for Dahab, Egypt", "FORWARD-DEPLOYED", "/case-study/askdahab"],
 ];
 
 export function ServicesHub() {
