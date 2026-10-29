@@ -5,13 +5,12 @@ import { ArrowUpRight } from "lucide-react";
 import { clientStripItems } from "@/components/shared/client-logos";
 import { Marquee } from "@/components/shared/marquee";
 import { CalloutCtaSection } from "@/components/shared/callout-cta-section";
-import { ProofQuoteSection } from "@/components/shared/proof-quote-section";
 import {
   DeploymentPatternsSection,
   TechStackSection,
 } from "@/components/shared/tech-stack-section";
-import { TrendingBanner } from "@/components/shared/trending-banner";
 import { WorkGrid } from "@/components/work-grid";
+import {ServicesProofSlider} from "@/components/services-proof-slider";
 
 export function WorkHubPage() {
   return (
@@ -65,7 +64,7 @@ export function WorkHubPage() {
           </div>
 
           {/* Right Hero Graphic */}
-          <div className="relative w-full lg:absolute lg:-top-[72px] lg:right-[10px] lg:h-[572px] lg:w-[710px]">
+          <div className="relative w-full lg:absolute lg:-top-[72px] lg:right-[-80px] lg:h-[572px] lg:w-[800px]">
             <div className="relative aspect-[16/11] w-full overflow-hidden rounded-[4px]  lg:h-full lg:aspect-auto">
               <Image
                 src="/figma/work/72e66.png"
@@ -87,9 +86,6 @@ export function WorkHubPage() {
           items={clientStripItems}
         />
       </section>
-
-      {/* 3. TRENDING BANNER */}
-      <TrendingBanner />
 
       {/* 4. FEATURED WORK SECTION */}
       <section
@@ -239,7 +235,9 @@ export function WorkHubPage() {
 
       <DeploymentPatternsSection />
 
-      <ProofQuoteSection />
+			<section className="lg:px-50 py-10 sm:px-5">
+			<ServicesProofSlider/>
+			</section>
 
       <CalloutCtaSection />
     </main>
