@@ -21,7 +21,7 @@ export function FaqAccordion({ faqs }: { faqs: string[][] }) {
                 onClick={() => setOpen(expanded ? null : index)}
                 className="flex w-full cursor-pointer items-center justify-between gap-4 py-6 sm:py-7 text-left"
               >
-                <span className="text-[#f4f4f1] text-[16px] sm:text-[18px] leading-[24px] font-[500]">
+                <span className="text-[#f4f4f1] text-[16px] sm:text-[18px] leading-[24px] font-[500] hover:text-orange">
                   {question}
                 </span>
                 <span
