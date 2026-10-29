@@ -2,6 +2,7 @@ import { clientStripItems } from "@/components/shared/client-logos";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { Marquee } from "@/components/shared/marquee";
 import { ServicesProofSlider } from "@/components/services-proof-slider";
+import { WorkTag } from "@/components/shared/work-tag";
 
 import { ArrowDown, ArrowRight } from "lucide-react";
 import Image from "next/image";
@@ -117,24 +118,27 @@ const faqs = [
 const work = [
   [
     "evidence-1.png",
-    "HEALTHCARE AI",
+    "AI PRODUCT ENGINEERING",
     "Kaya Health Coach",
     "Replaced slow enterprise search with instantaneous semantic discovery across 40M documents.",
-		"/case-study/kaya"
+		"/case-study/kaya",
+    "HEALTHCARE AI",
   ],
   [
     "nexagent-showcase.png",
-    "AI Workspace",
+    "AI PRODUCT ENGINEERING",
     "Nexagents",
     "NexAgents (app.nexagents.cloud) puts production AI agents to work for a team",
-		"/case-study/nexagents"
+		"/case-study/nexagents",
+    "AI WORKSPACE",
   ],
   [
     "askdahab-hero.png",
-    "Travel & Booking",
+    "AI PRODUCT ENGINEERING",
     "AskDahab",
     "Ask Dahab (askdahab.com) is a multilingual travel and booking platform for Dahab, Egypt",
-		"/case-study/askdahab"
+		"/case-study/askdahab",
+    "TRAVEL & BOOKING PLATFORM",
   ],
 ];
 
@@ -313,15 +317,18 @@ export function ProductEngineeringPage() {
           </a>
         </div>
         <div className="grid grid-cols-3 max-[900px]:grid-cols-2 max-[640px]:grid-cols-1 gap-6">
-          {work.map(([image, label, title, body, url]) => (
+          {work.map(([image, label, title, body, url, tag]) => (
             <article key={title} className="bg-[#0f1417] border border-[#293137] rounded-[4px] overflow-hidden flex flex-col">
-              <Image
-                src={`/figma/services/${image}`}
-                alt=""
-                width={640}
-                height={440}
-                className="w-full aspect-[1.45] object-cover"
-              />
+              <div className="relative">
+                <Image
+                  src={`/figma/services/${image}`}
+                  alt=""
+                  width={640}
+                  height={440}
+                  className="w-full aspect-[1.45] object-cover"
+                />
+                <WorkTag tag={tag} />
+              </div>
               <div className="flex-1 p-6">
                 <span className="text-[var(--orange)] text-[11px] font-[700] tracking-[0.55px]">{label}</span>
                 <h3 className="text-[#f2f2ef] text-[20px] leading-[26px] mt-1.5">{title}</h3>

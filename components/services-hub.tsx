@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ServicesProofSlider } from "@/components/services-proof-slider";
 import { clientStripItems } from "@/components/shared/client-logos";
 import { Marquee } from "@/components/shared/marquee";
+import { WorkTag } from "@/components/shared/work-tag";
 
 const capabilities = [
   {
@@ -26,9 +27,9 @@ const capabilities = [
 ];
 
 const evidence = [
-  ["evidence-1.png", "Kaya Functional Health", "Kaya is an AI functional medicine health coach. It guides people through structured wellness sessions", "AI PRODUCT ENGINEERING", "/case-study/kaya"],
-  ["nexagent-showcase.png", "Nexagents", "NexAgents (app.nexagents.cloud) puts production AI agents to work for a team", "AGENTIC SYSTEMS", "/case-study/nexagents"],
-  ["askdahab-hero.png", "Askdahab", "Ask Dahab (askdahab.com) is a multilingual travel and booking platform for Dahab, Egypt", "FORWARD-DEPLOYED", "/case-study/askdahab"],
+  ["evidence-1.png", "Kaya Functional Health", "Kaya is an AI functional medicine health coach. It guides people through structured wellness sessions", "AI PRODUCT ENGINEERING", "/case-study/kaya", "HEALTHCARE AI"],
+  ["nexagent-showcase.png", "Nexagents", "NexAgents (app.nexagents.cloud) puts production AI agents to work for a team", "AGENTIC SYSTEMS", "/case-study/nexagents", "AUTONOMOUS LOGISTICS"],
+  ["askdahab-hero.png", "Askdahab", "Ask Dahab (askdahab.com) is a multilingual travel and booking platform for Dahab, Egypt", "FORWARD-DEPLOYED", "/case-study/askdahab", "TRAVEL & BOOKING PLATFORM"],
 ];
 
 export function ServicesHub() {
@@ -185,14 +186,17 @@ export function ServicesHub() {
 						</div>
           </div>
           <div className="services-evidence-grid">
-            {evidence.map(([image, title, description, label, url]) => (
+            {evidence.map(([image, title, description, label, url, tag]) => (
               <article className="services-evidence-card p-8" key={image}>
-                <Image
-                  src={`/figma/services/${image}`}
-                  alt=""
-                  width={640}
-                  height={440}
-                />
+                <div className="relative">
+                  <Image
+                    src={`/figma/services/${image}`}
+                    alt=""
+                    width={640}
+                    height={440}
+                  />
+                  <WorkTag tag={tag} />
+                </div>
                 <span>{label}</span>
                 <h3>{title}</h3>
 								<p className="ml-4.5 text-muted mb-3">{description}</p>

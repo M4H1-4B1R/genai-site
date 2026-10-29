@@ -5,6 +5,7 @@ import { EngagementModel } from "@/components/engagement-model";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { clientStripItems } from "@/components/shared/client-logos";
 import { Marquee } from "@/components/shared/marquee";
+import { WorkTag } from "@/components/shared/work-tag";
 
 const challenges = [
   [
@@ -105,21 +106,24 @@ const faqs = [
 const work = [
   [
     "evidence-1.png",
-    "HEALTHCARE AI",
+    "FORWARD-DEPLOYED",
     "Kaya Health Coach",
     "Replaced slow enterprise search with instantaneous semantic discovery across 40M documents.",
+    "HEALTHCARE AI",
   ],
   [
     "evidence-2.png",
-    "LOGISTICS",
+    "FORWARD-DEPLOYED",
     "Generative Supply Chain Copilot",
     "Engineered high-performance model microservices that optimize delivery routing graphs.",
+    "LOGISTICS",
   ],
   [
     "evidence-3.png",
-    "HEALTHCARE",
+    "FORWARD-DEPLOYED",
     "Clinical Trial Data Parser",
     "Built real-time multi-model validation pipelines handling patient metrics with strict SLAs.",
+    "HEALTHCARE",
   ],
 ];
 
@@ -327,15 +331,18 @@ export function ForwardDeployedServicesPage() {
           </a>
         </div>
         <div className="grid grid-cols-3 max-[900px]:grid-cols-2 max-[640px]:grid-cols-1 gap-6">
-          {work.map(([image, label, title, body]) => (
+          {work.map(([image, label, title, body, tag]) => (
             <article key={title} className="bg-[#0f1417] border border-[#293137] rounded-[4px] overflow-hidden flex flex-col">
-              <Image
-                src={`/figma/services/${image}`}
-                alt=""
-                width={640}
-                height={440}
-                className="w-full aspect-[1.45] object-cover"
-              />
+              <div className="relative">
+                <Image
+                  src={`/figma/services/${image}`}
+                  alt=""
+                  width={640}
+                  height={440}
+                  className="w-full aspect-[1.45] object-cover"
+                />
+                <WorkTag tag={tag} />
+              </div>
               <div className="flex-1 p-6">
                 <span className="text-[var(--orange)] text-[11px] font-[700] tracking-[0.55px]">{label}</span>
                 <h3 className="text-[#f2f2ef] text-[20px] leading-[26px] mt-1.5">{title}</h3>
