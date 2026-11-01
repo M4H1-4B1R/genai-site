@@ -15,6 +15,8 @@ type NumberedCard = {
 
 const heroTags = ["AI Product Engineering", "Forward-Deployed Services"];
 
+const url = "https://askdahab.com/"
+
 const snapshot: Fact[] = [
   {
     label: "Client / Context",
@@ -229,7 +231,7 @@ export function AskDahabCaseStudyPage() {
   return (
     <main className="w-full">
       {/* 1. HERO */}
-      <section className="bg-deep px-[120px] pt-20 max-[900px]:px-10 max-[900px]:pb-16 max-[640px]:px-5 max-[640px]:pt-12">
+      <section className="bg-deep px-[120px] pt-20 max-[900px]:px-10 max-[900px]:pb-16 max-[640px]:px-5 max-[640px]:pt-12 py-5">
         <div className="mx-auto flex max-w-[1200px] items-center gap-12 max-[900px]:flex-col max-[900px]:items-stretch">
           <div className="flex min-w-0 flex-1 flex-col items-start gap-6">
             <ul className="flex flex-wrap gap-2">
@@ -256,9 +258,14 @@ export function AskDahabCaseStudyPage() {
                 <span className="size-[5px] rounded-full bg-orange" aria-hidden="true" />
                 Production
               </span>
-              <span className="font-mono text-[10px] uppercase text-[#747d81]">
-                51 releases since October 2026
-              </span>
+							<a
+								href={url}
+								target="_blank"
+								rel="noreferrer"
+								className="font-mono text-[10px] font-bold uppercase text-orange underline-offset-4 transition-colors duration-200 hover:text-text hover:underline"
+							>
+								View Live →
+							</a>
             </div>
           </div>
 

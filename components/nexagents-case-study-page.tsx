@@ -13,6 +13,8 @@ type NumberedCard = {
 
 const heroTags = ["Agentic Layer Engineering", "Forward-Deployed Services"];
 
+const url = "https://app.nexagents.cloud/"
+
 const snapshot: Fact[] = [
   {
     label: "Client / Context",
@@ -226,9 +228,14 @@ export function NexagentsCaseStudyPage() {
                 <span className="size-[5px] rounded-full bg-orange" aria-hidden="true" />
                 Production
               </span>
-              <span className="font-mono text-[10px] uppercase text-[#747d81]">
-                Live since 3 Oct 2026
-              </span>
+							<a
+								href={url}
+								target="_blank"
+								rel="noreferrer"
+								className="font-mono text-[10px] font-bold uppercase text-orange underline-offset-4 transition-colors duration-200 hover:text-text hover:underline"
+							>
+								View Live →
+							</a>
             </div>
           </div>
 

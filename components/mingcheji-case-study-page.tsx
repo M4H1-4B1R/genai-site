@@ -15,6 +15,8 @@ type NumberedCard = {
 
 const heroTags = ["AI Product Engineering", "Forward-Deployed Services"];
 
+const playStoreUrl = "https://play.google.com/store/apps/details?id=com.genailabs.mingcheji.cars"
+
 const snapshot: Fact[] = [
   {
     label: "Client / Context",
@@ -221,9 +223,14 @@ export function MingchejiCaseStudyPage() {
                 <span className="size-[5px] rounded-full bg-orange" aria-hidden="true" />
                 Pilot — preview site
               </span>
-              <span className="font-mono text-[10px] uppercase text-[#747d81]">
-                Preview on Render today
-              </span>
+							<a
+								href={playStoreUrl}
+								target="_blank"
+								rel="noreferrer"
+								className="font-mono text-[10px] font-bold uppercase text-orange underline-offset-4 transition-colors duration-200 hover:text-text hover:underline"
+							>
+								View on Google Play →
+							</a>
             </div>
           </div>
 

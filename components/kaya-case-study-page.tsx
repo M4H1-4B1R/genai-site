@@ -16,6 +16,8 @@ type NumberedCard = {
 
 const heroTags = ["AI Product Engineering", "Forward-Deployed Services"];
 
+const playStoreUrl = "https://play.google.com/store/apps/details?id=com.genialabs.kaya.dev"
+
 const snapshot: Fact[] = [
   {
     label: "Client / Context",
@@ -246,9 +248,14 @@ export function KayaCaseStudyPage() {
                 <span className="size-[5px] rounded-full bg-orange" aria-hidden="true" />
                 Live — App Store &amp; Google Play
               </span>
-              <span className="font-mono text-[10px] uppercase text-[#747d81]">
-                Public store links not available yet
-              </span>
+							<a
+								href={playStoreUrl}
+								target="_blank"
+								rel="noreferrer"
+								className="font-mono text-[10px] font-bold uppercase text-orange underline-offset-4 transition-colors duration-200 hover:text-text hover:underline"
+							>
+								View on Google Play →
+							</a>
             </div>
           </div>
 
