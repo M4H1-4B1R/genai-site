@@ -16,6 +16,8 @@ type NumberedCard = {
 
 const heroTags = ["AI Product Engineering", "Forward-Deployed Services"];
 
+const playStoreUrl = "https://play.google.com/store/apps/details?id=com.genialabs.kaya.dev"
+
 const snapshot: Fact[] = [
   {
     label: "Client / Context",
@@ -158,6 +160,10 @@ const bandClass =
 
 const cardClass = "rounded-[8px] border border-line bg-[#0f1417]";
 
+// Subtle lift + orange border on hover; no movement for reduced-motion users.
+const hoverClass =
+  "transition duration-200 ease-out hover:-translate-y-1 hover:border-orange/60 motion-reduce:transition-none motion-reduce:hover:translate-y-0";
+
 function SectionHeading({
   eyebrow,
   title,
@@ -198,7 +204,7 @@ function NumberedCards({ items, gap }: { items: NumberedCard[]; gap: string }) {
       {items.map((item, i) => (
         <article
           key={item.title}
-          className={`${cardClass} flex flex-col items-start p-6 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.18)] ${gap}`}
+          className={`${cardClass} ${hoverClass} flex flex-col items-start p-6 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.18)] ${gap}`}
         >
           <IndexBadge index={i} />
           <div className="h-px w-full bg-[#1c2328]" aria-hidden="true" />
@@ -221,7 +227,7 @@ export function KayaCaseStudyPage() {
               {heroTags.map((tag) => (
                 <li
                   key={tag}
-                  className="rounded-full border border-line bg-[#0f1417] px-3 py-1 font-mono text-[10px] font-bold tracking-[0.6px] uppercase text-orange"
+                  className="rounded-full border border-line bg-[#0f1417] px-3 py-1 font-mono text-[10px] font-bold tracking-[0.6px] uppercase text-orange transition-colors duration-200 hover:border-orange"
                 >
                   {tag}
                 </li>
@@ -242,9 +248,14 @@ export function KayaCaseStudyPage() {
                 <span className="size-[5px] rounded-full bg-orange" aria-hidden="true" />
                 Live — App Store &amp; Google Play
               </span>
-              <span className="font-mono text-[10px] uppercase text-[#747d81]">
-                Public store links not available yet
-              </span>
+							<a
+								href={playStoreUrl}
+								target="_blank"
+								rel="noreferrer"
+								className="font-mono text-[10px] font-bold uppercase text-orange underline-offset-4 transition-colors duration-200 hover:text-text hover:underline"
+							>
+								View on Google Play →
+							</a>
             </div>
           </div>
 
@@ -280,7 +291,7 @@ export function KayaCaseStudyPage() {
           </div>
           <dl className="grid grid-cols-4 gap-4 max-[900px]:grid-cols-2 max-[640px]:grid-cols-1">
             {snapshot.map((fact) => (
-              <div key={fact.label} className={`${cardClass} flex flex-col gap-2 p-6`}>
+              <div key={fact.label} className={`${cardClass} ${hoverClass} flex flex-col gap-2 p-6`}>
                 <dt className="font-mono text-[10px] font-bold tracking-[1px] uppercase text-[#747d81]">
                   {fact.label}
                 </dt>
@@ -370,7 +381,7 @@ export function KayaCaseStudyPage() {
             width={1536}
             height={1024}
             sizes="(max-width: 1280px) 100vw, 1280px"
-            className="h-auto w-full rounded-[8px] border border-line"
+            className={`${hoverClass} h-auto w-full rounded-[8px] border border-line`}
           />
           <div className="flex items-center gap-4 rounded-[4px] border border-[#1c2328] bg-panel px-[18px] py-3.5 max-[640px]:flex-col max-[640px]:items-start max-[640px]:gap-2">
             <p className="shrink-0 font-mono text-[10px] font-bold tracking-[0.8px] uppercase text-orange">
@@ -409,7 +420,7 @@ export function KayaCaseStudyPage() {
               {deploymentDetails.map((detail) => (
                 <div
                   key={detail.label}
-                  className="flex flex-col gap-2 rounded-[4px] border border-[#1c2328] bg-[#0f1417] p-5"
+                  className={`${hoverClass} flex flex-col gap-2 rounded-[4px] border border-[#1c2328] bg-[#0f1417] p-5`}
                 >
                   <dt className="font-mono text-[10px] font-bold tracking-[0.8px] uppercase text-[#747d81]">
                     {detail.label}
@@ -438,8 +449,8 @@ export function KayaCaseStudyPage() {
                 key={i}
                 className={`flex flex-col items-center gap-3 rounded-[8px] p-8 text-center ${
                   item.highlight
-                    ? "border-2 border-orange bg-panel shadow-[0_0_30px_rgba(255,152,0,0.25)]"
-                    : "border border-line bg-[#0f1417] shadow-[0_18px_40px_-18px_rgba(0,0,0,0.18)]"
+                    ? "border-2 border-orange bg-panel shadow-[0_0_30px_rgba(255,152,0,0.25)] transition-shadow duration-200 hover:shadow-[0_0_44px_rgba(255,152,0,0.4)] motion-reduce:transition-none"
+                    : `${hoverClass} border border-line bg-[#0f1417] shadow-[0_18px_40px_-18px_rgba(0,0,0,0.18)]`
                 }`}
               >
                 <p
@@ -494,7 +505,7 @@ export function KayaCaseStudyPage() {
             {relatedWork.map((project) => (
               <article
                 key={project.title}
-                className={`${cardClass} group flex flex-col gap-5 p-6 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.18)]`}
+                className={`${cardClass} ${hoverClass} group flex flex-col gap-5 p-6 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.18)]`}
               >
                 <div className="relative h-[180px] overflow-clip rounded-[4px] border border-[#1c2328] bg-deep">
                   <Image
@@ -502,7 +513,7 @@ export function KayaCaseStudyPage() {
                     alt=""
                     fill
                     sizes="(max-width: 900px) 100vw, 50vw"
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                   />
                   {project.glow && (
                     <div className="absolute -right-px -top-px h-[140px] w-[150px] bg-[linear-gradient(223deg,rgba(255,152,0,0.1)_0%,rgba(255,152,0,0)_50%)] opacity-50 blur-[16px]" />

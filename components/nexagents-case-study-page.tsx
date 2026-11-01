@@ -13,6 +13,8 @@ type NumberedCard = {
 
 const heroTags = ["Agentic Layer Engineering", "Forward-Deployed Services"];
 
+const url = "https://app.nexagents.cloud/"
+
 const snapshot: Fact[] = [
   {
     label: "Client / Context",
@@ -139,6 +141,10 @@ const bandClass =
 
 const cardClass = "rounded-[8px] border border-line bg-[#0f1417]";
 
+// Subtle lift + orange border on hover; no movement for reduced-motion users.
+const hoverClass =
+  "transition duration-200 ease-out hover:-translate-y-1 hover:border-orange/60 motion-reduce:transition-none motion-reduce:hover:translate-y-0";
+
 function SectionHeading({
   eyebrow,
   title,
@@ -179,7 +185,7 @@ function NumberedCards({ items, gap }: { items: NumberedCard[]; gap: string }) {
       {items.map((item, i) => (
         <article
           key={item.title}
-          className={`${cardClass} flex flex-col items-start p-6 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.18)] ${gap}`}
+          className={`${cardClass} ${hoverClass} flex flex-col items-start p-6 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.18)] ${gap}`}
         >
           <IndexBadge index={i} />
           <div className="h-px w-full bg-[#1c2328]" aria-hidden="true" />
@@ -202,7 +208,7 @@ export function NexagentsCaseStudyPage() {
               {heroTags.map((tag) => (
                 <li
                   key={tag}
-                  className="rounded-full border border-line bg-[#0f1417] px-3 py-1 font-mono text-[10px] font-bold tracking-[0.6px] uppercase text-orange"
+                  className="rounded-full border border-line bg-[#0f1417] px-3 py-1 font-mono text-[10px] font-bold tracking-[0.6px] uppercase text-orange transition-colors duration-200 hover:border-orange"
                 >
                   {tag}
                 </li>
@@ -222,9 +228,14 @@ export function NexagentsCaseStudyPage() {
                 <span className="size-[5px] rounded-full bg-orange" aria-hidden="true" />
                 Production
               </span>
-              <span className="font-mono text-[10px] uppercase text-[#747d81]">
-                Live since 3 Oct 2026
-              </span>
+							<a
+								href={url}
+								target="_blank"
+								rel="noreferrer"
+								className="font-mono text-[10px] font-bold uppercase text-orange underline-offset-4 transition-colors duration-200 hover:text-text hover:underline"
+							>
+								View Live →
+							</a>
             </div>
           </div>
 
@@ -259,7 +270,7 @@ export function NexagentsCaseStudyPage() {
           </div>
           <dl className="grid grid-cols-4 gap-4 max-[900px]:grid-cols-2 max-[640px]:grid-cols-1">
             {snapshot.map((fact) => (
-              <div key={fact.label} className={`${cardClass} flex flex-col gap-2 p-6`}>
+              <div key={fact.label} className={`${cardClass} ${hoverClass} flex flex-col gap-2 p-6`}>
                 <dt className="font-mono text-[10px] font-bold tracking-[1px] uppercase text-[#747d81]">
                   {fact.label}
                 </dt>
@@ -380,7 +391,7 @@ export function NexagentsCaseStudyPage() {
               {deploymentDetails.map((detail) => (
                 <div
                   key={detail.label}
-                  className="flex flex-col gap-2 rounded-[4px] border border-[#1c2328] bg-[#0f1417] p-5"
+                  className={`${hoverClass} flex flex-col gap-2 rounded-[4px] border border-[#1c2328] bg-[#0f1417] p-5`}
                 >
                   <dt className="font-mono text-[10px] font-bold tracking-[0.8px] uppercase text-[#747d81]">
                     {detail.label}
@@ -409,8 +420,8 @@ export function NexagentsCaseStudyPage() {
                 key={i}
                 className={`flex flex-col items-center gap-3 rounded-[8px] p-8 text-center ${
                   item.highlight
-                    ? "border-2 border-orange bg-panel shadow-[0_0_30px_rgba(255,152,0,0.25)]"
-                    : "border border-line bg-[#0f1417] shadow-[0_18px_40px_-18px_rgba(0,0,0,0.18)]"
+                    ? "border-2 border-orange bg-panel shadow-[0_0_30px_rgba(255,152,0,0.25)] transition-shadow duration-200 hover:shadow-[0_0_44px_rgba(255,152,0,0.4)] motion-reduce:transition-none"
+                    : `${hoverClass} border border-line bg-[#0f1417] shadow-[0_18px_40px_-18px_rgba(0,0,0,0.18)]`
                 }`}
               >
                 <p
@@ -465,7 +476,7 @@ export function NexagentsCaseStudyPage() {
             {relatedWork.map((project) => (
               <article
                 key={project.cycle}
-                className={`${cardClass} group flex flex-col gap-5 p-6 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.18)]`}
+                className={`${cardClass} ${hoverClass} group flex flex-col gap-5 p-6 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.18)]`}
               >
                 <div
                   className="relative h-[180px] overflow-clip rounded-[4px] border border-[#1c2328] bg-deep"

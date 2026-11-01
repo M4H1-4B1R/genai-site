@@ -46,6 +46,19 @@ const allProjects: Project[] = [
 		url: "/case-study/kaya",
 	},
 	{
+		id: "smart-teacher",
+		tag: "EDUCATION AI",
+		category: "AI PRODUCT ENGINEERING",
+		title: "Smart Teacher",
+		description:
+			"Arabic AI tutor that explains homework from a photo — step-by-step answers in Arabic or English, an AI teacher chat, lessons and a quiz mode.",
+		image: "/figma/smart-teacher-hero.png",
+		topics: ["Development", "Technology", "Design"],
+		tags: ["Education", "Arabic", "Production"],
+		proof: { label: "Play Console, 28 days", value: "60 installs from ~4,590 impressions" },
+		url: "/case-study/smart-teacher",
+	},
+	{
 		id: "askdahab",
 		tag: "TRAVEL & BOOKING PLATFORM",
 		category: "AI PRODUCT ENGINEERING",
