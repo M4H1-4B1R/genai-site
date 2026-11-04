@@ -20,9 +20,7 @@ export default function Home() {
         <WorkShowcase />
         <Capabilities />
         <Architecture />
-				<section className="px-50 py-20 max-[960px]:px-3 max-[960px]:py-5">
-				<ServicesProofSlider/>
-				</section>
+        <ServicesProofSlider />
         <HeroRightAnimated />
         <FinalCtaSection />
         <Contact />

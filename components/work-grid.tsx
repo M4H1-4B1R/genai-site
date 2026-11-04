@@ -72,6 +72,19 @@ const allProjects: Project[] = [
 		url: "/case-study/sino360",
 	},
 	{
+		id: "mashtal",
+		tag: "AGRITECH AI",
+		category: "AI PRODUCT ENGINEERING",
+		title: "Mashtal AI",
+		description:
+			"Arabic AI plant doctor — photograph a sick plant and get a structured Arabic diagnosis, treatment plan and care schedule.",
+		image: "/figma/mashtal-hero.png",
+		topics: ["Development", "Technology", "Design"],
+		tags: ["Plants", "Arabic", "Launching"],
+		proof: { label: "Per scan", value: "41 structured Arabic fields" },
+		url: "/case-study/mashtal",
+	},
+	{
 		id: "askdahab",
 		tag: "TRAVEL & BOOKING PLATFORM",
 		category: "AI PRODUCT ENGINEERING",

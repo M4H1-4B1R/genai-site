@@ -1,6 +1,6 @@
 export function ProofQuoteSection() {
   return (
-    <section className="border-b border-[#1c2328] bg-[#0d0e0f] px-6 py-16 sm:px-10 sm:py-20 lg:px-20">
+    <section className="border-b border-[#1c2328] bg-[#0d0e0f] section-x section-y">
       <div className="mx-auto max-w-[1280px]">
         <div className="rounded-[4px] border border-[rgba(83,68,52,0.3)] bg-deep p-8 md:p-14">
           {/* Top Pill Bar */}

@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/shared/section-heading";
 
 export function ContactLocation() {
   return (
-    <section className="flex flex-col gap-16 bg-[#0d1114] px-[max(80px,calc((100%_-_1280px)_/_2))] py-28 max-[900px]:px-8 max-[640px]:gap-10 max-[640px]:px-5 max-[640px]:py-[68px]">
+    <section className="flex flex-col gap-16 bg-[#0d1114] section-x section-y max-[640px]:gap-10">
       <SectionHeading
         eyebrow="LOCATION"
         title="Amman base. Global reach."

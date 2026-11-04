@@ -22,7 +22,7 @@ const channels = [
 
 export function ContactChannels() {
   return (
-    <section className="flex flex-col gap-12 border-y border-[#293137] bg-ink px-[max(80px,calc((100%_-_1280px)_/_2))] py-24 max-[900px]:px-8 max-[640px]:px-5 max-[640px]:py-[68px]">
+    <section className="flex flex-col gap-12 border-y border-[#293137] bg-ink section-x section-y">
       <SectionHeading
         eyebrow="DIRECT CHANNELS"
         title="Reach us your way"

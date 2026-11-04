@@ -1,6 +1,6 @@
 export function Automation() {
   return (
-    <section className="border-t border-[#2a2d34] bg-deep px-[max(40px,calc((100%_-_1280px)_/_2))] py-16 max-[640px]:px-5 max-[640px]:py-[68px]">
+    <section className="border-t border-[#2a2d34] bg-deep section-x section-y">
       <div className="mb-14">
         <p className="eyebrow">Automation categories</p>
         <h2 className="mt-3.5 mb-0 text-[clamp(40px,4vw,56px)] leading-[1.08] tracking-[-1.5px]">

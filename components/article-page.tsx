@@ -28,7 +28,7 @@ export function ArticlePage({
   return (
     <main className="w-full">
       {/* 1. HEADER */}
-      <section className="flex flex-col items-center bg-[#080b0d] px-6 pb-6 pt-16 sm:px-10 lg:px-[120px] lg:pb-8 lg:pt-20">
+      <section className="flex flex-col items-center bg-[#080b0d] section-x pb-6 pt-16 lg:pb-8 lg:pt-20">
         <div className="flex w-full max-w-[768px] flex-col items-start gap-6">
           <ArticleTag label={post.topic} />
           <h1 className="text-[clamp(36px,6vw,58px)] font-medium leading-[1.1] tracking-[-1.2px] text-[#f2f2f0]">
@@ -46,7 +46,7 @@ export function ArticlePage({
       </section>
 
       {/* 2. ARTICLE BODY */}
-      <section className="flex justify-center bg-[#080b0d] px-6 pb-12 pt-6 sm:px-10 lg:px-[120px] lg:pb-16 lg:pt-8">
+      <section className="flex justify-center bg-[#080b0d] section-x pb-12 pt-6 lg:pb-16 lg:pt-8">
         <article className="flex w-full max-w-[768px] flex-col gap-6">
           {post.blocks.map((block, i) => {
             if (block.type === "h2") {
@@ -109,7 +109,7 @@ export function ArticlePage({
       <TrendingBanner />
 
       {/* 4. RELATED INSIGHTS */}
-      <section className="flex flex-col gap-8 border-y border-[#1c2328] bg-[#0d0e0f] px-6 py-12 sm:px-10 lg:px-[120px] lg:py-16">
+      <section className="flex flex-col gap-8 border-y border-[#1c2328] bg-[#0d0e0f] section-x py-12 lg:py-16">
         <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-8">
           <div className="flex flex-col justify-between gap-3 md:flex-row md:items-end">
             <div className="flex flex-col gap-2">

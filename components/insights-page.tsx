@@ -20,7 +20,7 @@ export function InsightsPage() {
   return (
     <main className="w-full">
       {/* 1. HERO */}
-      <section className="border-b border-[#1c2328] bg-[#080b0d] px-6 py-20 sm:px-10 lg:flex lg:min-h-[720px] lg:items-center lg:px-20">
+      <section className="border-b border-[#1c2328] bg-[#080b0d] section-x py-20 lg:flex lg:min-h-[720px] lg:items-center">
         <div className="mx-auto flex w-full max-w-[1280px] flex-col items-start gap-6">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-[#293137] bg-[#0f1417] px-2.5 py-1.5">
             <span
@@ -55,7 +55,7 @@ export function InsightsPage() {
       {/* 4. FEATURED INSIGHT */}
       <section
         id="featured-insight"
-        className="border-b border-[#1c2328] bg-ink px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24"
+        className="border-b border-[#1c2328] bg-ink section-x section-y"
       >
         <div className="mx-auto max-w-[1280px]">
           <div className="mb-12 max-w-[600px]">
@@ -122,7 +122,7 @@ export function InsightsPage() {
       {/* 5. INSIGHT LIBRARY */}
       <section
         id="insight-library"
-        className="border-b border-[#1c2328] bg-ink px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24"
+        className="border-b border-[#1c2328] bg-ink section-x section-y"
       >
         <div className="mx-auto flex max-w-[1280px] flex-col gap-12">
           <div>

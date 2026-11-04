@@ -22,7 +22,7 @@ const capabilities = [
 export function Capabilities() {
   return (
     <section
-      className="border-t border-[#2a2d34] bg-deep px-[max(40px,calc((100%_-_1280px)_/_2))] py-16 max-[640px]:px-5 max-[640px]:py-[68px]"
+      className="border-t border-[#2a2d34] bg-deep section-x section-y"
       id="services"
     >
       <div className="mb-14">

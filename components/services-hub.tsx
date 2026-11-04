@@ -93,10 +93,10 @@ export function ServicesHub() {
       </section>
 
       <div
-        className="pt-[26px] pb-[30px]"
+        className="border-b border-[#1c2328] bg-ink py-6"
         aria-label="Selected technology partners"
       >
-        <Marquee duration={42} items={clientStripItems} className="max-[640px]:py-4" />
+        <Marquee duration={42} items={clientStripItems} />
       </div>
 
       <main className="services-main">

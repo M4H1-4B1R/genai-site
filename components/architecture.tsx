@@ -8,7 +8,7 @@ const nodes = [
 
 export function Architecture() {
   return (
-    <section className="grid grid-cols-[1fr_1.55fr] gap-16 border-t border-[#2a2d34] px-[max(40px,calc((100%_-_1280px)_/_2))] py-16 max-[900px]:grid-cols-1 max-[640px]:px-5 max-[640px]:py-[68px]">
+    <section className="grid grid-cols-[1fr_1.55fr] gap-16 border-t border-[#2a2d34] section-x section-y max-[900px]:grid-cols-1">
       <div className="self-center">
         <p className="eyebrow">Architecture & systems</p>
         <h2 className="mt-3.5 text-[clamp(40px,4vw,56px)] leading-[1.08] tracking-[-1.5px]">

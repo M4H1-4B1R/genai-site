@@ -421,7 +421,7 @@ export function HeroRightAnimated() {
   }, []);
 
   return (
-    <section className="border-t border-[#2a2d34] bg-deep px-[max(40px,calc((100%_-_1280px)_/_2))] py-16 max-[640px]:px-5 max-[640px]:py-[68px]">
+    <section className="border-t border-[#2a2d34] bg-deep section-x section-y">
       <div className="mx-auto w-full max-w-[1280px]">
         <div className="mb-10 max-[640px]:mb-8">
           <p className="eyebrow m-0">Automation categories</p>
