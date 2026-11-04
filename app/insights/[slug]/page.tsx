@@ -19,7 +19,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.title} | GenAILabs`,
     description: post.summary,
-    openGraph: { title: post.title, description: post.summary, type: "article" },
+    alternates: { canonical: `/insights/${post.slug}` },
+    openGraph: {
+      title: post.title,
+      description: post.summary,
+      type: "article",
+      url: `/insights/${post.slug}`,
+      publishedTime: post.date,
+    },
   };
 }
 

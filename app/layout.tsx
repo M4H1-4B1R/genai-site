@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Space_Grotesk, Space_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
+
+import { gaId, siteUrl } from "@/lib/site";
 
 import ChatWidget from "@/components/chat/chat-widget";
 
@@ -24,10 +27,6 @@ const spaceMono = Space_Mono({
   weight: ["400", "700"],
 });
 
-const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : "http://localhost:3000";
-
 const siteTitle = "GenAILabs | Build AI. Make It Act.";
 const siteDescription =
   "AI product engineering, agentic systems, and forward-deployed services.";
@@ -42,6 +41,8 @@ export const metadata: Metadata = {
     description: siteDescription,
     siteName: "GenAILabs",
     type: "website",
+    url: siteUrl,
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
@@ -62,13 +63,50 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "GenAILabs",
-              url: siteUrl,
-              description: siteDescription,
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": `${siteUrl}/#organization`,
+                  name: "GenAILabs",
+                  url: siteUrl,
+                  logo: `${siteUrl}/figma/logo-yellow.png`,
+                  description: siteDescription,
+                  foundingDate: "2023",
+                  contactPoint: {
+                    "@type": "ContactPoint",
+                    telephone: "+962776424784",
+                    email: "support@genailabs.agency",
+                    contactType: "Customer Service",
+                    availableLanguage: ["English", "Arabic"],
+                  },
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Amman",
+                    addressCountry: "JO",
+                  },
+                  sameAs: [
+                    "https://twitter.com/genailabs",
+                    "https://linkedin.com/company/genailabs",
+                  ],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": `${siteUrl}/#website`,
+                  url: siteUrl,
+                  name: "GenAILabs",
+                  publisher: { "@id": `${siteUrl}/#organization` },
+                },
+              ],
             }),
           }}
         />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${gaId}');`}
+        </Script>
         {children}
         <ChatWidget />
       </body>
