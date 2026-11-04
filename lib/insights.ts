@@ -46,7 +46,8 @@ function parseBlocks(body: string): Block[] {
 }
 
 function parse(file: string): Post {
-  const src = fs.readFileSync(path.join(dir, file), "utf8");
+  // Windows checkouts (git autocrlf) turn LF into CRLF, which breaks the \n regex below.
+  const src = fs.readFileSync(path.join(dir, file), "utf8").replace(/\r\n/g, "\n");
   const [, front, body] = src.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/) ?? [];
   if (!front) throw new Error(`content/insights/${file}: missing front matter`);
   const meta: Record<string, string> = {};
