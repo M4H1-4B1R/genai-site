@@ -6,16 +6,6 @@ const redirect = (source: string, destination: string) => ({
   permanent: true,
 });
 
-// Old posts not migrated to content/insights yet. Remove an entry once the post
-// is added (the generic /blog/:slug rule then takes over).
-const unmigratedPosts = [
-  "best-ai-governance-platforms-2026",
-  "eu-ai-act-article-50-transparency-requirements",
-  "eu-ai-act-compliance-guide-2026",
-  "eu-ai-act-compliant-chatbot-requirements",
-  "iso-42001-eu-ai-act-compliance",
-];
-
 const services: Record<string, string> = {
   "ai-development": "ai-product-engineering",
   "ai-development-company": "ai-product-engineering",
@@ -33,8 +23,6 @@ const services: Record<string, string> = {
 };
 
 export const redirects = [
-  // Specific rules first: Next matches in order.
-  ...unmigratedPosts.map((slug) => redirect(`/blog/${slug}`, "/insights")),
   redirect("/blog", "/insights"),
   redirect("/blog/:slug", "/insights/:slug"),
   redirect("/our-work", "/work"),
@@ -47,7 +35,7 @@ export const redirects = [
     redirect(`/services/${old}`, `/services/${next}`),
   ),
   redirect("/locations/:slug", "/contact"),
-  redirect("/eu-compliant-chat", "/insights"),
+  redirect("/eu-compliant-chat", "/insights/eu-ai-act-compliant-chatbot-requirements"),
   redirect("/ar", "/"),
   redirect("/ar/:path*", "/"),
 ];
