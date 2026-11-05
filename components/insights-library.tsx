@@ -7,7 +7,7 @@ import { useState } from "react";
 import type { PostSummary } from "@/lib/insights";
 
 const ALL = "All topics";
-const PAGE_SIZE = 12;
+const PAGE_SIZE = 4;
 
 export function TopicPill({ label }: { label: string }) {
   return (
@@ -66,7 +66,7 @@ export function InsightsLibrary({ posts }: { posts: PostSummary[] }) {
       </div>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        {visible.map((article) => (
+        {visible.map((article, i) => (
           <article
             key={article.slug}
             className="group flex flex-col gap-4 rounded-[4px] border border-[#293137] bg-[#0f1417] p-6 transition-colors duration-200 hover:border-[#424a50]"
@@ -79,6 +79,7 @@ export function InsightsLibrary({ posts }: { posts: PostSummary[] }) {
                   fill
                   sizes="(max-width: 768px) 100vw, 600px"
                   quality={90}
+                  loading={i < 2 ? "eager" : "lazy"}
                   className="object-cover"
                 />
               </div>
