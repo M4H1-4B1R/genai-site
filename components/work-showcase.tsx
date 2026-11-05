@@ -90,7 +90,7 @@ const kayaPhones = [
 export function WorkShowcase() {
   return (
     <section
-      className="border-t border-[#2a2d34] py-16 max-[640px]:py-[68px]"
+      className="border-t border-[#2a2d34] section-y"
       id="work"
     >
       {/* Content alignment lives on the heading/button, not on the section:
@@ -98,7 +98,7 @@ export function WorkShowcase() {
           the section and negate it — percentage margins resolve against the
           padded content box, so the negation collapses to -40px on wide
           screens and the cards end up boxed.) */}
-      <div className="mb-12 px-[max(40px,calc((100%_-_1280px)_/_2))] max-[640px]:px-5">
+      <div className="mb-12 section-x">
         <p className="eyebrow">Selected work</p>
         <h2 className="mt-3.5 text-[48px] leading-[52px] tracking-[-1.5px]">
           What we&apos;ve actually built.
@@ -191,7 +191,7 @@ export function WorkShowcase() {
           </article>
         ))}
       </div>
-			<div className="flex px-[max(40px,calc((100%_-_1280px)_/_2))] max-[640px]:px-5">
+			<div className="flex section-x">
       <a
         className="button button-muted min-h-11! px-8! py-3.5!"
         href="/work"

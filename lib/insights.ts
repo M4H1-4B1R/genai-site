@@ -4,7 +4,8 @@ import path from "node:path";
 export type Block =
   | { type: "h2"; text: string }
   | { type: "p"; text: string }
-  | { type: "ul"; items: string[] };
+  | { type: "ul"; items: string[] }
+  | { type: "img"; src: string; alt: string };
 
 export type PostSummary = {
   slug: string;
@@ -14,6 +15,7 @@ export type PostSummary = {
   summary: string;
   readTime: string;
   dateLabel: string;
+  image?: { src: string; alt: string }; // first image in the post, used as the thumbnail
 };
 
 export type Post = PostSummary & { blocks: Block[] };
@@ -31,7 +33,10 @@ function parseBlocks(body: string): Block[] {
   for (const chunk of body.split(/\n{2,}/)) {
     const text = chunk.trim();
     if (!text) continue;
-    if (text.startsWith("## ")) {
+    const img = text.match(/^!\[([^\]]*)\]\(([^)\s]+)\)$/);
+    if (img) {
+      blocks.push({ type: "img", alt: img[1], src: img[2] });
+    } else if (text.startsWith("## ")) {
       blocks.push({ type: "h2", text: text.slice(3) });
     } else if (text.startsWith("- ")) {
       const items = text.split("\n").map((l) => l.replace(/^- /, "").trim());
@@ -56,6 +61,8 @@ function parse(file: string): Post {
     meta[line.slice(0, i)] = value(line.slice(i + 1));
   }
   const words = body.split(/\s+/).length;
+  const blocks = parseBlocks(body);
+  const img = blocks.find((b) => b.type === "img");
   return {
     slug: file.replace(/\.md$/, ""),
     title: meta.title,
@@ -69,7 +76,8 @@ function parse(file: string): Post {
       day: "numeric",
       timeZone: "UTC",
     }),
-    blocks: parseBlocks(body),
+    image: img ? { src: img.src, alt: img.alt } : undefined,
+    blocks,
   };
 }
 

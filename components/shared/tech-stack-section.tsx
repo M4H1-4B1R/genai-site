@@ -86,7 +86,7 @@ const deploymentPatterns = [
 
 export function TechStackSection() {
   return (
-    <section className="border-b border-[#1c2328] bg-ink px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24">
+    <section className="border-b border-[#1c2328] bg-ink section-x section-y">
       <div className="mx-auto max-w-[1280px]">
         {/* Header */}
         <div className="mb-14">
@@ -143,6 +143,7 @@ export function TechStackSection() {
                         src={tech.icon}
                         alt={tech.name}
                         fill
+                        sizes="40px"
                         className="object-contain filter transition group-hover:brightness-110"
                       />
                     </div>
@@ -162,7 +163,7 @@ export function TechStackSection() {
 
 export function DeploymentPatternsSection() {
   return (
-    <section className="border-b border-[#1c2328] bg-[#0d0e0f] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24">
+    <section className="border-b border-[#1c2328] bg-[#0d0e0f] section-x section-y">
       <div className="mx-auto max-w-[1280px]">
         <div className="mb-10">
           <p className="font-mono text-[10px] font-bold tracking-[1.2px] uppercase text-[#999ea2]">

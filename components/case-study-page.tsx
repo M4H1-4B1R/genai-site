@@ -89,7 +89,7 @@ const relatedWork = [
 
 // Shared shell for the 1280px content bands below the snapshot.
 const bandClass =
-  "mx-auto flex max-w-[1280px] flex-col gap-12 px-[60px] py-20 max-[900px]:px-10 max-[640px]:gap-8 max-[640px]:px-5 max-[640px]:py-14";
+  "flex flex-col gap-12 section-x section-y max-[640px]:gap-8";
 
 const cardClass = "rounded-[8px] border border-line bg-[#0f1417]";
 
@@ -149,8 +149,8 @@ export function CaseStudyPage() {
   return (
     <main className="w-full">
       {/* 1. HERO */}
-      <section className="bg-deep px-[120px] pt-20 max-[900px]:px-10 max-[900px]:pb-16 max-[640px]:px-5 max-[640px]:pt-12">
-        <div className="mx-auto flex max-w-[1200px] items-center gap-12 max-[900px]:flex-col max-[900px]:items-stretch">
+      <section className="bg-deep section-x pt-20 pb-10 max-[640px]:pt-12">
+        <div className="flex items-center gap-12 max-[900px]:flex-col max-[900px]:items-stretch">
           <div className="flex min-w-0 flex-1 flex-col items-start gap-6">
             <ul className="flex flex-wrap gap-2">
               {heroTags.map((tag) => (
@@ -193,8 +193,8 @@ export function CaseStudyPage() {
       </section>
 
       {/* 2. PROJECT SNAPSHOT */}
-      <section className="border-y border-[#1c2328] bg-ink px-[120px] py-[60px] max-[900px]:px-10 max-[640px]:px-5 max-[640px]:py-12">
-        <div className="mx-auto flex max-w-[1200px] flex-col gap-8">
+      <section className="border-y border-[#1c2328] bg-ink section-x py-[60px] max-[640px]:py-12">
+        <div className="flex flex-col gap-8">
           <div className="flex items-end justify-between gap-8 max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-4">
             <div className="flex flex-col gap-3">
               <p className="font-mono text-[11px] font-bold tracking-[1.2px] uppercase text-[#999ea2]">
@@ -224,7 +224,7 @@ export function CaseStudyPage() {
       </section>
 
       {/* 3. TRENDING BANNER */}
-      <div className="bg-ink px-[max(40px,calc((100%_-_1280px)_/_2))] py-[60px] max-[640px]:px-5 max-[640px]:py-10">
+      <div className="bg-ink section-x py-[60px] max-[640px]:py-10">
         <div className="flex h-[120px] items-center justify-center rounded-[8px] border border-line bg-[#191c1e] shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)]">
           <strong className="text-xl uppercase text-text">Image banner</strong>
         </div>
@@ -378,9 +378,7 @@ export function CaseStudyPage() {
       </section>
 
       {/* 9. TESTIMONIAL */}
-      <div className="mx-auto max-w-[1280px] bg-ink">
-        <ServicesProofSlider />
-      </div>
+      <ServicesProofSlider />
 
       {/* 10. CAPABILITIES INVOLVED */}
       <section className="bg-deep">
@@ -453,12 +451,12 @@ export function CaseStudyPage() {
       </section>
 
       {/* 12. CALLOUT CTA */}
-      <section className="relative overflow-hidden bg-[linear-gradient(to_bottom,#080b0d,#0f1417_50%,#080b0d)] px-20 py-24 max-[900px]:px-10 max-[640px]:px-5 max-[640px]:py-14">
+      <section className="relative overflow-hidden bg-[linear-gradient(to_bottom,#080b0d,#0f1417_50%,#080b0d)] section-x section-y">
         <div
           className="absolute left-1/2 top-1/2 h-[340px] w-[720px] max-w-full -translate-x-1/2 -translate-y-1/2 rounded-[12px] bg-[rgba(255,152,0,0.1)] blur-[65px]"
           aria-hidden="true"
         />
-        <div className="cta-panel cta-panel--sentence relative mx-auto max-w-[1280px]">
+        <div className="cta-panel cta-panel--sentence relative">
           <p className="eyebrow">
             <span className="cta-panel-dot" aria-hidden="true" />
             Let&apos;s talk

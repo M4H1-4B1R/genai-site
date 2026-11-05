@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { FinalCtaSection } from "@/components/shared/final-cta-section";
@@ -27,7 +28,7 @@ export function ArticlePage({
   return (
     <main className="w-full">
       {/* 1. HEADER */}
-      <section className="flex flex-col items-center border-b border-[#1c2328] bg-[#080b0d] px-6 pb-12 pt-16 sm:px-10 lg:px-[120px] lg:pb-16 lg:pt-20">
+      <section className="flex flex-col items-center bg-[#080b0d] section-x pb-6 pt-16 lg:pb-8 lg:pt-20">
         <div className="flex w-full max-w-[768px] flex-col items-start gap-6">
           <ArticleTag label={post.topic} />
           <h1 className="text-[clamp(36px,6vw,58px)] font-medium leading-[1.1] tracking-[-1.2px] text-[#f2f2f0]">
@@ -45,7 +46,7 @@ export function ArticlePage({
       </section>
 
       {/* 2. ARTICLE BODY */}
-      <section className="flex justify-center bg-[#080b0d] px-6 py-12 sm:px-10 lg:px-[120px] lg:py-16">
+      <section className="flex justify-center bg-[#080b0d] section-x pb-12 pt-6 lg:pb-16 lg:pt-8">
         <article className="flex w-full max-w-[768px] flex-col gap-6">
           {post.blocks.map((block, i) => {
             if (block.type === "h2") {
@@ -53,6 +54,23 @@ export function ArticlePage({
                 <h2 key={i} className={`${h2} mt-6`}>
                   {block.text}
                 </h2>
+              );
+            }
+            if (block.type === "img") {
+              return (
+                // wider than the 768px text column on desktop; full width below lg
+                <figure key={i} className="relative aspect-video w-full overflow-clip rounded-[8px] border border-[#1c2328] bg-[#0f1417] lg:-mx-[120px] lg:w-[calc(100%+240px)]">
+                  <Image
+                    src={block.src}
+                    alt={block.alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 1008px"
+                    quality={90}
+                    // an opening poster is the LCP element; lazy-loading it delays first paint
+                    loading={i === 0 ? "eager" : "lazy"}
+                    className="object-cover"
+                  />
+                </figure>
               );
             }
             if (block.type === "ul") {
@@ -91,7 +109,7 @@ export function ArticlePage({
       <TrendingBanner />
 
       {/* 4. RELATED INSIGHTS */}
-      <section className="flex flex-col gap-8 border-y border-[#1c2328] bg-[#0d0e0f] px-6 py-12 sm:px-10 lg:px-[120px] lg:py-16">
+      <section className="flex flex-col gap-8 border-y border-[#1c2328] bg-[#0d0e0f] section-x py-12 lg:py-16">
         <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-8">
           <div className="flex flex-col justify-between gap-3 md:flex-row md:items-end">
             <div className="flex flex-col gap-2">

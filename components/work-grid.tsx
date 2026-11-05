@@ -59,6 +59,32 @@ const allProjects: Project[] = [
 		url: "/case-study/smart-teacher",
 	},
 	{
+		id: "sino360",
+		tag: "AUTOMOTIVE MOBILE APP",
+		category: "MOBILE PRODUCT ENGINEERING",
+		title: "Sino 360",
+		description:
+			"Chinese VIN decoder app — specs, accident and title history and mileage checks from a camera scan or typed VIN, in five languages.",
+		image: "/figma/sino360-hero.png",
+		topics: ["Development", "Technology", "Design"],
+		tags: ["Automotive", "Flutter", "Production"],
+		proof: { label: "Google Play", value: "Live, 29.1 MB install" },
+		url: "/case-study/sino360",
+	},
+	{
+		id: "mashtal",
+		tag: "AGRITECH AI",
+		category: "AI PRODUCT ENGINEERING",
+		title: "Mashtal AI",
+		description:
+			"Arabic AI plant doctor — photograph a sick plant and get a structured Arabic diagnosis, treatment plan and care schedule.",
+		image: "/figma/mashtal-hero.png",
+		topics: ["Development", "Technology", "Design"],
+		tags: ["Plants", "Arabic", "Launching"],
+		proof: { label: "Per scan", value: "41 structured Arabic fields" },
+		url: "/case-study/mashtal",
+	},
+	{
 		id: "askdahab",
 		tag: "TRAVEL & BOOKING PLATFORM",
 		category: "AI PRODUCT ENGINEERING",

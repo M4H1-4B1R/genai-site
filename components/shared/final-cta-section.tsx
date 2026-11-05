@@ -1,6 +1,6 @@
 export function FinalCtaSection() {
   return (
-    <section className="border-t border-[#2a2d34] bg-[#121314] px-6 py-[120px] text-center max-[640px]:px-5 max-[640px]:py-[90px]">
+    <section className="border-t border-[#2a2d34] bg-[#121314] section-x py-[120px] text-center max-[640px]:py-[90px]">
       <div className="mx-auto max-w-[800px]">
         <p className="eyebrow">Ready for discovery</p>
         <h2 className="mx-auto mt-3.5 mb-[22px] max-w-[700px] text-[clamp(38px,5vw,60px)] leading-[0.98] uppercase">

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -70,6 +71,18 @@ export function InsightsLibrary({ posts }: { posts: PostSummary[] }) {
             key={article.slug}
             className="group flex flex-col gap-4 rounded-[4px] border border-[#293137] bg-[#0f1417] p-6 transition-colors duration-200 hover:border-[#424a50]"
           >
+            {article.image && (
+              <div className="relative aspect-video overflow-clip rounded-[4px] border border-[#1c2328]">
+                <Image
+                  src={article.image.src}
+                  alt={article.image.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 600px"
+                  quality={90}
+                  className="object-cover"
+                />
+              </div>
+            )}
             <TopicPill label={article.topic} />
             <h3 className="text-[18px] font-bold leading-6 text-[#f2f2f0]">
               {article.title}

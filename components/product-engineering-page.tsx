@@ -167,7 +167,7 @@ function SectionHeading({
 export function ProductEngineeringPage() {
   return (
     <main className="bg-[#0d0e0f]">
-      <section className="relative overflow-hidden border-b border-[#1c2328] bg-[#080b0d] min-h-[720px] max-[640px]:min-h-[620px] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 pt-[110px] max-[900px]:pt-[92px] max-[640px]:pt-[68px]">
+      <section className="relative overflow-hidden border-b border-[#1c2328] bg-[#080b0d] min-h-[720px] max-[640px]:min-h-[620px] section-x pt-[110px] max-[900px]:pt-[92px] max-[640px]:pt-[68px]">
         <div className="relative z-[1] max-w-[650px]">
           <p className="inline-flex items-center gap-1.5 bg-[#0f1417] border border-[#293137] rounded-[2px] text-[#9ca3af] font-[700] text-[11px] tracking-[1.2px] uppercase px-2 py-1 mb-8">
             <span className="inline-block h-[6px] w-[6px] rounded-full bg-[var(--orange)]" aria-hidden="true" />
@@ -208,14 +208,12 @@ export function ProductEngineeringPage() {
         </svg>
       </section>
       <section
-        className="border-y border-[#1c2328] pt-[26px] pb-[30px]"
+        className="border-b border-[#1c2328] bg-ink py-6"
         aria-label="Clients"
       >
-        <Marquee duration={42} items={clientStripItems} className="max-[640px]:py-4" />
+        <Marquee duration={42} items={clientStripItems} />
       </section>
-      <div className="bg-[#0d0e0f] border-y border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 py-[38px]">
-      </div>
-      <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 py-[96px] max-[640px]:py-16">
+      <section className="border-b border-[#1c2328] section-x section-y">
         <SectionHeading
           eyebrow="When you need this"
           title="Recognize the situation before choosing the service."
@@ -230,7 +228,7 @@ export function ProductEngineeringPage() {
           ))}
         </div>
       </section>
-      <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 py-[96px] max-[640px]:py-16">
+      <section className="border-b border-[#1c2328] section-x section-y">
         <div className="mb-12">
           <p className="eyebrow">Deliverables</p>
           <h2 className="text-[#f2f2ef] text-[clamp(38px,4vw,48px)] font-[400] leading-[1.08] tracking-[-1.5px] mt-3 max-w-[760px]">
@@ -246,7 +244,7 @@ export function ProductEngineeringPage() {
           ))}
         </div>
       </section>
-      <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 py-[96px] max-[640px]:py-16">
+      <section className="border-b border-[#1c2328] section-x section-y">
         <div className="mb-12">
           <p className="eyebrow">How we work</p>
           <h2 className="text-[#f2f2ef] text-[clamp(38px,4vw,48px)] font-[400] leading-[1.08] tracking-[-1.5px] mt-3 max-w-[760px]">
@@ -304,7 +302,7 @@ export function ProductEngineeringPage() {
           Return to the problem as evidence changes.
         </p>
       </section>
-      <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 py-[96px] max-[640px]:py-16" id="relevant-work">
+      <section className="border-b border-[#1c2328] section-x section-y" id="relevant-work">
         <div className="flex items-end justify-between gap-8 max-[640px]:flex-col max-[640px]:items-start mb-5">
           <div>
             <p className="eyebrow">Relevant work</p>
@@ -341,10 +339,8 @@ export function ProductEngineeringPage() {
           ))}
         </div>
       </section>
-      <section className="border-t border-[rgba(83,68,52,0.2)] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 py-[49px]">
-			<ServicesProofSlider/>
-      </section>
-      <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 py-[96px] max-[640px]:py-16">
+      <ServicesProofSlider />
+      <section className="border-b border-[#1c2328] section-x section-y">
         <div className="mb-12">
           <p className="eyebrow">How we engage</p>
           <h2 className="text-[#f2f2ef] text-[clamp(38px,4vw,48px)] font-[400] leading-[1.08] tracking-[-1.5px] mt-3 max-w-[760px]">
@@ -361,7 +357,7 @@ export function ProductEngineeringPage() {
           ))}
         </div>
       </section>
-      <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 py-[96px] max-[640px]:py-16">
+      <section className="border-b border-[#1c2328] section-x section-y">
         <div className="mx-auto max-w-[760px] text-center">
           <p className="eyebrow">FAQ</p>
           <h2 className="text-[#f2f2ef] text-[clamp(38px,4vw,48px)] font-[400] leading-[1.08] tracking-[-1.5px] mt-3">
@@ -375,7 +371,7 @@ export function ProductEngineeringPage() {
           <FaqAccordion faqs={faqs} />
         </div>
       </section>
-      <section className="bg-[#0d0e0f] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 py-[96px] max-[640px]:py-16">
+      <section className="bg-[#0d0e0f] section-x section-y">
         <div className="cta-panel cta-panel--sentence">
           <p className="eyebrow">
             <span className="cta-panel-dot" aria-hidden="true" />

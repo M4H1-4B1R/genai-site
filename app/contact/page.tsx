@@ -16,7 +16,7 @@ export default function ContactRoute() {
   return (
     <div className="min-w-[320px] overflow-clip bg-ink">
       <SiteHeader />
-      <Contact />
+      <Contact asH1 />
       <ContactChannels />
       <ContactLocation />
       <SiteFooter />

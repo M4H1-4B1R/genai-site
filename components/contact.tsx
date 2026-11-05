@@ -2,16 +2,19 @@ import Image from "next/image";
 
 import { ContactForm } from "@/components/contact-form";
 
-export function Contact() {
+// The footer CTA renders on every page, so it is an h2 there; the /contact
+// route has no other heading, so it passes `asH1`.
+export function Contact({ asH1 = false }: { asH1?: boolean }) {
+  const Heading = asH1 ? "h1" : "h2";
   return (
     <section
-      className="grid grid-cols-2 gap-16 border-t border-[#2a2d34] px-[max(40px,calc((100%_-_1280px)_/_2))] py-16 max-[900px]:grid-cols-1 max-[640px]:px-9 max-[640px]:py-[68px]"
+      className="grid grid-cols-2 gap-16 border-t border-[#2a2d34] section-x section-y max-[900px]:grid-cols-1"
       id="contact"
     >
       <div className="self-center">
-        <h2 className="mt-3.5 text-[clamp(40px,4vw,56px)] leading-[1.08] tracking-[-1.5px]">
+        <Heading className="mt-3.5 text-[clamp(40px,4vw,56px)] leading-[1.08] tracking-[-1.5px]">
           Contact us
-        </h2>
+        </Heading>
         <p className="max-w-[520px] text-[18px] leading-[1.55] text-[#d1d5db]">
           Stop experimenting and start engineering. Let&apos;s discuss how we
           can turn your complex requirements into a deployed solution.

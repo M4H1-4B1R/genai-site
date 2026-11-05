@@ -152,7 +152,7 @@ function SectionHeading({
 export function AgenticLayerEngineeringPage() {
   return (
     <main className="bg-[#090a0b]">
-      <section className="relative min-h-[720px] overflow-hidden border-b border-[#1c2328] bg-[#080b0d] px-[max(40px,calc((100%_-_1120px)_/_2))] pt-20 max-[900px]:pt-[92px] max-[640px]:min-h-[620px] max-[640px]:px-5 max-[640px]:pt-[68px]">
+      <section className="relative min-h-[720px] overflow-hidden border-b border-[#1c2328] bg-[#080b0d] section-x pt-20 max-[900px]:pt-[92px] max-[640px]:min-h-[620px] max-[640px]:pt-[68px]">
         <div className="relative z-[1] max-w-[650px]">
           <p className="mb-8 inline-flex items-center gap-1.5 border border-[#293137] bg-[#0f1417] px-2 py-1 text-[11px] font-[700] uppercase tracking-[1.2px] text-[#f4f4f1]">
             <span
@@ -205,17 +205,16 @@ export function AgenticLayerEngineeringPage() {
       </section>
 
       <section
-        className="border-y border-[#1c2328] py-[26px]"
+        className="border-b border-[#1c2328] bg-ink py-6"
         aria-label="Clients"
       >
         <Marquee
           duration={42}
           items={clientStripItems}
-          className="max-[640px]:py-4"
         />
       </section>
 
-      <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] py-24 max-[640px]:px-5 max-[640px]:py-16">
+      <section className="border-b border-[#1c2328] section-x section-y">
         <SectionHeading
           eyebrow="When you need this"
           title="Recognize the situation before choosing the service."
@@ -238,7 +237,7 @@ export function AgenticLayerEngineeringPage() {
         </div>
       </section>
 
-      <section className="border-b border-[#1c2328] bg-[#080b0d] px-[max(40px,calc((100%_-_1120px)_/_2))] py-24 max-[640px]:px-5 max-[640px]:py-16">
+      <section className="border-b border-[#1c2328] bg-[#080b0d] section-x section-y">
         <SectionHeading eyebrow="What we engineer" title="What we engineer." />
         <div className="border-t border-[#293137]">
           {deliverables.map(([title, body]) => (
@@ -255,7 +254,7 @@ export function AgenticLayerEngineeringPage() {
         </div>
       </section>
 
-      <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] py-24 max-[640px]:px-5 max-[640px]:py-16">
+      <section className="border-b border-[#1c2328] section-x section-y">
         <SectionHeading
           eyebrow="Service model"
           title={
@@ -327,7 +326,7 @@ export function AgenticLayerEngineeringPage() {
 
       <section
         id="relevant-work"
-        className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] py-24 max-[640px]:px-5 max-[640px]:py-16"
+        className="border-b border-[#1c2328] section-x section-y"
       >
         <SectionHeading
           eyebrow="Relevant work"
@@ -373,11 +372,9 @@ export function AgenticLayerEngineeringPage() {
         </div>
       </section>
 
-      <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] py-24 max-[640px]:px-5 max-[640px]:py-16">
-			<ServicesProofSlider/>
-      </section>
+      <ServicesProofSlider />
 
-      <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] py-24 max-[640px]:px-5 max-[640px]:py-16">
+      <section className="border-b border-[#1c2328] section-x section-y">
         <SectionHeading
           eyebrow="Engagement model"
           title="The engagement model depends on the problem."
@@ -400,7 +397,7 @@ export function AgenticLayerEngineeringPage() {
         </div>
       </section>
 
-      <section className="border-b border-[#1c2328] bg-[#080b0d] px-[max(40px,calc((100%_-_1000px)_/_2))] py-24 max-[640px]:px-5 max-[640px]:py-16">
+      <section className="border-b border-[#1c2328] bg-[#080b0d] section-x section-y">
         <div className="mx-auto max-w-[760px] text-center">
           <p className="eyebrow text-[var(--orange)]">FAQ</p>
           <h2 className="mt-3 text-[clamp(38px,4vw,48px)] leading-[1.08] tracking-[-1.5px] text-[#f2f2ef]">
@@ -416,7 +413,7 @@ export function AgenticLayerEngineeringPage() {
         </div>
       </section>
 
-      <section className="bg-[#0d0e0f] px-[max(40px,calc((100%_-_1120px)_/_2))] py-24 max-[640px]:px-5 max-[640px]:py-16">
+      <section className="bg-[#0d0e0f] section-x section-y">
         <div className="cta-panel cta-panel--sentence">
           <p className="eyebrow">
             <span className="cta-panel-dot" aria-hidden="true" />

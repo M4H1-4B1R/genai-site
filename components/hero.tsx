@@ -15,7 +15,7 @@ export function Hero() {
       >
         <div className="hero sticky top-20 h-[calc(100svh_-_80px)] min-h-[680px] overflow-hidden bg-ink max-[900px]:relative max-[900px]:top-0 max-[900px]:h-auto max-[900px]:min-h-0 motion-reduce:relative motion-reduce:top-0 motion-reduce:h-auto motion-reduce:min-h-0">
           <HeroLines />
-          <div className="relative z-[1] mx-auto max-w-[1120px] px-0 pt-[clamp(96px,15svh,140px)] pb-[120px] opacity-[max(0,calc(1_-_var(--hero-p,0)*1.5))] translate-x-[calc(var(--hero-p,0)*-220px)] will-change-[opacity,transform] max-[900px]:px-8 max-[900px]:pt-[110px] max-[900px]:opacity-100 max-[900px]:translate-x-0 max-[640px]:px-5 max-[640px]:pt-[90px] max-[640px]:pb-10">
+          <div className="relative z-[1] section-x pt-[clamp(96px,15svh,140px)] pb-[120px] opacity-[max(0,calc(1_-_var(--hero-p,0)*1.5))] translate-x-[calc(var(--hero-p,0)*-220px)] will-change-[opacity,transform] max-[900px]:pt-[110px] max-[900px]:opacity-100 max-[900px]:translate-x-0 max-[640px]:pt-[90px] max-[640px]:pb-10">
             <div className="mb-[clamp(20px,4svh,40px)] flex items-center gap-[14px]">
               <span className="rounded-full border border-orange px-2.5 py-1.5 font-mono text-[10px] tracking-[0.5px] uppercase text-orange">
                 ● Live system
@@ -76,7 +76,7 @@ export function Hero() {
         </div>
       </section>
       <section
-        className="border-y border-[#1c2328] pt-[26px] pb-[30px]"
+        className="border-y border-[#1c2328] bg-ink py-6"
         aria-label="Clients"
       >
         <Marquee duration={42} items={clientStripItems} />

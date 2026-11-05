@@ -81,6 +81,7 @@ export function ServicesProofSlider() {
   const active = index % n;
 
   return (
+    <div className="section-x py-12 max-[640px]:py-8">
     <section
       className="services-proof services-proof-slider"
       onMouseEnter={() => (paused.current = true)}
@@ -141,5 +142,6 @@ export function ServicesProofSlider() {
         ))}
       </div>
     </section>
+    </div>
   );
 }

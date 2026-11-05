@@ -5,7 +5,7 @@ import { NewsletterForm } from "@/components/newsletter-form";
 
 export function SiteFooter() {
   return (
-    <footer className="grid grid-cols-[1.5fr_1fr_1fr_1.5fr] gap-12 border-t border-[#2a2d34] px-[max(40px,calc((100%_-_1280px)_/_2))] py-16 max-[900px]:grid-cols-2 max-[640px]:grid-cols-2 max-[640px]:px-5 max-[640px]:py-12">
+    <footer className="grid grid-cols-[1.5fr_1fr_1fr_1.5fr] gap-12 border-t border-[#2a2d34] section-x section-y max-[900px]:grid-cols-2 max-[640px]:grid-cols-2 max-[640px]:py-12">
       <div className="flex flex-col gap-2.5 max-[640px]:col-span-full">
         <Link className="flex items-center gap-3" href="/" aria-label="GenAILabs home">
           <Image

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function NotFoundPage() {
   return (
-    <main className="relative flex min-h-[720px] flex-col bg-[#080b0d] items-center justify-center gap-12 overflow-clip px-[120px] pb-20 pt-12 text-center max-[900px]:px-8 max-[640px]:min-h-[560px] max-[640px]:px-5">
+    <main className="relative flex min-h-[720px] flex-col bg-[#080b0d] items-center justify-center gap-12 overflow-clip section-x pb-20 pt-12 text-center max-[640px]:min-h-[560px]">
       <Image
         src="/figma/not-found/artwork.png"
         alt=""

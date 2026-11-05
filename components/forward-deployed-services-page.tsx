@@ -144,7 +144,7 @@ export function ForwardDeployedServicesPage() {
   return (
     <main className="bg-deep text-[#f2f2ef]">
       {/* Hero - matches services-hub layout but with arc SVG on desktop */}
-      <section className="border-b border-[#1c2328] px-10 sm:px-10 lg:grid lg:grid-cols-[minmax(0,8fr)_minmax(280px,4fr)] lg:gap-8 lg:px-80 lg:min-h-[520px] py-5">
+      <section className="border-b border-[#1c2328] section-x lg:grid lg:grid-cols-[minmax(0,8fr)_minmax(280px,4fr)] lg:gap-8 lg:min-h-[520px] py-5">
         <div className="max-w-[720px] mx-auto lg:mx-0 self-start lg:self-center pt-12 lg:pt-0">
           <div className="inline-flex items-center gap-2 border border-[#293137] bg-[#0f1417] px-[9px] py-[5px] text-[10px] font-bold tracking-[1.2px] text-orange mb-8">
             <i className="h-1.5 w-1.5 rounded-full bg-orange" />
@@ -180,15 +180,15 @@ export function ForwardDeployedServicesPage() {
 
       {/* Client logo marquee */}
       <div
-        className="border-b border-[#1c2328] px-6 py-4 sm:px-10 lg:px-20"
+        className="border-b border-[#1c2328] bg-ink py-6"
         aria-label="Selected technology partners"
       >
-        <Marquee duration={42} items={clientStripItems} className="max-[640px]:py-4" />
+        <Marquee duration={42} items={clientStripItems} />
       </div>
 
 
       {/* When you need this - Challenges */}
-      <section className="border-b border-[#1c2328] bg-deep px-6 py-16 sm:px-10 sm:py-20 lg:px-50 lg:py-24">
+      <section className="border-b border-[#1c2328] bg-deep section-x section-y">
         <div className="mb-12 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <div className="max-w-[600px]">
             <SectionLabel>When you need this</SectionLabel>
@@ -220,7 +220,7 @@ export function ForwardDeployedServicesPage() {
       </section>
 
       {/* What we do - Capabilities */}
-      <section className="border-b border-[#1c2328] bg-ink py-20 px-50 max-[960px]:px-7">
+      <section className="border-b border-[#1c2328] bg-ink section-x section-y">
         <div className="mb-12 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <div className="max-w-[600px]">
             <SectionLabel>What we do</SectionLabel>
@@ -259,7 +259,7 @@ export function ForwardDeployedServicesPage() {
 
       {/* Service model - Pipeline */}
 			<section className="bg-deep">
-      <div className="relative overflow-hidden border-b border-[#1c2328] bg-[#0f1417] px-6 py-16 sm:px-10 sm:py-20 lg:px-50 lg:py-24 before:absolute before:inset-[25%_20%] before:bg-[#ff98000d] before:blur-[50px] before:content-['']">
+      <div className="relative overflow-hidden border-b border-[#1c2328] bg-[#0f1417] section-x section-y before:absolute before:inset-[25%_20%] before:bg-[#ff98000d] before:blur-[50px] before:content-['']">
         <div className="relative">
           <SectionLabel>Service model</SectionLabel>
           <h2 className="mt-4 mb-12 text-[clamp(38px,4vw,48px)] font-bold leading-[1.08] tracking-[-1.2px]">
@@ -318,7 +318,7 @@ export function ForwardDeployedServicesPage() {
 
       {/* Evidence */}
       
-      <section className="border-b border-[#1c2328] px-[max(40px,calc((100%_-_1120px)_/_2))] max-[640px]:px-5 py-[96px] max-[640px]:py-16" id="evidence">
+      <section className="border-b border-[#1c2328] section-x section-y" id="evidence">
         <div className="flex items-end justify-between gap-8 max-[640px]:flex-col max-[640px]:items-start mb-10">
           <div>
             <p className="eyebrow">Relevant work</p>
@@ -359,13 +359,11 @@ export function ForwardDeployedServicesPage() {
 
       {/* Quote */}
       
-      <section className="border-t border-[#1c2328] px-50 max-[640px]:px-5 py-[49px]">
-			<ServicesProofSlider/>
-      </section>
+      <ServicesProofSlider />
 
 
       {/* Engagement model */}
-      <section className="border-b border-[#1c2328] bg-deep px-6 py-16 sm:px-10 sm:py-20 lg:px-50 lg:py-24">
+      <section className="border-b border-[#1c2328] bg-deep section-x section-y">
         <SectionLabel>Engagement model</SectionLabel>
         <h2 className="mt-4 max-w-[720px] text-[clamp(38px,4vw,48px)] font-bold leading-[1.08] tracking-[-1.2px]">
           The engagement model depends on the problem.
@@ -374,7 +372,7 @@ export function ForwardDeployedServicesPage() {
       </section>
 
       {/* FAQ */}
-      <section className="border-b border-[#1c2328] bg-ink px-6 py-16 sm:px-10 sm:py-20 lg:px-50 lg:py-24">
+      <section className="border-b border-[#1c2328] bg-ink section-x section-y">
         <SectionLabel>FAQ</SectionLabel>
         <h2 className="mb-12 mt-4 max-w-[720px] text-[clamp(38px,4vw,48px)] font-bold leading-[1.08] tracking-[-1.2px]">
           Frequently asked questions regarding our forward deployed services.
@@ -383,8 +381,8 @@ export function ForwardDeployedServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-deep px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-28 lg:max-w-[1280px] lg:mx-auto">
-        <div className="cta-panel cta-panel--sentence max-w-[1120px] mx-auto">
+      <section className="bg-deep section-x section-y">
+        <div className="cta-panel cta-panel--sentence">
           <p className="eyebrow">
             <span className="cta-panel-dot" aria-hidden="true" />
             Let&apos;s talk

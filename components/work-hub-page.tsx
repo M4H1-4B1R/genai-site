@@ -16,7 +16,7 @@ export function WorkHubPage() {
   return (
     <main className="w-full">
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden border-b border-[#1c2328] bg-deep px-6 py-16 sm:px-10 sm:py-20 lg:min-h-[720px] lg:px-20 lg:py-20">
+      <section className="relative overflow-hidden border-b border-[#1c2328] bg-deep section-x section-y lg:min-h-[720px]">
         <div className="relative mx-auto flex max-w-[1280px] flex-col justify-center gap-12 lg:grid lg:h-[720px] lg:grid-cols-12 lg:gap-6">
           {/* Left Column */}
           <div className="flex w-full flex-col items-start lg:col-span-7 lg:h-[371px] lg:justify-between">
@@ -90,7 +90,7 @@ export function WorkHubPage() {
       {/* 4. FEATURED WORK SECTION */}
       <section
         id="featured-work"
-        className="border-b border-[#1c2328] bg-ink px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24"
+        className="border-b border-[#1c2328] bg-ink section-x section-y"
       >
         <div className="mx-auto max-w-[1280px]">
           {/* Header Row */}
@@ -213,7 +213,7 @@ export function WorkHubPage() {
       {/* 5. ALL SELECTED WORK GRID */}
       <section
         id="all-work"
-        className="border-b border-[#1c2328] bg-deep px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24"
+        className="border-b border-[#1c2328] bg-deep section-x section-y"
       >
         <div className="mx-auto max-w-[1280px]">
           <div className="mb-10">
@@ -235,9 +235,7 @@ export function WorkHubPage() {
 
       <DeploymentPatternsSection />
 
-			<section className="lg:px-50 py-10 sm:px-5">
-			<ServicesProofSlider/>
-			</section>
+			<ServicesProofSlider />
 
       <CalloutCtaSection />
     </main>

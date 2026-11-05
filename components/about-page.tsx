@@ -39,7 +39,7 @@ const expertise = [
 ];
 
 const sectionClass =
-  "border-b border-[#1c2328] bg-ink px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24";
+  "border-b border-[#1c2328] bg-ink section-x section-y";
 const card = "rounded-[8px] border border-[#494247]";
 const cardClass = `${card} bg-[#0f1417]`;
 const index = "font-mono text-[10px] text-orange";
@@ -58,7 +58,7 @@ function Section({
 }) {
   return (
     <section className={sectionClass}>
-      <div className="mx-auto flex max-w-[1160px] flex-col gap-10 lg:gap-12">
+      <div className="flex flex-col gap-10 lg:gap-12">
         <div className="flex flex-col justify-between gap-4 border-b border-[#494247] pb-4 md:flex-row md:items-end md:gap-12">
           <div className="flex flex-col gap-3 md:max-w-[760px]">
             <p className="font-mono text-[12px] font-bold tracking-[1.2px] text-[#999ea2]">
@@ -94,7 +94,7 @@ export function AboutPage() {
   return (
     <main className="w-full">
       {/* 1. HERO */}
-      <section className="border-b border-[#1c2328] bg-[#080b0d] px-6 py-16 sm:px-10 lg:flex lg:min-h-[720px] lg:items-center lg:px-20">
+      <section className="border-b border-[#1c2328] bg-[#080b0d] section-x py-16 sm:py-20 lg:flex lg:min-h-[720px] lg:items-center">
         <div className="mx-auto grid w-full max-w-[1280px] items-center gap-12 lg:grid-cols-2">
           <div className="flex flex-col items-start gap-6">
             <div className="flex flex-wrap items-center gap-3">
@@ -317,9 +317,7 @@ export function AboutPage() {
       </Section>
 
       {/* 10-11. SHARED SECTIONS */}
-			<section className="lg:px-50 sm:px-5 py-10">
-			<ServicesProofSlider/>
-			</section>
+			<ServicesProofSlider />
       <FinalCtaSection />
     </main>
   );
