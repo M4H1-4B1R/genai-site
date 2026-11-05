@@ -5,6 +5,8 @@ topic: Generative AI
 summary: "AI has the potential to do a lot of good in the world, but it also has the potential to do a lot of harm. It's important to develop AI in a way that is fair\u2026"
 ---
 
+![Ethical AI Developement Poster](/insights/ethical-ai-development/ethical-ai-poster.webp)
+
 ## The Importance of Ethical AI
 
 AI has the potential to do a lot of good in the world, but it also has the potential to do a lot of harm. It's important to develop AI in a way that is fair, transparent, and accountable.

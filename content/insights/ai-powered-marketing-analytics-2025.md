@@ -5,6 +5,8 @@ topic: AI Marketing
 summary: "AI is making it possible to track and measure the ROI of your marketing campaigns with unprecedented accuracy. AI-powered marketing analytics tools can help\u2026"
 ---
 
+![AI Powered Marketing Analytics Poster](/insights/ai-marketing-analytics/ai-marketing-roi-poster.webp)
+
 ## The Future of Marketing Analytics
 
 AI is making it possible to track and measure the ROI of your marketing campaigns with unprecedented accuracy. AI-powered marketing analytics tools can help you to understand what's working and what's not, so you can optimize your campaigns for maximum results.

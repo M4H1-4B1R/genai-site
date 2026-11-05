@@ -49,9 +49,6 @@ export function InsightsPage() {
         />
       </section>
 
-      {/* 3. TRENDING BANNER */}
-      <TrendingBanner />
-
       {/* 4. FEATURED INSIGHT */}
       <section
         id="featured-insight"
