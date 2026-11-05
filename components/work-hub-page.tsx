@@ -16,8 +16,8 @@ export function WorkHubPage() {
   return (
     <main className="w-full">
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden border-b border-[#1c2328] bg-deep section-x section-y lg:min-h-[720px]">
-        <div className="relative mx-auto flex max-w-[1280px] flex-col justify-center gap-12 lg:grid lg:h-[720px] lg:grid-cols-12 lg:gap-6">
+      <section className="relative overflow-hidden border-b border-[#1c2328] bg-deep section-x section-y lg:py-12">
+        <div className="relative mx-auto flex max-w-[1280px] flex-col justify-center gap-12 lg:grid lg:h-[500px] lg:grid-cols-12 lg:items-center lg:gap-6">
           {/* Left Column */}
           <div className="flex w-full flex-col items-start lg:col-span-7 lg:h-[371px] lg:justify-between">
             {/* Eyebrow */}
