@@ -25,6 +25,42 @@ const team = [
     expertise: "Figma, Wireframing, Hi-Fi design",
     image: "/team/trinandha-yudha-ismoyo.webp",
   },
+  {
+    name: "Sharifa Akhter",
+    role: "Full Stack Developer",
+    expertise: "JavaScript, Tailwind, Next.js",
+    image: "/team/sharifa-akhter.webp",
+  },
+  {
+    name: "Kushal Ghosh",
+    role: "Software Engineer",
+    expertise: "TypeScript, MongoDB, Docker",
+    image: "/team/kushal-ghosh.webp",
+  },
+  {
+    name: "Taufiquzzaman Emon",
+    role: "Frontend & SEO Developer",
+    expertise: "Next.js, Tailwind",
+    image: "/team/taufiquzzaman-emon.webp",
+  },
+  {
+    name: "Adri Shikhar Barua",
+    role: "Full Stack Engineer",
+    expertise: "Next.js, React, Node",
+    image: "/team/adri-shikhar-barua.webp",
+  },
+  {
+    name: "Chalimatus Sa'diyah",
+    role: "Digital Marketing Expert",
+    expertise: "Social Media Marketing, Content Creation",
+    image: "/team/chalimatus-sadiyah.webp",
+  },
+  {
+    name: "Mahi Abir",
+    role: "Web Developer",
+    expertise: "JavaScript, Next.js, Node",
+    image: "/team/mahi-abir.webp",
+  },
 ];
 
 const showcase = [
@@ -155,6 +191,28 @@ export function AboutPage() {
               className="absolute right-[-1px] top-[-1px] h-[220px] w-[260px] bg-[linear-gradient(220deg,rgba(255,152,0,0.1)_0%,rgba(255,152,0,0)_55%)] opacity-70 blur-[24px]"
               aria-hidden="true"
             />
+            <svg
+              className="absolute left-6 right-6 top-8 h-[150px] w-[calc(100%-48px)] sm:left-[47px] sm:w-[calc(100%-94px)]"
+              viewBox="0 0 400 150"
+              preserveAspectRatio="none"
+              fill="none"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="about-chart-fill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#ff9800" stopOpacity="0.28" />
+                  <stop offset="100%" stopColor="#ff9800" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+              {[30, 70, 110].map((y) => (
+                <line key={y} x1="0" x2="400" y1={y} y2={y} stroke="#494247" strokeOpacity="0.5" strokeDasharray="3 5" />
+              ))}
+              {[20, 60, 100, 140, 180, 220, 260, 300, 340].map((x, i) => (
+                <rect key={x} x={x} y={150 - [28, 40, 34, 52, 46, 64, 58, 76, 70][i]} width="14" height={[28, 40, 34, 52, 46, 64, 58, 76, 70][i]} rx="2" fill="#494247" fillOpacity="0.55" />
+              ))}
+              <path d="M0 120 L40 104 L80 112 L120 86 L160 92 L200 64 L240 72 L280 44 L320 52 L360 22 L400 12 L400 150 L0 150 Z" fill="url(#about-chart-fill)" />
+              <path d="M0 120 L40 104 L80 112 L120 86 L160 92 L200 64 L240 72 L280 44 L320 52 L360 22 L400 12" stroke="#ff9800" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+            </svg>
             <dl className="absolute bottom-8 left-6 right-6 flex flex-wrap gap-x-6 gap-y-4 sm:left-[47px] sm:gap-x-12">
               {metrics.map((m) => (
                 <div key={m.label} className="flex flex-col gap-1">
