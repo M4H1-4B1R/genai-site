@@ -1,9 +1,50 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { clientStripItems } from "@/components/shared/client-logos";
 import { FinalCtaSection } from "@/components/shared/final-cta-section";
 import { Marquee } from "@/components/shared/marquee";
 import {ServicesProofSlider} from "@/components/services-proof-slider";
+
+const team = [
+  {
+    name: "Laith Al Abbadi",
+    role: "Founder and AI Engineer",
+    expertise: "Python, Node, PyTorch",
+    image: "/team/laith-al-abbadi.webp",
+  },
+  {
+    name: "Nafiul Hasan",
+    role: "Software Engineer",
+    expertise: "TypeScript, Next.js, MongoDB",
+    image: "/team/nafiul-hasan.webp",
+  },
+  {
+    name: "Trinandha Yudha Ismoyo",
+    role: "UI/UX Designer",
+    expertise: "Figma, Wireframing, Hi-Fi design",
+    image: "/team/trinandha-yudha-ismoyo.webp",
+  },
+];
+
+const showcase = [
+  {
+    title: "Kaya Health Coach",
+    category: "Healthcare AI",
+    summary:
+      "AI functional medicine coach guiding people through structured wellness sessions, with real-time coaching and habit, goal and mood tracking. Under 1s to first token.",
+    image: "/figma/work/8b005.png",
+    url: "/case-study/kaya",
+  },
+  {
+    title: "Ask Dahab",
+    category: "Travel & Booking Platform",
+    summary:
+      "Multilingual travel and booking platform for Dahab, Egypt — 6 languages, ~915 pages, 18 bookable experiences, admin panel, job portal and the Ask Sinai mobile app.",
+    image: "/figma/askdahab-hero.png",
+    url: "/case-study/askdahab",
+  },
+];
 
 const metrics = [
   { label: "Systems in production", value: "30+" },
@@ -77,16 +118,6 @@ function Section({
         {children}
       </div>
     </section>
-  );
-}
-
-function Placeholder({ label, className }: { label: string; className: string }) {
-  return (
-    <div
-      className={`flex items-center justify-center overflow-clip ${card} bg-[#171416] px-5 text-center text-xs font-bold text-[#747d81] ${className}`}
-    >
-      {label}
-    </div>
   );
 }
 
@@ -270,16 +301,18 @@ export function AboutPage() {
         aside="Practitioners who have shipped AI in production environments across finance, health, and enterprise software."
       >
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {[1, 2, 3].map((n) => (
-            <article key={n} className={`flex flex-col gap-4 p-6 ${cardClass}`}>
-              <Placeholder label="TEAM PORTRAIT / PROFILE" className="h-[180px]" />
+          {team.map((m) => (
+            <article key={m.name} className={`flex flex-col gap-4 p-6 ${cardClass}`}>
+              <div className={`relative aspect-[4/3] w-full overflow-clip ${card}`}>
+                <Image src={m.image} alt={m.name} fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover object-top" />
+              </div>
               <div className="flex flex-col gap-1.5">
-                <h3 className="text-xl font-bold leading-7 text-[#f4f4f1]">[Name]</h3>
+                <h3 className="text-xl font-bold leading-7 text-[#f4f4f1]">{m.name}</h3>
                 <p className="text-[13px] font-bold uppercase tracking-[0.5px] text-orange">
-                  [Role]
+                  {m.role}
                 </p>
                 <p className={`text-[13px] leading-[19px] ${secondary}`}>
-                  [Relevant expertise]
+                  {m.expertise}
                 </p>
               </div>
             </article>
@@ -294,20 +327,19 @@ export function AboutPage() {
         aside="Explore parallel high-throughput production implementations."
       >
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {[1, 2].map((n) => (
-            <article key={n} className={`flex flex-col items-start gap-4 p-6 ${cardClass}`}>
-              <Placeholder label="PROJECT / PRODUCT VISUAL" className="h-[200px] w-full" />
+          {showcase.map((p) => (
+            <article key={p.title} className={`flex flex-col items-start gap-4 p-6 ${cardClass}`}>
+              <div className={`relative h-[200px] w-full overflow-clip ${card}`}>
+                <Image src={p.image} alt={p.title} fill sizes="(max-width: 768px) 100vw, 600px" className="object-cover" />
+              </div>
               <span className="rounded-[4px] border border-[rgba(255,152,0,0.2)] bg-[#1c1410] px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.5px] text-orange">
-                [CATEGORY]
+                {p.category}
               </span>
               <div className="flex flex-col gap-2">
-                <h3 className="text-xl font-bold leading-7 text-[#f4f4f1]">[Project Name]</h3>
-                <p className={`text-sm leading-5 ${secondary}`}>
-                  Verified contribution: Summary of specific value delivered
-                  through AI automation.
-                </p>
+                <h3 className="text-xl font-bold leading-7 text-[#f4f4f1]">{p.title}</h3>
+                <p className={`text-sm leading-5 ${secondary}`}>{p.summary}</p>
               </div>
-              <Link href="/case-study" className="flex items-center gap-2 font-bold text-orange hover:underline">
+              <Link href={p.url} className="flex items-center gap-2 font-bold text-orange hover:underline">
                 <span className="text-[13px] uppercase leading-5">View Case Study</span>
                 <span aria-hidden="true">→</span>
               </Link>

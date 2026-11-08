@@ -5,6 +5,8 @@ topic: Micro SaaS
 summary: "Identifying a truly \"untapped\" niche in the rapidly growing Software as a Service (SaaS) market can be challenging, but opportunities exist by focusing on\u2026"
 ---
 
+![How to find untapped SaaS niches](/insights/micro-saas-find-niches/niche-finder-poster.webp)
+
 ## The Gold Rush of SaaS Niches
 
 Identifying a truly "untapped" niche in the rapidly growing Software as a Service (SaaS) market can be challenging, but opportunities exist by focusing on hyper-specific, underserved audiences and problems. The most promising niches often lie in vertical-specific solutions, AI-powered automation, and tools for emerging business models.

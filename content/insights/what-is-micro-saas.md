@@ -5,6 +5,8 @@ topic: Micro SaaS
 summary: "A micro-SaaS is a small-scale Software as a Service (SaaS) business that is designed to address a specific problem for a niche market. These businesses are\u2026"
 ---
 
+![Micro SaaS - What it is](/insights/micro-saas-what-it-is/what-is-micro-saas-poster.webp)
+
 What is a Micro SaaS?
 
 A micro-SaaS is a small-scale Software as a Service (SaaS) business that is designed to address a specific problem for a niche market. These businesses are typically run by an individual or a small team, often without any external funding.
