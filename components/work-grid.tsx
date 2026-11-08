@@ -116,7 +116,7 @@ const allProjects: Project[] = [
 		category: "FORWARD-DEPLOYED SERVICES",
 		title: "NEXAGENT Retail Operations",
 		description:
-			"A venture studio fused with retail VC: autonomous operational systems that manage inventory distribution and automated reporting.",
+			"NexAgents (app.nexagents.cloud) puts production AI agents to work for a team — agents that answer reliably, per-person control over models, tools, passwords and company data, and metered token costs. Live in production",
 		image: "/figma/nexagent-showcase.png",
 		topics: ["Design", "Business", "Technology", "Marketing"],
 		tags: ["Autonomous", "Retail VC", "Workflows"],

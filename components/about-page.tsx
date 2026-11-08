@@ -1,9 +1,86 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { clientStripItems } from "@/components/shared/client-logos";
 import { FinalCtaSection } from "@/components/shared/final-cta-section";
 import { Marquee } from "@/components/shared/marquee";
 import {ServicesProofSlider} from "@/components/services-proof-slider";
+
+const team = [
+  {
+    name: "Laith Al Abbadi",
+    role: "Founder and AI Engineer",
+    expertise: "Python, Node, PyTorch",
+    image: "/team/laith-al-abbadi.webp",
+  },
+  {
+    name: "Nafiul Hasan",
+    role: "Software Engineer",
+    expertise: "TypeScript, Next.js, MongoDB",
+    image: "/team/nafiul-hasan.webp",
+  },
+  {
+    name: "Trinandha Yudha Ismoyo",
+    role: "UI/UX Designer",
+    expertise: "Figma, Wireframing, Hi-Fi design",
+    image: "/team/trinandha-yudha-ismoyo.webp",
+  },
+  {
+    name: "Sharifa Akhter",
+    role: "Full Stack Developer",
+    expertise: "JavaScript, Tailwind, Next.js",
+    image: "/team/sharifa-akhter.webp",
+  },
+  {
+    name: "Kushal Ghosh",
+    role: "Software Engineer",
+    expertise: "TypeScript, MongoDB, Docker",
+    image: "/team/kushal-ghosh.webp",
+  },
+  {
+    name: "Taufiquzzaman Emon",
+    role: "Frontend & SEO Developer",
+    expertise: "Next.js, Tailwind",
+    image: "/team/taufiquzzaman-emon.webp",
+  },
+  {
+    name: "Adri Shikhar Barua",
+    role: "Full Stack Engineer",
+    expertise: "Next.js, React, Node",
+    image: "/team/adri-shikhar-barua.webp",
+  },
+  {
+    name: "Chalimatus Sa'diyah",
+    role: "Digital Marketing Expert",
+    expertise: "Social Media Marketing, Content Creation",
+    image: "/team/chalimatus-sadiyah.webp",
+  },
+  {
+    name: "Mahi Abir",
+    role: "Web Developer",
+    expertise: "JavaScript, Next.js, Node",
+    image: "/team/mahi-abir.webp",
+  },
+];
+
+const showcase = [
+  {
+    title: "Kaya Health Coach",
+    category: "Healthcare AI",
+    summary:
+      "AI functional medicine coach guiding people through structured wellness sessions, with real-time coaching and habit, goal and mood tracking. Under 1s to first token.",
+    image: "/figma/work/8b005.png",
+    url: "/case-study/kaya",
+  },
+  {
+    title: "Ask Dahab",
+    category: "Travel & Booking Platform",
+    summary:
+      "Multilingual travel and booking platform for Dahab, Egypt — 6 languages, ~915 pages, 18 bookable experiences, admin panel, job portal and the Ask Sinai mobile app.",
+    image: "/figma/askdahab-hero.png",
+    url: "/case-study/askdahab",
+  },
+];
 
 const metrics = [
   { label: "Systems in production", value: "30+" },
@@ -80,16 +157,6 @@ function Section({
   );
 }
 
-function Placeholder({ label, className }: { label: string; className: string }) {
-  return (
-    <div
-      className={`flex items-center justify-center overflow-clip ${card} bg-[#171416] px-5 text-center text-xs font-bold text-[#747d81] ${className}`}
-    >
-      {label}
-    </div>
-  );
-}
-
 export function AboutPage() {
   return (
     <main className="w-full">
@@ -124,6 +191,28 @@ export function AboutPage() {
               className="absolute right-[-1px] top-[-1px] h-[220px] w-[260px] bg-[linear-gradient(220deg,rgba(255,152,0,0.1)_0%,rgba(255,152,0,0)_55%)] opacity-70 blur-[24px]"
               aria-hidden="true"
             />
+            <svg
+              className="absolute left-6 right-6 top-8 h-[150px] w-[calc(100%-48px)] sm:left-[47px] sm:w-[calc(100%-94px)]"
+              viewBox="0 0 400 150"
+              preserveAspectRatio="none"
+              fill="none"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="about-chart-fill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#ff9800" stopOpacity="0.28" />
+                  <stop offset="100%" stopColor="#ff9800" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+              {[30, 70, 110].map((y) => (
+                <line key={y} x1="0" x2="400" y1={y} y2={y} stroke="#494247" strokeOpacity="0.5" strokeDasharray="3 5" />
+              ))}
+              {[20, 60, 100, 140, 180, 220, 260, 300, 340].map((x, i) => (
+                <rect key={x} x={x} y={150 - [28, 40, 34, 52, 46, 64, 58, 76, 70][i]} width="14" height={[28, 40, 34, 52, 46, 64, 58, 76, 70][i]} rx="2" fill="#494247" fillOpacity="0.55" />
+              ))}
+              <path d="M0 120 L40 104 L80 112 L120 86 L160 92 L200 64 L240 72 L280 44 L320 52 L360 22 L400 12 L400 150 L0 150 Z" fill="url(#about-chart-fill)" />
+              <path d="M0 120 L40 104 L80 112 L120 86 L160 92 L200 64 L240 72 L280 44 L320 52 L360 22 L400 12" stroke="#ff9800" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+            </svg>
             <dl className="absolute bottom-8 left-6 right-6 flex flex-wrap gap-x-6 gap-y-4 sm:left-[47px] sm:gap-x-12">
               {metrics.map((m) => (
                 <div key={m.label} className="flex flex-col gap-1">
@@ -270,16 +359,18 @@ export function AboutPage() {
         aside="Practitioners who have shipped AI in production environments across finance, health, and enterprise software."
       >
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {[1, 2, 3].map((n) => (
-            <article key={n} className={`flex flex-col gap-4 p-6 ${cardClass}`}>
-              <Placeholder label="TEAM PORTRAIT / PROFILE" className="h-[180px]" />
+          {team.map((m) => (
+            <article key={m.name} className={`flex flex-col gap-4 p-6 ${cardClass}`}>
+              <div className={`relative aspect-[4/3] w-full overflow-clip ${card}`}>
+                <Image src={m.image} alt={m.name} fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover object-top" />
+              </div>
               <div className="flex flex-col gap-1.5">
-                <h3 className="text-xl font-bold leading-7 text-[#f4f4f1]">[Name]</h3>
+                <h3 className="text-xl font-bold leading-7 text-[#f4f4f1]">{m.name}</h3>
                 <p className="text-[13px] font-bold uppercase tracking-[0.5px] text-orange">
-                  [Role]
+                  {m.role}
                 </p>
                 <p className={`text-[13px] leading-[19px] ${secondary}`}>
-                  [Relevant expertise]
+                  {m.expertise}
                 </p>
               </div>
             </article>
@@ -294,20 +385,19 @@ export function AboutPage() {
         aside="Explore parallel high-throughput production implementations."
       >
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {[1, 2].map((n) => (
-            <article key={n} className={`flex flex-col items-start gap-4 p-6 ${cardClass}`}>
-              <Placeholder label="PROJECT / PRODUCT VISUAL" className="h-[200px] w-full" />
+          {showcase.map((p) => (
+            <article key={p.title} className={`flex flex-col items-start gap-4 p-6 ${cardClass}`}>
+              <div className={`relative h-[200px] w-full overflow-clip ${card}`}>
+                <Image src={p.image} alt={p.title} fill sizes="(max-width: 768px) 100vw, 600px" className="object-cover" />
+              </div>
               <span className="rounded-[4px] border border-[rgba(255,152,0,0.2)] bg-[#1c1410] px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.5px] text-orange">
-                [CATEGORY]
+                {p.category}
               </span>
               <div className="flex flex-col gap-2">
-                <h3 className="text-xl font-bold leading-7 text-[#f4f4f1]">[Project Name]</h3>
-                <p className={`text-sm leading-5 ${secondary}`}>
-                  Verified contribution: Summary of specific value delivered
-                  through AI automation.
-                </p>
+                <h3 className="text-xl font-bold leading-7 text-[#f4f4f1]">{p.title}</h3>
+                <p className={`text-sm leading-5 ${secondary}`}>{p.summary}</p>
               </div>
-              <Link href="/case-study" className="flex items-center gap-2 font-bold text-orange hover:underline">
+              <Link href={p.url} className="flex items-center gap-2 font-bold text-orange hover:underline">
                 <span className="text-[13px] uppercase leading-5">View Case Study</span>
                 <span aria-hidden="true">→</span>
               </Link>
