@@ -78,7 +78,7 @@ const allProjects: Project[] = [
 		title: "Mashtal AI",
 		description:
 			"Arabic AI plant doctor — photograph a sick plant and get a structured Arabic diagnosis, treatment plan and care schedule.",
-		image: "/figma/mashtal-hero.png",
+		image: "/figma/mashtal-card.png",
 		topics: ["Development", "Technology", "Design"],
 		tags: ["Plants", "Arabic", "Launching"],
 		proof: { label: "Per scan", value: "41 structured Arabic fields" },
@@ -114,7 +114,7 @@ const allProjects: Project[] = [
 		id: "nexagent",
 		tag: "AUTONOMOUS LOGISTICS",
 		category: "FORWARD-DEPLOYED SERVICES",
-		title: "NEXAGENT Retail Operations",
+		title: "NEXAGENT AI WORKSPACE",
 		description:
 			"NexAgents (app.nexagents.cloud) puts production AI agents to work for a team — agents that answer reliably, per-person control over models, tools, passwords and company data, and metered token costs. Live in production",
 		image: "/figma/nexagent-showcase.png",

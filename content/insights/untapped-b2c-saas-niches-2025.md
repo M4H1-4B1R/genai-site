@@ -5,6 +5,8 @@ topic: Micro SaaS
 summary: "As of 2025, the B2C SaaS market is ripe with opportunities for entrepreneurs who can identify and cater to specific, often underserved, consumer needs. The\u2026"
 ---
 
+![10 untapped B2C saas niches](/insights/10-untapped-b2c-niches/b2c-niches-poster.webp)
+
 ## 10 Untapped B2C SaaS Niches for 2025
 
 As of 2025, the B2C SaaS market is ripe with opportunities for entrepreneurs who can identify and cater to specific, often underserved, consumer needs. The overarching trends point towards hyper-personalization, the integration of artificial intelligence (AI), and a focus on niche communities and sustainable living. Here are some of the most promising untapped B2C SaaS niches:

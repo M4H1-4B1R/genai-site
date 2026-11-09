@@ -5,6 +5,8 @@ topic: Generative AI
 summary: "Personalization is key to creating a great user experience. By delivering personalized content and recommendations, you can increase engagement, build loyalty\u2026"
 ---
 
+![AI Personalization Engines](/insights/creating-custom-user-experience/personalization-engine-poster.webp)
+
 ## The Power of Personalization
 
 Personalization is key to creating a great user experience. By delivering personalized content and recommendations, you can increase engagement, build loyalty, and drive conversions.
