@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { ImageLightbox } from "@/components/shared/image-lightbox";
 import { ServicesProofSlider } from "@/components/services-proof-slider";
 
 type Fact = {
@@ -256,9 +257,12 @@ export function MashtalCaseStudyPage() {
 					</div>
 
 					<div className="relative h-[360px] min-w-0 flex-1 max-[900px]:flex-none overflow-clip rounded-[8px] border border-line bg-[#0f1417] max-[640px]:h-[240px]">
-						<div className="flex h-full items-center justify-center font-mono text-[10px] font-bold tracking-[1px] uppercase text-[#747d81]">
-							Hero image placeholder
-						</div>
+						<ImageLightbox
+							fit="contain"
+							src="/figma/mashtal-ai.jpg"
+							alt="Mashtal AI mobile app — Arabic plant diagnosis screen"
+							sizes="(max-width: 640px) 100vw, 50vw"
+						/>
 						<span className="pointer-events-none absolute bottom-6 left-6 rounded-[4px] border border-line bg-[rgba(13,14,15,0.8)] px-3 py-1.5 font-mono text-[10px] font-bold tracking-[0.6px] uppercase text-[#747d81]">
 							Mobile app interface
 						</span>
