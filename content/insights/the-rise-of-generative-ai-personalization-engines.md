@@ -5,6 +5,8 @@ topic: Generative AI
 summary: "In the rapidly evolving landscape of artificial intelligence, one of the most compelling applications has emerged at the intersection of generative AI and\u2026"
 ---
 
+![AI personalization engine: Transform user experiences](/insights/personalization-engine-transform-user-experience/personalization-engine-poster.webp)
+
 In the rapidly evolving landscape of artificial intelligence, one of the most compelling applications has emerged at the intersection of generative AI and personalization technology. Generative AI personalization engines represent a paradigm shift in how businesses understand, engage with, and serve their customers, moving far beyond traditional recommendation systems to create truly individualized digital experiences.
 
 What Are Generative AI Personalization Engines?

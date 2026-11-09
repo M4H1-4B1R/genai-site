@@ -5,6 +5,8 @@ topic: Micro SaaS
 summary: "As the Software-as-a-Service (SaaS) market continues its rapid expansion, projected to reach over $232 billion in 2025, a number of untapped opportunities are\u2026"
 ---
 
+![Untapped saas opportunities: Where smart founders are building](/insights/untapped-saas-where-smart-founders-are-building/saas-opportunities-poster.webp)
+
 ## Beyond the Obvious: Untapped SaaS Opportunities in 2025
 
 As the Software-as-a-Service (SaaS) market continues its rapid expansion, projected to reach over $232 billion in 2025, a number of untapped opportunities are emerging for savvy entrepreneurs. Key trends for 2025 point towards hyper-niche solutions, the integration of artificial intelligence, and a focus on underserved industries.
