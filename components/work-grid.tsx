@@ -27,6 +27,7 @@ const filterTopics = [
 	"Marketing",
 	"Business",
 	"Technology",
+	"Client projects",
 ] as const;
 
 type FilterTopic = (typeof filterTopics)[number];
@@ -122,6 +123,19 @@ const allProjects: Project[] = [
 		tags: ["Autonomous", "Retail VC", "Workflows"],
 		proof: { label: "Operational Uptime", value: "99.98% unattended execution" },
 		url: "/case-study/nexagents",
+	},
+	{
+		id: "rennzone",
+		tag: "MARKETPLACE",
+		category: "CLIENT PROJECTS",
+		title: "Rennzone",
+		description:
+			"The global Porsche marketplace — a fully custom Sharetribe build with payments, car listings and a blog. Live for over a year.",
+		image: "/figma/rennzone-hero.png",
+		topics: ["Development", "Technology", "Client projects"],
+		tags: ["Marketplace", "Sharetribe", "Production"],
+		proof: { label: "Search visibility", value: "50 ranking keywords, best at #8" },
+		url: "/case-study/rennzone",
 	},
 ];
 
