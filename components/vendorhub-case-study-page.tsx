@@ -140,6 +140,13 @@ const capabilities: NumberedCard[] = [
   },
 ];
 
+const screens = [
+  { src: "/figma/vendorhub/home.png", label: "Home and events", alt: "Vendor Hub home screen with upcoming events across the UAE" },
+  { src: "/figma/vendorhub/event.png", label: "Event detail", alt: "Vendor Hub event page with booth availability, price range and vendor match score" },
+  { src: "/figma/vendorhub/floor-plan.png", label: "Floor-plan booking", alt: "Vendor Hub interactive floor plan with booth size, price and Apply button" },
+  { src: "/figma/vendorhub/messages.png", label: "Messages", alt: "Vendor Hub messages between organisers and vendors" },
+];
+
 const relatedWork = [
   {
     category: "Client Project",
@@ -263,7 +270,7 @@ export function VendorHubCaseStudyPage() {
               sizes="(max-width: 640px) 100vw, 32vw"
             />
             <span className="absolute bottom-6 left-6 rounded-[4px] border border-line bg-[rgba(13,14,15,0.8)] px-3 py-1.5 font-mono text-[10px] font-bold tracking-[0.6px] uppercase text-[#747d81]">
-              Concept preview
+              App screens
             </span>
           </div>
         </div>
@@ -363,9 +370,26 @@ export function VendorHubCaseStudyPage() {
         <div className={bandClass}>
           <SectionHeading
             eyebrow="System / solution"
-            title="Technical design of the custom system."
+            title="The app, screen by screen."
             description="Flutter app and REST API."
           />
+          <ul className="grid grid-cols-4 gap-6 max-[900px]:grid-cols-2">
+            {screens.map((screen) => (
+              <li key={screen.src} className="flex flex-col gap-3">
+                <div className="relative aspect-[1/2] overflow-clip rounded-[8px] border border-line bg-[#0f1417]">
+                  <ImageLightbox
+                    src={screen.src}
+                    alt={screen.alt}
+                    sizes="(max-width: 900px) 50vw, 25vw"
+                    fit="contain"
+                  />
+                </div>
+                <p className="font-mono text-[10px] font-bold tracking-[0.6px] uppercase text-[#747d81]">
+                  {screen.label}
+                </p>
+              </li>
+            ))}
+          </ul>
           <div className="flex items-center gap-4 rounded-[4px] border border-[#1c2328] bg-panel px-[18px] py-3.5 max-[640px]:flex-col max-[640px]:items-start max-[640px]:gap-2">
             <p className="shrink-0 font-mono text-[10px] font-bold tracking-[0.8px] uppercase text-orange">
               System architecture
