@@ -348,7 +348,7 @@ export function MingchejiCaseStudyPage() {
             title="Technical design of the custom system."
             description="Next.js website, Node.js/Express backend, GlobalVIN vehicle data, Stripe payments, and self-repairing background jobs."
           />
-					<img src="/architecture.svg" />
+          <img src="/architecture.svg" alt="Technical architecture diagram of the custom system" />
           <div className="flex items-center gap-4 rounded-[4px] border border-[#1c2328] bg-panel px-[18px] py-3.5 max-[640px]:flex-col max-[640px]:items-start max-[640px]:gap-2">
             <p className="shrink-0 font-mono text-[10px] font-bold tracking-[0.8px] uppercase text-orange">
               System architecture

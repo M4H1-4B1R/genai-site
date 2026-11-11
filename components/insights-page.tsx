@@ -9,7 +9,6 @@ import {
   DeploymentPatternsSection,
   TechStackSection,
 } from "@/components/shared/tech-stack-section";
-import { TrendingBanner } from "@/components/shared/trending-banner";
 import { InsightsLibrary, TopicPill } from "@/components/insights-library";
 import { getPosts, toSummary } from "@/lib/insights";
 

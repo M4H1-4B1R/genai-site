@@ -27,9 +27,9 @@ const spaceMono = Space_Mono({
   weight: ["400", "700"],
 });
 
-const siteTitle = "GenAILabs | Build AI. Make It Act.";
+const siteTitle = "AI Product Engineering & Agentic Systems | GenAILabs";
 const siteDescription =
-  "AI product engineering, agentic systems, and forward-deployed services.";
+  "GenAILabs builds production AI products, agentic systems and forward-deployed engineering for startups and enterprises. Based in Amman.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

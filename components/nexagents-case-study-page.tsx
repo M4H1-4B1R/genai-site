@@ -351,7 +351,7 @@ export function NexagentsCaseStudyPage() {
             title="Technical design of the custom system."
             description="Production stack: one VPS behind Caddy, four Docker app services, PostgreSQL state, Slack and web chat, Claude Agent SDK, and the qm agent platform."
           />
-					<img src="/architecture_qm.svg" />
+          <img src="/architecture_qm.svg" alt="Technical architecture diagram of the production stack" />
           <div className="flex items-center gap-4 rounded-[4px] border border-[#1c2328] bg-panel px-[18px] py-3.5 max-[640px]:flex-col max-[640px]:items-start max-[640px]:gap-2">
             <p className="shrink-0 font-mono text-[10px] font-bold tracking-[0.8px] uppercase text-orange">
               System architecture
