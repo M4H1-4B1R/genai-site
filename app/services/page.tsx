@@ -4,12 +4,13 @@ import { Contact } from "@/components/contact";
 import { ServicesHub } from "@/components/services-hub";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Services | GenAILabs",
-  description:
-    "Three core AI engineering capabilities: AI product engineering, agentic layer engineering, and forward-deployed services.",
-};
+export const metadata: Metadata = pageMeta(
+  "Services",
+  "Three core AI engineering capabilities: AI product engineering, agentic layer engineering, and forward-deployed services.",
+  "/services",
+);
 
 export default function ServicesPage() {
   return (

@@ -4,12 +4,13 @@ import { Contact } from "@/components/contact";
 import { ProductEngineeringPage } from "@/components/product-engineering-page";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "AI Product Engineering | GenAILabs",
-  description:
-    "Design and build AI-powered products, features, and applications for real users, from new concepts to launched products.",
-};
+export const metadata: Metadata = pageMeta(
+  "AI Product Engineering",
+  "Design and build AI-powered products, features, and applications for real users, from new concepts to launched products.",
+  "/services/ai-product-engineering",
+);
 
 export default function ProductEngineeringRoute() {
   return (

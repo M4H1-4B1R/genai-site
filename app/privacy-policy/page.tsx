@@ -3,12 +3,13 @@ import type { Metadata } from "next";
 import { LegalPage, type LegalSection } from "@/components/legal-page";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | GenAILabs",
-  description:
-    "How GenAILabs collects, uses, and protects your personal data.",
-};
+export const metadata: Metadata = pageMeta(
+  "Privacy Policy",
+  "How GenAILabs collects, uses, and protects your personal data.",
+  "/privacy-policy",
+);
 
 // Placeholder copy from the design; each paragraph appears twice there too.
 const twice = (text: string) => [text, text];
