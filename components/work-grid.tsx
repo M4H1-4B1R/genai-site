@@ -150,6 +150,19 @@ const allProjects: Project[] = [
 		proof: { label: "Single codebase", value: "Vendors and organisers in one app" },
 		url: "/case-study/vendorhub",
 	},
+	{
+		id: "rennworks",
+		tag: "AUTOMOTIVE WEBSITE",
+		category: "CLIENT PROJECTS",
+		title: "Rennworks",
+		description:
+			"Porsche and McLaren care done right — a fully custom WordPress site with detailed service pages and a WhatsApp widget. Live for almost a year.",
+		image: "/figma/rennworks-hero.png",
+		topics: ["Development", "Technology", "Design", "Client projects"],
+		tags: ["WordPress", "Automotive", "Production"],
+		proof: { label: "Service coverage", value: "Porsche and McLaren workshops" },
+		url: "/case-study/rennworks",
+	},
 ];
 
 export function WorkGrid() {
