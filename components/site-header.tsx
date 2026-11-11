@@ -34,15 +34,15 @@ export function SiteHeader() {
           aria-label="Primary navigation"
         >
           <ServicesDropdown />
-          <a className="px-0 pb-[25px] pt-[30px] text-[#b4b6b8]" href="/work">
+          <Link className="px-0 pb-[25px] pt-[30px] text-[#b4b6b8]" href="/work">
             Work
-          </a>
-          <a className="px-0 pb-[25px] pt-[30px] text-[#b4b6b8]" href="/insights">
+          </Link>
+          <Link className="px-0 pb-[25px] pt-[30px] text-[#b4b6b8]" href="/insights">
             Insights
-          </a>
-          <a className="px-0 pb-[25px] pt-[30px] text-[#b4b6b8]" href="/about">
+          </Link>
+          <Link className="px-0 pb-[25px] pt-[30px] text-[#b4b6b8]" href="/about">
             About
-          </a>
+          </Link>
         </nav>
         <a id="header-button" className="button button-outline max-[640px]:hidden" href="/contact">
           Talk to our team →
