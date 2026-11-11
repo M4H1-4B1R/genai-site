@@ -163,6 +163,19 @@ const allProjects: Project[] = [
 		proof: { label: "Service coverage", value: "Porsche and McLaren workshops" },
 		url: "/case-study/rennworks",
 	},
+	{
+		id: "spruceup",
+		tag: "MARKETPLACE",
+		category: "CLIENT PROJECTS",
+		title: "SpruceUp",
+		description:
+			"Two-sided marketplace for finding reliable cleaners in Ireland — automatic commission payments and document-based identity verification.",
+		image: "/figma/spruceup-hero.png",
+		topics: ["Development", "Technology", "Design", "Client projects"],
+		tags: ["Marketplace", "Sharetribe", "Production"],
+		proof: { label: "Trust layer", value: "Identity checks with real documents" },
+		url: "/case-study/spruceup",
+	},
 ];
 
 export function WorkGrid() {
