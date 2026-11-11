@@ -137,6 +137,19 @@ const allProjects: Project[] = [
 		proof: { label: "Search visibility", value: "50 ranking keywords, best at #8" },
 		url: "/case-study/rennzone",
 	},
+	{
+		id: "vendorhub",
+		tag: "EVENTS MARKETPLACE",
+		category: "CLIENT PROJECTS",
+		title: "Vendor Hub",
+		description:
+			"Mobile app where UAE event organisers and vendors connect, find work and manage events — built from the client's idea, with a floor-plan builder, applicant review, teams and disputes.",
+		image: "/figma/vendorhub-hero.png",
+		topics: ["Development", "Technology", "Design", "Client projects"],
+		tags: ["Marketplace", "Flutter", "Pre-launch"],
+		proof: { label: "Single codebase", value: "Vendors and organisers in one app" },
+		url: "/case-study/vendorhub",
+	},
 ];
 
 export function WorkGrid() {
