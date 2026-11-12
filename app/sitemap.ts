@@ -4,7 +4,8 @@ import { getPosts } from "@/lib/insights";
 
 import { siteUrl } from "@/lib/site";
 
-// case-study is a noindex placeholder: keep it out. Insight posts are appended below.
+// /case-study (template) and /case-study/dispatch-training are noindex: keep them out.
+// Insight posts are appended below.
 const paths = [
   "",
   "/services",
@@ -12,6 +13,18 @@ const paths = [
   "/services/agentic-layer-engineering",
   "/services/forward-deployed-services",
   "/work",
+  "/case-study/askdahab",
+  "/case-study/huntora",
+  "/case-study/kaya",
+  "/case-study/mashtal",
+  "/case-study/mingcheji",
+  "/case-study/nexagents",
+  "/case-study/rennworks",
+  "/case-study/rennzone",
+  "/case-study/sino360",
+  "/case-study/smart-teacher",
+  "/case-study/spruceup",
+  "/case-study/vendorhub",
   "/about",
   "/insights",
   "/contact",

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 
+import { JsonLd } from "@/components/json-ld";
 import { Contact } from "@/components/contact";
 import { ServicesHub } from "@/components/services-hub";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { pageMeta } from "@/lib/seo";
+import { breadcrumbLd, pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta(
   "Services",
@@ -15,6 +16,7 @@ export const metadata: Metadata = pageMeta(
 export default function ServicesPage() {
   return (
     <div className="min-w-[320px] overflow-clip bg-ink">
+      <JsonLd data={breadcrumbLd([["Services", "/services"]])} />
       <SiteHeader />
       <ServicesHub />
       <section className="cta-section services-cta">

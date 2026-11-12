@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 
 import { AboutPage } from "@/components/about-page";
+import { JsonLd } from "@/components/json-ld";
 import { Contact } from "@/components/contact";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { pageMeta } from "@/lib/seo";
+import { breadcrumbLd, pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta(
   "About",
@@ -15,6 +16,7 @@ export const metadata: Metadata = pageMeta(
 export default function AboutRoute() {
   return (
     <div className="min-w-[320px] overflow-clip bg-ink">
+      <JsonLd data={breadcrumbLd([["About", "/about"]])} />
       <SiteHeader />
       <AboutPage />
       <Contact />
