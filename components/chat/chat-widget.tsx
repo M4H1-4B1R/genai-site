@@ -1,11 +1,14 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 
 import { ChatLauncher } from "@/components/chat/chat-launcher";
-import { ChatPanel } from "@/components/chat/chat-panel";
 import { readTextStream } from "@/lib/chat/read-stream";
 import type { ChatMessage } from "@/lib/chat/validate";
+
+// Panel only renders after the launcher is clicked; keep it out of the every-page bundle.
+const ChatPanel = dynamic(() => import("@/components/chat/chat-panel").then((m) => m.ChatPanel));
 
 const PANEL_ID = "genailabs-chat-panel";
 const MAX_HISTORY = 10;
@@ -22,10 +25,6 @@ export default function ChatWidget() {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const threadRef = useRef<HTMLDivElement | null>(null);
   const abortRef = useRef<AbortController | null>(null);
-
-  useEffect(() => {
-    if (open) inputRef.current?.focus();
-  }, [open]);
 
   // On-screen keyboards overlay the layout viewport (iOS) or resize it only
   // partially (Android), so a fixed-bottom stack can end up under the keys
