@@ -24,49 +24,49 @@ export function SiteFooter() {
           debriefs.
         </p>
       </div>
-      <div className="flex flex-col gap-2.5">
-        <span className="text-[11px] uppercase tracking-[1px]">Services</span>
-        <Link className="text-sm leading-[1.5] text-[#9ca3af]" href="/services/ai-product-engineering">
+      <div className="flex flex-col gap-0">
+        <span className="mb-1 text-xs uppercase tracking-[1px]">Services</span>
+        <Link className="inline-flex min-h-11 items-center text-sm leading-[1.5] text-[#9ca3af]" href="/services/ai-product-engineering">
           AI Product Engineering
         </Link>
-        <Link className="text-sm leading-[1.5] text-[#9ca3af]" href="/services/agentic-layer-engineering">
+        <Link className="inline-flex min-h-11 items-center text-sm leading-[1.5] text-[#9ca3af]" href="/services/agentic-layer-engineering">
           Agentic Layer Engineering
         </Link>
-        <Link className="text-sm leading-[1.5] text-[#9ca3af]" href="/services/forward-deployed-services">
+        <Link className="inline-flex min-h-11 items-center text-sm leading-[1.5] text-[#9ca3af]" href="/services/forward-deployed-services">
           Forward-Deployed Services
         </Link>
       </div>
-      <div className="flex flex-col gap-2.5">
-        <span className="text-[11px] uppercase tracking-[1px]">Explore</span>
-        <a className="text-sm leading-[1.5] text-[#9ca3af]" href="/work">
+      <div className="flex flex-col gap-0">
+        <span className="mb-1 text-xs uppercase tracking-[1px]">Explore</span>
+        <a className="inline-flex min-h-11 items-center text-sm leading-[1.5] text-[#9ca3af]" href="/work">
           Work
         </a>
-        <Link className="text-sm leading-[1.5] text-[#9ca3af]" href="/architecture">
-          Architecture
+        <Link className="inline-flex min-h-11 items-center text-sm leading-[1.5] text-[#9ca3af]" href="/insights">
+         Insights 
         </Link>
-        <Link className="text-sm leading-[1.5] text-[#9ca3af]" href="/about">
+        <Link className="inline-flex min-h-11 items-center text-sm leading-[1.5] text-[#9ca3af]" href="/about">
           About
         </Link>
       </div>
-      <div className="flex flex-col gap-2.5 max-[640px]:col-span-full">
-        <span className="text-[11px] uppercase tracking-[1px]">Connect</span>
-        <a className="text-sm leading-[1.5] text-[#9ca3af]" href="/contact">
+      <div className="flex flex-col gap-0 max-[640px]:col-span-full">
+        <span className="mb-1 text-xs uppercase tracking-[1px]">Connect</span>
+        <a className="inline-flex min-h-11 items-center text-sm leading-[1.5] text-[#9ca3af]" href="/contact">
           Talk to Our Team
         </a>
-        <Link className="text-sm leading-[1.5] text-[#9ca3af]" href="/careers">
+        <Link className="inline-flex min-h-11 items-center text-sm leading-[1.5] text-[#9ca3af]" href="/careers">
           Careers
         </Link>
-        <a className="text-sm leading-[1.5] text-[#9ca3af]" href="/contact">
+        <a className="inline-flex min-h-11 items-center text-sm leading-[1.5] text-[#9ca3af]" href="/contact">
           Contact
         </a>
         <NewsletterForm />
       </div>
-      <div className="col-span-full mt-5 flex flex-row justify-between border-t border-[#2a2d34] pt-3 text-[11px] uppercase text-[#6b7280] max-[640px]:flex-col max-[640px]:gap-2">
+      <div className="col-span-full mt-5 flex flex-row justify-between border-t border-[#2a2d34] pt-3 text-xs uppercase text-[#8b9498] max-[640px]:flex-col max-[640px]:gap-2">
         <span>© 2025 GENAILABS INC. ALL RIGHTS RESERVED.</span>
-        <span>
-          <Link href="/privacy-policy">Privacy policy</Link>　{" "}
-          <Link href="/terms-of-use">Terms of use</Link>　{" "}
-          <Link href="/security">Security</Link>
+        <span className="flex flex-wrap gap-x-4">
+          <Link className="inline-flex min-h-11 items-center" href="/privacy-policy">Privacy policy</Link>
+          <Link className="inline-flex min-h-11 items-center" href="/terms-of-use">Terms of use</Link>
+          <Link className="inline-flex min-h-11 items-center" href="/security">Security</Link>
         </span>
       </div>
     </footer>

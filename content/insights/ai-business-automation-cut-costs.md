@@ -5,6 +5,8 @@ topic: AI Agents
 summary: "Last quarter, one of our clients \u2014 a 50-person trading company in Dubai \u2014 was spending 180 hours a month on three tasks: generating quotes, following up with\u2026"
 ---
 
+![AI Business Automation: How to Cut Operational Costs by 40% in 90 Days](/insights/ai-business-automation-cut-costs/ai-business-automation-cut-costs-poster.webp)
+
 Last quarter, one of our clients — a 50-person trading company in Dubai — was spending 180 hours a month on three tasks: generating quotes, following up with leads, and processing invoices. Three months after deploying AI automation, those 180 hours dropped to 22. This article breaks down exactly how to do it.
 
 Why 90 Days?

@@ -160,7 +160,7 @@ export function ChatPanel({
         </form>
         <Link
           href="/contact"
-          className="flex items-center justify-center gap-[6px] pt-[10px] text-[11px] font-bold uppercase leading-[16.5px] tracking-[0.55px] text-[#f2f2f0]"
+          className="flex items-center justify-center gap-[6px] pt-[10px] text-xs font-bold uppercase leading-[16.5px] tracking-[0.55px] text-[#f2f2f0]"
         >
           Prefer a person? Talk to our team
           <Image

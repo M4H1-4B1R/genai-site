@@ -5,6 +5,8 @@ topic: Micro SaaS
 summary: "Tired of manually creating invoices? Wasting hours each month on data entry, calculations, and formatting? Imagine a world where you could generate\u2026"
 ---
 
+![Build Your AI Invoice Generator SaaS in 5 Minutes](/insights/build-ai-invoice-generator-saas-5-minutes/build-ai-invoice-generator-saas-5-minutes-poster.webp)
+
 ## ```html
 
 Tired of manually creating invoices? Wasting hours each month on data entry, calculations, and formatting? Imagine a world where you could generate professional, accurate invoices in seconds. That world is here, and you can build your very own AI-powered invoice generator SaaS, ready to sell, in just 5 minutes using Jetpack!

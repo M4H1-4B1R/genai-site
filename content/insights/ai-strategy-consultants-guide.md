@@ -5,6 +5,8 @@ topic: AI Consulting
 summary: "AI Strategy Consultants: What They Do, What They Cost, and Do You Need One?"
 ---
 
+![AI Strategy Consultants: What They Do, What They Cost, and Do You Need One?](/insights/ai-strategy-consultants-guide/ai-strategy-consultants-guide-poster.webp)
+
 ## ```html
 
 ## ```html

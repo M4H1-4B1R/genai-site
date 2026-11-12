@@ -5,6 +5,8 @@ topic: Micro SaaS
 summary: "A Micro SaaS is a small, often niche-focused Software as a Service business. Unlike large SaaS companies, Micro SaaS businesses are typically run by one or a\u2026"
 ---
 
+![The Complete Micro SaaS Guide for 2025: Find, Build & Launch with Jetpack](/insights/ultimate-guide-micro-saas/ultimate-guide-micro-saas-poster.webp)
+
 What is a Micro SaaS?
 
 A Micro SaaS is a small, often niche-focused Software as a Service business. Unlike large SaaS companies, Micro SaaS businesses are typically run by one or a few people and target a specific audience with a specific solution.

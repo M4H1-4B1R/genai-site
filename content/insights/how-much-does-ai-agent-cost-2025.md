@@ -5,6 +5,8 @@ topic: AI Agents
 summary: "If you've searched \"how much does an AI agent cost\" recently, you've probably found answers that range from \"$500 to $500,000\" \u2014 which is technically true and\u2026"
 ---
 
+![How Much Does It Cost to Build an AI Agent in 2025? (Honest Breakdown)](/insights/how-much-does-ai-agent-cost-2025/how-much-does-ai-agent-cost-2025-poster.webp)
+
 If you've searched "how much does an AI agent cost" recently, you've probably found answers that range from "$500 to $500,000" — which is technically true and completely useless. This article gives you actual numbers with context.
 
 First: What Is an AI Agent?

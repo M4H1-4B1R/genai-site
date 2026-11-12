@@ -5,6 +5,8 @@ topic: Micro SaaS
 summary: "Tired of spending hours manually repurposing your content across different platforms? Blog post written? Great. Now, spend another 3 hours crafting tweets\u2026"
 ---
 
+![Build Your AI Content Repurposing SaaS in 5 Minutes](/insights/build-ai-content-repurposer-saas-5-minutes/build-ai-content-repurposer-saas-5-minutes-poster.webp)
+
 ## ```html
 
 Tired of spending hours manually repurposing your content across different platforms? Blog post written? Great. Now, spend another 3 hours crafting tweets, LinkedIn updates, and an email newsletter to promote it. It's a time-suck, right? What if you could automate that entire process and reclaim those precious hours? With Jetpack, you can build your own AI-powered content repurposing SaaS in just 5 minutes. Yes, you read that right. Five minutes!

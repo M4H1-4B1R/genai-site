@@ -258,7 +258,7 @@ export function WorkGrid() {
 							/>
 							{/* Tag pill */}
 							<div className="absolute right-3 top-3 z-10 rounded-[2px] border border-[rgba(255,192,129,0.3)] bg-[rgba(8,11,13,0.85)] px-2 py-[3px] backdrop-blur-sm">
-								<span className="font-mono text-[10px] uppercase tracking-[0.5px] text-[#ffa600]">
+								<span className="font-mono text-xs uppercase tracking-[0.5px] text-[#ffa600]">
 									{project.tag}
 								</span>
 							</div>
@@ -266,7 +266,7 @@ export function WorkGrid() {
 
 						{/* Body */}
 						<div className="flex flex-1 flex-col p-6 sm:px-7 sm:py-6">
-							<p className="font-mono text-[10px] uppercase tracking-[1px] text-[#ffc081]">
+							<p className="font-mono text-xs uppercase tracking-[1px] text-[#ffc081]">
 								{project.category}
 							</p>
 							<h3 className="mt-1.5 text-[20px] font-bold leading-snug text-[#f2f2ef] sm:text-[22px]">

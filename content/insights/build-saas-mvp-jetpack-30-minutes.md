@@ -5,6 +5,8 @@ topic: Micro SaaS
 summary: "In this tutorial, you are going to build a complete customer feedback SaaS tool called FeedbackPulse using Jetpack. By the end, you will have a working\u2026"
 ---
 
+![Build a SaaS MVP in 30 Minutes with Jetpack (Tutorial)](/insights/build-saas-mvp-jetpack-30-minutes/build-saas-mvp-jetpack-30-minutes-poster.webp)
+
 Talk is cheap. Let us actually build something.
 
 In this tutorial, you are going to build a complete customer feedback SaaS tool called FeedbackPulse using Jetpack. By the end, you will have a working application with user authentication, a feedback submission form, an upvoting system, an admin dashboard, and analytics — deployed and accessible via a live URL.

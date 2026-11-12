@@ -5,6 +5,7 @@ topic: AI Strategy
 summary: "A plain-English 2026 guide to EU AI Act compliance: the full timeline after the Digital Omnibus, who is in scope, Article 50 transparency, high-risk deadlines, and fines up to \u20ac35M."
 ---
 
+![EU AI Act Compliance: The Complete 2026 Guide](/insights/eu-ai-act-compliance-guide-2026/eu-ai-act-compliance-guide-2026-poster.webp)
 
 Everything a product, legal, or engineering team needs to understand EU AI Act compliance in 2026 — the updated timeline after the Digital Omnibus, who is in scope, what applies today, and what the fines are.
 

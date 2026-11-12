@@ -5,6 +5,8 @@ topic: Generative AI
 summary: "Generative AI can be used to create stunning works of art that would be impossible for humans to create on their own. This is opening up new possibilities for\u2026"
 ---
 
+![Generative AI in Creative Industries: Art to Code](/insights/generative-ai-creative-industries/generative-ai-creative-industries-poster.webp)
+
 ## Art
 
 Generative AI can be used to create stunning works of art that would be impossible for humans to create on their own. This is opening up new possibilities for artists and pushing the boundaries of creativity.

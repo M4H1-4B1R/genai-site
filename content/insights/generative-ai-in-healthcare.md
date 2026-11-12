@@ -5,6 +5,8 @@ topic: Generative AI
 summary: "Generative AI is accelerating the drug discovery process by generating novel molecular structures and predicting their properties. This can significantly\u2026"
 ---
 
+![How Generative AI is Transforming the Healthcare Industry](/insights/generative-ai-in-healthcare/generative-ai-in-healthcare-poster.webp)
+
 ## Drug Discovery and Development
 
 Generative AI is accelerating the drug discovery process by generating novel molecular structures and predicting their properties. This can significantly reduce the time and cost of developing new drugs.

@@ -6,7 +6,7 @@ export function Proof() {
     >
       <div className="flex justify-between border-b border-[#53443433] pb-[33px] uppercase">
         <span>— &nbsp; Proof record</span>
-        <b className="rounded-xl border border-[#f59e0b4d] px-[11px] py-[3px] text-[11px] font-medium text-[#ffc174]">
+        <b className="rounded-xl border border-[#f59e0b4d] px-[11px] py-[3px] text-xs font-medium text-[#ffc174]">
           ● Verified audit
         </b>
       </div>

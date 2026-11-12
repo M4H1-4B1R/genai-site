@@ -160,7 +160,7 @@ export function WorkShowcase() {
               className={`absolute top-0 z-[2] flex h-full items-center ${textOverlayClassName[project.side]} max-[640px]:relative max-[640px]:top-auto max-[640px]:left-auto max-[640px]:right-auto max-[640px]:h-auto max-[640px]:w-full max-[640px]:bg-deep max-[640px]:px-5 max-[640px]:py-7`}
             >
               <div className="max-w-[480px]">
-                <p className="font-mono text-[11px] tracking-[1px] uppercase text-orange">
+                <p className="font-mono text-xs tracking-[1px] uppercase text-orange">
                   {project.number} — {project.type}
                 </p>
                 <h3 className="mt-4 mb-3 text-[32px] max-[640px]:text-[28px]">
@@ -170,18 +170,18 @@ export function WorkShowcase() {
                   {project.copy}
                 </p>
                 <div className="my-[22px] flex flex-wrap gap-2">
-                  <span className="rounded-full border border-line px-3.5 py-1.5 font-mono text-[10px] tracking-[0.5px] uppercase text-muted">
+                  <span className="rounded-full border border-line px-3.5 py-1.5 font-mono text-xs tracking-[0.5px] uppercase text-muted">
                     AI
                   </span>
-                  <span className="rounded-full border border-line px-3.5 py-1.5 font-mono text-[10px] tracking-[0.5px] uppercase text-muted">
+                  <span className="rounded-full border border-line px-3.5 py-1.5 font-mono text-xs tracking-[0.5px] uppercase text-muted">
                     Automation
                   </span>
-                  <span className="rounded-full border border-line px-3.5 py-1.5 font-mono text-[10px] tracking-[0.5px] uppercase text-muted">
+                  <span className="rounded-full border border-line px-3.5 py-1.5 font-mono text-xs tracking-[0.5px] uppercase text-muted">
                     Infrastructure
                   </span>
                 </div>
                 <a
-                  className="text-[13px] font-bold uppercase text-orange"
+                  className="inline-flex min-h-11 items-center text-[13px] font-bold uppercase text-orange"
                   href={project.caseStudyUrl || "/contact"}
                 >
                   View project →

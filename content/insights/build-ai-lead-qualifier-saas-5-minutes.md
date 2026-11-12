@@ -5,6 +5,8 @@ topic: Micro SaaS
 summary: "Tired of your sales team chasing cold leads? Wasting precious time on prospects who are never going to convert? You're not alone. Qualifying leads manually is\u2026"
 ---
 
+![Build Your AI Lead Qualifier SaaS in 5 Minutes](/insights/build-ai-lead-qualifier-saas-5-minutes/build-ai-lead-qualifier-saas-5-minutes-poster.webp)
+
 ## ```html
 
 Tired of your sales team chasing cold leads? Wasting precious time on prospects who are never going to convert? You're not alone. Qualifying leads manually is slow, inefficient, and frankly, soul-crushing. But what if you could automate the entire process, identifying hot leads and routing them directly to your CRM, all in a matter of minutes? With Jetpack, you can. Let's dive into how to build your AI Lead Qualifier SaaS in just 5 minutes.

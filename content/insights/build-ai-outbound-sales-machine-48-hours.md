@@ -5,6 +5,8 @@ topic: GTM & Sales
 summary: "What if you could go from zero to a fully operational, AI-powered outbound sales machine in just 48 hours? Not a theoretical framework or a vague strategy\u2014but\u2026"
 ---
 
+![Build an AI Outbound Sales Machine in 48 Hours](/insights/build-ai-outbound-sales-machine-48-hours/build-ai-outbound-sales-machine-48-hours-poster.webp)
+
 What if you could go from zero to a fully operational, AI-powered outbound sales machine in just 48 hours? Not a theoretical framework or a vague strategy—but a concrete, step-by-step blueprint that takes you from initial setup to sending your first personalized outbound campaigns.
 
 That's exactly what this guide delivers. We've built dozens of these systems for startups and scale-ups at GenAI Labs, and we've distilled the process into a 48-hour sprint. This isn't about cutting corners—it's about focused execution, leveraging the right tools, and eliminating the months of trial-and-error that most teams go through.

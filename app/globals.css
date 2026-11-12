@@ -90,7 +90,7 @@
 @utility eyebrow {
   color: var(--orange);
   font-family: var(--font-space-mono), monospace;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 1.2px;
   text-transform: uppercase;
 }
@@ -110,6 +110,9 @@
 @layer base {
   * {
     box-sizing: border-box;
+  }
+  small {
+    font-size: max(12px, 0.8em);
   }
   body {
     margin: 0;
@@ -159,7 +162,7 @@
   color: #747d81;
   display: flex;
   font:
-    10px var(--font-space-mono),
+    12px var(--font-space-mono),
     monospace;
   gap: 8px;
   letter-spacing: 1px;
@@ -261,7 +264,7 @@
 .services-evidence-card > span {
   color: var(--orange);
   font:
-    10px var(--font-space-mono),
+    12px var(--font-space-mono),
     monospace;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -288,7 +291,7 @@
   border: 1px solid #293137;
   color: #747d81;
   font:
-    10px var(--font-space-mono),
+    12px var(--font-space-mono),
     monospace;
   letter-spacing: 0.6px;
   padding: 4px 8px;
@@ -332,7 +335,7 @@
 .services-routing-row span {
   color: var(--orange);
   font:
-    10px var(--font-space-mono),
+    12px var(--font-space-mono),
     monospace;
 }
 .services-routing-row p {
@@ -520,7 +523,7 @@
 .services-why-grid span {
   color: var(--orange);
   font:
-    10px var(--font-space-mono),
+    12px var(--font-space-mono),
     monospace;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -584,7 +587,7 @@
   border: 1px solid #f59e0b4d;
   border-radius: 12px;
   color: #ffc174;
-  font-size: 11px;
+  font-size: 12px;
   padding: 3px 11px;
 }
 .services-proof blockquote {
@@ -627,7 +630,7 @@
 }
 .services-proof-dots {
   display: flex;
-  gap: 16px;
+  gap: 24px;
   justify-content: center;
   padding-top: 26px;
 }
@@ -644,7 +647,7 @@
 }
 .services-proof-dots button::after {
   content: "";
-  inset: -8px;
+  inset: -12px;
   position: absolute;
 }
 .services-proof-dots button:hover {
@@ -788,7 +791,7 @@
 }
 .client-logo small {
   color: #83898c;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
@@ -885,7 +888,7 @@
 /* Product engineering legacy classes removed - converted to Tailwind utilities in components/product-engineering-page.tsx */
 @media (max-width: 640px) {
   .button {
-    font-size: 11px;
+    font-size: 12px;
     padding: 12px 15px;
   }
   .cta-section {
@@ -1042,7 +1045,7 @@
   border-radius: 999px;
   color: #8b8e93;
   display: inline-flex;
-  font: 500 10.5px/1 var(--demo-mono);
+  font: 500 12px/1 var(--demo-mono);
   gap: 7px;
   letter-spacing: 0.1em;
   margin-left: auto;
@@ -1078,7 +1081,7 @@
 
 /* code scene */
 .agent-demo .ed {
-  font: 400 clamp(11.5px, 1.18vw, 14px) / 1.72 var(--demo-mono);
+  font: 400 clamp(12px, 1.18vw, 14px) / 1.72 var(--demo-mono);
   padding: 12px 0;
   position: relative;
 }
@@ -1140,7 +1143,7 @@
   border: 1px solid rgba(212, 103, 90, 0.55);
   border-radius: 8px;
   color: #f0b3aa;
-  font: 500 clamp(11px, 1.05vw, 13px) / 1.2 var(--demo-display);
+  font: 500 clamp(12px, 1.05vw, 13px) / 1.2 var(--demo-display);
   opacity: 0;
   padding: 7px 11px;
   position: absolute;
@@ -1158,7 +1161,7 @@
   background: var(--demo-bg-2);
   border-top: 1px solid var(--demo-rule);
   color: #8b8e93;
-  font: 400 clamp(11px, 1.05vw, 13px) / 1.85 var(--demo-mono);
+  font: 400 clamp(12px, 1.05vw, 13px) / 1.85 var(--demo-mono);
   min-height: 104px;
   padding: 11px 16px;
 }
@@ -1284,7 +1287,7 @@
   border: 1px solid;
   border-radius: 999px;
   flex: none;
-  font: 500 9.5px/1 var(--demo-mono);
+  font: 500 12px/1 var(--demo-mono);
   letter-spacing: 0.08em;
   opacity: 0;
   padding: 5px 8px;
@@ -1335,7 +1338,7 @@
 .agent-demo .rh small {
   color: #6f7276;
   display: block;
-  font: 400 11px/1 var(--demo-mono);
+  font: 400 12px/1 var(--demo-mono);
   margin-top: 4px;
 }
 .agent-demo .rb {
@@ -1360,7 +1363,7 @@
 }
 .agent-demo .rl {
   color: var(--demo-amber);
-  font: 500 10px/1 var(--demo-mono);
+  font: 500 12px/1 var(--demo-mono);
   letter-spacing: 0.14em;
   margin-bottom: 8px;
   text-transform: uppercase;
@@ -1376,7 +1379,7 @@
   border-radius: 7px;
   color: #6f7276;
   display: inline-block;
-  font: 700 11px/1 var(--demo-display);
+  font: 700 12px/1 var(--demo-display);
   letter-spacing: 0.06em;
   margin-top: 9px;
   padding: 9px 14px;
@@ -1464,7 +1467,7 @@
 }
 .agent-demo .nd small {
   color: #8b8e93;
-  font: 400 clamp(10.5px, 1vw, 12.5px) / 1.3 var(--demo-display);
+  font: 400 clamp(12px, 1vw, 12.5px) / 1.3 var(--demo-display);
 }
 .agent-demo .pk {
   background: var(--demo-amber);
@@ -1505,7 +1508,7 @@
   border-top: 1px solid var(--demo-rule);
   color: #8b8e93;
   display: flex;
-  font: 500 11px/1 var(--demo-mono);
+  font: 500 12px/1 var(--demo-mono);
   gap: 12px;
   justify-content: space-between;
   letter-spacing: 0.1em;
@@ -1585,7 +1588,7 @@
   opacity: 1;
 }
 .agent-demo .dts i {
-  animation: agent-bounce 1s ease-in-out infinite;
+  animation: agent-bounce 1s cubic-bezier(0.25, 1, 0.5, 1) infinite;
   background: var(--demo-amber);
   border-radius: 50%;
   height: 6px;
@@ -1607,7 +1610,7 @@
   align-items: center;
   color: #6f7276;
   display: grid;
-  font: 500 11px/1 var(--demo-mono);
+  font: 500 12px/1 var(--demo-mono);
   gap: 10px;
   grid-template-columns: 46px minmax(0, 1fr);
 }
@@ -1616,7 +1619,7 @@
   border: 1px solid #2a2c2f;
   border-radius: 9px;
   color: #9a9da2;
-  font: 500 clamp(11.5px, 1.05vw, 13px) / 1.2 var(--demo-display);
+  font: 500 clamp(12px, 1.05vw, 13px) / 1.2 var(--demo-display);
   overflow: hidden;
   padding: 10px 11px;
   text-overflow: ellipsis;
@@ -1651,7 +1654,7 @@
   color: var(--demo-amber-ink);
   display: inline-grid;
   flex: none;
-  font: 700 11px/1 var(--demo-display);
+  font: 700 12px/1 var(--demo-display);
   height: 19px;
   opacity: 0;
   place-items: center;
@@ -1700,7 +1703,7 @@
   background: var(--demo-amber);
   border-radius: 6px;
   color: var(--demo-amber-ink);
-  font: 700 10px/1 var(--demo-mono);
+  font: 700 12px/1 var(--demo-mono);
   left: 18px;
   letter-spacing: 0.08em;
   padding: 4px 7px;

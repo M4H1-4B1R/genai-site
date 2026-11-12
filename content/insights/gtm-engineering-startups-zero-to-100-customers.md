@@ -5,6 +5,8 @@ topic: GTM & Sales
 summary: "Getting your first 100 customers is the hardest thing you'll do as a startup founder. Not because the tactics are complicated, but because every stage requires\u2026"
 ---
 
+![GTM for Startups: Zero to 100 Customers Playbook](/insights/gtm-engineering-startups-zero-to-100-customers/gtm-engineering-startups-zero-to-100-customers-poster.webp)
+
 Getting your first 100 customers is the hardest thing you'll do as a startup founder. Not because the tactics are complicated, but because every stage requires a completely different approach. What works for customers 1-10 will actively hurt you at customers 30-100. What scales to 100 is overkill for your first 10.
 
 Most startup advice ignores this reality. You get either "do things that don't scale" (great for the first 5 customers, useless after that) or "build a scalable GTM engine" (great advice if you've already validated product-market fit, terrible if you haven't). The missing piece is the bridge between these two—the systematic progression from manual to semi-automated to fully engineered go-to-market.

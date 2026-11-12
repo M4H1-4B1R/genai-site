@@ -5,6 +5,8 @@ topic: Micro SaaS
 summary: "Drowning in resumes? Spending hours sifting through unqualified candidates? Imagine if you could instantly identify the best fits for your open roles\u2026"
 ---
 
+![Build Your AI Resume Screener SaaS in 5 Minutes](/insights/build-ai-resume-screener-saas-5-minutes/build-ai-resume-screener-saas-5-minutes-poster.webp)
+
 ## ```html
 
 Drowning in resumes? Spending hours sifting through unqualified candidates? Imagine if you could instantly identify the best fits for your open roles, highlight potential red flags, and reclaim those lost hours. With Jetpack, GenAI Labs' AI-powered no-code app builder, you can build and deploy a fully functional AI resume screening SaaS in just 5 minutes. Yes, you read that right – 5 minutes.

@@ -5,6 +5,8 @@ topic: GTM & Sales
 summary: "A typical early-stage sales team of five people includes some combination of SDRs, account executives, a sales ops person, and maybe a part-time analyst. Total\u2026"
 ---
 
+![7 AI Workflows That Replace a 5-Person Sales Team](/insights/ai-gtm-automation-7-workflows-replace-sales-team/ai-gtm-automation-7-workflows-replace-sales-team-poster.webp)
+
 A typical early-stage sales team of five people includes some combination of SDRs, account executives, a sales ops person, and maybe a part-time analyst. Total loaded cost: $400,000-$600,000 per year. And despite that investment, much of their time is spent on repetitive, automatable tasks—research, data entry, follow-up emails, CRM updates, and report generation.
 
 What if you could automate the repetitive 70% and focus human effort on the high-value 30%? That's exactly what these seven AI-powered GTM workflows accomplish. Each one eliminates hours of manual work per week, and together they can reduce a 5-person sales operation to 1-2 people (or amplify a small team's output to match a much larger one).

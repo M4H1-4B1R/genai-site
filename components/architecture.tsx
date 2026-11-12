@@ -20,7 +20,7 @@ export function Architecture() {
           delivers value in the real world.
         </p>
         <div className="mt-[30px] flex flex-col gap-1.5 border-l-2 border-white bg-[#14161a99] px-5 py-3.5">
-          <strong className="text-[11px] tracking-[0.6px] uppercase">
+          <strong className="text-xs tracking-[0.6px] uppercase">
             Synchronized architecture
           </strong>
           <span className="text-[14px] leading-[1.45] text-[#9ca3af]">
@@ -44,7 +44,7 @@ export function Architecture() {
               <strong className="text-[14px] transition-colors duration-200 group-hover:text-ink">
                 {title}
               </strong>
-              <span className="text-[11px] text-[#9ca3af] transition-colors duration-200 group-hover:text-ink/75">
+              <span className="text-xs text-[#9ca3af] transition-colors duration-200 group-hover:text-ink/75">
                 {copy}
               </span>
             </div>
@@ -54,7 +54,7 @@ export function Architecture() {
           className="flex flex-[1.4] flex-col gap-3 rounded border-2 border-white p-9 shadow-[0_0_35px_#ff8a0026] max-[640px]:px-5 max-[640px]:py-6"
           data-diagram-target=""
         >
-          <p className="m-0 text-[11px] font-bold tracking-[1.2px] uppercase text-[#ff8a00]">
+          <p className="m-0 text-xs font-bold tracking-[1.2px] uppercase text-[#ff8a00]">
             Unified target
           </p>
           <strong className="text-[24px] uppercase">

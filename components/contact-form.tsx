@@ -101,7 +101,7 @@ export function ContactForm() {
     >
       <div className="mb-8 flex items-center justify-between">
         <h3 className="m-0 text-[28px]">Project intake</h3>
-        <span className="text-[#747d81] font-mono text-[10px] tracking-[0.7px] uppercase">
+        <span className="text-[#747d81] font-mono text-xs tracking-[0.7px] uppercase">
           * Required fields
         </span>
       </div>
@@ -115,7 +115,7 @@ export function ContactForm() {
       <input className="hidden" name="_honey" tabIndex={-1} autoComplete="off" />
 
       <div className="grid grid-cols-2 gap-x-4 gap-y-6 max-[640px]:grid-cols-1 max-[640px]:gap-0">
-        <label className="mb-6 flex flex-col gap-2 text-[#747d81] font-mono text-[10px] tracking-[0.7px] uppercase">
+        <label className="mb-6 flex flex-col gap-2 text-[#747d81] font-mono text-xs tracking-[0.7px] uppercase">
           Name *
           <input
             autoComplete="name"
@@ -126,7 +126,7 @@ export function ContactForm() {
             type="text"
           />
         </label>
-        <label className="mb-6 flex flex-col gap-2 text-[#747d81] font-mono text-[10px] tracking-[0.7px] uppercase">
+        <label className="mb-6 flex flex-col gap-2 text-[#747d81] font-mono text-xs tracking-[0.7px] uppercase">
           Work email *
           <input
             autoComplete="email"
@@ -138,7 +138,7 @@ export function ContactForm() {
           />
         </label>
       </div>
-      <label className="mb-6 flex flex-col gap-2 text-[#747d81] font-mono text-[10px] tracking-[0.7px] uppercase">
+      <label className="mb-6 flex flex-col gap-2 text-[#747d81] font-mono text-xs tracking-[0.7px] uppercase">
         What are you working on? *
         <textarea
           className={`min-h-[130px] resize-y ${FIELD_CLASSES}`}
@@ -147,9 +147,9 @@ export function ContactForm() {
           required
         />
       </label>
-      <label className="mb-6 grid grid-cols-[18px_120px_1fr] items-start gap-2.5 leading-[1.5] text-[#747d81] font-mono text-[10px] tracking-[0.7px] uppercase max-[640px]:grid-cols-[18px_1fr]">
+      <label className="mb-6 grid grid-cols-[24px_120px_1fr] items-start gap-2.5 leading-[1.5] text-[#747d81] font-mono text-xs tracking-[0.7px] uppercase max-[640px]:grid-cols-[18px_1fr]">
         <input
-          className="m-0 size-[18px] accent-orange"
+          className="m-0 size-6 accent-orange"
           name="marketing_consent"
           type="checkbox"
           value="yes"

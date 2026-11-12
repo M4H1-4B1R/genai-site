@@ -133,7 +133,7 @@ const work = [
 
 function SectionLabel({ children }: { children: string }) {
   return (
-    <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[1.2px] text-orange">
+    <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[1.2px] text-orange">
       <span className="h-px w-6 bg-orange" />
       {children}
     </div>
@@ -146,7 +146,7 @@ export function ForwardDeployedServicesPage() {
       {/* Hero - matches services-hub layout but with arc SVG on desktop */}
       <section className="border-b border-[#1c2328] section-x lg:grid lg:grid-cols-[minmax(0,8fr)_minmax(280px,4fr)] lg:gap-8 lg:min-h-[520px] py-5">
         <div className="max-w-[720px] mx-auto lg:mx-0 self-start lg:self-center pt-12 lg:pt-0">
-          <div className="inline-flex items-center gap-2 border border-[#293137] bg-[#0f1417] px-[9px] py-[5px] text-[10px] font-bold tracking-[1.2px] text-orange mb-8">
+          <div className="inline-flex items-center gap-2 border border-[#293137] bg-[#0f1417] px-[9px] py-[5px] text-xs font-bold tracking-[1.2px] text-orange mb-8">
             <i className="h-1.5 w-1.5 rounded-full bg-orange" />
             SERVICES / FORWARD DEPLOYED
           </div>
@@ -241,7 +241,7 @@ export function ForwardDeployedServicesPage() {
             >
               <div className="flex flex-1 items-baseline gap-6 sm:gap-8">
                 <b
-                  className={`w-10 shrink-0 text-[10px] sm:text-[11px] tracking-[1px] ${index === 2 ? "text-orange" : "text-[#747d81]"}`}
+                  className={`w-10 shrink-0 text-xs sm:text-xs tracking-[1px] ${index === 2 ? "text-orange" : "text-[#747d81]"}`}
                 >
                   0{index + 1}
                 </b>
@@ -278,7 +278,7 @@ export function ForwardDeployedServicesPage() {
                 key={title}
               >
                 <b
-                  className={`block font-mono text-[10px] tracking-[1px] ${
+                  className={`block font-mono text-xs tracking-[1px] ${
                     index === 2 ? "text-orange" : "text-[#747d81]"
                   }`}
                 >
@@ -344,7 +344,7 @@ export function ForwardDeployedServicesPage() {
                 <WorkTag tag={tag} />
               </div>
               <div className="flex-1 p-6">
-                <span className="text-[var(--orange)] text-[11px] font-[700] tracking-[0.55px]">{label}</span>
+                <span className="text-[var(--orange)] text-xs font-[700] tracking-[0.55px]">{label}</span>
                 <h3 className="text-[#f2f2ef] text-[20px] leading-[26px] mt-1.5">{title}</h3>
                 <p className="text-[#9ca3af] text-[14px] leading-[22px] mt-0">{body}</p>
               </div>

@@ -5,6 +5,8 @@ topic: AI Agents
 summary: "AI agents are autonomous systems that can perceive their environment, make decisions, and take actions to achieve specific goals. They are a key component of\u2026"
 ---
 
+![Building Custom AI Agents for Business Automation in 2025](/insights/custom-ai-agents-for-business-automation-2025/custom-ai-agents-for-business-automation-2025-poster.webp)
+
 What are AI Agents?
 
 AI agents are autonomous systems that can perceive their environment, make decisions, and take actions to achieve specific goals. They are a key component of modern business automation AI.

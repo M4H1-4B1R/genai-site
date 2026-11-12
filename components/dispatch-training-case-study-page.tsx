@@ -201,7 +201,7 @@ function SectionHeading({
   return (
     <div className="flex items-end justify-between gap-8 max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-4">
       <div className="flex max-w-[760px] flex-col gap-3">
-        <p className="font-mono text-[11px] font-bold tracking-[1.2px] uppercase text-[#999ea2]">
+        <p className="font-mono text-xs font-bold tracking-[1.2px] uppercase text-[#999ea2]">
           {eyebrow}
         </p>
         <h2 className="text-[clamp(30px,4vw,40px)] font-medium leading-[1.15] text-text">
@@ -217,7 +217,7 @@ function SectionHeading({
 
 function IndexBadge({ index }: { index: number }) {
   return (
-    <span className="rounded-[4px] border border-orange px-2.5 py-1.5 font-mono text-[10px] font-bold tracking-[0.5px] text-orange">
+    <span className="rounded-[4px] border border-orange px-2.5 py-1.5 font-mono text-xs font-bold tracking-[0.5px] text-orange">
       {String(index + 1).padStart(2, "0")}
     </span>
   );
@@ -252,7 +252,7 @@ export function DispatchTrainingCaseStudyPage() {
               {heroTags.map((tag) => (
                 <li
                   key={tag}
-                  className="rounded-full border border-line bg-[#0f1417] px-3 py-1 font-mono text-[10px] font-bold tracking-[0.6px] uppercase text-orange transition-colors duration-200 hover:border-orange"
+                  className="rounded-full border border-line bg-[#0f1417] px-3 py-1 font-mono text-xs font-bold tracking-[0.6px] uppercase text-orange transition-colors duration-200 hover:border-orange"
                 >
                   {tag}
                 </li>
@@ -268,7 +268,7 @@ export function DispatchTrainingCaseStudyPage() {
               the name and design are not finalized.
             </p>
             <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-orange px-2.5 py-1.5 font-mono text-[10px] font-bold tracking-[0.5px] uppercase text-orange">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-orange px-2.5 py-1.5 font-mono text-xs font-bold tracking-[0.5px] uppercase text-orange">
                 <span className="size-[5px] rounded-full bg-orange" aria-hidden="true" />
                 In development
               </span>
@@ -281,7 +281,7 @@ export function DispatchTrainingCaseStudyPage() {
               alt="Dispatch Training Platform trainee screen with scenarios and progress (sensitive text blurred)"
               sizes="(max-width: 640px) 100vw, 32vw"
             />
-            <span className="absolute bottom-6 left-6 rounded-[4px] border border-line bg-[rgba(13,14,15,0.8)] px-3 py-1.5 font-mono text-[10px] font-bold tracking-[0.6px] uppercase text-[#747d81]">
+            <span className="absolute bottom-6 left-6 rounded-[4px] border border-line bg-[rgba(13,14,15,0.8)] px-3 py-1.5 font-mono text-xs font-bold tracking-[0.6px] uppercase text-[#747d81]">
               Trainee screen · design not final
             </span>
           </div>
@@ -293,7 +293,7 @@ export function DispatchTrainingCaseStudyPage() {
         <div className="flex flex-col gap-8">
           <div className="flex items-end justify-between gap-8 max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-4">
             <div className="flex flex-col gap-3">
-              <p className="font-mono text-[11px] font-bold tracking-[1.2px] uppercase text-[#999ea2]">
+              <p className="font-mono text-xs font-bold tracking-[1.2px] uppercase text-[#999ea2]">
                 Snapshot
               </p>
               <h2 className="max-w-[447px] text-[clamp(30px,4vw,40px)] font-medium leading-[1.15] text-text">
@@ -307,7 +307,7 @@ export function DispatchTrainingCaseStudyPage() {
           <dl className="grid grid-cols-4 gap-4 max-[900px]:grid-cols-2 max-[640px]:grid-cols-1">
             {snapshot.map((fact) => (
               <div key={fact.label} className={`${cardClass} ${hoverClass} flex flex-col gap-2 p-6`}>
-                <dt className="font-mono text-[10px] font-bold tracking-[1px] uppercase text-[#747d81]">
+                <dt className="font-mono text-xs font-bold tracking-[1px] uppercase text-[#747d81]">
                   {fact.label}
                 </dt>
                 <dd className="text-[17px] font-bold leading-7 text-text">
@@ -341,7 +341,7 @@ export function DispatchTrainingCaseStudyPage() {
                 provide stays private and is never shared.</p>
             </div>
             <aside className={`${cardClass} flex w-[380px] shrink-0 flex-col gap-5 p-6 max-[900px]:w-full`}>
-              <p className="font-mono text-[10px] font-bold tracking-[1px] uppercase text-[#747d81]">
+              <p className="font-mono text-xs font-bold tracking-[1px] uppercase text-[#747d81]">
                 Operational risk bounds
               </p>
               {riskBounds.map((metric, i) => (
@@ -386,7 +386,7 @@ export function DispatchTrainingCaseStudyPage() {
             description="Next.js, Node.js and Tailwind, built to the client's design."
           />
           <div className="flex items-center gap-4 rounded-[4px] border border-[#1c2328] bg-panel px-[18px] py-3.5 max-[640px]:flex-col max-[640px]:items-start max-[640px]:gap-2">
-            <p className="shrink-0 font-mono text-[10px] font-bold tracking-[0.8px] uppercase text-orange">
+            <p className="shrink-0 font-mono text-xs font-bold tracking-[0.8px] uppercase text-orange">
               System architecture
             </p>
             <p className="text-[13px] leading-[19px] text-muted">
@@ -414,7 +414,7 @@ export function DispatchTrainingCaseStudyPage() {
                   key={detail.label}
                   className={`${hoverClass} flex flex-col gap-2 rounded-[4px] border border-[#1c2328] bg-[#0f1417] p-5`}
                 >
-                  <dt className="font-mono text-[10px] font-bold tracking-[0.8px] uppercase text-[#747d81]">
+                  <dt className="font-mono text-xs font-bold tracking-[0.8px] uppercase text-[#747d81]">
                     {detail.label}
                   </dt>
                   <dd className="text-[15px] leading-6 text-text">
@@ -446,7 +446,7 @@ export function DispatchTrainingCaseStudyPage() {
                 }`}
               >
                 <p
-                  className={`font-mono text-[10px] font-bold tracking-[1px] uppercase ${
+                  className={`font-mono text-xs font-bold tracking-[1px] uppercase ${
                     item.highlight ? "text-orange" : "text-[#747d81]"
                   }`}
                 >
@@ -530,10 +530,10 @@ export function DispatchTrainingCaseStudyPage() {
                   />
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="rounded-full border border-line bg-[#0f1417] px-2.5 py-1 font-mono text-[10px] font-bold tracking-[0.5px] uppercase text-orange">
+                  <span className="rounded-full border border-line bg-[#0f1417] px-2.5 py-1 font-mono text-xs font-bold tracking-[0.5px] uppercase text-orange">
                     {project.category}
                   </span>
-                  <span className="font-mono text-[10px] text-[#747d81]">
+                  <span className="font-mono text-xs text-[#747d81]">
                     {project.cycle}
                   </span>
                 </div>
@@ -547,7 +547,7 @@ export function DispatchTrainingCaseStudyPage() {
                 </div>
                 <Link
                   href={project.href}
-                  className="inline-flex items-center gap-2 font-bold text-orange"
+                  className="inline-flex min-h-11 items-center gap-2 font-bold text-orange"
                 >
                   <span className="text-[13px] leading-4 tracking-[0.65px] uppercase">
                     View Case Study
