@@ -140,6 +140,7 @@ export function ChatPanel({
         >
           <input
             ref={inputRef}
+            autoFocus
             value={draft}
             onChange={(event) => onDraftChange(event.target.value)}
             disabled={pending}
