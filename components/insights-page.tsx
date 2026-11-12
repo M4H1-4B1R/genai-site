@@ -26,7 +26,7 @@ export function InsightsPage() {
               className="size-[5px] rounded-full bg-orange"
               aria-hidden="true"
             />
-            <span className="font-mono text-[10px] font-bold uppercase tracking-[0.5px] text-orange">
+            <span className="font-mono text-xs font-bold uppercase tracking-[0.5px] text-orange">
               Insights
             </span>
           </span>
@@ -55,7 +55,7 @@ export function InsightsPage() {
       >
         <div className="mx-auto max-w-[1280px]">
           <div className="mb-12 max-w-[600px]">
-            <p className="font-mono text-[11px] font-bold uppercase tracking-[1.2px] text-[#999ea2]">
+            <p className="font-mono text-xs font-bold uppercase tracking-[1.2px] text-[#999ea2]">
               Featured Insight
             </p>
             <h2 className="mt-3 text-[clamp(34px,4vw,48px)] font-bold leading-[1.08] tracking-[-1.2px] text-[#f2f2f0]">
@@ -81,12 +81,12 @@ export function InsightsPage() {
                     className="size-[5px] rounded-full bg-orange"
                     aria-hidden="true"
                   />
-                  <span className="font-mono text-[10px] font-bold uppercase tracking-[0.5px] text-orange">
+                  <span className="font-mono text-xs font-bold uppercase tracking-[0.5px] text-orange">
                     {featured.topic}
                   </span>
                 </span>
                 {!featured.image && (
-                  <span className="text-center font-mono text-[10px] font-bold uppercase tracking-[1px] text-[#aeb5b8]">
+                  <span className="text-center font-mono text-xs font-bold uppercase tracking-[1px] text-[#aeb5b8]">
                     Featured article visual
                   </span>
                 )}
@@ -101,7 +101,7 @@ export function InsightsPage() {
               <p className="text-[15px] leading-6 text-[#9fa4ab]">
                 {featured.summary}
               </p>
-              <p className="font-mono text-[10px] tracking-[0.5px] text-[#747d81]">
+              <p className="font-mono text-xs tracking-[0.5px] text-[#747d81]">
                 {featured.dateLabel} · {featured.readTime}
               </p>
               <Link
@@ -122,7 +122,7 @@ export function InsightsPage() {
       >
         <div className="mx-auto flex max-w-[1280px] flex-col gap-12">
           <div>
-            <p className="font-mono text-[11px] font-bold uppercase tracking-[1.2px] text-[#999ea2]">
+            <p className="font-mono text-xs font-bold uppercase tracking-[1.2px] text-[#999ea2]">
               Insight Library
             </p>
             <h2 className="mt-3 text-[clamp(34px,4vw,48px)] font-medium leading-[1.08] tracking-[-1.2px] text-[#f2f2f0]">

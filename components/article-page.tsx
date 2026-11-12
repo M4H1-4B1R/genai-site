@@ -11,7 +11,7 @@ const h2 = "text-[clamp(26px,3vw,32px)] font-bold leading-[1.19] text-[#f2f2f0]"
 function ArticleTag({ label, className = "px-3" }: { label: string; className?: string }) {
   return (
     <span
-      className={`w-fit rounded-[4px] border border-[#293137] bg-[#0f1417] py-1 font-mono text-[10px] font-bold uppercase tracking-[1px] text-[#ff9800] ${className}`}
+      className={`w-fit rounded-[4px] border border-[#293137] bg-[#0f1417] py-1 font-mono text-xs font-bold uppercase tracking-[1px] text-[#ff9800] ${className}`}
     >
       {label}
     </span>
@@ -35,7 +35,7 @@ export function ArticlePage({
             {post.title}
           </h1>
           <p className={body}>{post.summary}</p>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[11px] text-[#747d81]">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-xs text-[#747d81]">
             <span>GenAI Labs</span>
             <span className="h-3 w-px bg-[#293137]" aria-hidden="true" />
             <span>{post.dateLabel}</span>
@@ -91,7 +91,7 @@ export function ArticlePage({
 
           <div className="mt-6 flex flex-col gap-5 border-y border-[#1c2328] py-8">
             <div className="flex items-center gap-4">
-              <span className="flex size-14 shrink-0 items-center justify-center rounded-[28px] border border-[#293137] bg-[#0f1417] font-mono text-[11px] text-[#747d81]">
+              <span className="flex size-14 shrink-0 items-center justify-center rounded-[28px] border border-[#293137] bg-[#0f1417] font-mono text-xs text-[#747d81]">
                 GL
               </span>
               <div className="flex flex-col gap-1">
@@ -113,7 +113,7 @@ export function ArticlePage({
         <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-8">
           <div className="flex flex-col justify-between gap-3 md:flex-row md:items-end">
             <div className="flex flex-col gap-2">
-              <p className="font-mono text-[11px] font-bold tracking-[1.2px] text-[#999ea2]">
+              <p className="font-mono text-xs font-bold tracking-[1.2px] text-[#999ea2]">
                 RELATED INSIGHTS
               </p>
               <h2 className="text-2xl font-bold leading-[30px] text-[#f2f2f0]">
@@ -143,7 +143,7 @@ export function ArticlePage({
                   </p>
                 </div>
                 <div className="mt-auto flex items-center justify-between gap-4 max-[640px]:flex-col max-[640px]:items-start max-[640px]:gap-2">
-                  <span className="font-mono text-[10px] text-[#747d81]">
+                  <span className="font-mono text-xs text-[#747d81]">
                     {item.dateLabel} · {item.readTime}
                   </span>
                   <Link

@@ -121,7 +121,7 @@ export function ServicesHub() {
                     ))}
                   </div>
                 </div>
-                <a href="/contact">
+                <a className="inline-flex min-h-11 items-center" href="/contact">
                   Explore <span>→</span>
                 </a>
               </article>
@@ -182,7 +182,7 @@ export function ServicesHub() {
             <p className="eyebrow">Proof in practice</p>
 						<div className="flex gap-30 max-[640px]:flex-col max-[640px]:gap-2">
             <h2>Evidence that demonstrates this capability.</h2>
-						<a href="/work" className="underline mt-8 font-bold">View All Work →</a>
+						<a href="/work" className="mt-8 inline-flex min-h-11 items-center font-bold underline">View All Work →</a>
 						</div>
           </div>
           <div className="services-evidence-grid">
@@ -200,7 +200,7 @@ export function ServicesHub() {
                 <span>{label}</span>
                 <h3>{title}</h3>
 								<p className="ml-4.5 text-muted mb-3">{description}</p>
-							<a href={url} className="text-text text-[13px] font-bold ml-5">Explore →</a>
+							<a href={url} className="ml-5 inline-flex min-h-11 items-center text-[13px] font-bold text-text">Explore →</a>
               </article>
             ))}
           </div>

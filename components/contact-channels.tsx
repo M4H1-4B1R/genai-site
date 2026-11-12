@@ -37,7 +37,7 @@ export function ContactChannels() {
               className="flex min-h-[190px] flex-col gap-3 rounded-lg border border-[#293137] bg-[#191c1e] p-6"
               href={href}
             >
-              <p className="text-[11px] font-medium text-orange">{tag}</p>
+              <p className="text-xs font-medium text-orange">{tag}</p>
               <p className="text-[22px] font-bold text-white">{title}</p>
               <div className="text-[14px] text-[#c8c1c5]">
                 <p className="break-words">{lines[0]}</p>

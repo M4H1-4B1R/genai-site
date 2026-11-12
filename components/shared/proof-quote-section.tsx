@@ -13,7 +13,7 @@ export function ProofQuoteSection() {
                 className="size-1.5 rounded-full bg-[#f59e0b] animate-pulse"
                 aria-hidden="true"
               />
-              <span className="font-mono text-[11px] font-medium tracking-wide uppercase text-[#ffc174]">
+              <span className="font-mono text-xs font-medium tracking-wide uppercase text-[#ffc174]">
                 VERIFIED AUDIT
               </span>
             </div>
@@ -37,7 +37,7 @@ export function ProofQuoteSection() {
               </span>
             </div>
             <div>
-              <strong className="block font-mono text-[10px] tracking-[0.6px] uppercase text-[#747d81]">
+              <strong className="block font-mono text-xs tracking-[0.6px] uppercase text-[#747d81]">
                 Discipline
               </strong>
               <span className="mt-1 block text-xs leading-relaxed text-[#c8c1c5]">
@@ -46,7 +46,7 @@ export function ProofQuoteSection() {
               </span>
             </div>
             <div>
-              <strong className="block font-mono text-[10px] tracking-[0.6px] uppercase text-[#747d81]">
+              <strong className="block font-mono text-xs tracking-[0.6px] uppercase text-[#747d81]">
                 Deployment cycle
               </strong>
               <span className="mt-1 block text-xs leading-relaxed text-[#c8c1c5]">

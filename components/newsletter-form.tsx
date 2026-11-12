@@ -18,7 +18,7 @@ type Status = "idle" | "sending" | "done" | "error";
     "Connect" still reads as the column/topic. */
 function NewsletterLabel() {
   return (
-    <p className="mt-4.5 ml-1 text-[11px] uppercase leading-[1.4] tracking-[1px] text-[#ff9800]">
+    <p className="mt-4.5 ml-1 text-xs uppercase leading-[1.4] tracking-[1px] text-[#ff9800]">
       Subscribe to get latest news
     </p>
   );

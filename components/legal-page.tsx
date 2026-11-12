@@ -15,10 +15,10 @@ export function LegalPage({
         <h1 className="text-[clamp(32px,4vw,44px)] font-bold text-[#f4f4f1]">
           {title}
         </h1>
-        <p className="text-[12px] text-[#747d81]">{updated}</p>
+        <p className="text-[12px] text-[#8b9498]">{updated}</p>
       </div>
-      <div className="grid grid-cols-12 gap-8">
-        <div className="col-span-8 col-start-3 flex flex-col gap-3 p-5 max-[900px]:col-span-12 max-[900px]:col-start-1 max-[640px]:px-0">
+      <div className="grid grid-cols-12 gap-8 max-[900px]:grid-cols-1 max-[900px]:gap-0">
+        <div className="col-span-8 col-start-3 flex flex-col gap-3 p-5 max-[900px]:col-span-full max-[900px]:col-start-1 max-[640px]:px-0">
           {sections.map(({ heading, paragraphs }) => (
             <section key={heading} className="flex flex-col gap-3">
               <h2 className="text-[25px] font-bold text-[#f4f4f1] max-[640px]:text-[22px]">

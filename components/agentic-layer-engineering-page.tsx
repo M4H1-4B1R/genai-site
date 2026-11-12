@@ -154,7 +154,7 @@ export function AgenticLayerEngineeringPage() {
     <main className="bg-[#090a0b]">
       <section className="relative min-h-[720px] overflow-hidden border-b border-[#1c2328] bg-[#080b0d] section-x pt-20 max-[900px]:pt-[92px] max-[640px]:min-h-[620px] max-[640px]:pt-[68px]">
         <div className="relative z-[1] max-w-[650px]">
-          <p className="mb-8 inline-flex items-center gap-1.5 border border-[#293137] bg-[#0f1417] px-2 py-1 text-[11px] font-[700] uppercase tracking-[1.2px] text-[#f4f4f1]">
+          <p className="mb-8 inline-flex items-center gap-1.5 border border-[#293137] bg-[#0f1417] px-2 py-1 text-xs font-[700] uppercase tracking-[1.2px] text-[#f4f4f1]">
             <span
               className="inline-block h-[6px] w-[6px] rounded-full bg-[var(--orange)]"
               aria-hidden="true"
@@ -226,7 +226,7 @@ export function AgenticLayerEngineeringPage() {
               key={situation}
               className="rounded-[4px] border border-[#293137] bg-[#0f1417] p-7 max-[640px]:p-5"
             >
-              <span className="font-mono text-[10px] text-[var(--orange)]">
+              <span className="font-mono text-xs text-[var(--orange)]">
                 0{index + 1}
               </span>
               <h3 className="mt-4 text-[24px] font-[700] leading-[30px] text-[#f2f2ef]">
@@ -276,7 +276,7 @@ export function AgenticLayerEngineeringPage() {
               className={`relative flex-1 rounded-[4px] border bg-[#080b0d] px-4 py-6 text-center ${index === 2 ? "border-[#ff9800] shadow-[0_0_40px_rgba(255,152,0,0.3)]" : "border-[#293137]"}`}
             >
               <span
-                className={`font-mono text-[11px] ${index === 2 ? "text-[#ffc081]" : "text-[#747d81]"}`}
+                className={`font-mono text-xs ${index === 2 ? "text-[#ffc081]" : "text-[#747d81]"}`}
               >
                 {number}
               </span>
@@ -350,7 +350,7 @@ export function AgenticLayerEngineeringPage() {
                   <WorkTag tag={tag} />
                 </div>
                 <div className="flex-1 p-6">
-                  <span className="text-[11px] font-[700] tracking-[0.55px] text-[#ffc081]">
+                  <span className="text-xs font-[700] tracking-[0.55px] text-[#ffc081]">
                     {label}
                   </span>
                   <h3 className="mt-1.5 text-[22px] font-[700] leading-7 text-[#f2f2ef]">
@@ -385,7 +385,7 @@ export function AgenticLayerEngineeringPage() {
               key={number}
               className="rounded-[4px] border border-[#293137] bg-[#0f1417] p-8 max-[640px]:p-5"
             >
-              <span className="font-mono text-[11px] text-[var(--orange)]">
+              <span className="font-mono text-xs text-[var(--orange)]">
                 {number}
               </span>
               <h3 className="mt-6 text-[22px] leading-7 text-[#f2f2ef]">

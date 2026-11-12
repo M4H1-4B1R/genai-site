@@ -17,7 +17,7 @@ export function Hero() {
           <HeroLines />
           <div className="relative z-[1] section-x pt-[clamp(96px,15svh,140px)] pb-[120px] opacity-[max(0,calc(1_-_var(--hero-p,0)*1.5))] translate-x-[calc(var(--hero-p,0)*-220px)] will-change-[opacity,transform] max-[900px]:pt-[110px] max-[900px]:opacity-100 max-[900px]:translate-x-0 max-[640px]:pt-[90px] max-[640px]:pb-10">
             <div className="mb-[clamp(20px,4svh,40px)] flex items-center gap-[14px]">
-              <span className="rounded-full border border-orange px-2.5 py-1.5 font-mono text-[10px] tracking-[0.5px] uppercase text-orange">
+              <span className="rounded-full border border-orange px-2.5 py-1.5 font-mono text-xs tracking-[0.5px] uppercase text-orange">
                 ● Live system
               </span>
               <small className="eyebrow">Build / Act / Deploy</small>
@@ -42,7 +42,7 @@ export function Hero() {
                 <strong className="block text-[26px] max-[640px]:text-xl">
                   10+
                 </strong>
-                <span className="mt-1 block text-[12px] tracking-[0.55px] uppercase text-[#9ca3af] max-[640px]:text-[9px]">
+                <span className="mt-1 block text-[12px] tracking-[0.55px] uppercase text-[#9ca3af] max-[640px]:text-xs">
                   AI products shipped
                 </span>
               </div>
@@ -50,7 +50,7 @@ export function Hero() {
                 <strong className="block text-[26px] max-[640px]:text-xl">
                   40
                 </strong>
-                <span className="mt-1 block text-[12px] tracking-[0.55px] uppercase text-[#9ca3af] max-[640px]:text-[9px]">
+                <span className="mt-1 block text-[12px] tracking-[0.55px] uppercase text-[#9ca3af] max-[640px]:text-xs">
                   Agents deployed
                 </span>
               </div>
@@ -58,7 +58,7 @@ export function Hero() {
                 <strong className="block text-[26px] max-[640px]:text-xl">
                   12+
                 </strong>
-                <span className="mt-1 block text-[12px] tracking-[0.55px] uppercase text-[#9ca3af] max-[640px]:text-[9px]">
+                <span className="mt-1 block text-[12px] tracking-[0.55px] uppercase text-[#9ca3af] max-[640px]:text-xs">
                   Production deployments
                 </span>
               </div>

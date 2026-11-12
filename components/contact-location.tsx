@@ -31,7 +31,7 @@ export function ContactLocation() {
               <p className="text-[16px] leading-[1.55] text-[#c8c1c5]">Adress</p>
             </div>
             <div className="flex flex-col gap-3 border-t border-[#293137] pt-5">
-						{/* <p className="text-[11px] uppercase text-[#747d81]">
+						{/* <p className="text-xs uppercase text-[#747d81]">
                 Nearby transit stations
               </p>
               <p className="text-[15px] leading-[1.45] text-[#f4f4f1]">

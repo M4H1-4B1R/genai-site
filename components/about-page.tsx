@@ -119,7 +119,7 @@ const sectionClass =
   "border-b border-[#1c2328] bg-ink section-x section-y";
 const card = "rounded-[8px] border border-[#494247]";
 const cardClass = `${card} bg-[#0f1417]`;
-const index = "font-mono text-[10px] text-orange";
+const index = "font-mono text-xs text-orange";
 const secondary = "text-[#c8c1c5]";
 
 function Section({
@@ -167,11 +167,11 @@ export function AboutPage() {
             <div className="flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-orange px-2.5 py-1.5">
                 <span className="size-[5px] rounded-full bg-orange" aria-hidden="true" />
-                <span className="font-mono text-[10px] font-bold uppercase tracking-[0.5px] text-orange">
+                <span className="font-mono text-xs font-bold uppercase tracking-[0.5px] text-orange">
                   AI Engineering Agency
                 </span>
               </span>
-              <span className="font-mono text-[11px] text-[#747d81]">
+              <span className="font-mono text-xs text-[#747d81]">
                 AMMAN, JORDAN / GLOBAL DELIVERY
               </span>
             </div>
@@ -216,7 +216,7 @@ export function AboutPage() {
             <dl className="absolute bottom-8 left-6 right-6 flex flex-wrap gap-x-6 gap-y-4 sm:left-[47px] sm:gap-x-12">
               {metrics.map((m) => (
                 <div key={m.label} className="flex flex-col gap-1">
-                  <dt className="font-mono text-[9px] uppercase tracking-[0.8px] text-[#747d81]">
+                  <dt className="font-mono text-xs uppercase tracking-[0.8px] text-[#747d81]">
                     {m.label}
                   </dt>
                   <dd
@@ -390,7 +390,7 @@ export function AboutPage() {
               <div className={`relative h-[200px] w-full overflow-clip ${card}`}>
                 <Image src={p.image} alt={p.title} fill sizes="(max-width: 768px) 100vw, 600px" className="object-cover" />
               </div>
-              <span className="rounded-[4px] border border-[rgba(255,152,0,0.2)] bg-[#1c1410] px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.5px] text-orange">
+              <span className="rounded-[4px] border border-[rgba(255,152,0,0.2)] bg-[#1c1410] px-2 py-1 font-mono text-xs font-bold uppercase tracking-[0.5px] text-orange">
                 {p.category}
               </span>
               <div className="flex flex-col gap-2">

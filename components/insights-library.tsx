@@ -13,7 +13,7 @@ export function TopicPill({ label }: { label: string }) {
   return (
     <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-orange px-2.5 py-1.5">
       <span className="size-[5px] rounded-full bg-orange" aria-hidden="true" />
-      <span className="font-mono text-[10px] font-bold uppercase tracking-[0.5px] text-orange">
+      <span className="font-mono text-xs font-bold uppercase tracking-[0.5px] text-orange">
         {label}
       </span>
     </span>
@@ -92,7 +92,7 @@ export function InsightsLibrary({ posts }: { posts: PostSummary[] }) {
               {article.summary}
             </p>
             <div className="mt-auto flex items-center justify-between gap-4 pt-4 max-[640px]:flex-col max-[640px]:items-start max-[640px]:gap-2">
-              <span className="font-mono text-[10px] tracking-[0.5px] text-[#747d81]">
+              <span className="font-mono text-xs tracking-[0.5px] text-[#747d81]">
                 {article.dateLabel} · {article.readTime}
               </span>
               <Link

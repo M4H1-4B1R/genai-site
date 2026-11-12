@@ -184,7 +184,7 @@ export function TechStackSection() {
       <div className="mx-auto max-w-[1280px]">
         {/* Header */}
         <div className="mb-14">
-          <p className="font-mono text-[10px] font-bold tracking-[1.2px] uppercase text-[#999ea2]">
+          <p className="font-mono text-xs font-bold tracking-[1.2px] uppercase text-[#999ea2]">
             TECH WE USE
           </p>
           <h2 className="mt-3 text-[clamp(36px,4vw,48px)] font-bold leading-tight tracking-[-1.5px] text-white">
@@ -260,7 +260,7 @@ export function DeploymentPatternsSection() {
     <section className="border-b border-[#1c2328] bg-[#0d0e0f] section-x section-y">
       <div className="mx-auto max-w-[1280px]">
         <div className="mb-10">
-          <p className="font-mono text-[10px] font-bold tracking-[1.2px] uppercase text-[#999ea2]">
+          <p className="font-mono text-xs font-bold tracking-[1.2px] uppercase text-[#999ea2]">
             DEPLOYMENT PATTERNS
           </p>
           <h2 className="mt-3 text-[clamp(30px,3.5vw,40px)] font-bold leading-tight tracking-[-1px] text-white">

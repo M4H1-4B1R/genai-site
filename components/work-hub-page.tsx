@@ -27,11 +27,11 @@ export function WorkHubPage() {
                   className="size-1.5 rounded-full bg-orange animate-pulse"
                   aria-hidden="true"
                 />
-                <span className="font-mono text-[10px] font-bold tracking-[0.5px] uppercase text-orange">
+                <span className="font-mono text-xs font-bold tracking-[0.5px] uppercase text-orange">
                   Work Hub
                 </span>
               </div>
-              <span className="font-mono text-[11px] uppercase tracking-[0.5px] text-[#747d81]">
+              <span className="font-mono text-xs uppercase tracking-[0.5px] text-[#747d81]">
                 VERIFIED CASE STUDIES
               </span>
             </div>
@@ -96,7 +96,7 @@ export function WorkHubPage() {
           {/* Header Row */}
           <div className="mb-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
-              <p className="font-mono text-[10px] font-bold tracking-[1.2px] uppercase text-[#999ea2]">
+              <p className="font-mono text-xs font-bold tracking-[1.2px] uppercase text-[#999ea2]">
                 FEATURED WORK
               </p>
               <h2 className="mt-2 text-[clamp(36px,4vw,48px)] font-bold leading-tight tracking-[-1.5px] text-[#f4f4f1]">
@@ -105,7 +105,7 @@ export function WorkHubPage() {
             </div>
             <a
               href="#all-work"
-              className="inline-flex items-center gap-1.5 font-sans text-sm font-medium text-orange transition hover:underline"
+              className="inline-flex min-h-11 items-center gap-1.5 font-sans text-sm font-medium text-orange transition hover:underline"
             >
               <span>View All Work</span>
               <ArrowUpRight size={16} />
@@ -126,7 +126,7 @@ export function WorkHubPage() {
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
                 <div className="absolute right-4 top-4 z-10 rounded-[2px] border border-[rgba(255,192,129,0.3)] bg-[rgba(8,11,13,0.85)] px-3 py-1 backdrop-blur-sm">
-                  <span className="font-mono text-[11px] font-medium tracking-[0.5px] uppercase text-[#ffa600]">
+                  <span className="font-mono text-xs font-medium tracking-[0.5px] uppercase text-[#ffa600]">
                     HEALTHCARE AI
                   </span>
                 </div>
@@ -135,7 +135,7 @@ export function WorkHubPage() {
               {/* Card Meta & Copy */}
               <div className="flex flex-1 flex-col justify-between p-6 sm:p-8">
                 <div>
-                  <p className="font-mono text-[11px] uppercase tracking-[1px] text-[#ffc081]">
+                  <p className="font-mono text-xs uppercase tracking-[1px] text-[#ffc081]">
                     AI PRODUCT ENGINEERING
                   </p>
                   <h3 className="mt-2 text-[26px] font-bold text-[#f2f2ef] sm:text-[30px]">
@@ -152,7 +152,7 @@ export function WorkHubPage() {
                 <div className="mt-8 border-t border-[#1c2328] pt-6">
                   <Link
                     href="/case-study/kaya"
-                    className="inline-flex items-center gap-2 text-[14px] font-bold uppercase tracking-[0.6px] text-[#f2f2ef] transition-colors group-hover:text-orange"
+                    className="inline-flex min-h-11 items-center gap-2 text-[14px] font-bold uppercase tracking-[0.6px] text-[#f2f2ef] transition-colors group-hover:text-orange"
                   >
                     <span>View Case Study</span>
                     <span className="transition-transform duration-200 group-hover:translate-x-1">
@@ -167,7 +167,7 @@ export function WorkHubPage() {
             <div className="flex flex-col justify-between rounded-[4px] border border-[#293137] bg-[#0f1417]/70 p-6 sm:p-8">
               <div className="flex flex-col gap-6">
                 <div>
-                  <span className="font-mono text-[11px] font-bold uppercase tracking-[1.2px] text-orange">
+                  <span className="font-mono text-xs font-bold uppercase tracking-[1.2px] text-orange">
                     PROJECT PROOF
                   </span>
                   <h4 className="mt-1.5 text-base font-bold text-[#f4f4f1]">
@@ -181,7 +181,7 @@ export function WorkHubPage() {
                 </div>
 
                 <div className="border-t border-[#293137] pt-6">
-                  <span className="font-mono text-[11px] font-bold uppercase tracking-[1.2px] text-orange">
+                  <span className="font-mono text-xs font-bold uppercase tracking-[1.2px] text-orange">
                     STRONGEST EVIDENCE
                   </span>
                   <h4 className="mt-1.5 text-base font-bold text-[#f4f4f1]">
