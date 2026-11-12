@@ -66,19 +66,113 @@ const techCategories: TechCategory[] = [
   },
 ];
 
+
+// Pattern illustrations: inline SVG so they match the dark/orange palette with no asset requests.
+const svgProps = {
+  viewBox: "0 0 410 156",
+  className: "h-full w-full",
+  fill: "none",
+  role: "presentation",
+  "aria-hidden": true,
+} as const;
+const label = {
+  fontFamily: "var(--font-space-mono), monospace",
+  fontSize: 9,
+  letterSpacing: 1,
+  fill: "#aeb5b8",
+} as const;
+
+function CloudArt() {
+  return (
+    <svg {...svgProps}>
+      {["AWS", "GCP", "AZURE"].map((name, i) => (
+        <g key={name}>
+          <rect x={60 + i * 100} y="18" width="70" height="26" rx="3" stroke="#384149" fill="#0d1215" />
+          <text x={95 + i * 100} y="35" textAnchor="middle" style={label}>{name}</text>
+          <path d={`M${95 + i * 100} 44 V62 H205 V74`} stroke="#384149" />
+        </g>
+      ))}
+      {Array.from({ length: 6 }, (_, i) => (
+        <rect
+          key={i}
+          x={157 + (i % 3) * 36}
+          y={74 + Math.floor(i / 3) * 24}
+          width="28"
+          height="16"
+          rx="2"
+          stroke={i === 1 ? "#ff9800" : "#384149"}
+          fill={i === 1 ? "rgba(255,152,0,0.15)" : "#0d1215"}
+        />
+      ))}
+      <text x="205" y="140" textAnchor="middle" style={label}>CONTAINERS · MANAGED · SECURE</text>
+    </svg>
+  );
+}
+
+function LlmArt() {
+  const nodes = ["PROMPT", "MODEL", "TUNE", "EVAL"];
+  return (
+    <svg {...svgProps}>
+      {nodes.map((name, i) => (
+        <g key={name}>
+          <rect
+            x={18 + i * 98}
+            y="48"
+            width="72"
+            height="36"
+            rx="3"
+            stroke={name === "MODEL" ? "#ff9800" : "#384149"}
+            fill={name === "MODEL" ? "rgba(255,152,0,0.15)" : "#0d1215"}
+          />
+          <text x={54 + i * 98} y="70" textAnchor="middle" style={label}>{name}</text>
+          {i < 3 && <path d={`M${90 + i * 98} 66 H${116 + i * 98} m-5 -4 l5 4 l-5 4`} stroke="#6b757b" />}
+        </g>
+      ))}
+      <path d="M342 84 V112 H54 V90 m-4 5 l4 -5 l4 5" stroke="#384149" strokeDasharray="3 3" />
+      <text x="205" y="132" textAnchor="middle" style={label}>MEASURE · ITERATE · SHIP</text>
+    </svg>
+  );
+}
+
+function ObservabilityArt() {
+  return (
+    <svg {...svgProps}>
+      {[30, 62, 94].map((y) => (
+        <path key={y} d={`M24 ${y}H386`} stroke="#1c2328" />
+      ))}
+      <path
+        d="M24 88 L70 72 L110 80 L158 46 L204 58 L252 34 L300 52 L344 28 L386 40"
+        stroke="#ff9800"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <circle cx="344" cy="28" r="4" fill="#ff9800" />
+      {["LOGS", "TRACES", "METRICS"].map((name, i) => (
+        <g key={name}>
+          <rect x={86 + i * 90} y="116" width="76" height="22" rx="3" stroke="#384149" fill="#0d1215" />
+          <text x={124 + i * 90} y="131" textAnchor="middle" style={label}>{name}</text>
+        </g>
+      ))}
+    </svg>
+  );
+}
+
 const deploymentPatterns = [
   {
     title: "Cloud-native Foundations",
+    Art: CloudArt,
     description:
       "We build on AWS, GCP, and Azure with managed services, container orchestration, and secure deployment patterns.",
   },
   {
     title: "LLMs and Custom Models",
+    Art: LlmArt,
     description:
       "From prompt engineering to fine-tuned models, we ship AI systems that are reliable, measurable, and scalable.",
   },
   {
     title: "Observability and Data",
+    Art: ObservabilityArt,
     description:
       "We instrument systems with monitoring, logging, and analytics so every decision is grounded in real-world data.",
   },
@@ -178,9 +272,11 @@ export function DeploymentPatternsSection() {
           {deploymentPatterns.map((pattern) => (
             <article key={pattern.title} className="group">
               <div
-                className="h-[156px] rounded-[4px] border border-[#293137] bg-[#080b0d] transition-colors duration-200 group-hover:border-[#424a50]"
+                className="h-[156px] overflow-hidden rounded-[4px] border border-[#293137] bg-[#080b0d] transition-colors duration-200 group-hover:border-[#424a50]"
                 aria-hidden="true"
-              />
+              >
+                <pattern.Art />
+              </div>
               <h3 className="mt-5 text-sm font-medium text-[#f4f4f1]">
                 {pattern.title}
               </h3>

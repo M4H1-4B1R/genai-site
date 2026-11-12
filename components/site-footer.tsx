@@ -41,8 +41,8 @@ export function SiteFooter() {
         <a className="text-sm leading-[1.5] text-[#9ca3af]" href="/work">
           Work
         </a>
-        <Link className="text-sm leading-[1.5] text-[#9ca3af]" href="/architecture">
-          Architecture
+        <Link className="text-sm leading-[1.5] text-[#9ca3af]" href="/insights">
+         Insights 
         </Link>
         <Link className="text-sm leading-[1.5] text-[#9ca3af]" href="/about">
           About
