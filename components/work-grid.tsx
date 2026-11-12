@@ -189,6 +189,19 @@ const allProjects: Project[] = [
 		proof: { label: "Discovery pilot", value: "56 focused tests passed" },
 		url: "/case-study/huntora",
 	},
+	{
+		id: "dispatch-training",
+		tag: "TRAINING PLATFORM",
+		category: "CLIENT PROJECTS",
+		title: "Dispatch Training Platform",
+		description:
+			"A two-sided web platform for training 911 dispatchers, with trainee, agency admin and superadmin panels. Under development; design not finalized.",
+		image: "/figma/dispatch-training-trainee.png",
+		topics: ["Development", "Technology", "Client projects"],
+		tags: ["Next.js", "Node", "In development"],
+		proof: { label: "Status", value: "Under development" },
+		url: "/case-study/dispatch-training",
+	},
 ];
 
 export function WorkGrid() {
