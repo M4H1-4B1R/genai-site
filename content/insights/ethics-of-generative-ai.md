@@ -5,6 +5,8 @@ topic: Generative AI
 summary: "Generative AI models are trained on large datasets of text and images, which can contain biases. This can lead to the models generating biased or unfair\u2026"
 ---
 
+![The Ethics of Generative AI: Navigating the Moral Landscape](/insights/ethics-of-generative-ai/ethics-of-generative-ai-poster.webp)
+
 ## Bias and Fairness
 
 Generative AI models are trained on large datasets of text and images, which can contain biases. This can lead to the models generating biased or unfair content. It is important to be aware of these biases and to take steps to mitigate them.

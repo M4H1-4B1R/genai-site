@@ -5,6 +5,8 @@ topic: Micro SaaS
 summary: "Your CEO wants AI features by Q2. Your engineering team is fully booked. And every consultant you've talked to is either overselling a full rewrite or\u2026"
 ---
 
+![How to Add AI to Your Existing SaaS Without Breaking Everything](/insights/add-ai-to-existing-saas/add-ai-to-existing-saas-poster.webp)
+
 Your CEO wants AI features by Q2. Your engineering team is fully booked. And every consultant you've talked to is either overselling a full rewrite or underselling the complexity with "just add an API call." Both are wrong.
 
 Adding AI to an existing SaaS product is a distinct engineering discipline. Done right, it makes your product meaningfully better. Done wrong, it breaks things users rely on and creates technical debt that slows you down for years.

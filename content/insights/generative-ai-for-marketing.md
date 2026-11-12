@@ -5,6 +5,8 @@ topic: AI Marketing
 summary: "The first step is to define your target audience. Who are you trying to reach with your marketing campaign? Once you know who your target audience is, you can\u2026"
 ---
 
+![AI for Marketing: High-Converting Campaigns Guide](/insights/generative-ai-for-marketing/generative-ai-for-marketing-poster.webp)
+
 ## 1. Define Your Target Audience
 
 The first step is to define your target audience. Who are you trying to reach with your marketing campaign? Once you know who your target audience is, you can use generative AI to create content that is tailored to their specific needs and interests.

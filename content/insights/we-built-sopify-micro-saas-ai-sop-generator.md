@@ -5,6 +5,8 @@ topic: Micro SaaS
 summary: "Before writing a single line of code, we ran a keyword analysis. One signal stood out immediately:"
 ---
 
+![We Built a Micro SaaS in One Day: Introducing SOPify — The AI SOP Generator](/insights/we-built-sopify-micro-saas-ai-sop-generator/we-built-sopify-micro-saas-ai-sop-generator-poster.webp)
+
 ## The Opportunity: A Keyword Growing at 5,830%
 
 Before writing a single line of code, we ran a keyword analysis. One signal stood out immediately:

@@ -5,6 +5,8 @@ topic: AI Agents
 summary: "Let's be direct about the title: \"replacing employees\" is provocative and we're not going to soften it. The reality is more nuanced \u2014 AI agents are replacing\u2026"
 ---
 
+![How Startups Are Replacing $15K/Month Employees With AI Agents (Real Examples)](/insights/ai-agents-replace-employees-cost/ai-agents-replace-employees-cost-poster.webp)
+
 Let's be direct about the title: "replacing employees" is provocative and we're not going to soften it. The reality is more nuanced — AI agents are replacing specific functions, not whole people. But the economic impact is the same: companies are getting $15,000/month worth of output from tools that cost $500–$2,000/month to operate.
 
 The Functions Being Automated (And the Numbers)

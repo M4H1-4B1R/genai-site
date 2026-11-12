@@ -5,6 +5,8 @@ topic: Generative AI
 summary: "Generative AI can be used to create synthetic data that can be used to train fraud detection models. This can help financial institutions identify and prevent\u2026"
 ---
 
+![Generative AI in Finance: Use Cases and Future Outlook](/insights/generative-ai-in-finance/generative-ai-in-finance-poster.webp)
+
 ## Fraud Detection
 
 Generative AI can be used to create synthetic data that can be used to train fraud detection models. This can help financial institutions identify and prevent fraud more effectively.

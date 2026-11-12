@@ -5,6 +5,7 @@ topic: AI Strategy
 summary: "What an EU AI Act compliant chatbot requires in 2026: Article 50 disclosure, marking AI-generated content, human oversight, and how chatbot rules stack with GDPR \u2014 plus a compliance checklist."
 ---
 
+![Is Your AI Chatbot EU AI Act Compliant? Requirements for Conversational AI in Europe](/insights/eu-ai-act-compliant-chatbot-requirements/eu-ai-act-compliant-chatbot-requirements-poster.webp)
 
 Chatbots are the most deployed form of business AI — and they sit inside the EU AI Act's transparency regime. Here is what a compliant conversational AI needs in 2026, and how it stacks with GDPR.
 

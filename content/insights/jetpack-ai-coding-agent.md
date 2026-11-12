@@ -5,6 +5,8 @@ topic: Micro SaaS
 summary: "What if you could describe an app idea in plain English and have a working, deployable full-stack application in front of you within minutes? Not a wireframe.\u2026"
 ---
 
+![Jetpack: Build Full-Stack Apps with AI in Minutes](/insights/jetpack-ai-coding-agent/jetpack-ai-coding-agent-poster.webp)
+
 What if you could describe an app idea in plain English and have a working, deployable full-stack application in front of you within minutes? Not a wireframe. Not a mockup. An actual, functional application with a frontend, backend, database, and authentication — ready to show investors, test with users, or launch to paying customers.
 
 That is exactly what Jetpack does. And today, we are officially introducing it to the world.

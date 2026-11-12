@@ -5,6 +5,8 @@ topic: Micro SaaS
 summary: "Tired of spending countless hours and thousands of dollars building a customer support chatbot from scratch? Imagine launching a fully functional, AI-powered\u2026"
 ---
 
+![Build Your AI Customer Support Bot SaaS in 5 Minutes](/insights/build-ai-customer-support-bot-saas-5-minutes/build-ai-customer-support-bot-saas-5-minutes-poster.webp)
+
 ## ```html
 
 Tired of spending countless hours and thousands of dollars building a customer support chatbot from scratch? Imagine launching a fully functional, AI-powered customer support SaaS in less time than it takes to brew a pot of coffee. It's no longer a pipe dream. With Jetpack, GenAI Labs' revolutionary no-code AI app builder, you can deploy your own AI customer support bot SaaS in just 5 minutes. Let's dive in!

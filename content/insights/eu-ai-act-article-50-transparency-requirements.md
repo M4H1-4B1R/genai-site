@@ -5,6 +5,7 @@ topic: AI Strategy
 summary: "EU AI Act Article 50 explained: the transparency and disclosure rules now live from August 2026 \u2014 chatbot disclosure, marking AI-generated content, watermarking, and deepfake labelling."
 ---
 
+![EU AI Act Article 50: Transparency & AI Disclosure Requirements](/insights/eu-ai-act-article-50-transparency-requirements/eu-ai-act-article-50-transparency-requirements-poster.webp)
 
 Article 50 is the EU AI Act obligation that touches the most companies, and it is live from August 2026. Here is exactly what transparency, watermarking, and deepfake disclosure require — and how to comply.
 

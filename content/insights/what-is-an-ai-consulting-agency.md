@@ -5,6 +5,8 @@ topic: AI Consulting
 summary: "What Is an AI Consulting Agency? (And How to Choose the Right One)"
 ---
 
+![What Is an AI Consulting Agency? (And How to Choose the Right One)](/insights/what-is-an-ai-consulting-agency/what-is-an-ai-consulting-agency-poster.webp)
+
 ## ```html
 
 ## ```html

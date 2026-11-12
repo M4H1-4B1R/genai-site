@@ -5,6 +5,8 @@ topic: AI Consulting
 summary: "AI Consulting Services: What You Get, What It Costs, and What to Watch Out For | GenAI Labs"
 ---
 
+![AI Consulting Services: What You Get, What It Costs, and What to Watch Out For](/insights/ai-consulting-services-what-to-expect/ai-consulting-services-what-to-expect-poster.webp)
+
 ## ```html
 
 ## ```html

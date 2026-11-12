@@ -5,6 +5,8 @@ topic: AI Strategy
 summary: "Your SAP license costs more than your entire dev team. There's a better way."
 ---
 
+![Why Companies Are Ditching SAP — And Building Custom Alternatives With AI](/insights/custom-sap-alternative-ai/custom-sap-alternative-ai-poster.webp)
+
 Your SAP license costs more than your entire dev team. There's a better way.
 
 SAP is the backbone of enterprise operations worldwide. It's also one of the most expensive, complex, and frustrating pieces of software ever built.

@@ -5,6 +5,7 @@ topic: AI Strategy
 summary: "How ISO 42001 (the AI management system standard) maps to EU AI Act compliance: what ISO 42001 is, the article-by-article crosswalk, whether certification is worth it, and how to get certified."
 ---
 
+![ISO 42001 & the EU AI Act: How the AI Management System Standard Maps to Compliance](/insights/iso-42001-eu-ai-act-compliance/iso-42001-eu-ai-act-compliance-poster.webp)
 
 ISO 42001 is the AI management system standard becoming the backbone of AI governance in Europe. Here is what it is, how it maps article-by-article onto the EU AI Act, and whether certification is worth it.
 

@@ -5,6 +5,8 @@ topic: Generative AI
 summary: "Generative AI can be used to develop more accurate and sophisticated climate models. This can help us to better understand the potential impacts of climate\u2026"
 ---
 
+![The Role of Generative AI in Combating Climate Change](/insights/generative-ai-and-climate-change/generative-ai-and-climate-change-poster.webp)
+
 ## Developing New Climate Models
 
 Generative AI can be used to develop more accurate and sophisticated climate models. This can help us to better understand the potential impacts of climate change and to develop more effective mitigation and adaptation strategies.

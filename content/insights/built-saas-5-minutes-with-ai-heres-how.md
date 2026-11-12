@@ -5,6 +5,8 @@ topic: Micro SaaS
 summary: "Everyone claims AI can build apps fast. We decided to prove it. The goal: build a working SaaS product \u2014 with user authentication, a database, real\u2026"
 ---
 
+![Build Your Micro SaaS in Minutes with AI — Here's Exactly How](/insights/built-saas-5-minutes-with-ai-heres-how/built-saas-5-minutes-with-ai-heres-how-poster.webp)
+
 ## The Challenge: Build a Real SaaS in Under 10 Minutes
 
 Everyone claims AI can build apps fast. We decided to prove it. The goal: build a working SaaS product — with user authentication, a database, real functionality, and deployment — using nothing but Jetpack and natural language prompts.
