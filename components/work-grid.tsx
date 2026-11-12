@@ -176,6 +176,19 @@ const allProjects: Project[] = [
 		proof: { label: "Trust layer", value: "Identity checks with real documents" },
 		url: "/case-study/spruceup",
 	},
+	{
+		id: "huntora",
+		tag: "AI AUTOMATION",
+		category: "CLIENT PROJECTS",
+		title: "Huntora",
+		description:
+			"Lead discovery, email outreach and scheduled blog drafts in one workspace, with human review before publishing and read-only MCP access.",
+		image: "/figma/huntora-hero.png",
+		topics: ["Development", "Technology", "Marketing", "Client projects"],
+		tags: ["Automation", "Next.js", "MCP"],
+		proof: { label: "Discovery pilot", value: "56 focused tests passed" },
+		url: "/case-study/huntora",
+	},
 ];
 
 export function WorkGrid() {
