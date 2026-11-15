@@ -281,7 +281,7 @@ export function DispatchTrainingCaseStudyPage() {
 
           <div className="relative h-[360px] min-w-0 flex-1 max-[900px]:flex-none overflow-clip rounded-[8px] border border-line bg-[#0f1417] max-[640px]:h-[240px]">
             <ImageLightbox
-              src="/figma/clearline-features.png"
+              src="/figma/clearline-features.webp"
               alt={`${PROJECT_NAME} — what GenAILabs built: trainee platform, training system, agency admin panel, superadmin panel, security and performance, SEO, GEO and maintenance`}
               sizes="(max-width: 640px) 100vw, 32vw"
               fit="contain"
