@@ -1,0 +1,79 @@
+/* Shared chrome for the VendorHub phone-screen mockups — "treatment C".
+   Export canvas is exactly 1:2 so it fills the gallery's aspect-[1/2] slot with
+   no letterbox; the backdrop resolves to #0f1417 at every edge so any residual
+   object-contain padding is invisible. See tools/mockups/README.md. */
+
+:root {
+  --ink: #0f1417;      /* must match the slot background in image-lightbox.tsx */
+  --orange: #ff5a1f;   /* site accent */
+  --teal: #0f7a63;     /* VendorHub app accent */
+  --app-bg: #f4f5f3;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--ink); display: flex; }
+
+.canvas {
+  width: 1280px;
+  height: 2560px;
+  background: radial-gradient(
+    130% 90% at 50% 0%,
+    rgba(255, 90, 31, 0.18) 0%,
+    rgba(15, 122, 99, 0.10) 38%,
+    var(--ink) 72%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sized so the phone fills as much of the 1:2 canvas as the >=60px backdrop rule
+   allows, otherwise these tiles render visibly smaller than the originals they
+   replace. 1108x2397 content + 18px bezel = 1144x2433 outer, leaving 68px of
+   backdrop left/right and 63px top/bottom inside the 1280x2560 canvas.
+   These are OUTER sizes: `* { box-sizing: border-box }` above means the 18px
+   bezel is subtracted from them, leaving exactly the 1108x2397 content box the
+   scaled .screen needs. Declaring the content size here instead silently clips
+   36px of width and 37px of height, taking part of the tab bar with it. */
+.phone {
+  width: 1144px;
+  height: 2433px;
+  flex: none;
+  overflow: hidden;
+  border: 18px solid #0a0a0a;
+  border-radius: 80px;
+  background: var(--app-bg);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 90, 31, 0.22);
+}
+
+/* Authored at the real logical viewport, then scaled up. 1108/390 = 2.8410,
+   and 844 * 2.8410 = 2397, which is the .phone content height.
+   Scaling the layout rather than restating every size keeps the mockup honest
+   about what the app actually renders. */
+.screen {
+  width: 390px;
+  height: 844px;
+  transform: scale(2.8410);
+  transform-origin: 0 0;
+  background: var(--app-bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  color: #111;
+  display: flex;
+  flex-direction: column;
+}
+
+.monogram {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.2px;
+}
