@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vendor Hub — hero composite</title>
+<link rel="stylesheet" href="phone.css">
+<style>
+  /* 1600x800 hero. Rather than re-authoring the four screens, this crops the
+     phone out of each exported 1280x2560 PNG with overflow + a negative offset,
+     so the only inputs are files already committed to the repo. The phone sits
+     at (68, 63) in those exports and measures 1144x2433 — see phone.css. */
+  .hero {
+    width: 1600px;
+    height: 800px;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(
+      120% 150% at 50% 0%,
+      rgba(255, 90, 31, 0.20) 0%,
+      rgba(15, 122, 99, 0.11) 40%,
+      #0f1417 74%
+    );
+  }
+  .ph {
+    position: absolute;
+    width: 1144px;
+    height: 2433px;
+    overflow: hidden;
+    transform-origin: 0 0;
+    transform: scale(0.285);
+    border-radius: 80px;
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55);
+  }
+  .ph img {
+    position: absolute;
+    left: -68px;
+    top: -63px;
+    width: 1280px;
+    height: 2560px;
+    display: block;
+  }
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="ph" style="left:59px;  top:52px;"><img src="../../public/figma/vendorhub/home.webp" alt=""></div>
+  <div class="ph" style="left:444px; top:16px;"><img src="../../public/figma/vendorhub/event.webp" alt=""></div>
+  <div class="ph" style="left:829px; top:28px;"><img src="../../public/figma/vendorhub/floor-plan.webp" alt=""></div>
+  <div class="ph" style="left:1214px;top:72px;"><img src="../../public/figma/vendorhub/messages.webp" alt=""></div>
+</div>
+</body>
+</html>

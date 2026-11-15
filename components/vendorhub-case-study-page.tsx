@@ -141,10 +141,10 @@ const capabilities: NumberedCard[] = [
 ];
 
 const screens = [
-  { src: "/figma/vendorhub/home.png", label: "Home and events", alt: "Vendor Hub home screen with upcoming events across the UAE" },
-  { src: "/figma/vendorhub/event.png", label: "Event detail", alt: "Vendor Hub event page with booth availability, price range and vendor match score" },
-  { src: "/figma/vendorhub/floor-plan.png", label: "Floor-plan booking", alt: "Vendor Hub interactive floor plan with booth size, price and Apply button" },
-  { src: "/figma/vendorhub/messages.png", label: "Messages", alt: "Vendor Hub messages between organisers and vendors" },
+  { src: "/figma/vendorhub/home.webp", label: "Home and events", alt: "Vendor Hub home screen with upcoming events across the UAE" },
+  { src: "/figma/vendorhub/event.webp", label: "Event detail", alt: "Vendor Hub event page with booth availability, price range and vendor match score" },
+  { src: "/figma/vendorhub/floor-plan.webp", label: "Floor-plan booking", alt: "Vendor Hub interactive floor plan with booth size, price and Apply button" },
+  { src: "/figma/vendorhub/messages.webp", label: "Messages", alt: "Vendor Hub messages between organisers and vendors" },
 ];
 
 const relatedWork = [

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vendor Hub — Home and events</title>
+<link rel="stylesheet" href="phone.css">
+<style>
+  .status { display:flex; justify-content:space-between; align-items:center; padding:14px 18px 4px; font-size:15px; font-weight:600; flex:none; }
+  .status-right { display:flex; align-items:center; gap:5px; }
+  .bars { display:flex; align-items:flex-end; gap:2px; }
+  .bars i { width:3px; background:#111; border-radius:1px; display:block; }
+  .bars i:nth-child(1){height:4px} .bars i:nth-child(2){height:6px}
+  .bars i:nth-child(3){height:8px} .bars i:nth-child(4){height:10px}
+  .battery { width:22px; height:11px; border:1.3px solid #111; border-radius:3px; position:relative; }
+  .battery::after { content:""; position:absolute; right:-3px; top:3px; width:2px; height:5px; background:#111; border-radius:0 1px 1px 0; }
+  .battery i { position:absolute; inset:1.5px; background:#111; border-radius:1px; display:block; }
+
+  .brand { display:flex; align-items:center; gap:8px; padding:8px 18px 14px; flex:none; }
+  .mark { width:17px; height:17px; border-radius:4px; background:#0f7a63; flex:none; }
+  .bname { font-size:14px; font-weight:700; }
+  .brand .right { margin-left:auto; display:flex; gap:7px; align-items:center; }
+  .ar { font-size:11px; padding:5px 11px; border-radius:99px; background:#fff; border:1px solid #e3e5e1; color:#3f4a46; }
+  .login { font-size:11px; font-weight:700; padding:5px 13px; border-radius:99px; background:#111; color:#fff; }
+
+  h1 { font-size:21px; font-weight:700; line-height:1.25; letter-spacing:-0.5px; padding:0 18px; flex:none; }
+  .sub { font-size:11.5px; color:#6b7280; line-height:1.5; padding:8px 18px 14px; flex:none; }
+
+  .ctas { display:flex; gap:8px; padding:0 18px 14px; flex:none; }
+  .cta { flex:1; text-align:center; font-size:12.5px; font-weight:700; padding:11px; border-radius:8px; }
+  .cta.primary { background:#0f7a63; color:#fff; }
+  .cta.ghost { background:#fff; border:1px solid #d9ddd8; color:#111; }
+
+  .emirates { display:flex; gap:6px; padding:0 18px 16px; overflow:hidden; flex:none; }
+  .em { font-size:11px; padding:6px 12px; border-radius:99px; background:#fff; border:1px solid #e3e5e1; color:#3f4a46; white-space:nowrap; }
+  .em.on { background:#111; color:#fff; border-color:#111; }
+
+  .evhead { display:flex; align-items:baseline; padding:0 18px 10px; flex:none; }
+  .evhead b { font-size:14px; font-weight:700; }
+  .evhead span { margin-left:auto; font-size:11px; color:#0f7a63; font-weight:700; }
+
+  .cards { padding:0 18px; display:flex; flex-direction:column; gap:14px; flex:1; overflow:hidden; }
+  .card { border-radius:9px; overflow:hidden; background:#fff; border:1px solid #e8eae6; }
+  /* The photo carries the app's own baked-in badge and title overlay, so they
+     are not redrawn here — redrawing would double them. */
+  /* Natural aspect, never cover-cropped: the overlay text lives in the photo,
+     so any crop clips the app's own badges and titles. */
+  .shot { display:block; width:100%; height:auto; }
+  /* The source screen cuts the second card off at the bottom of the viewport.
+     Reproduce that: the last card fills the remaining space and is clipped,
+     so it reads as "continues below" rather than as a complete empty card. */
+  .card:last-child { flex:1; min-height:0; border-radius:9px 9px 0 0; }
+  .card:last-child .shot { height:100%; object-fit:cover; object-position:top; }
+  .cinfo { display:flex; align-items:center; padding:9px 11px; gap:8px; }
+  .cwhen { font-size:11px; color:#55605c; }
+  .ccount { margin-left:auto; font-size:11px; color:#55605c; letter-spacing:0.5px; }
+  .cprice { display:flex; align-items:center; padding:0 11px 10px; gap:8px; }
+  .cprice b { font-size:13px; font-weight:700; }
+  .cprice small { font-size:10.5px; color:#6b7280; }
+  .capply { margin-left:auto; font-size:10.5px; padding:6px 10px; border-radius:7px; background:#f0f1ee; color:#3f4a46; }
+
+  .foot { display:flex; gap:14px; padding:14px 18px 6px; font-size:10px; color:#6b7280; flex:none; }
+  .note { padding:0 18px 14px; text-align:right; font-size:10px; color:#9aa2ab; flex:none; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="phone">
+    <div class="screen">
+
+      <div class="status">
+        <span>9:41</span>
+        <span class="status-right">
+          <span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span class="battery" aria-hidden="true"><i></i></span>
+        </span>
+      </div>
+
+      <div class="brand">
+        <span class="mark" aria-hidden="true"></span>
+        <span class="bname">Vendor Hub</span>
+        <span class="right">
+          <span class="ar">&#1593;&#1585;&#1576;&#1610;</span>
+          <span class="login">Log in</span>
+        </span>
+      </div>
+
+      <h1>Every market booth in the<br>UAE, one application away.</h1>
+      <p class="sub">Browse events, pick a booth on the real floor plan,<br>apply with your documents in one tap.</p>
+
+      <div class="ctas">
+        <span class="cta primary">I&rsquo;m a vendor</span>
+        <span class="cta ghost">I run events</span>
+      </div>
+
+      <div class="emirates">
+        <span class="em on">All UAE</span>
+        <span class="em">Dubai</span>
+        <span class="em">Abu Dhabi</span>
+        <span class="em">Sharjah</span>
+        <span class="em">Fujairah</span>
+      </div>
+
+      <div class="evhead"><b>Upcoming events</b><span>142 listed</span></div>
+
+      <div class="cards">
+        <div class="card">
+          <img class="shot" src="../../public/figma/vendorhub/photos/ripe-market.jpg" alt="">
+          <div class="cinfo">
+            <span class="cwhen">3&ndash;5 Oct &middot; Umm Suqeim</span>
+            <span class="ccount">42 / 48</span>
+          </div>
+          <div class="cprice">
+            <b>AED 2,000</b><small>from</small>
+            <span class="capply">Log in to apply</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="shot" src="../../public/figma/vendorhub/photos/al-ain.jpg" alt="">
+        </div>
+      </div>
+
+      <div class="foot"><span>Terms</span><span>Privacy</span><span>Help and support</span></div>
+      <p class="note">No download badges on phone</p>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -12,13 +12,16 @@ type NumberedCard = {
   description: string;
 };
 
+// Temporary codename — swap for the client's product name when it is decided.
+export const PROJECT_NAME = "Callsign";
+
 const heroTags = ["Client Project", "Training Platform", "In Development"];
 
 const snapshot: Fact[] = [
   {
     label: "Client / Context",
     value:
-      "A web platform for training 911 dispatchers. Product name not finalized, so a generic title is used",
+      "A web platform for training 911 dispatchers. The client's product name is not public, so this case study refers to the project by its GenAILabs codename, Callsign",
   },
   {
     label: "Engagement",
@@ -259,13 +262,14 @@ export function DispatchTrainingCaseStudyPage() {
               ))}
             </ul>
             <h1 className="text-[clamp(40px,5vw,58px)] font-medium leading-[1.1] tracking-[-1.2px] text-text">
-              Dispatch Training Platform
+              {PROJECT_NAME}
             </h1>
             <p className="text-lg leading-7 text-muted">
               A two-sided web platform for training 911
               dispatchers. GenAILabs designed to the client&apos;s spec, built
-              and deployed it. The project is still under development, and
-              the name and design are not finalized.
+              and deployed it. The project is still under development;
+              {" "}{PROJECT_NAME} is our codename for it, and the design is not
+              finalized.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-orange px-2.5 py-1.5 font-mono text-xs font-bold tracking-[0.5px] uppercase text-orange">
@@ -277,13 +281,11 @@ export function DispatchTrainingCaseStudyPage() {
 
           <div className="relative h-[360px] min-w-0 flex-1 max-[900px]:flex-none overflow-clip rounded-[8px] border border-line bg-[#0f1417] max-[640px]:h-[240px]">
             <ImageLightbox
-              src="/figma/dispatch-training-trainee.png"
-              alt="Dispatch Training Platform trainee screen with scenarios and progress (sensitive text blurred)"
+              src="/figma/callsign-features.webp"
+              alt={`${PROJECT_NAME} — what GenAILabs built: trainee platform, training system, agency admin panel, superadmin panel, security and performance, SEO, GEO and maintenance`}
               sizes="(max-width: 640px) 100vw, 32vw"
+              fit="contain"
             />
-            <span className="absolute bottom-6 left-6 rounded-[4px] border border-line bg-[rgba(13,14,15,0.8)] px-3 py-1.5 font-mono text-xs font-bold tracking-[0.6px] uppercase text-[#747d81]">
-              Trainee screen · design not final
-            </span>
           </div>
         </div>
       </section>
@@ -482,7 +484,7 @@ export function DispatchTrainingCaseStudyPage() {
                 <div className="relative h-[200px] overflow-clip rounded-[4px] border border-[#1c2328] bg-deep">
                   <ImageLightbox
                     src={screen.src}
-                    alt={`Dispatch Training Platform ${screen.title.toLowerCase()} (sensitive text blurred)`}
+                    alt={`${PROJECT_NAME} ${screen.title.toLowerCase()} (sensitive text blurred)`}
                     sizes="(max-width: 900px) 100vw, 33vw"
                   />
                 </div>

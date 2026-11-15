@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Callsign feature board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f1417;        /* must match the slot background in image-lightbox.tsx */
+    --line: #1c2328;
+    --rule: #161c20;
+    --orange: #ff5a1f;
+    --muted: #747d81;
+    --text: #e8eaec;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--ink); display: flex; }
+
+  .board {
+    width: 1600px;
+    height: 900px;
+    background: var(--ink);
+    color: var(--text);
+    font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+    display: flex;
+    padding: 72px;
+    gap: 72px;
+  }
+
+  .mono { font-family: "Space Mono", ui-monospace, SFMono-Regular, monospace; }
+
+  /* ---- left column ---- */
+  .left {
+    width: 38%;
+    flex: none;
+    border-right: 1px solid var(--line);
+    padding-right: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .eyebrow {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+  .title {
+    font-size: 104px;
+    font-weight: 700;
+    letter-spacing: -2.5px;
+    line-height: 1;
+    margin: 22px 0 26px;
+  }
+  .blurb {
+    font-size: 30px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
+  .tag {
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #999ea2;
+    border: 1px solid #2a3339;
+    border-radius: 6px;
+    padding: 8px 14px;
+  }
+  .meta {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ---- right column ---- */
+  .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .row {
+    display: flex;
+    align-items: baseline;
+    gap: 32px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .row:last-child { border-bottom: 0; padding-bottom: 0; }
+  .num {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--orange);
+    flex: none;
+    width: 62px;
+  }
+  /* Floor is 52px: at the 640px breakpoint the hero renders this board at ~0.21
+     scale, so anything smaller drops under 11px on a phone. */
+  .name { font-size: 54px; font-weight: 700; letter-spacing: -1px; }
+</style>
+</head>
+<body>
+  <div class="board">
+    <div class="left">
+      <div>
+        <p class="eyebrow mono">Client project</p>
+        <h1 class="title">Callsign</h1>
+        <p class="blurb">A two-sided web platform for training 911 dispatchers. Built, deployed and maintained by GenAILabs.</p>
+      </div>
+      <div>
+        <div class="tags">
+          <span class="tag mono">Next.js</span>
+          <span class="tag mono">Node</span>
+          <span class="tag mono">Tailwind</span>
+        </div>
+        <p class="meta mono">3 roles &middot; 12+ admin sections</p>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="row"><span class="num mono">01</span><span class="name">Trainee platform</span></div>
+      <div class="row"><span class="num mono">02</span><span class="name">Training system</span></div>
+      <div class="row"><span class="num mono">03</span><span class="name">Agency admin panel</span></div>
+      <div class="row"><span class="num mono">04</span><span class="name">Superadmin panel</span></div>
+      <div class="row"><span class="num mono">05</span><span class="name">Security &amp; performance</span></div>
+      <div class="row"><span class="num mono">06</span><span class="name">SEO, GEO &amp; maintenance</span></div>
+    </div>
+  </div>
+</body>
+</html>

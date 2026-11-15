@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vendor Hub — Floor-plan booking</title>
+<link rel="stylesheet" href="phone.css">
+<style>
+  .status { display:flex; justify-content:space-between; align-items:center; padding:14px 18px 4px; font-size:15px; font-weight:600; flex:none; }
+  .status-right { display:flex; align-items:center; gap:5px; }
+  .bars { display:flex; align-items:flex-end; gap:2px; }
+  .bars i { width:3px; background:#111; border-radius:1px; display:block; }
+  .bars i:nth-child(1){height:4px} .bars i:nth-child(2){height:6px}
+  .bars i:nth-child(3){height:8px} .bars i:nth-child(4){height:10px}
+  .battery { width:22px; height:11px; border:1.3px solid #111; border-radius:3px; position:relative; }
+  .battery::after { content:""; position:absolute; right:-3px; top:3px; width:2px; height:5px; background:#111; border-radius:0 1px 1px 0; }
+  .battery i { position:absolute; inset:1.5px; background:#111; border-radius:1px; display:block; }
+
+  .head { display:flex; gap:10px; align-items:flex-start; padding:8px 18px 12px; flex:none; }
+  .back { width:28px; height:28px; border-radius:50%; background:#fff; border:1px solid #e3e5e1; display:flex; align-items:center; justify-content:center; flex:none; }
+  .back svg { width:14px; height:14px; fill:none; stroke:#111; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+  .htitle { font-size:16px; font-weight:700; letter-spacing:-0.2px; }
+  .hsub { font-size:11.5px; color:#6b7280; margin-top:2px; }
+
+  .controls { display:flex; gap:6px; align-items:center; padding:0 18px 12px; flex:none; }
+  .seg { font-size:11.5px; padding:6px 12px; border-radius:99px; background:#fff; border:1px solid #e3e5e1; color:#3f4a46; }
+  .seg.on { background:#111; color:#fff; border-color:#111; }
+  .zoom { margin-left:auto; display:flex; gap:4px; }
+  .zoom span { width:26px; height:26px; border-radius:50%; background:#fff; border:1px solid #e3e5e1; display:flex; align-items:center; justify-content:center; font-size:14px; color:#3f4a46; }
+
+  .map { margin:0 18px; background:#fff; border:1px solid #e8eae6; border-radius:10px; padding:10px; position:relative; flex:none; }
+  .pct { position:absolute; top:10px; left:10px; font-size:10px; padding:3px 7px; border-radius:99px; background:#fff; border:1px solid #e3e5e1; color:#3f4a46; }
+  .mini { position:absolute; top:8px; right:8px; width:62px; height:44px; border:1px solid #d7dbd6; border-radius:4px; background:#f7f8f6; overflow:hidden; }
+  .mini i { position:absolute; display:block; background:#cdd6d2; }
+
+  .rows { padding-top:26px; display:flex; flex-direction:column; gap:7px; }
+  .brow { display:flex; gap:5px; align-items:center; }
+  .b { width:23px; height:17px; border-radius:3px; background:#eceee9; color:#55605c; font-size:8.5px; font-weight:700; display:flex; align-items:center; justify-content:center; flex:none; position:relative; }
+  .b.avail { background:#b9e3d6; color:#0c4f41; }
+  .b.sold  { background:#e2e4df; color:#9aa2ab; }
+  .b.prem  { background:#0f7a63; color:#fff; }
+  .b.held  { background:#d8f0e8; color:#0c4f41; border:1.2px dashed #4aa58e; }
+  .b.sel   { outline:2px solid #d99b2b; outline-offset:1px; }
+  .b small { position:absolute; bottom:-7px; left:50%; transform:translateX(-50%); font-size:6px; color:#0c4f41; font-weight:700; }
+  .dots { display:flex; gap:5px; padding:4px 0 2px; }
+  .dots i { width:23px; display:flex; justify-content:center; }
+  .dots i::before { content:""; width:5px; height:5px; border-radius:50%; background:#d7dbd6; display:block; }
+
+  .legend { display:flex; gap:10px; flex-wrap:wrap; padding:12px 0 0; font-size:9px; color:#55605c; }
+  .legend span { display:flex; align-items:center; gap:4px; }
+  .legend i { width:9px; height:9px; border-radius:2px; display:block; }
+
+  .hint { font-size:10px; color:#9aa2ab; line-height:1.45; padding:10px 18px 0; flex:none; }
+
+  /* Bottom sheet: auto top margin pins it to the foot of the screen, as in the app. */
+  .detail { margin:auto 18px 16px; background:#fff; border:1px solid #e8eae6; border-radius:10px; padding:12px; flex:none; }
+  .grab { width:34px; height:3px; border-radius:99px; background:#e2e4df; margin:0 auto 10px; }
+  .drow { display:flex; align-items:center; gap:7px; margin-bottom:10px; }
+  .dcode { font-size:17px; font-weight:700; }
+  .pill { font-size:9.5px; padding:3px 8px; border-radius:99px; font-weight:700; }
+  .pill.ok { background:#dff0ea; color:#0c4f41; }
+  .pill.pr { background:#faecc8; color:#7a5a12; }
+  .tiles { display:flex; gap:7px; }
+  .tile { flex:1; border:1px solid #eceee9; border-radius:7px; padding:7px 8px; }
+  .tlab { font-size:8.5px; color:#9aa2ab; }
+  .tval { font-size:12.5px; font-weight:700; margin-top:3px; line-height:1.3; }
+  .tsub { font-size:8.5px; color:#9aa2ab; margin-top:2px; }
+  .total { display:flex; justify-content:space-between; align-items:baseline; margin-top:11px; font-size:11px; color:#55605c; }
+  .total b { font-size:14px; color:#111; }
+  .cancel { margin-top:9px; background:#f5f6f3; border-radius:6px; padding:8px 9px; font-size:9.5px; color:#6b7280; line-height:1.5; }
+  .apply { margin-top:11px; background:#0f7a63; color:#fff; font-size:13px; font-weight:700; text-align:center; padding:11px; border-radius:8px; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="phone">
+    <div class="screen">
+
+      <div class="status">
+        <span>9:41</span>
+        <span class="status-right">
+          <span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span class="battery" aria-hidden="true"><i></i></span>
+        </span>
+      </div>
+
+      <div class="head">
+        <span class="back" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></span>
+        <span>
+          <span class="htitle" style="display:block;">Ripe Market &middot; Hall A</span>
+          <span class="hsub" style="display:block;">48 booths &middot; 6 available &middot; 3&ndash;5 Oct</span>
+        </span>
+      </div>
+
+      <div class="controls">
+        <span class="seg on">Map</span>
+        <span class="seg">List</span>
+        <span class="seg on">Available</span>
+        <span class="seg">Area</span>
+        <span class="zoom"><span>&minus;</span><span>+</span></span>
+      </div>
+
+      <div class="map">
+        <span class="pct">100 %</span>
+        <span class="mini" aria-hidden="true">
+          <i style="left:6px;top:6px;width:14px;height:8px"></i>
+          <i style="left:24px;top:6px;width:14px;height:8px;background:#0f7a63"></i>
+          <i style="left:6px;top:18px;width:32px;height:6px"></i>
+          <i style="left:6px;top:28px;width:46px;height:6px"></i>
+        </span>
+
+        <div class="rows">
+          <div class="brow">
+            <span class="b">A1</span>
+            <span class="b sel">A2</span>
+            <span class="b">A3</span>
+            <span class="b prem">A4</span>
+            <span class="b held">A5</span>
+            <span class="b">A6</span>
+          </div>
+          <div class="brow">
+            <span class="b">B1</span>
+            <span class="b">B2</span>
+            <span class="b avail">B3<small>2,000</small></span>
+            <span class="b">B4</span>
+            <span class="b">B5</span>
+            <span class="b held">B6</span>
+          </div>
+          <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="brow">
+            <span class="b">C1</span><span class="b">C2</span><span class="b">C3</span>
+            <span class="b">C4</span><span class="b">C5</span><span class="b">C6</span>
+            <span class="b avail">C7<small>1,200</small></span>
+            <span class="b">C8</span><span class="b">C9</span><span class="b">C10</span>
+          </div>
+          <div class="brow" style="margin-top:6px">
+            <span class="b sold">D1</span><span class="b sold">D2</span>
+            <span class="b held">D3</span><span class="b sold">D4</span>
+            <span class="b sold">D5</span><span class="b sold">D6</span>
+            <span class="b sold">D7</span><span class="b sold">D8</span>
+            <span class="b sold">D9</span><span class="b held">D10</span>
+            <span class="b sold">D11</span><span class="b sold">D12</span>
+          </div>
+        </div>
+
+        <div class="legend">
+          <span><i style="background:#b9e3d6"></i>Available</span>
+          <span><i style="background:#d8f0e8;border:1px dashed #4aa58e"></i>Held</span>
+          <span><i style="background:#e2e4df"></i>Sold</span>
+          <span><i style="background:#0f7a63"></i>Premium</span>
+        </div>
+      </div>
+
+      <p class="hint">Pinch to zoom &middot; labels and prices show from 150&nbsp;% &middot; tap a booth for details</p>
+
+      <div class="detail">
+        <div class="grab" aria-hidden="true"></div>
+        <div class="drow">
+          <span class="dcode">A4</span>
+          <span class="pill ok">&bull; Available</span>
+          <span class="pill pr">Premium</span>
+        </div>
+        <div class="tiles">
+          <div class="tile">
+            <div class="tlab">Size</div>
+            <div class="tval">3 &times; 3 m<br>9 m&sup2;</div>
+          </div>
+          <div class="tile">
+            <div class="tlab">Price</div>
+            <div class="tval">AED 2,500</div>
+            <div class="tsub">2,000 + 500 premium</div>
+          </div>
+          <div class="tile">
+            <div class="tlab">Position</div>
+            <div class="tval">Entrance<br>row &middot; power</div>
+          </div>
+        </div>
+        <div class="total"><span>Total with 5 % VAT</span><b>AED 2,625</b></div>
+        <div class="cancel">Cancellation: 90 % back until 26 Sep &middot; 75 % until 1 Oct &middot; none after 2 Oct</div>
+        <div class="apply">Apply for A4</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
