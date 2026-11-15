@@ -24,11 +24,35 @@ const capabilities = [
     body: "Embed with your team to solve high-stakes operational problems and move from prototype to production.",
     tags: ["Rapid discovery", "Systems thinking", "Production ops"],
   },
+  {
+    number: "04",
+    title: "AI Agents",
+    body: "Smart helpers that answer questions and do tasks, from chat and voice bots to AI that reads your files.",
+    tags: ["Chat & voice bots", "Reads your files", "Call review"],
+  },
+  {
+    number: "05",
+    title: "Engineers in Your Team",
+    body: "Our engineers join your team and teach your people, with CTO guidance and AI training when you need it.",
+    tags: ["Embedded engineers", "CTO guidance", "Team training"],
+  },
+  {
+    number: "06",
+    title: "Software Kitchen",
+    body: "Outsourcing for agencies and tech teams: send us the work and we build it under your brand.",
+    tags: ["Outsourcing", "White-label", "Agencies & tech teams"],
+  },
+];
+
+const ways = [
+  ["Monthly Team", "For tech companies", "Hire our engineers by the month. Start in days."],
+  ["Build and Share", "For new startups", "We build your product for less. Pay with money, a small share, or both."],
+  ["Build Together", "For investors and partners", "We start new AI businesses with you and own them together."],
 ];
 
 const evidence = [
   ["evidence-1.png", "Kaya Functional Health", "Kaya is an AI functional medicine health coach. It guides people through structured wellness sessions", "AI PRODUCT ENGINEERING", "/case-study/kaya", "HEALTHCARE AI"],
-  ["nexagent-showcase.png", "Nexagents", "NexAgents (app.nexagents.cloud) puts production AI agents to work for a team", "AGENTIC SYSTEMS", "/case-study/nexagents", "AUTONOMOUS LOGISTICS"],
+  ["nexagent-showcase.png", "Nexagents", "NexAgents (app.nexagents.cloud) puts production AI agents to work for a team", "AGENTIC SYSTEMS", "/case-study/nexagents", "AI AGENTS FOR TEAMS"],
   ["askdahab-hero.png", "Askdahab", "Ask Dahab (askdahab.com) is a multilingual travel and booking platform for Dahab, Egypt", "FORWARD-DEPLOYED", "/case-study/askdahab", "TRAVEL & BOOKING PLATFORM"],
 ];
 
@@ -79,7 +103,7 @@ export function ServicesHub() {
             <h1>
               AI engineering capabilities for different kinds of problems.
             </h1>
-            <p>Three core capabilities. One integrated approach.</p>
+            <p>Six services. One integrated approach. Idea to live product in 4–8 weeks.</p>
           </div>
           <div className="services-actions">
             <a className="button button-primary" href="/contact">
@@ -103,7 +127,7 @@ export function ServicesHub() {
         <section className="services-section">
           <div className="services-section-heading">
             <p className="eyebrow">Capabilities</p>
-            <h2>Three ways we can help.</h2>
+            <h2>Six ways we can help.</h2>
             <p>Choose by the problem you need solved.</p>
           </div>
           <div className="services-capability-grid">
@@ -123,6 +147,28 @@ export function ServicesHub() {
                 </div>
                 <a className="inline-flex min-h-11 items-center" href="/contact">
                   Explore <span>→</span>
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="services-section">
+          <div className="services-section-heading">
+            <p className="eyebrow">How we work</p>
+            <h2>Three ways to work with us.</h2>
+            <p>Bring us one idea. We can make it live in 4 to 8 weeks.</p>
+          </div>
+          <div className="services-capability-grid">
+            {ways.map(([title, who, body]) => (
+              <article className="services-capability" key={title}>
+                <div>
+                  <span className="services-card-number">{who}</span>
+                  <h3>{title}</h3>
+                  <p>{body}</p>
+                </div>
+                <a className="inline-flex min-h-11 items-center" href="/contact">
+                  Talk to us <span>→</span>
                 </a>
               </article>
             ))}

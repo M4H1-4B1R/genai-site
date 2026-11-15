@@ -9,9 +9,9 @@ type Project = {
 	category: string;
 	title: string;
 	description: string;
-	image: string;
+	image?: string;
 	imageAlt?: string;
-	url: string;
+	url?: string;
 	topics: string[];
 	tags: string[];
 	proof?: {
@@ -21,13 +21,12 @@ type Project = {
 };
 
 const filterTopics = [
-	"All topics",
-	"Design",
-	"Development",
-	"Marketing",
-	"Business",
-	"Technology",
+	"All",
+	"Our products",
 	"Client projects",
+	"AI agents",
+	"Mobile apps",
+	"Websites & marketplaces",
 ] as const;
 
 type FilterTopic = (typeof filterTopics)[number];
@@ -36,12 +35,12 @@ const allProjects: Project[] = [
 	{
 		id: "kaya-health",
 		tag: "HEALTHCARE AI",
-		category: "AI PRODUCT ENGINEERING",
+		category: "CLIENT PROJECT",
 		title: "Kaya Health Coach",
 		description:
 			"AI functional medicine coach guiding people through structured wellness sessions, with real-time coaching and habit, goal and mood tracking.",
 		image: "/figma/work/8b005.png",
-		topics: ["Development", "Technology", "Design"],
+		topics: ["Client projects", "Mobile apps", "AI agents"],
 		tags: ["Healthcare", "Semantic Search", "Production"],
 		proof: { label: "Real-time streaming", value: "Under 1s to first token" },
 		url: "/case-study/kaya",
@@ -49,12 +48,12 @@ const allProjects: Project[] = [
 	{
 		id: "smart-teacher",
 		tag: "EDUCATION AI",
-		category: "AI PRODUCT ENGINEERING",
+		category: "CLIENT PROJECT",
 		title: "Smart Teacher",
 		description:
 			"Arabic AI tutor that explains homework from a photo — step-by-step answers in Arabic or English, an AI teacher chat, lessons and a quiz mode.",
 		image: "/figma/smart-teacher-hero.png",
-		topics: ["Development", "Technology", "Design"],
+		topics: ["Client projects", "Mobile apps", "AI agents"],
 		tags: ["Education", "Arabic", "Production"],
 		proof: { label: "Play Console, 28 days", value: "60 installs from ~4,590 impressions" },
 		url: "/case-study/smart-teacher",
@@ -62,12 +61,12 @@ const allProjects: Project[] = [
 	{
 		id: "sino360",
 		tag: "AUTOMOTIVE MOBILE APP",
-		category: "MOBILE PRODUCT ENGINEERING",
-		title: "Sino 360",
+		category: "OUR PRODUCT",
+		title: "China Vehicle History (Sino 360 app)",
 		description:
 			"Chinese VIN decoder app — specs, accident and title history and mileage checks from a camera scan or typed VIN, in five languages.",
 		image: "/figma/sino360-hero.png",
-		topics: ["Development", "Technology", "Design"],
+		topics: ["Our products", "Mobile apps"],
 		tags: ["Automotive", "Flutter", "Production"],
 		proof: { label: "Google Play", value: "Live, 29.1 MB install" },
 		url: "/case-study/sino360",
@@ -75,12 +74,12 @@ const allProjects: Project[] = [
 	{
 		id: "mashtal",
 		tag: "AGRITECH AI",
-		category: "AI PRODUCT ENGINEERING",
+		category: "OUR PRODUCT",
 		title: "Mashtal AI",
 		description:
 			"Arabic AI plant doctor — photograph a sick plant and get a structured Arabic diagnosis, treatment plan and care schedule.",
 		image: "/figma/mashtal-card.png",
-		topics: ["Development", "Technology", "Design"],
+		topics: ["Our products", "Mobile apps", "AI agents"],
 		tags: ["Plants", "Arabic", "Launching"],
 		proof: { label: "Per scan", value: "41 structured Arabic fields" },
 		url: "/case-study/mashtal",
@@ -88,38 +87,38 @@ const allProjects: Project[] = [
 	{
 		id: "askdahab",
 		tag: "TRAVEL & BOOKING PLATFORM",
-		category: "AI PRODUCT ENGINEERING",
+		category: "OUR PRODUCT",
 		title: "Ask Dahab",
 		description:
 			"Multilingual travel and booking platform for Dahab, Egypt — 6 languages, ~915 pages, 18 bookable experiences, admin panel, job portal, multilingual search, and Ask Sinai mobile app.",
 		image: "/figma/askdahab-hero.png",
-		topics: ["Development", "Technology", "Design", "Business"],
+		topics: ["Our products", "Websites & marketplaces", "Mobile apps"],
 		tags: ["Travel", "Multilingual", "Production"],
 		proof: { label: "Pages & URLs", value: "~915 pages, 903 URLs in sitemap" },
 		url: "/case-study/askdahab",
 	},
 		{
 		id: "mingcheji",
-		tag: "TRADE COMPLIANCE AI",
-		category: "AGENTIC LAYER ENGINEERING",
-		title: "Mingcheji China Cars",
+		tag: "CAR DATA",
+		category: "OUR PRODUCT",
+		title: "Mingcheji",
 		description:
-			"Bring cross-border trade documents, automated tariff inspections, and multi-jurisdiction compliance into one workflow.",
+			"Find used cars from China and check them first: vehicle history, specs and registration checks before you buy.",
 		image: "/figma/mingcheji-showcase.png",
-		topics: ["Development", "Business", "Technology"],
+		topics: ["Our products", "Websites & marketplaces"],
 		tags: ["Trade AI", "Compliance", "Multi-Agent"],
 		proof: { label: "Audit Throughput", value: "10x document cycle velocity" },
 		url: "/case-study/mingcheji",
 	},
 	{
 		id: "nexagent",
-		tag: "AUTONOMOUS LOGISTICS",
-		category: "FORWARD-DEPLOYED SERVICES",
-		title: "NEXAGENT AI WORKSPACE",
+		tag: "AI AGENTS FOR TEAMS",
+		category: "AI AGENTS FOR TEAMS",
+		title: "NexAgents",
 		description:
 			"NexAgents (app.nexagents.cloud) puts production AI agents to work for a team — agents that answer reliably, per-person control over models, tools, passwords and company data, and metered token costs. Live in production",
 		image: "/figma/nexagent-showcase.png",
-		topics: ["Design", "Business", "Technology", "Marketing"],
+		topics: ["Our products", "AI agents"],
 		tags: ["Autonomous", "Retail VC", "Workflows"],
 		proof: { label: "Operational Uptime", value: "99.98% unattended execution" },
 		url: "/case-study/nexagents",
@@ -127,12 +126,12 @@ const allProjects: Project[] = [
 	{
 		id: "rennzone",
 		tag: "MARKETPLACE",
-		category: "CLIENT PROJECTS",
+		category: "CLIENT PROJECT",
 		title: "Rennzone",
 		description:
 			"The global Porsche marketplace — a fully custom Sharetribe build with payments, car listings and a blog. Live for over a year.",
 		image: "/figma/rennzone-hero.png",
-		topics: ["Development", "Technology", "Client projects"],
+		topics: ["Client projects", "Websites & marketplaces"],
 		tags: ["Marketplace", "Sharetribe", "Production"],
 		proof: { label: "Search visibility", value: "50 ranking keywords, best at #8" },
 		url: "/case-study/rennzone",
@@ -140,12 +139,12 @@ const allProjects: Project[] = [
 	{
 		id: "vendorhub",
 		tag: "EVENTS MARKETPLACE",
-		category: "CLIENT PROJECTS",
+		category: "CLIENT PROJECT",
 		title: "Vendor Hub",
 		description:
 			"Mobile app where UAE event organisers and vendors connect, find work and manage events — built from the client's idea, with a floor-plan builder, applicant review, teams and disputes.",
 		image: "/figma/vendorhub-hero.png",
-		topics: ["Development", "Technology", "Design", "Client projects"],
+		topics: ["Client projects", "Mobile apps", "Websites & marketplaces"],
 		tags: ["Marketplace", "Flutter", "Pre-launch"],
 		proof: { label: "Single codebase", value: "Vendors and organisers in one app" },
 		url: "/case-study/vendorhub",
@@ -153,12 +152,12 @@ const allProjects: Project[] = [
 	{
 		id: "rennworks",
 		tag: "AUTOMOTIVE WEBSITE",
-		category: "CLIENT PROJECTS",
+		category: "CLIENT PROJECT",
 		title: "Rennworks",
 		description:
 			"Porsche and McLaren care done right — a fully custom WordPress site with detailed service pages and a WhatsApp widget. Live for almost a year.",
 		image: "/figma/rennworks-hero.png",
-		topics: ["Development", "Technology", "Design", "Client projects"],
+		topics: ["Client projects", "Websites & marketplaces"],
 		tags: ["WordPress", "Automotive", "Production"],
 		proof: { label: "Service coverage", value: "Porsche and McLaren workshops" },
 		url: "/case-study/rennworks",
@@ -166,12 +165,12 @@ const allProjects: Project[] = [
 	{
 		id: "spruceup",
 		tag: "MARKETPLACE",
-		category: "CLIENT PROJECTS",
+		category: "CLIENT PROJECT",
 		title: "SpruceUp",
 		description:
 			"Two-sided marketplace for finding reliable cleaners in Ireland — automatic commission payments and document-based identity verification.",
 		image: "/figma/spruceup-hero.png",
-		topics: ["Development", "Technology", "Design", "Client projects"],
+		topics: ["Client projects", "Websites & marketplaces"],
 		tags: ["Marketplace", "Sharetribe", "Production"],
 		proof: { label: "Trust layer", value: "Identity checks with real documents" },
 		url: "/case-study/spruceup",
@@ -179,36 +178,135 @@ const allProjects: Project[] = [
 	{
 		id: "huntora",
 		tag: "AI AUTOMATION",
-		category: "CLIENT PROJECTS",
+		category: "CLIENT PROJECT",
 		title: "Huntora",
 		description:
 			"Lead discovery, email outreach and scheduled blog drafts in one workspace, with human review before publishing and read-only MCP access.",
 		image: "/figma/huntora-hero.png",
-		topics: ["Development", "Technology", "Marketing", "Client projects"],
+		topics: ["Client projects", "AI agents"],
 		tags: ["Automation", "Next.js", "MCP"],
 		proof: { label: "Discovery pilot", value: "56 focused tests passed" },
 		url: "/case-study/huntora",
 	},
 	{
-		id: "dispatch-training",
-		tag: "TRAINING PLATFORM",
-		category: "CLIENT PROJECTS",
-		title: "Dispatch Training Platform",
+		id: "globalvin",
+		tag: "CAR DATA",
+		category: "OUR PRODUCT",
+		title: "GlobalVIN",
 		description:
-			"A two-sided web platform for training 911 dispatchers, with trainee, agency admin and superadmin panels. Under development; design not finalized.",
-		image: "/figma/dispatch-training-trainee.png",
-		topics: ["Development", "Technology", "Client projects"],
-		tags: ["Next.js", "Node", "In development"],
-		proof: { label: "Status", value: "Under development" },
-		url: "/case-study/dispatch-training",
+			"Any car's history, from 150+ countries, in one place. 20+ data sources, 99.9% uptime, VIN check API.",
+		topics: ["Our products", "Websites & marketplaces"],
+		tags: ["Car data", "API", "Production"],
+		url: "https://globalvin.co",
+	},
+	{
+		id: "asksinai",
+		tag: "TRAVEL",
+		category: "OUR PRODUCT",
+		title: "Ask Sinai",
+		description:
+			"Book car and boat rides across Sinai. Part of the Ask Dahab family.",
+		image: "/figma/asksinai.png",
+		topics: ["Our products", "Mobile apps"],
+		tags: ["Travel", "Booking", "Mobile"],
+	},
+	{
+		id: "shopbot",
+		tag: "E-COMMERCE",
+		category: "OUR PRODUCT",
+		title: "ShopBot",
+		description:
+			"An online store with orders on WhatsApp: customers browse and add to cart, and the admin gets WhatsApp notifications instantly.",
+		topics: ["Our products", "Websites & marketplaces"],
+		tags: ["E-commerce", "WhatsApp"],
+	},
+	{
+		id: "resinwerks",
+		tag: "AI CHATBOT",
+		category: "CLIENT PROJECT",
+		title: "Resinwerks",
+		description:
+			"A chatbot that answers from the company's own information, built on their existing platform with their internal data.",
+		topics: ["Client projects", "AI agents"],
+		tags: ["Chatbot", "OpenAI", "HubSpot"],
+	},
+	{
+		id: "triten",
+		tag: "CUSTOM AI SKILL",
+		category: "CLIENT PROJECT",
+		title: "Triten",
+		description:
+			"A custom Claude skill that applies Triten's own fonts, colours and tone to everything Claude writes.",
+		topics: ["Client projects", "AI agents"],
+		tags: ["Claude", "Branding"],
+	},
+	{
+		id: "ebay-assistant",
+		tag: "AI AGENT",
+		category: "CLIENT PROJECT",
+		title: "eBay Assistant",
+		description:
+			"Automatically replies to eBay buyer messages using trained patterns and the seller's own requirements.",
+		topics: ["Client projects", "AI agents"],
+		tags: ["Python", "n8n"],
+	},
+	{
+		id: "linkedin-agent",
+		tag: "AI AGENT",
+		category: "CLIENT PROJECT",
+		title: "LinkedIn Agent",
+		description:
+			"Outreach on autopilot: turns a spreadsheet into LinkedIn connection requests, with rate limiting.",
+		topics: ["Client projects", "AI agents"],
+		tags: ["n8n", "Automation"],
+	},
+	{
+		id: "nda-review-agent",
+		tag: "AI AGENT",
+		category: "CLIENT PROJECT",
+		title: "NDA Review Agent",
+		description:
+			"Checks NDAs and gives structured feedback on each clause.",
+		topics: ["Client projects", "AI agents"],
+		tags: ["CrewAI", "OpenAI"],
+	},
+	{
+		id: "property-ad-writer",
+		tag: "AI AGENT",
+		category: "CLIENT PROJECT",
+		title: "Property Ad Writer",
+		description:
+			"Writes property listings and ads, and connects them to Airtable.",
+		topics: ["Client projects", "AI agents"],
+		tags: ["OpenAI", "Airtable"],
+	},
+	{
+		id: "private-in-house-ai",
+		tag: "PRIVATE AI",
+		category: "CLIENT PROJECT",
+		title: "Private In-House AI",
+		description:
+			"A proof of concept for an AI that runs on the client's own servers, so no data leaves their infrastructure.",
+		topics: ["Client projects", "AI agents"],
+		tags: ["Local LLM", "Privacy"],
+	},
+	{
+		id: "sprout",
+		tag: "COACHING APP",
+		category: "CLIENT PROJECT",
+		title: "Sprout",
+		description:
+			"A coaching app built in Flutter.",
+		topics: ["Client projects", "Mobile apps"],
+		tags: ["Flutter"],
 	},
 ];
 
 export function WorkGrid() {
-	const [selected, setSelected] = useState<FilterTopic>("All topics");
+	const [selected, setSelected] = useState<FilterTopic>("All");
 
 	const visible =
-		selected === "All topics"
+		selected === "All"
 			? allProjects
 			: allProjects.filter((p) => p.topics.includes(selected));
 
@@ -217,7 +315,7 @@ export function WorkGrid() {
 			{/* Filter Pills */}
 			<div
 				role="tablist"
-				aria-label="Filter by topic"
+				aria-label="Filter by category"
 				className="flex items-center gap-2 overflow-x-auto py-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
 			>
 				{filterTopics.map((topic) => {
@@ -247,7 +345,8 @@ export function WorkGrid() {
 						key={project.id}
 						className="group flex flex-col overflow-hidden rounded-[2px] border border-[#293137] bg-[#0f1417] transition-all duration-300 hover:border-[#424a50] hover:shadow-[0_8px_32px_rgba(0,0,0,0.45)]"
 					>
-						{/* Image */}
+						{/* Image (text-only cards have none) */}
+						{project.image ? (
 						<div className="relative aspect-[29/12] w-full overflow-hidden border-b border-[#293137] bg-[#13191d]">
 							<Image
 								src={project.image}
@@ -263,11 +362,13 @@ export function WorkGrid() {
 								</span>
 							</div>
 						</div>
+						) : null}
 
 						{/* Body */}
 						<div className="flex flex-1 flex-col p-6 sm:px-7 sm:py-6">
 							<p className="font-mono text-xs uppercase tracking-[1px] text-[#ffc081]">
 								{project.category}
+								{project.image ? "" : ` · ${project.tag}`}
 							</p>
 							<h3 className="mt-1.5 text-[20px] font-bold leading-snug text-[#f2f2ef] sm:text-[22px]">
 								{project.title}
@@ -276,19 +377,26 @@ export function WorkGrid() {
 								{project.description}
 							</p>
 
-							{/* Link */}
-							<a
-								href={project.url}
-								className="mt-5 inline-flex items-center gap-2 border-t border-[#1c2328] pt-4 text-[12px] font-bold uppercase tracking-[0.65px] text-[#f2f2ef] transition-colors duration-200 hover:text-orange"
-							>
-								<span>View Case Study</span>
-								<span
-									aria-hidden="true"
-									className="transition-transform duration-200 group-hover:translate-x-1"
+							{/* Link: only when there is a page to open */}
+							{project.url ? (
+								<a
+									href={project.url}
+									{...(project.url.startsWith("http")
+										? { target: "_blank", rel: "noopener noreferrer" }
+										: {})}
+									className="mt-5 inline-flex items-center gap-2 border-t border-[#1c2328] pt-4 text-[12px] font-bold uppercase tracking-[0.65px] text-[#f2f2ef] transition-colors duration-200 hover:text-orange"
 								>
-									→
-								</span>
-							</a>
+									<span>
+										{project.url.startsWith("http") ? "Visit site" : "View Case Study"}
+									</span>
+									<span
+										aria-hidden="true"
+										className="transition-transform duration-200 group-hover:translate-x-1"
+									>
+										→
+									</span>
+								</a>
+							) : null}
 						</div>
 					</article>
 				))}

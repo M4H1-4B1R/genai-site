@@ -74,13 +74,11 @@ Replaced slow enterprise search with instantaneous semantic discovery across
 Engineered high-performance model microservices that optimise delivery routing
 graphs. 48% reduction in routing overhead.
 
-### Mingcheji China Cars — Trade Compliance AI / Agentic Layer Engineering
-Brought cross-border trade documents, automated tariff inspections and
-multi-jurisdiction compliance into one workflow. 10x document cycle velocity.
+### Mingcheji — Car data
+Helps people find used cars from China and check them first.
 
-### NEXAGENT Retail Operations — Autonomous Logistics / Forward-Deployed
-A venture studio fused with retail VC: autonomous operational systems managing
-inventory distribution and automated reporting.
+### NexAgents — AI agents for teams
+AI helpers a whole team can use safely at work (app.nexagents.cloud).
 
 All four are at /work.
 
@@ -104,8 +102,13 @@ cost controls that keep AI systems performant and auditable over time.
 
 ## 6. Company facts
 
-Headquarters: Amman, Jordan. Core team operates from Amman with partners across
-North America, Europe and Asia-Pacific.
+GenAI Labs is the software arm of NexAgents Ltd, a UK-registered company (128 City Road,
+London EC1V 2NX) that also owns our products. Fully remote team of 16, founded 2023.
+Numbers: 230+ client projects delivered, 8 own products, app users in 150+ countries,
+4.8/5 from 238 client reviews, 4-8 weeks from idea to a live product.
+Services: AI products, AI agents, Engineers in Your Team, Software Kitchen (outsourcing).
+Ways to work: Monthly Team, Build and Share, Build Together.
+Contact: support@genailabs.agency, +44 7895 566797.
 Office hours: Monday to Friday, 09:00–18:00 GMT. Visits by appointment.
 
 How we work:

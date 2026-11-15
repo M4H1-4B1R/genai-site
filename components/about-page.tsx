@@ -83,15 +83,18 @@ const showcase = [
 ];
 
 const metrics = [
-  { label: "Systems in production", value: "30+" },
-  { label: "Avg deployment cycle", value: "8 WKS" },
-  { label: "Uptime SLA", value: "99.9%", accent: true },
+  { label: "Projects delivered", value: "230+" },
+  { label: "Own products", value: "8" },
+  { label: "People", value: "16" },
+  { label: "App users in", value: "150+ countries" },
+  { label: "238 client reviews", value: "4.8/5", accent: true },
+  { label: "Idea to live product", value: "4–8 wks" },
 ];
 
 const facts = [
   ["Founded on engineering discipline", "Built by practitioners who have shipped AI at scale."],
-  ["Independent and embedded", "We work alongside your team, not around it."],
-  ["Global reach, Amman-rooted", "Delivering production-grade AI for global enterprise clients."],
+  ["Independent and embedded", "We work alongside your team, not around it. GenAI Labs is the software arm of NexAgents Ltd, the UK-registered parent company that also owns our products."],
+  ["Global reach, fully remote", "A fully remote team of 16, registered in the UK, with app users in 150+ countries."],
 ];
 
 const thinking = [

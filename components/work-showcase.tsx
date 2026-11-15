@@ -45,9 +45,9 @@ const projects = [
   },
   {
     number: "02",
-    type: "Trade Compliance AI",
+    type: "Car data · used cars from China",
     title: "Mingcheji China Cars",
-    copy: "Bring trade documents, checks, and decisions into one workflow.",
+    copy: "Find used cars from China and check them first.",
     image: "/figma/mingcheji-showcase.png",
     // textured backdrop behind the transparent laptop/phone art; Figma mirrors it
     bg: "/figma/mingcheji-showcase-bg.png",
@@ -58,7 +58,7 @@ const projects = [
   },
   {
     number: "03",
-    type: "Autonomous Logistics",
+    type: "AI agents for teams",
     title: "NEXAGENT",
     copy: "A venture studio fused with retail VC . we build and operate real products, then open the cap table so anyone can invest and help grow them.",
     image: "/figma/nexagent-showcase.png",
