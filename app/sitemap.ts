@@ -14,6 +14,7 @@ const paths = [
   "/services/forward-deployed-services",
   "/work",
   "/case-study/askdahab",
+  "/case-study/chinavehiclehistory",
   "/case-study/globalvin",
   "/case-study/huntora",
   "/case-study/kaya",

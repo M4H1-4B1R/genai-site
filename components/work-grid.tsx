@@ -203,6 +203,7 @@ const allProjects: Project[] = [
 	},
 	{
 		id: "china-vehicle-history",
+		image: "/figma/chinavehiclehistory-hero.png",
 		tag: "CAR DATA",
 		category: "OUR PRODUCT",
 		title: "China Vehicle History",
@@ -210,6 +211,8 @@ const allProjects: Project[] = [
 			"History reports for cars made in China: VIN check and decoder, accident verification and title status. Part of the GlobalVIN network. Sino 360 is its companion mobile app.",
 		topics: ["Our products", "Websites & marketplaces"],
 		tags: ["Car data", "VIN check", "Production"],
+		proof: { label: "Search visibility", value: "#1 for chinese vin decoder" },
+		url: "/case-study/chinavehiclehistory",
 	},
 	{
 		id: "asksinai",
