@@ -13,7 +13,7 @@ type NumberedCard = {
 };
 
 // Temporary codename — swap for the client's product name when it is decided.
-export const PROJECT_NAME = "ClearLine";
+export const PROJECT_NAME = "Callsign";
 
 const heroTags = ["Client Project", "Training Platform", "In Development"];
 
@@ -21,7 +21,7 @@ const snapshot: Fact[] = [
   {
     label: "Client / Context",
     value:
-      "A web platform for training 911 dispatchers. The client's product name is not public, so this case study refers to the project by its GenAILabs codename, ClearLine",
+      "A web platform for training 911 dispatchers. The client's product name is not public, so this case study refers to the project by its GenAILabs codename, Callsign",
   },
   {
     label: "Engagement",
@@ -281,7 +281,7 @@ export function DispatchTrainingCaseStudyPage() {
 
           <div className="relative h-[360px] min-w-0 flex-1 max-[900px]:flex-none overflow-clip rounded-[8px] border border-line bg-[#0f1417] max-[640px]:h-[240px]">
             <ImageLightbox
-              src="/figma/clearline-features.webp"
+              src="/figma/callsign-features.webp"
               alt={`${PROJECT_NAME} — what GenAILabs built: trainee platform, training system, agency admin panel, superadmin panel, security and performance, SEO, GEO and maintenance`}
               sizes="(max-width: 640px) 100vw, 32vw"
               fit="contain"

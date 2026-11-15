@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Callsign work-grid card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* Card variant of callsign-board.html. The /work card slot is aspect-[29/12]
+     and the category badge is absolutely positioned over the image's top-right
+     corner at a FIXED size, so it eats a larger share of the image the narrower
+     the viewport: at 390px it covers 41% of the width and 24% of the height.
+     The board's own two-column layout puts feature rows there, and the badge
+     buries rows 01 and 02. This layout keeps that corner empty instead. */
+  :root {
+    --ink: #0f1417;        /* must match the slot background in image-lightbox.tsx */
+    --line: #1c2328;
+    --rule: #1a2126;
+    --orange: #ff5a1f;
+    --muted: #747d81;
+    --text: #e8eaec;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--ink); display: flex; }
+
+  .card {
+    width: 1595px;
+    height: 660px;
+    background: var(--ink);
+    color: var(--text);
+    font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 52px 64px 56px;
+  }
+
+  .mono { font-family: "Space Mono", ui-monospace, SFMono-Regular, monospace; }
+
+  /* Keep-out zone for the badge: nothing in .head may cross 52% of the width or
+     run past 170px of height. */
+  .head { width: 52%; }
+  .eyebrow {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+  .title {
+    font-size: 86px;
+    font-weight: 700;
+    letter-spacing: -2.2px;
+    line-height: 1;
+    margin-top: 14px;
+  }
+  .meta {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 16px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 56px;
+  }
+  .row {
+    display: flex;
+    align-items: baseline;
+    gap: 26px;
+    padding: 20px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .num {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--orange);
+    flex: none;
+    width: 54px;
+  }
+  /* Floor is 50px: the card renders at ~0.22 scale on a 390px viewport, so
+     anything smaller drops under 11px there. */
+  .name { font-size: 50px; font-weight: 700; letter-spacing: -0.8px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="head">
+      <p class="eyebrow mono">Client project</p>
+      <h1 class="title">Callsign</h1>
+      <p class="meta mono">3 roles &middot; 12+ admin sections</p>
+    </div>
+
+    <div class="grid">
+      <div class="row"><span class="num mono">01</span><span class="name">Trainee platform</span></div>
+      <div class="row"><span class="num mono">04</span><span class="name">Superadmin panel</span></div>
+      <div class="row"><span class="num mono">02</span><span class="name">Training system</span></div>
+      <div class="row"><span class="num mono">05</span><span class="name">Security &amp; performance</span></div>
+      <div class="row"><span class="num mono">03</span><span class="name">Agency admin panel</span></div>
+      <div class="row"><span class="num mono">06</span><span class="name">SEO, GEO &amp; maintenance</span></div>
+    </div>
+  </div>
+</body>
+</html>

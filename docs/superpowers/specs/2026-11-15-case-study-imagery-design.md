@@ -105,7 +105,7 @@ explicit decision — the cost is fabricated text on a client case study.
 | 911 board layout | **B — editorial spine**: name and context in a left column, six numbered feature rows on the right | User (terminal + browser click `choice:"spine"`) |
 | VendorHub framing | **C — framed + backdrop**: phone bezel, plus a baked-in orange→teal radial gradient and warm rim light | User |
 | Avatars in Messages screen | Monogram circles, not AI portraits | User |
-| Project name | `ClearLine` — a deliberately temporary placeholder, to be swapped when the client settles the real name | Claude (user asked for "a clean and professional made up name now") |
+| Project name | `Callsign` — a deliberately temporary placeholder, to be swapped when the client settles the real name | Claude (user asked for "a clean and professional made up name now") |
 | Scope of the rename | Display name only; the route slug stays `/case-study/dispatch-training` | Claude |
 | VendorHub PNG provenance | Real app images. Redraw must reproduce their content faithfully. | User |
 | AI photography of named real places | Acceptable | User |
@@ -115,7 +115,7 @@ explicit decision — the cost is fabricated text on a client case study.
 
 ### Naming
 
-Rename the project from "Dispatch Training Platform" to **ClearLine**, presented as a
+Rename the project from "Dispatch Training Platform" to **Callsign**, presented as a
 **GenAILabs project codename**, not as the client's product brand. The snapshot line at
 `dispatch-training-case-study-page.tsx:22` changes from "Product name not finalized, so a
 generic title is used" to wording that says the client's product name is not public and
@@ -135,12 +135,18 @@ name later. That drives two decisions:
 Files touched by the rename: `components/dispatch-training-case-study-page.tsx` (the new
 constant, plus the three hard-coded "Dispatch Training Platform" strings at lines 262, 281
 and 485) and `app/case-study/dispatch-training/page.tsx` (`metadata.title` only). No route
-move, no `lib/redirects.ts` change, no `app/sitemap.ts` change, and — per the user —
-no `components/work-grid.tsx` change.
+move, no `lib/redirects.ts` change and no `app/sitemap.ts` change. `components/work-grid.tsx`
+was out of scope initially; the user brought it in on 2026-11-15, asking for the new
+imagery on the `/work` cards too, so its `dispatch-training` entry carries the codename and
+a card-shaped export of the feature board.
 
 Name diligence: a web search of the dispatch-training vertical found no product called
-ClearLine. Incumbents are Vector Solutions, PowerPhone, PowerDMS, Lexipol, Equature,
-Priority Dispatch (AI SkillLab) and Eventide. This was not a trademark search.
+Callsign. Incumbents are Vector Solutions, PowerPhone, PowerDMS, Lexipol, Equature,
+Priority Dispatch (AI SkillLab), Eventide, ThisGen and Knogin. This was not a trademark
+search. **Callsign is, however, the name of a live identity-verification company**
+(callsign.com) in an unrelated vertical — acceptable for a temporary internal codename on
+a `noindex` page, not acceptable as a shipped product name. The first codename, ClearLine,
+was rejected by the user on 2026-11-15; the replacement lives in the same single constant.
 
 ### The 911 feature board
 
@@ -241,7 +247,7 @@ name or the copy changes. Outputs:
 
 | Output | Size | Replaces |
 |---|---|---|
-| `public/figma/clearline-features.png` | 1600×900 | hero image |
+| `public/figma/callsign-features.png` | 1600×900 | hero image |
 | `public/figma/vendorhub/{home,event,floor-plan,messages}.png` | 1170×2532 | the four soft PNGs |
 | `public/figma/vendorhub-hero.png` | 1600×800 | rebuilt composite |
 
@@ -268,7 +274,7 @@ settled**; their answers are recorded in the decisions table above.
 lint, typecheck, build, land. Nothing is staged behind an unmerged branch on this account.
 
 **Resolved:** (1) the VendorHub PNGs are real app images, so the redraw reproduces their
-content faithfully — the honesty concern is retired; (2) `ClearLine` is an accepted
+content faithfully — the honesty concern is retired; (2) `Callsign` is an accepted
 temporary placeholder, display-name only; (3) AI photography of named real places is
 acceptable; (5) the `work-grid.tsx` entry is out of scope; (6) the three blurred
 screenshots stay in the gallery, as proposed.

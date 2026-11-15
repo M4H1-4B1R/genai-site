@@ -315,6 +315,24 @@ const allProjects: Project[] = [
 		topics: ["Client projects", "Mobile apps"],
 		tags: ["Flutter"],
 	},
+	{
+		id: "dispatch-training",
+		tag: "TRAINING PLATFORM",
+		category: "CLIENT PROJECT",
+		// Codename, kept in sync by hand with PROJECT_NAME in
+		// components/dispatch-training-case-study-page.tsx — that module is a Server
+		// Component, so this client component cannot import the constant from it.
+		title: "Callsign",
+		description:
+			"A two-sided web platform for training 911 dispatchers, with trainee, agency admin and superadmin panels. Under development; design not finalized.",
+		// 29:12 variant of the feature board — the hero's 16:9 export would be
+		// object-cover cropped here and lose the first and last feature rows.
+		image: "/figma/callsign-card.webp",
+		topics: ["Client projects", "Websites & marketplaces"],
+		tags: ["Next.js", "Node", "In development"],
+		proof: { label: "Status", value: "Under development" },
+		url: "/case-study/dispatch-training",
+	},
 ];
 
 export function WorkGrid() {

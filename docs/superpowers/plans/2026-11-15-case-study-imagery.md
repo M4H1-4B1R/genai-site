@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Replace the soft VendorHub app screens and the mostly-empty blurred 911 hero screenshot with code-rendered images exported at 3×, and rename the 911 project to ClearLine.
+**Goal:** Replace the soft VendorHub app screens and the mostly-empty blurred 911 hero screenshot with code-rendered images exported at 3×, and rename the 911 project to Callsign.
 
 **Architecture:** Every image is authored as an HTML file under `tools/mockups/`, rendered by the gstack `/browse` headless browser at `--scale 3`, and screenshotted to `public/figma/`. Source HTML is committed so images regenerate when copy or the name changes. No new npm dependency: `/browse` is already installed and `sharp` already resolves.
 
@@ -14,7 +14,7 @@
 
 - No new npm dependencies. `/browse` and `sharp` only.
 - `/browse` `--scale` is capped at 1–3 by gstack policy. 3 is the maximum export factor.
-- The project name is **`ClearLine`**, and it is temporary. It lives in exactly one exported constant in `components/dispatch-training-case-study-page.tsx`; every other mention references that constant.
+- The project name is **`Callsign`**, and it is temporary. It lives in exactly one exported constant in `components/dispatch-training-case-study-page.tsx`; every other mention references that constant.
 - The route slug stays `/case-study/dispatch-training`. No route move, no `lib/redirects.ts` change, no `app/sitemap.ts` change.
 - **Do not modify `components/work-grid.tsx`.** Its dispatch entry is an unrelated uncommitted working-tree change.
 - No hero board text may render below **11 px at the 640 px breakpoint**, which is a floor of **52 px** in the 1600 px export.
@@ -35,22 +35,22 @@ Failure modes the spec implies that no single task's deliverable naturally exerc
 
 ---
 
-### Task 1: Mockup pipeline and the ClearLine feature board
+### Task 1: Mockup pipeline and the Callsign feature board
 
 **Files:**
 - Create: `tools/mockups/README.md`
-- Create: `tools/mockups/clearline-board.html`
-- Create (output): `public/figma/clearline-features.png`
+- Create: `tools/mockups/callsign-board.html`
+- Create (output): `public/figma/callsign-features.png`
 
 **Interfaces:**
 - Consumes: nothing.
-- Produces: `public/figma/clearline-features.png` at exactly 1600×900, consumed by Task 2. The regeneration command recorded in `tools/mockups/README.md` is reused verbatim by Tasks 3 and 4.
+- Produces: `public/figma/callsign-features.png` at exactly 1600×900, consumed by Task 2. The regeneration command recorded in `tools/mockups/README.md` is reused verbatim by Tasks 3 and 4.
 
-- [ ] **Step 1: Write `tools/mockups/clearline-board.html`**
+- [ ] **Step 1: Write `tools/mockups/callsign-board.html`**
 
 A standalone HTML document with its own `<!doctype html>`, charset and viewport metas. Root element `.board`, exactly `1600×900`, `background:#0f1417`, fonts Space Grotesk and Space Mono loaded from Google Fonts to match `app/layout.tsx`.
 
-Layout B from the spec: a left column (38 % width, right border `#1c2328`) holding the eyebrow `CLIENT PROJECT`, the title `ClearLine`, the sentence "A two-sided web platform for training 911 dispatchers. Built, deployed and maintained by GenAILabs.", the tag pills `Next.js` / `Node` / `Tailwind`, and the line `3 ROLES · 12+ ADMIN SECTIONS`. A right column holding six numbered rows, `01`–`06` in orange `#ff5a1f`, separated by `1px solid #161c20`:
+Layout B from the spec: a left column (38 % width, right border `#1c2328`) holding the eyebrow `CLIENT PROJECT`, the title `Callsign`, the sentence "A two-sided web platform for training 911 dispatchers. Built, deployed and maintained by GenAILabs.", the tag pills `Next.js` / `Node` / `Tailwind`, and the line `3 ROLES · 12+ ADMIN SECTIONS`. A right column holding six numbered rows, `01`–`06` in orange `#ff5a1f`, separated by `1px solid #161c20`:
 
 ```
 01  Trainee platform
@@ -68,16 +68,16 @@ Names only — no descriptive tails. Feature-name font size **≥52px**; title �
 Invoke the `/browse` skill and run:
 
 ```
-goto file:///home/abir/repos/genai-site/tools/mockups/clearline-board.html
+goto file:///home/abir/repos/genai-site/tools/mockups/callsign-board.html
 viewport 1600x900 --scale 3
-screenshot /home/abir/repos/genai-site/public/figma/clearline-features.png --selector .board
+screenshot /home/abir/repos/genai-site/public/figma/callsign-features.png --selector .board
 ```
 
 Then downscale the 4800×2700 capture to exactly 1600×900 with `sharp`.
 
 - [ ] **Step 3: Verify dimensions and background**
 
-Run: `file public/figma/clearline-features.png`
+Run: `file public/figma/callsign-features.png`
 Expected: `PNG image data, 1600 x 900`
 
 Then Read the PNG. Confirm: all six rows present and legible, no clipped text, outer background is `#0f1417` (Review Focus 2).
@@ -89,21 +89,21 @@ Record the three `/browse` commands, the `sharp` downscale, the `#0f1417` backgr
 - [ ] **Step 5: Commit**
 
 ```bash
-git add tools/mockups/README.md tools/mockups/clearline-board.html public/figma/clearline-features.png
-git commit -m "feat: add ClearLine feature board image and mockup pipeline"
+git add tools/mockups/README.md tools/mockups/callsign-board.html public/figma/callsign-features.png
+git commit -m "feat: add Callsign feature board image and mockup pipeline"
 ```
 
 ---
 
-### Task 2: ClearLine rename and hero wiring
+### Task 2: Callsign rename and hero wiring
 
 **Files:**
 - Modify: `components/dispatch-training-case-study-page.tsx` (lines 22, 262, 277–285, 485)
 - Modify: `app/case-study/dispatch-training/page.tsx:10`
 
 **Interfaces:**
-- Consumes: `public/figma/clearline-features.png` from Task 1.
-- Produces: exported `const PROJECT_NAME = "ClearLine"` from `components/dispatch-training-case-study-page.tsx`, the single source for the name.
+- Consumes: `public/figma/callsign-features.png` from Task 1.
+- Produces: exported `const PROJECT_NAME = "Callsign"` from `components/dispatch-training-case-study-page.tsx`, the single source for the name.
 
 - [ ] **Step 1: Add the name constant**
 
@@ -111,7 +111,7 @@ At the top of `components/dispatch-training-case-study-page.tsx`, above `heroTag
 
 ```tsx
 // Temporary codename — swap for the client's product name when it is decided.
-export const PROJECT_NAME = "ClearLine";
+export const PROJECT_NAME = "Callsign";
 ```
 
 - [ ] **Step 2: Replace the three hard-coded name strings**
@@ -120,11 +120,11 @@ Lines 262 (the `<h1>`), 281 (the hero `alt`) and 485 (the gallery `alt`, inside 
 
 - [ ] **Step 3: Rewrite the placeholder snapshot line**
 
-`snapshot[0].value` at line 22 currently reads "A web platform for training 911 dispatchers. Product name not finalized, so a generic title is used". Replace with wording that says the client's product name is not public and this case study refers to the project by the internal name ClearLine. The claim must stay true: ClearLine is ours, not the client's brand.
+`snapshot[0].value` at line 22 currently reads "A web platform for training 911 dispatchers. Product name not finalized, so a generic title is used". Replace with wording that says the client's product name is not public and this case study refers to the project by the internal name Callsign. The claim must stay true: Callsign is ours, not the client's brand.
 
 - [ ] **Step 4: Point the hero at the board and stop cropping it**
 
-In the hero block at lines 277–285, change the `ImageLightbox` `src` to `/figma/clearline-features.png`, add `fit="contain"`, and update the caption pill below it — it currently reads "Trainee screen · design not final", which no longer describes a feature board.
+In the hero block at lines 277–285, change the `ImageLightbox` `src` to `/figma/callsign-features.png`, add `fit="contain"`, and update the caption pill below it — it currently reads "Trainee screen · design not final", which no longer describes a feature board.
 
 - [ ] **Step 5: Verify the rename is complete**
 
@@ -133,7 +133,7 @@ Expected: no matches (Review Focus 5).
 
 - [ ] **Step 6: Update the route metadata title**
 
-`app/case-study/dispatch-training/page.tsx:10` reads `"Dispatch Training Platform Case Study | GenAILabs"`. Use `ClearLine`. Import `PROJECT_NAME` rather than retyping it.
+`app/case-study/dispatch-training/page.tsx:10` reads `"Dispatch Training Platform Case Study | GenAILabs"`. Use `Callsign`. Import `PROJECT_NAME` rather than retyping it.
 
 - [ ] **Step 7: Verify lint, types and build**
 
@@ -148,7 +148,7 @@ Start `npm run dev`, then via `/browse`: `viewport 390x844`, `goto http://localh
 
 ```bash
 git add components/dispatch-training-case-study-page.tsx app/case-study/dispatch-training/page.tsx
-git commit -m "feat: rename dispatch project to ClearLine and lead with the feature board"
+git commit -m "feat: rename dispatch project to Callsign and lead with the feature board"
 ```
 
 ---
@@ -265,7 +265,7 @@ Expected: `PNG image data, 1600 x 800`
 
 - [ ] **Step 3: Enforce the page-weight budget**
 
-Run: `ls -l public/figma/clearline-features.png public/figma/vendorhub-hero.png public/figma/vendorhub/*.png`
+Run: `ls -l public/figma/callsign-features.png public/figma/vendorhub-hero.png public/figma/vendorhub/*.png`
 Expected: every file under 400 KB (Review Focus 4).
 
 Any file over budget gets re-encoded with `sharp` — raise PNG compression first, and convert to WebP if that is not enough. A WebP conversion also renames the `src` in `components/vendorhub-case-study-page.tsx:144–147` and `:268`, which is why this check runs before the final build.

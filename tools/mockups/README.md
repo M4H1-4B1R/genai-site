@@ -44,7 +44,7 @@ is antialiased from nine subpixels. `--scale` is capped at 3 by gstack policy.
 - **Outer background is `#0f1417`.** It must match the slot background in
   `components/shared/image-lightbox.tsx`, or `object-contain` letterboxing shows a visible
   rectangle around the image.
-- **Minimum type size on the ClearLine board is 52 px** in the 1600 px export. The hero is
+- **Minimum type size on the Callsign board is 52 px** in the 1600 px export. The hero is
   `max-[640px]:h-[240px]`, so a contained board renders at roughly 0.21 scale on a phone;
   anything under 52 px drops below 11 px there and stops being readable.
 - **Phone screens export at exactly 1:2** (1280×2560). The VendorHub gallery slot is
@@ -74,12 +74,22 @@ page. It is 247 KB, inside the budget, so there is nothing to gain by converting
 
 | Source | Export | Used by |
 |---|---|---|
-| `clearline-board.html` | `public/figma/clearline-features.webp` (1600×900) | `/case-study/dispatch-training` hero |
+| `callsign-board.html` | `public/figma/callsign-features.webp` (1600×900) | `/case-study/dispatch-training` hero |
+| `callsign-card.html` | `public/figma/callsign-card.webp` (1595×660) | `/work` card |
 | `vendorhub-home.html` | `public/figma/vendorhub/home.webp` (1280×2560) | `/case-study/vendorhub` gallery |
 | `vendorhub-event.html` | `public/figma/vendorhub/event.webp` (1280×2560) | `/case-study/vendorhub` gallery |
 | `vendorhub-floor-plan.html` | `public/figma/vendorhub/floor-plan.webp` (1280×2560) | `/case-study/vendorhub` gallery |
 | `vendorhub-messages.html` | `public/figma/vendorhub/messages.webp` (1280×2560) | `/case-study/vendorhub` gallery |
 | `vendorhub-hero.html` | `public/figma/vendorhub-hero.png` (1600×800) | `/case-study/vendorhub` hero, `/work` card |
+
+`callsign-card.html` restates the board for the `/work` grid instead of re-exporting
+`callsign-board.html` at 29:12. Two things rule the board layout out there: `object-cover`
+on a 16:9 image in an `aspect-[29/12]` slot crops away the `01` and `06` rows, and the
+category badge is absolutely positioned over the image's top-right corner at a fixed size,
+so on a 390 px viewport it covers 41 % of the width and 24 % of the height and buries the
+first two feature rows. The card layout keeps that corner empty; **anything added to its
+`.head` must stay inside 52 % of the width and 170 px of height.** Its type floor is 50 px,
+not the board's 52 px, because the card renders at ~0.22 scale on a phone.
 
 `vendorhub-hero.html` has no screen markup of its own: it CSS-crops the phone out of the
 four exported screens (the phone sits at 68,63 and measures 1144×2433 in a 1280×2560
