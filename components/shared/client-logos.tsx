@@ -1,7 +1,10 @@
-import Image from "next/image";
 import type { ReactNode } from "react";
 
-const iconProps = {
+// Real clients and products only (from the 2026 company profile).
+// Mono (currentColor) marks are simplified redraws of each client's logo,
+// not exact traces; swap for the official vector files if supplied.
+const svgProps = {
+  "aria-hidden": true,
   fill: "none",
   height: 24,
   viewBox: "0 0 24 24",
@@ -9,117 +12,102 @@ const iconProps = {
   xmlns: "http://www.w3.org/2000/svg",
 } as const;
 
-function TechSolutionMark() {
-  // Official mark, extracted from the Figma page export with the dark
-  // background converted to transparency.
+function SpruceupMark() {
   return (
-    <Image
-      alt=""
-      className="mark-image"
-      height={31}
-      src="/figma/logo-tech-solution.png"
-      width={36}
-    />
+    <svg {...svgProps}>
+      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+      <path
+        d="M12 5.5 8.2 10.5h2.4L7.4 14.5h3.2V18h2.8v-3.5h3.2l-3.2-4h2.4z"
+        fill="currentColor"
+      />
+    </svg>
   );
 }
 
-function FrostbiteMark() {
+function RennzoneMark() {
   return (
-    <svg {...iconProps} aria-hidden="true">
-      <g stroke="currentColor" strokeLinecap="round" strokeWidth="2.4">
-        <path d="M12 3v18" />
-        <path d="M3 12h18" />
-        <path d="M5.6 5.6l12.8 12.8" />
-        <path d="M18.4 5.6L5.6 18.4" />
+    <svg {...svgProps}>
+      <g stroke="currentColor" strokeLinecap="round" strokeWidth="2">
+        <path d="M2 8h5M1 12h6M3 16h4" />
+        <path d="M10.5 19V5h4.5a3.5 3.5 0 0 1 0 7h-4.5M14.5 12l4 7" strokeWidth="2.4" />
       </g>
     </svg>
   );
 }
 
-function DatawatchMark() {
+function ResinwerksMark() {
   return (
-    <svg {...iconProps} fill="currentColor" aria-hidden="true">
-      <ellipse cx="12" cy="15.5" rx="6" ry="5.5" />
-      <circle cx="5.2" cy="8.6" r="2.6" />
-      <circle cx="12" cy="6.4" r="2.6" />
-      <circle cx="18.8" cy="8.6" r="2.6" />
+    <svg {...svgProps}>
+      <path
+        d="M7 4h10l5 8-5 8H7l-5-8z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
+      <path d="M7 12h10" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
     </svg>
   );
 }
 
-function DataInsightMark() {
+function HuntoraMark() {
   return (
-    <svg {...iconProps} aria-hidden="true">
-      <g stroke="currentColor" strokeLinecap="round" strokeWidth="2.4">
-        <circle cx="12" cy="12" r="8.5" />
-        <path d="M12 7.8v8.4" />
-        <path d="M7.8 12h8.4" />
+    <svg {...svgProps}>
+      <rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" strokeWidth="2" />
+      <path d="M13.2 6 8 13h3.6L10.8 18 16 11h-3.6z" fill="currentColor" />
+    </svg>
+  );
+}
+
+function RennworksMark() {
+  return (
+    <svg {...svgProps}>
+      <g
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2.4"
+        transform="skewX(-12) translate(3 0)"
+      >
+        <path d="M2 19V5h5a3 3 0 0 1 0 6H2M7 11l3 8" />
+        <path d="M11 5l2 14 3-8 3 8 2-14" />
       </g>
     </svg>
   );
 }
 
-function NextgenMark() {
+function KayaMark() {
   return (
-    <svg {...iconProps} fill="currentColor" aria-hidden="true">
-      <path d="M12 3.5l9.5 17h-19z" />
+    <svg {...svgProps}>
+      <rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" strokeWidth="2" />
+      <circle cx="12" cy="7" r="1.6" stroke="currentColor" strokeWidth="1.4" />
+      <path
+        d="M12 10 8 17.5M12 10l4 7.5M8.6 20q1.7-1.4 3.4 0t3.4 0"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="1.4"
+      />
     </svg>
   );
 }
 
-function ElevateMark() {
-  return (
-    <svg {...iconProps} aria-hidden="true">
-      <g stroke="currentColor" strokeLinecap="round" strokeWidth="2.4">
-        <path d="M3 20L8 4l5 16" />
-        <path d="M5.4 14h5.2" />
-        <path d="M15 4l6 16" />
-      </g>
-    </svg>
-  );
-}
+type Client = { name: string; tagline: string; icon?: ReactNode };
 
-type ClientLogo = {
-  icon: ReactNode;
-  name?: ReactNode;
-  tagline: string;
-};
-
-const clientLogos: ClientLogo[] = [
-  { icon: <TechSolutionMark />, tagline: "Tech Solution" },
-  {
-    icon: <FrostbiteMark />,
-    name: <strong>Frostbite</strong>,
-    tagline: "Cloud Data Architecture",
-  },
-  {
-    icon: <DatawatchMark />,
-    name: <strong>DATAWATCH</strong>,
-    tagline: "System Monitoring",
-  },
-  {
-    icon: <DataInsightMark />,
-    name: <span className="name-light">DATA INSIGHT</span>,
-    tagline: "Security & Strategy",
-  },
-  {
-    icon: <NextgenMark />,
-    name: <strong>NextGen</strong>,
-    tagline: "Cloud Edge Computing",
-  },
-  {
-    icon: <ElevateMark />,
-    name: <strong>ELEVATE AI</strong>,
-    tagline: "Next Generation Models",
-  },
+const clients: Client[] = [
+  { name: "Spruceup", tagline: "Marketplace · Ireland", icon: <SpruceupMark /> },
+  { name: "Rennzone", tagline: "Porsche marketplace", icon: <RennzoneMark /> },
+  { name: "Resinwerks", tagline: "AI chatbot", icon: <ResinwerksMark /> },
+  { name: "Huntora", tagline: "AI lead finder", icon: <HuntoraMark /> },
+  { name: "Kaya", tagline: "AI health coach", icon: <KayaMark /> },
+  { name: "Rennworks", tagline: "Porsche workshop site", icon: <RennworksMark /> },
+  { name: "Vendor Hub", tagline: "Events app · UAE" },
 ];
 
-export const clientStripItems = clientLogos.map((logo) => (
-  <span className="client-logo" key={logo.tagline}>
+export const clientStripItems = clients.map((c) => (
+  <span className="client-logo" key={c.name}>
     <span className="client-logo-row">
-      {logo.icon}
-      {logo.name}
+      {c.icon}
+      <strong>{c.name}</strong>
     </span>
-    <small>{logo.tagline}</small>
+    <small>{c.tagline}</small>
   </span>
 ));

@@ -23,6 +23,19 @@ export function SiteFooter() {
           Monthly intelligence, architecture blueprints, and product deployment
           debriefs.
         </p>
+        <p className="m-0 max-w-80 text-sm leading-[1.5] text-[#9ca3af]">
+          GenAI Labs is the software arm of NexAgents Ltd, the UK-registered
+          parent company that also owns our products.
+        </p>
+        <address className="m-0 max-w-80 text-sm not-italic leading-[1.6] text-[#9ca3af]">
+          NexAgents Ltd, 128 City Road, London EC1V 2NX
+          <br />
+          <a href="tel:+447895566797">+44 7895 566797</a>
+          <br />
+          <a href="mailto:support@genailabs.agency">support@genailabs.agency</a>
+          <br />
+          Fully remote team
+        </address>
       </div>
       <div className="flex flex-col gap-0">
         <span className="mb-1 text-xs uppercase tracking-[1px]">Services</span>
@@ -62,7 +75,7 @@ export function SiteFooter() {
         <NewsletterForm />
       </div>
       <div className="col-span-full mt-5 flex flex-row justify-between border-t border-[#2a2d34] pt-3 text-xs uppercase text-[#8b9498] max-[640px]:flex-col max-[640px]:gap-2">
-        <span>© 2025 GENAILABS INC. ALL RIGHTS RESERVED.</span>
+        <span>© 2026 GENAI LABS, A NEXAGENTS LTD COMPANY, REGISTERED IN THE UK. ALL RIGHTS RESERVED.</span>
         <span className="flex flex-wrap gap-x-4">
           <Link className="inline-flex min-h-11 items-center" href="/privacy-policy">Privacy policy</Link>
           <Link className="inline-flex min-h-11 items-center" href="/terms-of-use">Terms of use</Link>

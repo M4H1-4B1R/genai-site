@@ -4,7 +4,7 @@ import Link from "next/link";
 import { clientStripItems } from "@/components/shared/client-logos";
 import { Marquee } from "@/components/shared/marquee";
 import { CalloutCtaSection } from "@/components/shared/callout-cta-section";
-import { ProofQuoteSection } from "@/components/shared/proof-quote-section";
+import { ServicesProofSlider } from "@/components/services-proof-slider";
 import {
   DeploymentPatternsSection,
   TechStackSection,
@@ -136,7 +136,7 @@ export function InsightsPage() {
       {/* 6–9. SHARED SECTIONS */}
       <TechStackSection />
       <DeploymentPatternsSection />
-      <ProofQuoteSection />
+      <ServicesProofSlider />
       <CalloutCtaSection />
     </main>
   );

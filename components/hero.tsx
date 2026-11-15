@@ -40,26 +40,26 @@ export function Hero() {
             <div className="mt-[clamp(24px,5svh,48px)] grid max-w-[760px] grid-cols-3 gap-6 border-t border-[#2a2d34] pt-4 max-[640px]:gap-3">
               <div>
                 <strong className="block text-[26px] max-[640px]:text-xl">
-                  10+
+                  230+
                 </strong>
                 <span className="mt-1 block text-[12px] tracking-[0.55px] uppercase text-[#9ca3af] max-[640px]:text-xs">
-                  AI products shipped
+                  Projects delivered
                 </span>
               </div>
               <div>
                 <strong className="block text-[26px] max-[640px]:text-xl">
-                  40
+                  8
                 </strong>
                 <span className="mt-1 block text-[12px] tracking-[0.55px] uppercase text-[#9ca3af] max-[640px]:text-xs">
-                  Agents deployed
+                  Own products
                 </span>
               </div>
               <div>
                 <strong className="block text-[26px] max-[640px]:text-xl">
-                  12+
+                  16
                 </strong>
                 <span className="mt-1 block text-[12px] tracking-[0.55px] uppercase text-[#9ca3af] max-[640px]:text-xs">
-                  Production deployments
+                  People on our team
                 </span>
               </div>
             </div>
