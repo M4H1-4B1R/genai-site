@@ -24,13 +24,17 @@ $B wait --networkidle
 # 4. Capture the root element. The selector is POSITIONAL, not --selector.
 $B screenshot .board /tmp/<name>-3x.png
 
-# 5. Downscale the 3x capture to the final size.
+# 5. Downscale the 3x capture to the final size. Exports are WebP — see Encoding.
+#    Use quality 92 for flat UI, 85 where the screen carries photography.
 node -e "
 const sharp=require('sharp');
-sharp(process.argv[1]).resize(<W>,<H>,{fit:'fill'}).png({compressionLevel:9,palette:true})
-  .toFile('public/figma/<out>.png').then(i=>console.log(i.width+'x'+i.height, i.size));
+sharp(process.argv[1]).resize(<W>,<H>,{fit:'fill'}).webp({quality:<92|85>,effort:6})
+  .toFile('public/figma/<out>.webp').then(i=>console.log(i.width+'x'+i.height, i.size));
 " /tmp/<name>-3x.png
 ```
+
+`vendorhub-hero.png` is the one PNG — step 5 for it is
+`.png({compressionLevel:9,palette:true})` to `public/figma/vendorhub-hero.png`.
 
 Rendering at 3× and downscaling to 1× is supersampling: the final PNG is 1× but its text
 is antialiased from nine subpixels. `--scale` is capped at 3 by gstack policy.

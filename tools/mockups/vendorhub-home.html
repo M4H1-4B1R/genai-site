@@ -46,6 +46,11 @@
   /* Natural aspect, never cover-cropped: the overlay text lives in the photo,
      so any crop clips the app's own badges and titles. */
   .shot { display:block; width:100%; height:auto; }
+  /* The source screen cuts the second card off at the bottom of the viewport.
+     Reproduce that: the last card fills the remaining space and is clipped,
+     so it reads as "continues below" rather than as a complete empty card. */
+  .card:last-child { flex:1; min-height:0; border-radius:9px 9px 0 0; }
+  .card:last-child .shot { height:100%; object-fit:cover; object-position:top; }
   .cinfo { display:flex; align-items:center; padding:9px 11px; gap:8px; }
   .cwhen { font-size:11px; color:#55605c; }
   .ccount { margin-left:auto; font-size:11px; color:#55605c; letter-spacing:0.5px; }
@@ -93,7 +98,7 @@
         <span class="em">Dubai</span>
         <span class="em">Abu Dhabi</span>
         <span class="em">Sharjah</span>
-        <span class="em">Fu</span>
+        <span class="em">Fujairah</span>
       </div>
 
       <div class="evhead"><b>Upcoming events</b><span>142 listed</span></div>

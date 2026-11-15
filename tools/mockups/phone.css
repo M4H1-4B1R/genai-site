@@ -1,7 +1,11 @@
 /* Shared chrome for the VendorHub phone-screen mockups — "treatment C".
-   Export canvas is exactly 1:2 so it fills the gallery's aspect-[1/2] slot with
-   no letterbox; the backdrop resolves to #0f1417 at every edge so any residual
-   object-contain padding is invisible. See tools/mockups/README.md. */
+   Export canvas is exactly 1:2 so it fills the gallery's aspect-[1/2] slot.
+   The backdrop must resolve to #0f1417 at every edge: ImageLightbox adds p-4 in
+   contain mode, which leaves ~32px of vertical slack in an aspect-[1/2] slot, so
+   the image's own top and bottom edges sit directly against the slot background.
+   The radial glow peaks at 50% 0%, i.e. exactly on the top edge, so a linear
+   ink-to-transparent overlay is layered above it to kill that seam.
+   See tools/mockups/README.md. */
 
 :root {
   --ink: #0f1417;      /* must match the slot background in image-lightbox.tsx */
@@ -16,12 +20,14 @@ body { background: var(--ink); display: flex; }
 .canvas {
   width: 1280px;
   height: 2560px;
-  background: radial-gradient(
-    130% 90% at 50% 0%,
-    rgba(255, 90, 31, 0.18) 0%,
-    rgba(15, 122, 99, 0.10) 38%,
-    var(--ink) 72%
-  );
+  background:
+    linear-gradient(to bottom, var(--ink) 0, rgba(15, 20, 23, 0) 90px),
+    radial-gradient(
+      130% 90% at 50% 0%,
+      rgba(255, 90, 31, 0.18) 0%,
+      rgba(15, 122, 99, 0.10) 38%,
+      var(--ink) 72%
+    );
   display: flex;
   align-items: center;
   justify-content: center;
