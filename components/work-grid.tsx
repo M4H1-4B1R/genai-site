@@ -62,9 +62,9 @@ const allProjects: Project[] = [
 		id: "sino360",
 		tag: "AUTOMOTIVE MOBILE APP",
 		category: "OUR PRODUCT",
-		title: "China Vehicle History (Sino 360 app)",
+		title: "Sino 360",
 		description:
-			"Chinese VIN decoder app — specs, accident and title history and mileage checks from a camera scan or typed VIN, in five languages.",
+			"Companion mobile app to China Vehicle History: Chinese VIN decoder with specs, accident and title history and mileage checks from a camera scan or typed VIN, in five languages.",
 		image: "/figma/sino360-hero.png",
 		topics: ["Our products", "Mobile apps"],
 		tags: ["Automotive", "Flutter", "Production"],
@@ -195,9 +195,21 @@ const allProjects: Project[] = [
 		title: "GlobalVIN",
 		description:
 			"Any car's history, from 150+ countries, in one place. 20+ data sources, 99.9% uptime, VIN check API.",
+		image: "/figma/globalvin-hero.png",
 		topics: ["Our products", "Websites & marketplaces"],
 		tags: ["Car data", "API", "Production"],
-		url: "https://globalvin.co",
+		proof: { label: "Search visibility", value: "9 ranking keywords, best at #10" },
+		url: "/case-study/globalvin",
+	},
+	{
+		id: "china-vehicle-history",
+		tag: "CAR DATA",
+		category: "OUR PRODUCT",
+		title: "China Vehicle History",
+		description:
+			"History reports for cars made in China: VIN check and decoder, accident verification and title status. Part of the GlobalVIN network. Sino 360 is its companion mobile app.",
+		topics: ["Our products", "Websites & marketplaces"],
+		tags: ["Car data", "VIN check", "Production"],
 	},
 	{
 		id: "asksinai",
