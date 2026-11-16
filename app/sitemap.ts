@@ -29,6 +29,7 @@ const paths = [
   "/case-study/sino360",
   "/case-study/smart-teacher",
   "/case-study/spruceup",
+  "/case-study/triten",
   "/case-study/vendorhub",
   "/about",
   "/insights",

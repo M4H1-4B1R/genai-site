@@ -259,9 +259,12 @@ const allProjects: Project[] = [
 		category: "CLIENT PROJECT",
 		title: "Triten",
 		description:
-			"A custom Claude skill that applies Triten's own fonts, colours and tone to everything Claude writes.",
+			"A custom Claude skill that applies Triten Real Estate Partners' fonts, colours, logo rules and tone to the decks, documents and dashboards Claude produces.",
+		image: "/figma/triten-features.webp",
 		topics: ["Client projects", "AI agents"],
-		tags: ["Claude", "Branding"],
+		tags: ["Claude", "Branding", "Delivered"],
+		proof: { label: "Formats covered", value: "PowerPoint, Word, HTML" },
+		url: "/case-study/triten",
 	},
 	{
 		id: "ebay-assistant",
