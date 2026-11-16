@@ -19,6 +19,7 @@ const paths = [
   "/case-study/globalvin",
   "/case-study/huntora",
   "/case-study/kaya",
+  "/case-study/linkedin-agent",
   "/case-study/mashtal",
   "/case-study/mingcheji",
   "/case-study/nexagents",

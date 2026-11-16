@@ -267,6 +267,19 @@ const allProjects: Project[] = [
 		url: "/case-study/triten",
 	},
 	{
+		id: "linkedin-agent",
+		tag: "N8N AUTOMATION",
+		category: "CLIENT PROJECT",
+		title: "LinkedIn Connection Agent",
+		description:
+			"An n8n workflow that turns a Google Sheet of prospects into LinkedIn connection requests, with a rate-limit stage and a connection log.",
+		image: "/figma/linkedin-agent-features.webp",
+		topics: ["Client projects", "AI agents"],
+		tags: ["n8n", "Google Sheets", "Delivered"],
+		proof: { label: "Workflow", value: "Sheet to LinkedIn requests" },
+		url: "/case-study/linkedin-agent",
+	},
+	{
 		id: "ebay-assistant",
 		tag: "AI AGENT",
 		category: "CLIENT PROJECT",
