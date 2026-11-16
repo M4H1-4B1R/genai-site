@@ -246,9 +246,12 @@ const allProjects: Project[] = [
 		category: "CLIENT PROJECT",
 		title: "Resinwerks",
 		description:
-			"A chatbot that answers from the company's own information, built on their existing platform with their internal data.",
+			"A sitewide chatbot for a floor-coatings maker, built on HubSpot with the OpenAI API and trained on the client's own business data, then handed over.",
+		image: "/figma/resinwerks-hero.webp",
 		topics: ["Client projects", "AI agents"],
-		tags: ["Chatbot", "OpenAI", "HubSpot"],
+		tags: ["Chatbot", "OpenAI", "HubSpot", "Live"],
+		proof: { label: "Stack", value: "HubSpot + OpenAI API" },
+		url: "/case-study/resinwerks",
 	},
 	{
 		id: "triten",
