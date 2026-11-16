@@ -293,14 +293,17 @@ const allProjects: Project[] = [
 		url: "/case-study/nda-agent",
 	},
 	{
-		id: "property-ad-writer",
+		id: "property-ad-agent",
 		tag: "AI AGENT",
 		category: "CLIENT PROJECT",
-		title: "Property Ad Writer",
+		title: "Property Ad Agent",
 		description:
-			"Writes property listings and ads, and connects them to Airtable.",
+			"An OpenAI agent that writes unique, rule-checked ads for property listings and saves them to Airtable.",
+		image: "/figma/property-ad-agent-features.webp",
 		topics: ["Client projects", "AI agents"],
-		tags: ["OpenAI", "Airtable"],
+		tags: ["OpenAI", "Airtable", "Delivered"],
+		proof: { label: "Prompt stages", value: "4, with headline check" },
+		url: "/case-study/property-ad-agent",
 	},
 	{
 		id: "private-in-house-ai",
