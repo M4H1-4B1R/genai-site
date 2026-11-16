@@ -322,11 +322,14 @@ const allProjects: Project[] = [
 		id: "sprout",
 		tag: "COACHING APP",
 		category: "CLIENT PROJECT",
-		title: "Sprout",
+		title: "Sprout Coaching App",
 		description:
-			"A coaching app built in Flutter.",
+			"An AI coach that follows its coaching method, one question at a time, released on iOS and Android.",
+		image: "/figma/sprout-features.webp",
 		topics: ["Client projects", "Mobile apps"],
-		tags: ["Flutter"],
+		tags: ["Flutter", "OpenAI", "LangChain"],
+		proof: { label: "Release", value: "iOS and Android" },
+		url: "/case-study/sprout",
 	},
 	{
 		id: "dispatch-training",
@@ -399,6 +402,7 @@ export function WorkGrid() {
 								alt={project.imageAlt ?? project.title}
 								fill
 								sizes="(max-width: 640px) 100vw, 50vw"
+								quality={90}
 								className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
 							/>
 							{/* Tag pill */}

@@ -26,6 +26,7 @@ const paths = [
   "/case-study/nda-agent",
   "/case-study/nexagents",
   "/case-study/property-ad-agent",
+  "/case-study/sprout",
   "/case-study/rennworks",
   "/case-study/rennzone",
   "/case-study/resinwerks",

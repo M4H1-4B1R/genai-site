@@ -23,6 +23,7 @@ export function ImageLightbox({ src, alt, sizes, fit = "cover" }: Props) {
           alt={alt}
           fill
           sizes={sizes}
+          quality={90}
           className={fit === "contain" ? "object-contain p-4" : "object-cover"}
         />
       </button>
