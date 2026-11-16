@@ -280,6 +280,19 @@ const allProjects: Project[] = [
 		url: "/case-study/linkedin-agent",
 	},
 	{
+		id: "nda-agent",
+		tag: "AI AGENT",
+		category: "CLIENT PROJECT",
+		title: "NDA Analysis Agent",
+		description:
+			"A CrewAI agent that reviews NDAs against five weighted criteria and returns scores, risk levels and a clear recommendation.",
+		image: "/figma/nda-agent-features.webp",
+		topics: ["Client projects", "AI agents"],
+		tags: ["CrewAI", "OpenAI", "Delivered"],
+		proof: { label: "Criteria", value: "5 weighted areas" },
+		url: "/case-study/nda-agent",
+	},
+	{
 		id: "ebay-assistant",
 		tag: "AI AGENT",
 		category: "CLIENT PROJECT",
