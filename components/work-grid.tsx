@@ -231,9 +231,12 @@ const allProjects: Project[] = [
 		category: "OUR PRODUCT",
 		title: "ShopBot",
 		description:
-			"An online store with orders on WhatsApp: customers browse and add to cart, and the admin gets WhatsApp notifications instantly.",
-		topics: ["Our products", "Websites & marketplaces"],
-		tags: ["E-commerce", "WhatsApp"],
+			"Your online store powered by WhatsApp: an AI support agent on WhatsApp, Messenger and Instagram answers customers, takes carts and checkouts, 24/7.",
+		image: "/figma/shopbot-hero.webp",
+		topics: ["Our products", "Websites & marketplaces", "AI agents"],
+		tags: ["E-commerce", "WhatsApp", "Production"],
+		proof: { label: "Channels", value: "WhatsApp, Messenger, Instagram" },
+		url: "/case-study/shopbot",
 	},
 	{
 		id: "resinwerks",
