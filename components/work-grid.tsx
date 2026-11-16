@@ -97,6 +97,19 @@ const allProjects: Project[] = [
 		proof: { label: "Pages & URLs", value: "~915 pages, 903 URLs in sitemap" },
 		url: "/case-study/askdahab",
 	},
+	{
+		id: "asksinai",
+		tag: "TRAVEL & TRANSPORT APP",
+		category: "OUR PRODUCT",
+		title: "Ask Sinai",
+		description:
+			"Bilingual iOS and Android app for Dahab: ride offers by road or water, local discovery, tourism services and in-app tools for drivers, businesses and operations.",
+		image: "/figma/asksinai-hero.webp",
+		topics: ["Our products", "Mobile apps"],
+		tags: ["Travel", "Flutter", "Production"],
+		proof: { label: "Audiences", value: "Travelers, drivers, businesses, ops" },
+		url: "/case-study/asksinai",
+	},
 		{
 		id: "mingcheji",
 		tag: "CAR DATA",
@@ -213,17 +226,6 @@ const allProjects: Project[] = [
 		tags: ["Car data", "VIN check", "Production"],
 		proof: { label: "Search visibility", value: "#1 for chinese vin decoder" },
 		url: "/case-study/chinavehiclehistory",
-	},
-	{
-		id: "asksinai",
-		tag: "TRAVEL",
-		category: "OUR PRODUCT",
-		title: "Ask Sinai",
-		description:
-			"Book car and boat rides across Sinai. Part of the Ask Dahab family.",
-		image: "/figma/asksinai.png",
-		topics: ["Our products", "Mobile apps"],
-		tags: ["Travel", "Booking", "Mobile"],
 	},
 	{
 		id: "shopbot",
