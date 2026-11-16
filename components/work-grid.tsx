@@ -293,36 +293,6 @@ const allProjects: Project[] = [
 		url: "/case-study/nda-agent",
 	},
 	{
-		id: "ebay-assistant",
-		tag: "AI AGENT",
-		category: "CLIENT PROJECT",
-		title: "eBay Assistant",
-		description:
-			"Automatically replies to eBay buyer messages using trained patterns and the seller's own requirements.",
-		topics: ["Client projects", "AI agents"],
-		tags: ["Python", "n8n"],
-	},
-	{
-		id: "linkedin-agent",
-		tag: "AI AGENT",
-		category: "CLIENT PROJECT",
-		title: "LinkedIn Agent",
-		description:
-			"Outreach on autopilot: turns a spreadsheet into LinkedIn connection requests, with rate limiting.",
-		topics: ["Client projects", "AI agents"],
-		tags: ["n8n", "Automation"],
-	},
-	{
-		id: "nda-review-agent",
-		tag: "AI AGENT",
-		category: "CLIENT PROJECT",
-		title: "NDA Review Agent",
-		description:
-			"Checks NDAs and gives structured feedback on each clause.",
-		topics: ["Client projects", "AI agents"],
-		tags: ["CrewAI", "OpenAI"],
-	},
-	{
 		id: "property-ad-writer",
 		tag: "AI AGENT",
 		category: "CLIENT PROJECT",
