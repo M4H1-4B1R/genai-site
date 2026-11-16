@@ -306,14 +306,17 @@ const allProjects: Project[] = [
 		url: "/case-study/property-ad-agent",
 	},
 	{
-		id: "private-in-house-ai",
+		id: "local-llm",
 		tag: "PRIVATE AI",
 		category: "CLIENT PROJECT",
-		title: "Private In-House AI",
+		title: "Local LLM Proof of Concept",
 		description:
-			"A proof of concept for an AI that runs on the client's own servers, so no data leaves their infrastructure.",
+			"A document question-and-answer system that runs entirely on local infrastructure, so no documents leave the building.",
+		image: "/figma/local-llm-poc-features.webp",
 		topics: ["Client projects", "AI agents"],
-		tags: ["Local LLM", "Privacy"],
+		tags: ["Local LLM", "LangChain", "Privacy"],
+		proof: { label: "Scope", value: "20+ documents, fully local" },
+		url: "/case-study/local-llm",
 	},
 	{
 		id: "sprout",
