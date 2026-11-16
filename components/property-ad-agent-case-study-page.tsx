@@ -267,7 +267,7 @@ export function PropertyAdAgentCaseStudyPage() {
           <div className="relative h-[360px] min-w-0 flex-1 max-[900px]:flex-none overflow-clip rounded-[8px] border border-line bg-[#0f1417] max-[640px]:h-[240px]">
             <ImageLightbox
               src="/figma/property-ad-agent-features.webp"
-              alt="Property Ad Agent: Airtable property intake, buyer-persona ad drafts, unique headlines, rule-based validation, results saved to Airtable, fine-tuning guide"
+              alt="Property Ad Agent: Airtable intake, buyer-persona drafts, unique headlines, rule validation, saved to Airtable, four prompt stages"
               sizes="(max-width: 640px) 100vw, 32vw"
             />
             <span className="absolute bottom-6 left-6 rounded-[4px] border border-line bg-[rgba(13,14,15,0.8)] px-3 py-1.5 font-mono text-xs font-bold tracking-[0.6px] uppercase text-[#747d81]">
