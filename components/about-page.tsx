@@ -356,7 +356,7 @@ export function AboutPage() {
       </Section>
 
       {/* 8. MEET THE TEAM */}
-      <Section
+			{/*      <Section
         eyebrow="THE TEAM"
         title="Meet the Team"
         aside="Practitioners who have shipped AI in production environments across finance, health, and enterprise software."
@@ -380,6 +380,7 @@ export function AboutPage() {
           ))}
         </div>
       </Section>
+			*/}
 
       {/* 9. PROJECT SHOWCASE */}
       <Section
