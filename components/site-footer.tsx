@@ -20,12 +20,8 @@ export function SiteFooter() {
           </strong>
         </Link>
         <p className="m-0 max-w-80 text-sm leading-[1.5] text-[#9ca3af]">
-          Monthly intelligence, architecture blueprints, and product deployment
-          debriefs.
-        </p>
-        <p className="m-0 max-w-80 text-sm leading-[1.5] text-[#9ca3af]">
-          GenAI Labs is the software arm of NexAgents Ltd, the UK-registered
-          parent company that also owns our products.
+          GenAI Labs is the software arm of NexAgents Ltd, a UK-registered
+          company.
         </p>
         <address className="m-0 max-w-80 text-sm not-italic leading-[1.6] text-[#9ca3af]">
           NexAgents Ltd, 128 City Road, London EC1V 2NX
@@ -33,8 +29,6 @@ export function SiteFooter() {
           <a href="tel:+447895566797">+44 7895 566797</a>
           <br />
           <a href="mailto:support@genailabs.agency">support@genailabs.agency</a>
-          <br />
-          Fully remote team
         </address>
       </div>
       <div className="flex flex-col gap-0">
